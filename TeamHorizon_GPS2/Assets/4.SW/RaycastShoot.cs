@@ -7,13 +7,12 @@ public class RayCastShoot : MonoBehaviour {
 
     public int gunDamage = 1;
     public float fireRate = .25f;
-    public float weaponRange = 50f;
-    public float hitForce = 100f;
-    public int gunBullet = 5;
+    public float weaponRange = 500f;
+    public int gunBullet = 6;
+    public int maxBullet = 6;
     public Transform gunEnd;
-    private Camera fpsCam;
     private WaitForSeconds shotDuration = new WaitForSeconds(.07f);
-    private AudioSource gunAudio;
+    //private AudioSource gunAudio;
     private LineRenderer laserLine;
     private float nextFire;
 
@@ -21,18 +20,17 @@ public class RayCastShoot : MonoBehaviour {
 
     void Start () {
         laserLine = GetComponent<LineRenderer>();
-        gunAudio = GetComponent<AudioSource>();
-        fpsCam = GetComponentInParent<Camera>();
+        //gunAudio = GetComponent<AudioSource>();
     }
-	
-	// Update is called once per frame
+
 	void Update () {
-        Debug.Log(Input.acceleration.y);
-        Debug.Log(Input.acceleration.x);
+        //Debug.Log(Input.acceleration.y);
+        //Debug.Log(Input.acceleration.x);
 
         if (new Vector2(Input.acceleration.x, Input.acceleration.z).magnitude > 2)
         {
-            gunBullet = 5;
+            gunBullet = maxBullet;
+            bulletLeft.text = gunBullet.ToString();
         }
         /*if (Input.GetMouseButtonDown(0) && Time.time > nextFire)
         {
@@ -59,8 +57,10 @@ public class RayCastShoot : MonoBehaviour {
                 laserLine.SetPosition(1, rayOrigin + (fpsCam.transform.forward * weaponRange));
             }
         }*/
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && Time.time > nextFire && gunBullet>0)
         {
+            nextFire = Time.time + fireRate;
+            StartCoroutine(ShotEffect());
             Vector3 mousePosFar = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.farClipPlane);
             Vector3 mousePosNear = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane);
             Vector3 mousePosF = Camera.main.ScreenToWorldPoint(mousePosFar);
@@ -68,18 +68,22 @@ public class RayCastShoot : MonoBehaviour {
             RaycastHit hit;
             laserLine.SetPosition(0, gunEnd.position);
             gunBullet--;
+            bulletLeft.text = gunBullet.ToString();
             if (Physics.Raycast(mousePosN,mousePosF-mousePosN,out hit,weaponRange))
             {
                 laserLine.SetPosition(1, hit.point);
+                if (hit.collider.CompareTag("Enemy"))
+                {
+                    int targetHP = hit.collider.gameObject.GetComponent<EnemyHP>().hp;
+                    targetHP = targetHP - gunDamage;
+                }
             }
         }
-
-        bulletLeft.text = gunBullet.ToString();
     }
 
     private IEnumerator ShotEffect()
     {
-        gunAudio.Play();
+        //gunAudio.Play();
         laserLine.enabled = true;
         yield return shotDuration;
         laserLine.enabled = false;
