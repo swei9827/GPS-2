@@ -17,8 +17,7 @@ public class RaycastShoot : MonoBehaviour {
             {
                 //Debug.DrawRay(transform.position,(hit.))
                 Instantiate(particle,transform.position,transform.rotation);
-            }
-                
+            }                
         }
     }
 }
