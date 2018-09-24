@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ball_Move_Try : MonoBehaviour {
 
-    float speed = 18f;
+    float speed = 12f;
 
 	// Use this for initialization
 	void Start () {
