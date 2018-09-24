@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RayCastShoot : MonoBehaviour {
+public class RaycastShoot : MonoBehaviour {
 
     public int gunDamage = 1;
     public float fireRate = .25f;
@@ -72,6 +72,11 @@ public class RayCastShoot : MonoBehaviour {
             {
                 laserLine.SetPosition(1, hit.point);
             }
+        }
+
+        if(gunBullet <=0)
+        {
+            gunBullet = 0;
         }
 
         bulletLeft.text = gunBullet.ToString();
