@@ -15,6 +15,7 @@ public class RayCastShoot : MonoBehaviour {
     //private AudioSource gunAudio;
     private LineRenderer laserLine;
     private float nextFire;
+    public GameObject effect;
 
     public Text bulletLeft;
 
@@ -27,7 +28,7 @@ public class RayCastShoot : MonoBehaviour {
         //Debug.Log(Input.acceleration.y);
         //Debug.Log(Input.acceleration.x);
 
-        if (new Vector2(Input.acceleration.x, Input.acceleration.z).magnitude > 2)
+        if (new Vector2(Input.acceleration.x, Input.acceleration.z).magnitude > 1.5)
         {
             gunBullet = maxBullet;
             bulletLeft.text = gunBullet.ToString();
@@ -72,11 +73,20 @@ public class RayCastShoot : MonoBehaviour {
             if (Physics.Raycast(mousePosN,mousePosF-mousePosN,out hit,weaponRange))
             {
                 laserLine.SetPosition(1, hit.point);
+                Instantiate(effect,hit.point, transform.rotation);
                 if (hit.collider.CompareTag("Enemy"))
                 {
                     int targetHP = hit.collider.gameObject.GetComponent<EnemyHP>().hp;
                     targetHP = targetHP - gunDamage;
                 }
+                else
+                {
+
+                }
+            }
+            else
+            {
+                laserLine.SetPosition(1, Camera.main.ScreenToWorldPoint(Input.mousePosition));
             }
         }
     }
