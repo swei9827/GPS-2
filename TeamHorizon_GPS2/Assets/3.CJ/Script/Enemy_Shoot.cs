@@ -17,7 +17,7 @@ public class Enemy_Shoot : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        playerArea = TargetCheckpoint.PlayerArea;
+        playerArea = TargetProfile.PlayerArea;
         timer += Time.deltaTime;
         startShoot = EnemyMovement.StartShooting;
         if(timer  > shootDelayTime)
