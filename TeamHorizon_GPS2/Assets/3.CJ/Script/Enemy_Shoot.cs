@@ -14,12 +14,6 @@ public class Enemy_Shoot : MonoBehaviour {
     public int EnemyArea = 0;
     public int playerArea = 0;
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {

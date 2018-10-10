@@ -113,7 +113,7 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    private void OnMouseDown()
+   /* private void OnMouseDown()
     {
         if (hp > 0)
         {
@@ -124,11 +124,6 @@ public class EnemyMovement : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-    }
-
-    void Shoot()
-    {
-
-    }
+    }*/
 }
 
