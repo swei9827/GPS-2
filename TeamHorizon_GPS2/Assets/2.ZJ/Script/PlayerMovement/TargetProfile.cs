@@ -16,6 +16,8 @@ public class TargetProfile : MonoBehaviour {
     Transform playerPos;
     bool reached = false;
 
+    public static int PlayerArea = 0;
+
     // Use this for initialization
     void Start()
     {
@@ -34,6 +36,7 @@ public class TargetProfile : MonoBehaviour {
         {
             Debug.Log("Reached Target : " + this.name);
             reached = true;
+            PlayerArea++;
             if (CameraPanNodes)
             {
                 GameObject.FindGameObjectWithTag("2ndCamera").GetComponent<PanToTarget>().hazardID = SetHazardID;
