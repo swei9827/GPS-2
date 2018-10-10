@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RaycastShoot : MonoBehaviour {
+public class RayCastShoot : MonoBehaviour {
 
-    public Weapon weapon;
-    public GameObject reloadIndicator;
-    public Transform gunEnd;
+    public int gunDamage = 1;
+    public float fireRate = .25f;
+    public float weaponRange = 500f;
+    public int gunBullet = 6;
+    public int maxBullet = 6;
+    //public Transform gunEnd;
     private WaitForSeconds shotDuration = new WaitForSeconds(.07f);
-    //private AudioSource gunAudio;
+    private AudioSource gunAudio;
     private LineRenderer laserLine;
     private float nextFire;
     public GameObject effect;
-    bool reloading;
-    public List<Image> bulletList;
-    public int meleeDamage;
 
     public Text bulletLeft;
 
@@ -26,9 +26,7 @@ public class RaycastShoot : MonoBehaviour {
     void Start () {
         dragDistance = Screen.height * 0.15f;
         laserLine = GetComponent<LineRenderer>();
-        bulletLeft.text = weapon.currentAmmo.ToString() + " / " + weapon.maxAmmo.ToString();
-        reloading = false;
-        //gunAudio = GetComponent<AudioSource>();
+        gunAudio = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -36,25 +34,10 @@ public class RaycastShoot : MonoBehaviour {
         //Debug.Log(Input.acceleration.y);
         //Debug.Log(Input.acceleration.x);
 
-        if (/*(new Vector2(Input.acceleration.x, Input.acceleration.z).magnitude > 2 */reloading == false && Input.GetButtonDown("Jump")) // reload
+        if (new Vector2(Input.acceleration.x, Input.acceleration.z).magnitude > 1.5) // reload
         {
-            reloading = true;
-            if(weapon.clipReload == true)
-            {
-                StartCoroutine(ReloadEffect(weapon.reloadTime));
-            }
-            else
-            {
-                StartCoroutine(ReloadEffect2(weapon.eachBulletRequire,(weapon.maxAmmo-weapon.currentAmmo)));
-            }
-        }
-        for(int i =0;i<bulletList.Count;i++)
-        {
-            bulletList[i].gameObject.SetActive(false);
-        }
-        for(int i =0;i < weapon.currentAmmo;i++)
-        {
-            bulletList[i].gameObject.SetActive(true);
+            gunBullet = maxBullet;
+            bulletLeft.text = gunBullet.ToString();
         }
 
         if (Input.touchCount > 0)
@@ -74,48 +57,30 @@ public class RaycastShoot : MonoBehaviour {
 
                     if (Mathf.Abs(lastPos.x - firstPos.x) > dragDistance || Mathf.Abs(lastPos.y - firstPos.y) > dragDistance)
                     {
-                        Debug.Log("Melee");
-                        GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy");
-                        GameObject closest = null;
-                        float distance = 100;
-                        Vector3 myPos = transform.position;
-                        foreach (GameObject go in enemy)
-                        {
-                            Vector3 diff = go.transform.position - myPos;
-                            float curDistance = diff.sqrMagnitude;
-                            if (curDistance < distance)
-                            {
-                                closest = go;
-                                distance = curDistance;
-                            }
-                        }
-                        if(closest != null)
-                        {
-                            closest.GetComponent<EnemyHP>().hp -= meleeDamage;
-                        }
+                        // perform melee
                     }
                     else
                     {
-                        if (Time.time > nextFire && weapon.currentAmmo > 0)
+                        if (Time.time > nextFire && gunBullet > 0)
                         {
-                            nextFire = Time.time + weapon.fireRate;
+                            nextFire = Time.time + fireRate;
                             StartCoroutine(ShotEffect());
                             Vector3 posFar = new Vector3(touch.position.x, touch.position.y, Camera.main.farClipPlane);
                             Vector3 posNear = new Vector3(touch.position.x, touch.position.y, Camera.main.nearClipPlane);
                             Vector3 posF = Camera.main.ScreenToWorldPoint(posFar);
                             Vector3 posN = Camera.main.ScreenToWorldPoint(posNear);
                             RaycastHit hit;
-                            laserLine.SetPosition(0, gunEnd.position);
-                            weapon.currentAmmo--;
-                            bulletLeft.text = weapon.currentAmmo.ToString() + " / " + weapon.maxAmmo.ToString(); ;
-                            if (Physics.Raycast(posN, posF - posN, out hit, weapon.weaponRange))
+                            laserLine.SetPosition(0, posN);
+                            gunBullet--;
+                            bulletLeft.text = gunBullet.ToString();
+                            if (Physics.Raycast(posN, posF - posN, out hit, weaponRange))
                             {
                                 laserLine.SetPosition(1, hit.point);
                                 Instantiate(effect, hit.point, transform.rotation);
                                 if (hit.collider.CompareTag("Enemy"))
                                 {
                                     int targetHP = hit.collider.gameObject.GetComponent<EnemyHP>().hp;
-                                    targetHP = targetHP - weapon.gunDamage;
+                                    targetHP = targetHP - gunDamage;
                                 }
                                 else
                                 {
@@ -135,51 +100,13 @@ public class RaycastShoot : MonoBehaviour {
 
     private IEnumerator ShotEffect()
     {
-        //gunAudio.Play();
+        gunAudio.Play();
         laserLine.enabled = true;
         yield return shotDuration;
         laserLine.enabled = false;
     }
-
-    private IEnumerator ReloadEffect(float rT)
-    {
-        reloadIndicator.SetActive(true);
-        yield return new WaitForSeconds(rT);
-        weapon.currentAmmo = weapon.maxAmmo;
-        bulletLeft.text = weapon.currentAmmo.ToString() + " / " + weapon.maxAmmo.ToString();
-        reloadIndicator.SetActive(false);
-        reloading = false;
-    }
-
-    private IEnumerator ReloadEffect2(float perBullet,int bulletCount)
-    {
-        reloadIndicator.SetActive(true);
-        Debug.Log(bulletCount);
-        for(int i=0; i<bulletCount; i++)
-        {            
-            yield return new WaitForSeconds(perBullet);
-            weapon.currentAmmo++;
-            bulletLeft.text = weapon.currentAmmo.ToString() + " / " + weapon.maxAmmo.ToString();
-            Debug.Log("+1");
-        }
-        reloadIndicator.SetActive(false);
-        reloading = false;
-    }
 }
 
-//[CreateAssetMenu(fileName = "New Weapon", menuName = "Weapon")]
-[System.Serializable]
-public class Weapon //: ScriptableObject
-{
-    public int gunDamage = 1;
-    public float fireRate = .25f;
-    public float weaponRange = 500f;
-    public int currentAmmo = 6;
-    public int maxAmmo = 6;
-    public float reloadTime;
-    public bool clipReload;
-    public float eachBulletRequire;
-}
 /*if (Input.GetMouseButtonDown(0) && Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
