@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RayCastShoot : MonoBehaviour {
+public class RaycastShoot : MonoBehaviour {
 
     public Weapon weapon;
     public GameObject reloadIndicator;
