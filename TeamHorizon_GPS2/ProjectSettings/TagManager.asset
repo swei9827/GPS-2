@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Hazard
+  - 2ndCamera
+  - Target
   layers:
   - Default
   - TransparentFX
