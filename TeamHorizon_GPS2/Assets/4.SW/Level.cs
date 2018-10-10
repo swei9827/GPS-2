@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,7 +25,6 @@ public class Level: MonoBehaviour
         return score;
     }
 
-	// Update is called once per frame
 	void Update () {
 
         timeLeftUI.text = (Math.Truncate((int)timeLeft * 100.0) / 100.0).ToString();

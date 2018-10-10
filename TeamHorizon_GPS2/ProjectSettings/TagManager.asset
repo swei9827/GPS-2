@@ -5,9 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
-  - Hazard
-  - 2ndCamera
-  - Target
+  - Enemy_Bullet
   layers:
   - Default
   - TransparentFX
