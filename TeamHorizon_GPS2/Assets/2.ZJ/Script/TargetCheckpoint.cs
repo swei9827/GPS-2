@@ -7,6 +7,8 @@ public class TargetCheckpoint : MonoBehaviour {
     Transform playerPos;
     bool reached = false;
 
+    public static int PlayerArea = 0;
+
 	// Use this for initialization
 	void Start () {
         playerPos = player.GetComponent<Transform>();
@@ -18,6 +20,7 @@ public class TargetCheckpoint : MonoBehaviour {
         {
             Debug.Log("Reached Target : " + this.name);
             reached = true;
+            PlayerArea++;
         }
 	}
 }
