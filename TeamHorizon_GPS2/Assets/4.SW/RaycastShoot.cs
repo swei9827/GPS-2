@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class RaycastShoot : MonoBehaviour
-{ 
+{
+    public CURRENT_SELECTED_WEAPON CSW;
     public Weapon weapon;
     public GameObject reloadIndicator;
     private WaitForSeconds shotDuration = new WaitForSeconds(.07f);
@@ -29,6 +30,7 @@ public class RaycastShoot : MonoBehaviour
         bulletLeft.text = weapon.currentAmmo.ToString() + " / " + weapon.maxAmmo.ToString();
         reloading = false;
         gunAudio = GetComponent<AudioSource>();
+        CSW = CURRENT_SELECTED_WEAPON.MELEE;
     }
 
     void Update()
@@ -36,7 +38,7 @@ public class RaycastShoot : MonoBehaviour
         //Debug.Log(Input.acceleration.y);
         //Debug.Log(Input.acceleration.x);
 
-        if (/*(new Vector2(Input.acceleration.x, Input.acceleration.z).magnitude > 2 */reloading == false && Input.GetButtonDown("Jump")) // reload
+        if ((new Vector2(Input.acceleration.x, Input.acceleration.z).magnitude > 2 && reloading == false)) //&& Input.GetButtonDown("Jump")) // reload
         {
             reloading = true;
             if (weapon.clipReload == true)
@@ -48,14 +50,14 @@ public class RaycastShoot : MonoBehaviour
                 StartCoroutine(ReloadEffect2(weapon.eachBulletRequire, (weapon.maxAmmo - weapon.currentAmmo)));
             }
         }
-        for (int i = 0; i < bulletList.Count; i++)
+        /*for (int i = 0; i < bulletList.Count; i++)
         {
             bulletList[i].gameObject.SetActive(false);
         }
         for (int i = 0; i < weapon.currentAmmo; i++)
         {
-            bulletList[i].gameObject.SetActive(true);
-        }
+            //bulletList[i].gameObject.SetActive(true);
+        }*/
 
         if (Input.touchCount > 0)
         {
@@ -114,7 +116,8 @@ public class RaycastShoot : MonoBehaviour
                             if (Physics.Raycast(posN, posF - posN, out hit, weapon.weaponRange))
                             {
                                 laserLine.SetPosition(1, hit.point);
-                                Instantiate(effect, hit.point, transform.rotation);
+                                GameObject bulletEffect = Instantiate(effect, hit.point, transform.rotation);
+                                Destroy(bulletEffect, 1.0f);
                                 if (hit.collider.CompareTag("Enemy"))
                                 {
                                     int targetHP = hit.collider.gameObject.GetComponent<EnemyHP>().hp;
@@ -134,6 +137,21 @@ public class RaycastShoot : MonoBehaviour
                     break;
             }
         }
+    }
+    
+    public void SwitchWeapon()
+    {/*
+        if(CSW == CURRENT_SELECTED_WEAPON.MELEE)
+        {
+            Debug.Log("Switch To Range");
+            CSW = CURRENT_SELECTED_WEAPON.RANGE;
+        }
+        else
+        {
+            CSW = CURRENT_SELECTED_WEAPON.MELEE;
+            Debug.Log("Switch To Melee");
+        }*/
+        Debug.Log("x");
     }
 
     private IEnumerator ShotEffect()
@@ -183,6 +201,13 @@ public class Weapon //: ScriptableObject
     public bool clipReload;
     public float eachBulletRequire;
 }
+
+public enum CURRENT_SELECTED_WEAPON
+{
+    RANGE = 0,
+    MELEE
+}
+
 /*if (Input.GetMouseButtonDown(0) && Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
