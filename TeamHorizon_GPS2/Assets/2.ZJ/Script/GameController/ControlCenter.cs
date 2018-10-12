@@ -27,7 +27,7 @@ public class ControlCenter : MonoBehaviour {
     {
         if (LevelTutorial)
         {
-            LevelTutorialScript();
+            //LevelTutorialScript();
         }   
     }
 
@@ -45,7 +45,7 @@ public class ControlCenter : MonoBehaviour {
         else if(levelStatus == 1) // 2nd target 
         {         
             sMove.transitionMovement(1);
-            coroutine = IncreaseLevelStatus(2, 1.5f);
+            coroutine = IncreaseLevelStatus(2, 3.0f);
             StartCoroutine(coroutine);
         }
         else if(levelStatus == 2) // 3rd target, camera pan to falling tree
