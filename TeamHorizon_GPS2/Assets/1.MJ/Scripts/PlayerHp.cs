@@ -8,54 +8,62 @@ public class PlayerHp : MonoBehaviour {
 
     public float startHealth = 100f;
     public float startShield = 100f;
-    public bool activeShield = false;
-    private float health;
-    private float shield;
+    public bool activeShield = true;
+    public float health;
+    public float shield;
 
     public Image healthBar;
     public Image shieldBar;
 
-    private float tempDmg;
+    private float tempDmg = 0;
+    float testDamage;
+    public float healthAfterDamage;
+    public float shieldAfterDamage;
 
     // Use this for initialization
     void Start () {
         //healthBar = GetComponent<Image>();
         health = startHealth;
         shield = startShield;
+        healthAfterDamage = health;
+        shieldAfterDamage = shield;
 	}
-	
-	// Update is called once per frame
-	void TakeDamage (float damage) {
 
-        if(activeShield == false)
+    private void Update()
+    {
+        
+        if(health != healthAfterDamage || shield != shieldAfterDamage)
         {
-            health -= 50f;
-            healthBar.fillAmount = health / startHealth;
-            Debug.Log("hehehehe");
-
-        }
-
-        else if(activeShield == true)
-        {
+            health = Mathf.MoveTowards(health, healthAfterDamage, 20f * Time.deltaTime);
+            shield = Mathf.MoveTowards(shield, shieldAfterDamage, 20f * Time.deltaTime);
             shieldBar.fillAmount = shield / startShield;
+            healthBar.fillAmount = health / startHealth;
+        }
+        
+    }
 
+    public void TakeDamage (float damage)
+    {
+        if (activeShield == false)
+        {
+            healthAfterDamage = health - damage;
+            Debug.Log("hehehehe");
+        }
+        else if (activeShield == true)
+        {
             if (damage >= shield)
             {
                 tempDmg = damage - shield;
-                health -= tempDmg;
-                healthBar.fillAmount = health / startHealth;
+                shieldAfterDamage = 0;
+                healthAfterDamage = health - tempDmg;
+                activeShield = false;
+                Debug.Log("condition 1");
             }
-            
-        }
-
-        
-
-        if (healthBar.fillAmount <= 0.5f)
-        {
-            Debug.Log("hehehehe");
-            //Die();
-            //deathAudio.Play();
-
+            else
+            {
+                shieldAfterDamage = shield - damage;
+                Debug.Log("condition 2");
+            }
         }
     }
 }
