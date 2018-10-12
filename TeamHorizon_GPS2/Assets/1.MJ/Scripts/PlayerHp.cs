@@ -14,6 +14,9 @@ public class PlayerHp : MonoBehaviour {
 
     public Image healthBar;
     public Image shieldBar;
+
+    private float tempDmg;
+
     // Use this for initialization
     void Start () {
         //healthBar = GetComponent<Image>();
@@ -34,8 +37,15 @@ public class PlayerHp : MonoBehaviour {
 
         else if(activeShield == true)
         {
-            shield -= 50f;
             shieldBar.fillAmount = shield / startShield;
+
+            if (damage >= shield)
+            {
+                tempDmg = damage - shield;
+                health -= tempDmg;
+                healthBar.fillAmount = health / startHealth;
+            }
+            
         }
 
         
@@ -49,3 +59,6 @@ public class PlayerHp : MonoBehaviour {
         }
     }
 }
+
+
+    
