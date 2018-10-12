@@ -959,7 +959,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunDamage: 1
   fireRate: 0.25
-  weaponRange: 50000
+  weaponRange: 500
   gunBullet: 6
   maxBullet: 6
   gunEnd: {fileID: 1933317132}

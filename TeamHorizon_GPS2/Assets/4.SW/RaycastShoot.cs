@@ -10,9 +10,9 @@ public class RayCastShoot : MonoBehaviour {
     public float weaponRange = 500f;
     public int gunBullet = 6;
     public int maxBullet = 6;
-    public Transform gunEnd;
+    //public Transform gunEnd;
     private WaitForSeconds shotDuration = new WaitForSeconds(.07f);
-    //private AudioSource gunAudio;
+    private AudioSource gunAudio;
     private LineRenderer laserLine;
     private float nextFire;
     public GameObject effect;
@@ -26,7 +26,7 @@ public class RayCastShoot : MonoBehaviour {
     void Start () {
         dragDistance = Screen.height * 0.15f;
         laserLine = GetComponent<LineRenderer>();
-        //gunAudio = GetComponent<AudioSource>();
+        gunAudio = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -70,7 +70,7 @@ public class RayCastShoot : MonoBehaviour {
                             Vector3 posF = Camera.main.ScreenToWorldPoint(posFar);
                             Vector3 posN = Camera.main.ScreenToWorldPoint(posNear);
                             RaycastHit hit;
-                            laserLine.SetPosition(0, gunEnd.position);
+                            laserLine.SetPosition(0, posN);
                             gunBullet--;
                             bulletLeft.text = gunBullet.ToString();
                             if (Physics.Raycast(posN, posF - posN, out hit, weaponRange))
@@ -100,7 +100,7 @@ public class RayCastShoot : MonoBehaviour {
 
     private IEnumerator ShotEffect()
     {
-        //gunAudio.Play();
+        gunAudio.Play();
         laserLine.enabled = true;
         yield return shotDuration;
         laserLine.enabled = false;
