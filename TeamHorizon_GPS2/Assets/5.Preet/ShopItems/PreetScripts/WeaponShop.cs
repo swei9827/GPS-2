@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class WeaponShop : MonoBehaviour
 {
     public static WeaponShop weaponShop;
-    public List<Weapon> weaponList = new List<Weapon>();
+    public List<Weapon1> weaponList = new List<Weapon1>();
     public GameObject itemHolderPrefab;
     public Transform grid;
 

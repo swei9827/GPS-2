@@ -8,6 +8,7 @@ public class ScriptedMovement : MonoBehaviour {
     public List<Transform> locations = new List<Transform>();
     public float speed;
     public float turnSpeed;
+    float step;
 
     private IEnumerator coroutine;
 
@@ -17,29 +18,21 @@ public class ScriptedMovement : MonoBehaviour {
         StartCoroutine(coroutine);
     }    
 
-    public void transitionMovement(int targetCount)
+    void MoveTo()
     {
-        StopAllCoroutines();
-        goal = locations[targetCount];
-        float step = speed * Time.deltaTime;
-
-        Vector3 targetDir = goal.position - transform.position;
-        Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, turnSpeed * step, 0.0f);
-        Debug.DrawRay(transform.position, newDir, Color.red);
-        transform.rotation = Quaternion.LookRotation(newDir);
+        step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, goal.position, step);
     }
 
     private IEnumerator WaitAndMove(float waitTime, int targetCount)
     {
         yield return new WaitForSeconds(waitTime);
-        goal = locations[targetCount];
-        float step = speed * Time.deltaTime;
-
+        goal = locations[targetCount]; 
+        step = speed * Time.deltaTime;
         Vector3 targetDir = goal.position - transform.position;
         Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, turnSpeed * step, 0.0f);
         Debug.DrawRay(transform.position, newDir, Color.red);
         transform.rotation = Quaternion.LookRotation(newDir);
-        transform.position = Vector3.MoveTowards(transform.position, goal.position, step);
+        Invoke("MoveTo", 1.0f);
     }
 }

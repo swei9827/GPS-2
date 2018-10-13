@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 [System.Serializable]
-public class Weapon
+public class Weapon1 
 {
     public string weaponName;
     public int weaponID;

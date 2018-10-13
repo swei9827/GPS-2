@@ -4,14 +4,8 @@ using UnityEngine;
 
 public class TreeFallHazard : MonoBehaviour
 {
-    Rigidbody rb;
     float fall = 1;
     public bool FallenTree = false;
-
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
 
     public void TreeFalling()
     {
@@ -46,7 +40,7 @@ public class TreeFallHazard : MonoBehaviour
                 FallenTree = true;
             }
 
-            transform.rotation = Quaternion.Euler(-Mathf.Clamp(fall, 0, 85), 0, 0);
+            transform.rotation = Quaternion.Euler(-Mathf.Clamp(fall, 0, 85), transform.localEulerAngles.y, transform.eulerAngles.z);
         }
     }
 }
