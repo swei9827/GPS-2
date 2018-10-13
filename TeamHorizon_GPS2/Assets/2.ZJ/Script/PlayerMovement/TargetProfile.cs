@@ -5,13 +5,12 @@ using UnityEngine;
 public class TargetProfile : MonoBehaviour {
 
     public GameObject player;
-    public int TargetID;
     public bool ConnectionNodes;
     public bool BattleNodes;
     public bool CameraPanNodes;
-    public int SetHazardID;
     public bool QTENodes;
- 
+    public bool InteractableNodes;
+    public bool PortalNodes;
     
     Transform playerPos;
     bool reached = false;
@@ -36,11 +35,7 @@ public class TargetProfile : MonoBehaviour {
         {
             Debug.Log("Reached Target : " + this.name);
             reached = true;
-            PlayerArea++;
-            if (CameraPanNodes)
-            {
-                GameObject.FindGameObjectWithTag("2ndCamera").GetComponent<PanToTarget>().hazardID = SetHazardID;
-            }
+            PlayerArea++;           
         }
     }
 }
