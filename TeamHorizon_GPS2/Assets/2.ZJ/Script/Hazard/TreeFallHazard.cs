@@ -40,7 +40,7 @@ public class TreeFallHazard : MonoBehaviour
                 FallenTree = true;
             }
 
-            transform.rotation = Quaternion.Euler(-Mathf.Clamp(fall, 0, 85), transform.localEulerAngles.y, transform.eulerAngles.z);
+            transform.rotation = Quaternion.Euler(-Mathf.Clamp(fall, 0, 85), transform.localEulerAngles.y, transform.localEulerAngles.z);
         }
     }
 }

@@ -386,7 +386,6 @@ MonoBehaviour:
   - {fileID: 1010219716}
   - {fileID: 454096444}
   - {fileID: 615754002}
-  hazardID: 0
   cam: {fileID: 35193604}
 --- !u!20 &35193604
 Camera:
@@ -866,12 +865,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1865196918}
-  TargetID: 8
   ConnectionNodes: 0
   BattleNodes: 1
   CameraPanNodes: 0
-  Hazard: {fileID: 0}
-  SetHazardID: 0
   QTENodes: 0
 --- !u!1 &212234630
 GameObject:
@@ -914,12 +910,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1865196918}
-  TargetID: 2
   ConnectionNodes: 1
   BattleNodes: 0
   CameraPanNodes: 0
-  Hazard: {fileID: 0}
-  SetHazardID: 0
   QTENodes: 0
 --- !u!1 &290434337
 GameObject:
@@ -1086,12 +1079,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1865196918}
-  TargetID: 8
   ConnectionNodes: 0
   BattleNodes: 0
   CameraPanNodes: 0
-  Hazard: {fileID: 0}
-  SetHazardID: 0
   QTENodes: 0
 --- !u!1 &333844627
 GameObject:
@@ -1565,6 +1555,7 @@ Prefab:
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 114787219830555514, guid: 19682540d8a014522a319b1cf788aee2, type: 2}
+    - {fileID: 114261827629835118, guid: 19682540d8a014522a319b1cf788aee2, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 19682540d8a014522a319b1cf788aee2, type: 2}
   m_IsPrefabAsset: 0
 --- !u!4 &454096443 stripped
@@ -2089,6 +2080,7 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
+    - {fileID: 114261827629835118, guid: 19682540d8a014522a319b1cf788aee2, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 19682540d8a014522a319b1cf788aee2, type: 2}
   m_IsPrefabAsset: 0
 --- !u!4 &615754001 stripped
@@ -2333,12 +2325,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1865196918}
-  TargetID: 3
   ConnectionNodes: 0
   BattleNodes: 0
   CameraPanNodes: 1
-  Hazard: {fileID: 1010219717}
-  SetHazardID: 0
   QTENodes: 0
 --- !u!1 &776907183
 GameObject:
@@ -2498,12 +2487,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1865196918}
-  TargetID: 8
   ConnectionNodes: 1
   BattleNodes: 0
   CameraPanNodes: 0
-  Hazard: {fileID: 0}
-  SetHazardID: 0
   QTENodes: 0
 --- !u!1 &925302212
 GameObject:
@@ -2631,12 +2617,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1865196918}
-  TargetID: 7
   ConnectionNodes: 0
   BattleNodes: 0
   CameraPanNodes: 1
-  Hazard: {fileID: 454096445}
-  SetHazardID: 1
   QTENodes: 0
 --- !u!4 &948434837
 Transform:
@@ -2693,12 +2676,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1865196918}
-  TargetID: 1
   ConnectionNodes: 0
   BattleNodes: 1
   CameraPanNodes: 0
-  Hazard: {fileID: 0}
-  SetHazardID: 0
   QTENodes: 0
 --- !u!1 &954814298
 GameObject:
@@ -2914,7 +2894,8 @@ Prefab:
       propertyPath: m_Name
       value: FallingTree_01
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114261827629835118, guid: 19682540d8a014522a319b1cf788aee2, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 19682540d8a014522a319b1cf788aee2, type: 2}
   m_IsPrefabAsset: 0
 --- !u!4 &1010219715 stripped
@@ -2973,12 +2954,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1865196918}
-  TargetID: 6
   ConnectionNodes: 0
   BattleNodes: 1
   CameraPanNodes: 0
-  Hazard: {fileID: 0}
-  SetHazardID: 0
   QTENodes: 0
 --- !u!1 &1047394884
 GameObject:
@@ -3021,12 +2999,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1865196918}
-  TargetID: 5
   ConnectionNodes: 1
   BattleNodes: 0
   CameraPanNodes: 0
-  Hazard: {fileID: 0}
-  SetHazardID: 0
   QTENodes: 0
 --- !u!1 &1104033963
 GameObject:
@@ -3462,12 +3437,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1865196918}
-  TargetID: 8
   ConnectionNodes: 0
   BattleNodes: 0
   CameraPanNodes: 0
-  Hazard: {fileID: 0}
-  SetHazardID: 0
   QTENodes: 0
 --- !u!1 &1348369877
 GameObject:
@@ -3662,12 +3634,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1865196918}
-  TargetID: 8
   ConnectionNodes: 0
   BattleNodes: 0
   CameraPanNodes: 1
-  Hazard: {fileID: 615754003}
-  SetHazardID: 2
   QTENodes: 0
 --- !u!1 &1388831728
 GameObject:
@@ -3697,6 +3666,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1865196918}
+  camera: {fileID: 35193604}
   LevelTutorial: 1
   Level1: 0
   Level2: 0
@@ -3705,6 +3675,27 @@ MonoBehaviour:
   QTESuccess: 0
   QTEFail: 0
   levelStatus: 1
+  locations:
+  - {fileID: 954013140}
+  - {fileID: 212234631}
+  - {fileID: 715778751}
+  - {fileID: 1861047323}
+  - {fileID: 2010673900}
+  - {fileID: 1047394885}
+  - {fileID: 1024685899}
+  - {fileID: 933131227}
+  - {fileID: 2114774047}
+  - {fileID: 1373504133}
+  - {fileID: 923463475}
+  - {fileID: 1710432372}
+  - {fileID: 1305016749}
+  - {fileID: 327068047}
+  - {fileID: 204193800}
+  - {fileID: 2076863270}
+  hazards:
+  - {fileID: 1010219717}
+  - {fileID: 454096445}
+  - {fileID: 615754003}
 --- !u!4 &1388831730
 Transform:
   m_ObjectHideFlags: 0
@@ -4163,12 +4154,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1865196918}
-  TargetID: 8
   ConnectionNodes: 0
   BattleNodes: 1
   CameraPanNodes: 0
-  Hazard: {fileID: 0}
-  SetHazardID: 0
   QTENodes: 0
 --- !u!1 &1715206752
 GameObject:
@@ -4740,12 +4728,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1865196918}
-  TargetID: 4
   ConnectionNodes: 0
   BattleNodes: 0
   CameraPanNodes: 0
-  Hazard: {fileID: 0}
-  SetHazardID: 0
   QTENodes: 1
 --- !u!1 &1865196918
 GameObject:
@@ -4788,24 +4773,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1482cb069caf5444285296d63d71d62c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goal: {fileID: 0}
-  locations:
-  - {fileID: 954013140}
-  - {fileID: 212234631}
-  - {fileID: 715778751}
-  - {fileID: 1861047323}
-  - {fileID: 2010673900}
-  - {fileID: 1024685899}
-  - {fileID: 933131227}
-  - {fileID: 2114774047}
-  - {fileID: 1373504133}
-  - {fileID: 923463475}
-  - {fileID: 1710432372}
-  - {fileID: 1305016749}
-  - {fileID: 327068047}
-  - {fileID: 204193800}
-  - {fileID: 2076863270}
-  - {fileID: 1047394885}
   speed: 5
   turnSpeed: 0.4
 --- !u!4 &1865196921
@@ -4989,12 +4956,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1865196918}
-  TargetID: 5
   ConnectionNodes: 1
   BattleNodes: 0
   CameraPanNodes: 0
-  Hazard: {fileID: 0}
-  SetHazardID: 0
   QTENodes: 0
 --- !u!1 &2014413477
 GameObject:
@@ -5239,12 +5203,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1865196918}
-  TargetID: 8
   ConnectionNodes: 0
   BattleNodes: 0
   CameraPanNodes: 0
-  Hazard: {fileID: 0}
-  SetHazardID: 0
   QTENodes: 0
 --- !u!1 &2113561465
 GameObject:
@@ -5374,10 +5335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1865196918}
-  TargetID: 8
   ConnectionNodes: 0
   BattleNodes: 1
   CameraPanNodes: 0
-  Hazard: {fileID: 0}
-  SetHazardID: 0
   QTENodes: 0
