@@ -9,6 +9,7 @@ public class Level: MonoBehaviour
     private float timeLeft;
     private float extraTime;
     [SerializeField] private Text timeLeftUI;
+    [SerializeField] private Text ScoreUI;
     private LEVEL_STATE levelState;
 
 	void Start () {
@@ -27,7 +28,11 @@ public class Level: MonoBehaviour
 
 	void Update () {
 
-        timeLeftUI.text = (Math.Truncate((int)timeLeft * 100.0) / 100.0).ToString();
+        float minutes = Mathf.Floor(timeLeft / 60);
+        float seconds = Mathf.RoundToInt(timeLeft % 60);
+
+        timeLeftUI.text = minutes.ToString() + " : " + seconds.ToString();
+        ScoreUI.text = "what is the score formula";
 
         if(levelState == LEVEL_STATE.PLAYING)
         {

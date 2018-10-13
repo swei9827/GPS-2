@@ -17,7 +17,7 @@ public class Player_Crouch : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        /*if (Input.GetMouseButtonDown(0))
         {
             if (isCrouch == false)
             {
@@ -38,7 +38,7 @@ public class Player_Crouch : MonoBehaviour {
                 transform.Translate(new Vector3(0.0f, 1.2f, 0.0f));
                 //text.text = "Vulnerable";
             }
-        }
+        }*/
     }
 
  

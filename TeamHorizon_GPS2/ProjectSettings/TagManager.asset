@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Enemy
   - Enemy_Bullet
+  - 2ndCamera
+  - Target
+  - Hazard
+  - UI
   layers:
   - Default
   - TransparentFX
