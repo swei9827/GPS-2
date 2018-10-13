@@ -17,7 +17,7 @@ public class ControlCenter : MonoBehaviour {
     public bool InteractSuccess;
     public bool InteractFail;
 
-    public int levelStatus = 0;
+    public float levelStatus = 0;
 
     public List<Transform> locations = new List<Transform>();
     public List<GameObject> hazards = new List<GameObject>();
@@ -76,10 +76,17 @@ public class ControlCenter : MonoBehaviour {
                 QTESuccess = false;
             }
             else if (QTEFail)
-            {                
-                player.transform.position = player.transform.position + new Vector3 (-5.0f,0,0);
-                QTEFail = false;               
+            {
+                StopAllCoroutines();
+                levelStatus = 5.5f;
+                QTEFail = false;
             }
+        }
+        else if(levelStatus == 5.5)
+        {
+            sMove.PlayerMove(0.0f, locations[5]);
+            coroutine = IncreaseLevelStatus(5, 2f);
+            StartCoroutine(coroutine);
         }
         else if(levelStatus == 5)
         {
@@ -140,6 +147,31 @@ public class ControlCenter : MonoBehaviour {
                 coroutine = IncreaseLevelStatus(12, 0.0f);
                 StartCoroutine(coroutine);
             }
+            else if (InteractFail)
+            {
+                coroutine = IncreaseLevelStatus(14, 0.0f);
+                StartCoroutine(coroutine);
+            }
+        }
+        else if(levelStatus == 14)
+        {
+            sMove.PlayerRotate(0.0f, locations[11]);
+            sMove.PlayerMove(2.0f, locations[11]);
+            coroutine = IncreaseLevelStatus(15, 4.0f);
+            StartCoroutine(coroutine);
+        }
+        else if(levelStatus == 15)
+        {
+            StopAllCoroutines();
+            if (BattleCompleted)
+            {
+                levelStatus = 16;
+                BattleCompleted = false;
+            }
+        }
+        else if(levelStatus == 16)
+        {
+            sMove.PlayerMove(0.0f, locations[12]);
         }
         else if(levelStatus == 12)
         {
