@@ -5,6 +5,7 @@ using UnityEngine;
 public class PanToTarget : MonoBehaviour {
 
     public float zoomSpeed;
+    public float zoomLevel;
     public GameObject[] target;
     public int hazardID;
     Quaternion currentRotation;
@@ -41,7 +42,7 @@ public class PanToTarget : MonoBehaviour {
             }
             Quaternion lookOnLook = Quaternion.LookRotation(target[hazardID].transform.position - transform.position);
             transform.rotation = Quaternion.Slerp(transform.rotation, lookOnLook, Time.deltaTime);
-            cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, 20.0f, zoomSpeed);
+            cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, zoomLevel, zoomSpeed);
             Reset();
         }
     }
@@ -50,8 +51,8 @@ public class PanToTarget : MonoBehaviour {
     {
         yield return new WaitForSeconds(waitTime);
         if (target[hazardID].GetComponentInParent<TreeFallHazard>().FallenTree == true)
-        {
-            transform.rotation = Quaternion.Slerp(transform.rotation, currentRotation, Time.deltaTime);
+        {            
+            transform.rotation = Quaternion.Lerp(transform.rotation, currentRotation, 0.8f);
             cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, 40.0f, zoomSpeed);
             rotationSet = false;
         }

@@ -9,6 +9,7 @@ public class TargetProfile : MonoBehaviour {
     public bool ConnectionNodes;
     public bool BattleNodes;
     public bool CameraPanNodes;
+    public GameObject Hazard;
     public int SetHazardID;
     public bool QTENodes;
  
