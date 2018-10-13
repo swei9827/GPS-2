@@ -51,7 +51,7 @@ public class ControlCenter : MonoBehaviour {
         else if(levelStatus == 2) // 3rd target, camera pan to falling tree
         {
             sMove.PlayerMovement(0.0f, 2);
-            coroutine = CameraPanPhase(1.0f); 
+            coroutine = CameraPanPhase(2.0f); 
             StartCoroutine(coroutine);
             coroutine = IncreaseLevelStatus(3, 7.0f);
             StartCoroutine(coroutine);

@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Player_Crouch : MonoBehaviour {
 
-    public Transform yawRoot;
     public static bool isCrouch = false;
     //public Text text;
 
@@ -31,14 +30,16 @@ public class Player_Crouch : MonoBehaviour {
 
             if (isCrouch == true)
             {
-                yawRoot.Translate(0f, -1.2f, 0f);
-                //text.text = "Invulnerable";
+                transform.Translate(new Vector3(0.0f, -1.2f, 0.0f));
+                //text.text = "Invulnerable";;
             }
             else
             {
-                yawRoot.Translate(0f, 1.2f, 0f);
+                transform.Translate(new Vector3(0.0f, 1.2f, 0.0f));
                 //text.text = "Vulnerable";
             }
         }
     }
+
+ 
 }

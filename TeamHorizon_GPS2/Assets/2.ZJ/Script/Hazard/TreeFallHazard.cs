@@ -19,27 +19,27 @@ public class TreeFallHazard : MonoBehaviour
         {
             if (fall < 10)
             {
-                fall += Time.deltaTime * 5;
+                fall += Time.deltaTime * 15;
             }
             else if (fall > 10 && fall < 20)
             {
-                fall += Time.deltaTime * 10;
+                fall += Time.deltaTime * 20;
             }
             else if (fall > 20 && fall < 30)
             {
-                fall += Time.deltaTime * 15;
+                fall += Time.deltaTime * 25;
             }
             else if (fall > 30 && fall < 40)
             {
-                fall += Time.deltaTime * 20;
+                fall += Time.deltaTime * 30;
             }
             else if (fall > 40 && fall < 55)
             {
-                fall += Time.deltaTime * 25;
+                fall += Time.deltaTime * 35;
             }
             else if (fall > 55 && fall < 85)
             {
-                fall += Time.deltaTime * 30;
+                fall += Time.deltaTime * 40;
             }
             else if (fall >= 85)
             {

@@ -41,7 +41,7 @@ public class PanToTarget : MonoBehaviour {
             }
             Quaternion lookOnLook = Quaternion.LookRotation(target[hazardID].transform.position - transform.position);
             transform.rotation = Quaternion.Slerp(transform.rotation, lookOnLook, Time.deltaTime);
-            cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, 20.0f, zoomSpeed);
+            cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, 15.0f, zoomSpeed);
             Reset();
         }
     }
