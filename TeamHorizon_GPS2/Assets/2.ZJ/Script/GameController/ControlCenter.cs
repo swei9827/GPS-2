@@ -6,25 +6,32 @@ public class ControlCenter : MonoBehaviour {
     
     public GameObject player;
     public Camera camera;
+   
     public bool LevelTutorial;
     public bool Level1;
     public bool Level2;
     public bool Level3;
 
+    public bool OnBattle;
+    public bool OnQTE;
+    public bool OnInteractableObject;       
     public bool BattleCompleted;
     public bool QTESuccess;   
     public bool QTEFail;
     public bool InteractSuccess;
     public bool InteractFail;
-
+    public float HidingSpotSwapTime;
     public float levelStatus = 0;
 
     public List<Transform> locations = new List<Transform>();
+    public List<Transform> battleArea = new List<Transform>();
+    public List<Transform> cameraFocus = new List<Transform>();
     public List<GameObject> hazards = new List<GameObject>();
+ 
 
     IEnumerator coroutine;
-
     ScriptedMovement sMove;
+    int pos = 1;
 
     void Start()
     {
@@ -44,11 +51,20 @@ public class ControlCenter : MonoBehaviour {
     {        
         if(levelStatus == 1) // Start to first battle phase
         {
-            sMove.PlayerMove(0.0f, locations[0]);
+            if (!OnBattle)
+            {
+                sMove.PlayerMove(0.0f, locations[0]);
+                sMove.PlayerRotate(0.0f, locations[1]);
+            }
+            else if (OnBattle)
+            {
+                BattlePhase(0,1,0);
+            }
             if (BattleCompleted) // If battle phase completed move to next target
             {
                 levelStatus = 2;
                 BattleCompleted = false;
+                OnBattle = false;
             }            
         }
         else if(levelStatus == 2) // 2nd target 
@@ -97,12 +113,21 @@ public class ControlCenter : MonoBehaviour {
         }
         else if(levelStatus == 6)
         {
-            sMove.PlayerMove(1.0f, locations[6]);
+            if (!OnBattle)
+            {
+                sMove.PlayerMove(1.0f, locations[6]);
+                sMove.PlayerRotate(1.0f, locations[7]);
+            }
+            else if (OnBattle)
+            {
+                BattlePhase(2, 3, 1);
+            }
             if (BattleCompleted) // If battle phase completed move to next target
             {
                 StopAllCoroutines();
                 levelStatus = 7;
                 BattleCompleted = false;
+                OnBattle = false;
             }
         }
         else if(levelStatus == 7)
@@ -126,9 +151,9 @@ public class ControlCenter : MonoBehaviour {
         else if(levelStatus == 9)
         {
             sMove.PlayerMove(0.0f, locations[9]);
-            coroutine = CameraPanPhase(5f,2);
-            StartCoroutine(coroutine);
-            coroutine = IncreaseLevelStatus(10, 11.5f);
+            //coroutine = CameraPanPhase(5f,2);
+           // StartCoroutine(coroutine);
+            coroutine = IncreaseLevelStatus(10, 6f);
             StartCoroutine(coroutine);
         }
         else if(levelStatus == 10)
@@ -175,21 +200,35 @@ public class ControlCenter : MonoBehaviour {
         }
         else if(levelStatus == 12)
         {
-            sMove.PlayerMove(0.0f, locations[14]);
+            if (!OnBattle)
+            {
+                sMove.PlayerMove(0.0f, locations[14]);
+                sMove.PlayerRotate(1.0f, locations[15]);
+            }
+            else if (OnBattle)
+            {
+                BattlePhase(4, 5, 3);
+            }
             if (BattleCompleted) // If battle phase completed move to next target
             {
                 StopAllCoroutines();
                 levelStatus = 13;
                 BattleCompleted = false;
+                OnBattle = false;
             }
         }
         else if(levelStatus == 13)
         {
             sMove.PlayerMove(0.0f, locations[15]);
-        }
-        
-        
-    } 
+        }       
+    }
+
+    void BattlePhase(int ID1, int ID2, int focusID)
+    {
+        sMove.PlayerRotate(0.0f, cameraFocus[focusID]);
+        coroutine = MoveBetweenHS(ID1, ID2);
+        StartCoroutine(coroutine);
+    }
 
     private IEnumerator IncreaseLevelStatus(int num, float waitTime)
     {
@@ -208,5 +247,21 @@ public class ControlCenter : MonoBehaviour {
     {
         yield return new WaitForSeconds(waitTime);
         StopAllCoroutines();
+    }
+
+    private IEnumerator MoveBetweenHS(int ID1, int ID2)
+    {       
+        if(pos == 1)
+        {
+            sMove.PlayerMove(0.0f, battleArea[ID1]);
+            yield return new WaitForSeconds(HidingSpotSwapTime);
+            pos = 2;
+        }
+        else if(pos == 2)
+        {
+            sMove.PlayerMove(0.0f, battleArea[ID2]);
+            yield return new WaitForSeconds(HidingSpotSwapTime);
+            pos = 1;
+        }               
     }
 }
