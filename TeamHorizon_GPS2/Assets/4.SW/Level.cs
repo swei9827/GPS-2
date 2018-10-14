@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Level: MonoBehaviour
 {
@@ -47,9 +48,12 @@ public class Level: MonoBehaviour
             //player currency +=  timeLeft* xxx;
             //show score + etc
         }
-        
-
 	}
+
+    public void LoadScene(int scene)
+    {
+        SceneManager.LoadScene(scene);
+    }
 }
 
 enum LEVEL_STATE
