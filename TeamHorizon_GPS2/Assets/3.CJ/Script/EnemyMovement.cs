@@ -9,12 +9,15 @@ public class EnemyMovement : MonoBehaviour
     public bool down;
     public bool top;
 
+    public bool move;
+
     public float moveSpeed;
     private float tempX;
     private float tempY;
 
     private Rigidbody rb;
     private Vector3 endPosition;
+    private Vector3 startPosition;
 
     public float endPosX;
     public float endPosY;
@@ -25,12 +28,18 @@ public class EnemyMovement : MonoBehaviour
     public float PlayerZAtCheckpoint;
     public static bool StartShooting = false;
 
+    public float timer;
+    public int hideDelayTimer = 3;
+
+    public bool enemyHide = false;
+
     public int hp;
 
     void Start()
     {
         tempX = this.transform.position.x;
         tempY = this.transform.position.y;
+        startPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         rb = GetComponent<Rigidbody>();
 
     }
@@ -43,21 +52,54 @@ public class EnemyMovement : MonoBehaviour
             EnemyStartAppear = true;
         }
 
+        if(move == true && EnemyStartAppear == true)
+        {
+            endPosition = new Vector3(-endPosX, this.transform.position.y, this.transform.position.z);
+            if (transform.position != endPosition)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, endPosition, moveSpeed * Time.deltaTime);
+            }
+        }
+
+        if (transform.position == endPosition)
+        {
+            move = false;
+            EnemyStartAppear = false;
+            StartShooting = true;
+
+            timer += Time.deltaTime;
+            Debug.Log(timer);
+
+            if (timer >= hideDelayTimer)
+            {
+                StartShooting = false;
+                enemyHide = true;
+                if (enemyHide == true && StartShooting == false)
+                {
+                    //back last position;
+                    if (transform.position != startPosition)
+                    {
+                        transform.position = Vector3.MoveTowards(transform.position, startPosition, moveSpeed * Time.deltaTime);
+                    }
+                }
+            }
+
+            if (transform.position == startPosition && enemyHide == true)
+            {
+                timer = 0;
+                enemyHide = false;
+                EnemyStartAppear = true;
+                move = true;
+            }
+
+        }
+        /*
         if (left == true && right == false && down == false && top == false && EnemyStartAppear == true)
         {
             endPosition = new Vector3(-endPosX, this.transform.position.y, this.transform.position.z);
             if (transform.position != endPosition)
             {
                 transform.position = Vector3.MoveTowards(transform.position, endPosition, moveSpeed * Time.deltaTime);
-                if (transform.position == endPosition)
-                {
-                    left = false;
-                    right = false;
-                    down = false;
-                    top = false;
-                    EnemyStartAppear = false;
-                    StartShooting = true;
-                }
             }
         }
         if (left == false && right == true && down == false && top == false && EnemyStartAppear == true)
@@ -74,6 +116,30 @@ public class EnemyMovement : MonoBehaviour
                     top = false;
                     EnemyStartAppear = false;
                     StartShooting = true;
+
+                    timer += Time.deltaTime;
+
+                    if (timer >= hideDelayTimer)
+                    {
+                        StartShooting = false;
+                        enemyHide = true;
+                        timer = 0;
+                        if (enemyHide == true && StartShooting == false)
+                        {
+                            //back last position;
+                            if (transform.position != startPosition)
+                            {
+                                transform.position = Vector3.MoveTowards(transform.position, startPosition, moveSpeed * Time.deltaTime);
+                                if (transform.position == startPosition)
+                                {
+                                    timer++;
+                                    enemyHide = false;
+                                    EnemyStartAppear = true;
+                                    right = true;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -91,6 +157,30 @@ public class EnemyMovement : MonoBehaviour
                     top = false;
                     EnemyStartAppear = false;
                     StartShooting = true;
+
+                    timer += Time.deltaTime;
+
+                    if (timer >= hideDelayTimer)
+                    {
+                        StartShooting = false;
+                        enemyHide = true;
+                        timer = 0;
+                        if (enemyHide == true && StartShooting == false)
+                        {
+                            //back last position;
+                            if (transform.position != startPosition)
+                            {
+                                transform.position = Vector3.MoveTowards(transform.position, startPosition, moveSpeed * Time.deltaTime);
+                                if (transform.position == startPosition)
+                                {
+                                    timer++;
+                                    enemyHide = false;
+                                    EnemyStartAppear = true;
+                                    down = true;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -108,22 +198,35 @@ public class EnemyMovement : MonoBehaviour
                     top = false;
                     EnemyStartAppear = false;
                     StartShooting = true;
+
+                    timer += Time.deltaTime;
+
+                    if (timer >= hideDelayTimer)
+                    {
+                        StartShooting = false;
+                        enemyHide = true;
+                        timer = 0;
+                        if (enemyHide == true && StartShooting == false)
+                        {
+                            //back last position;
+                            if (transform.position != startPosition)
+                            {
+                                transform.position = Vector3.MoveTowards(transform.position, startPosition, moveSpeed * Time.deltaTime);
+                                if (transform.position == startPosition)
+                                {
+                                    timer++;
+                                    enemyHide = false;
+                                    EnemyStartAppear = true;
+                                    top = true;
+                                }
+                            }
+                        }
+                    }
                 }
             }
-        }
+        }*/
+
+
     }
-
-   /* private void OnMouseDown()
-    {
-        if (hp > 0)
-        {
-            hp -= 1;
-
-        }
-        else if (hp <= 0)
-        {
-            Destroy(this.gameObject);
-        }
-    }*/
 }
 

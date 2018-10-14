@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Player_Crouch : MonoBehaviour {
 
-    public static bool isCrouch = false;
+    public  bool isCrouch = false;
     //public Text text;
 
     // Use this for initialization
@@ -17,7 +17,7 @@ public class Player_Crouch : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (isCrouch == false)
             {
@@ -39,6 +39,7 @@ public class Player_Crouch : MonoBehaviour {
                 //text.text = "Vulnerable";
             }
         }
+        Debug.Log(isCrouch);
     }
 
  
