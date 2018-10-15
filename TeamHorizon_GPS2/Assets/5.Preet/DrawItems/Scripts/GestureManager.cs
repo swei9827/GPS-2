@@ -9,11 +9,13 @@ public class GestureManager : MonoBehaviour
     public int numBoxDestroyed = 0;
     
     
+        ControlCenter cc;
+        bool QTEcorrect = false;
 
     // Use this for initialization
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -39,6 +41,16 @@ public class GestureManager : MonoBehaviour
 
                     Destroy(gameObject, destroyTime);
 
+                }
+
+                if (QTEcorrect == true)
+                {
+                    //cc = GameObject.FindGameObjectWithTag("ControlCenter").GetComponent<ControlCenter>();
+                    cc.QTESuccess = true;
+                }
+                else
+                {
+                    cc.QTEFail = true;
                 }
             }
         }
