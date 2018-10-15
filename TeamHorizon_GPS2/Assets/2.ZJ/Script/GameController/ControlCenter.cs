@@ -27,6 +27,7 @@ public class ControlCenter : MonoBehaviour {
     public List<Transform> battleArea = new List<Transform>();
     public List<Transform> cameraFocus = new List<Transform>();
     public List<GameObject> hazards = new List<GameObject>();
+    public List<GameObject> enemyArea1 = new List<GameObject>();
  
 
     IEnumerator coroutine;
@@ -44,7 +45,11 @@ public class ControlCenter : MonoBehaviour {
         {
             LevelTutorialScript();
             
-        }   
+        }  
+        if(enemyArea1.Count <= 0)
+        {
+            BattleCompleted = true;
+        }
     }
 
     void LevelTutorialScript()

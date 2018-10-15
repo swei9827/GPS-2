@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class RaycastShoot : MonoBehaviour,IPointerDownHandler
+public class RaycastShoot : MonoBehaviour//,IPointerDownHandler
 {
     public CURRENT_SELECTED_WEAPON CSW;
     public Weapon weapon;
@@ -14,7 +14,7 @@ public class RaycastShoot : MonoBehaviour,IPointerDownHandler
     private float nextFire;
     public Camera camera;
     private bool reloading;
-    
+
     public int meleeDamage;
 
     private Vector3 firstPos = Vector3.zero; // First Position
@@ -61,139 +61,92 @@ public class RaycastShoot : MonoBehaviour,IPointerDownHandler
         {
             //bulletList[i].gameObject.SetActive(true);
         }*/
-
-        /*if (Input.touchCount > 0)
+        if(Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
-            if (CSW == CURRENT_SELECTED_WEAPON.RANGE)
+            if (!EventSystem.current.IsPointerOverGameObject(touch.fingerId))
             {
-                if (Time.time > nextFire && weapon.currentAmmo > 0)
+                if (CSW == CURRENT_SELECTED_WEAPON.RANGE)
                 {
-                    nextFire = Time.time + weapon.fireRate;
-                    StartCoroutine(ShotEffect());
-                    Vector3 posFar = new Vector3(touch.position.x, touch.position.y, camera.farClipPlane);
-                    Vector3 posNear = new Vector3(touch.position.x, touch.position.y, camera.nearClipPlane);
-                    Vector3 posF = camera.ScreenToWorldPoint(posFar);
-                    Vector3 posN = camera.ScreenToWorldPoint(posNear);
-                    RaycastHit hit;
-                    Vector3 shootOrigin = camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.0f));
-                    laserLine.SetPosition(0, shootOrigin);
-                    if (Physics.Raycast(shootOrigin, posF - posN, out hit, weapon.weaponRange))
+                    if (Time.time > nextFire && weapon.currentAmmo > 0)
                     {
-                        if (hit.collider.tag != "UI")
+                        nextFire = Time.time + weapon.fireRate;
+                        StartCoroutine(ShotEffect());
+                        Vector3 posFar = new Vector3(touch.position.x, touch.position.y, camera.farClipPlane);
+                        Vector3 posNear = new Vector3(touch.position.x, touch.position.y, camera.nearClipPlane);
+                        Vector3 posF = camera.ScreenToWorldPoint(posFar);
+                        Vector3 posN = camera.ScreenToWorldPoint(posNear);
+                        RaycastHit hit;
+                        weapon.currentAmmo--;
+                        Vector3 shootOrigin = camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.0f));
+                        laserLine.SetPosition(0, shootOrigin);
+                        if (Physics.Raycast(shootOrigin, posF - posN, out hit, weapon.weaponRange))
                         {
                             laserLine.SetPosition(1, hit.point);
                             GameObject bulletEffect = Instantiate(weapon.effect, hit.point, transform.rotation);
                             Destroy(bulletEffect, 1.0f);
                             if (hit.collider.CompareTag("Enemy"))
                             {
-                                int targetHP = hit.collider.gameObject.GetComponent<EnemyHP>().hp;
-                                targetHP -= weapon.gunDamage;
+                                hit.collider.gameObject.GetComponent<EnemyMovement>().hp -= weapon.gunDamage;
                             }
-                            else
+                            else if (hit.collider.CompareTag("Environment"))
                             {
 
                             }
                         }
-
+                        else
+                        {
+                            laserLine.SetPosition(1, camera.ScreenToWorldPoint(touch.position));
+                            GameObject bulletEffect = Instantiate(weapon.effect, shootOrigin + ((posF - posN) * weapon.weaponRange), transform.rotation);
+                            Destroy(bulletEffect, 1.0f);
+                        }
+                        bulletLeft.text = weapon.currentAmmo.ToString() + " / " + weapon.maxAmmo.ToString();
                     }
-                    else
+                }
+                else if (CSW == CURRENT_SELECTED_WEAPON.MELEE)
+                {
+                    switch (touch.phase)
                     {
-                        weapon.currentAmmo--;
-                        laserLine.SetPosition(1, camera.ScreenToWorldPoint(Input.mousePosition));
-                        GameObject bulletEffect = Instantiate(weapon.effect, shootOrigin + ((posF - posN) * weapon.weaponRange), transform.rotation);
-                        Destroy(bulletEffect, 1.0f);
+                        case TouchPhase.Began:
+                            firstPos = touch.position;
+                            lastPos = touch.position;
+                            break;
+                        case TouchPhase.Moved:
+                            lastPos = touch.position;
+                            break;
+                        case TouchPhase.Ended:
+                            lastPos = touch.position;
+                            if (Mathf.Abs(lastPos.x - firstPos.x) > dragDistance || Mathf.Abs(lastPos.y - firstPos.y) > dragDistance)
+                            {
+                                Debug.Log("Melee");
+                                GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy");
+                                GameObject closest = null;
+                                float distance = 100;
+                                Vector3 myPos = transform.position;
+                                foreach (GameObject go in enemy)
+                                {
+                                    Vector3 diff = go.transform.position - myPos;
+                                    float curDistance = diff.sqrMagnitude;
+                                    if (curDistance < distance)
+                                    {
+                                        closest = go;
+                                        distance = curDistance;
+                                    }
+                                }
+                                if (closest != null)
+                                {
+                                    if (closest.tag == "Enemy")
+                                    {
+                                        closest.GetComponent<EnemyHP>().hp -= meleeDamage;
+                                    }
+                                }
+                            }
+                            break;
                     }
-                    bulletLeft.text = weapon.currentAmmo.ToString() + " / " + weapon.maxAmmo.ToString();
-                }
-                /*switch (touch.phase)
-                {
-                    case TouchPhase.Began:
-                        firstPos = touch.position;
-                        lastPos = touch.position;
-                        break;
-                    case TouchPhase.Moved:
-                        lastPos = touch.position;
-                        break;
-                    case TouchPhase.Ended:
-                        lastPos = touch.position;
-                        if (Mathf.Abs(lastPos.x - firstPos.x) > dragDistance || Mathf.Abs(lastPos.y - firstPos.y) > dragDistance)
-                        {
-                            Debug.Log("Melee");
-                            GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy");
-                            GameObject closest = null;
-                            float distance = 100;
-                            Vector3 myPos = transform.position;
-                            foreach (GameObject go in enemy)
-                            {
-                                Vector3 diff = go.transform.position - myPos;
-                                float curDistance = diff.sqrMagnitude;
-                                if (curDistance < distance)
-                                {
-                                    closest = go;
-                                    distance = curDistance;
-                                }
-                            }
-                            if (closest != null)
-                            {
-                                closest.GetComponent<EnemyHP>().hp -= meleeDamage;
-                            }
-                        }
-                        else
-                        {
-
-                        }
-                    break;
-            }
-            else if (CSW == CURRENT_SELECTED_WEAPON.MELEE)
-            {
-                switch (touch.phase)
-                {
-                    case TouchPhase.Began:
-                        firstPos = touch.position;
-                        lastPos = touch.position;
-                        break;
-                    case TouchPhase.Moved:
-                        lastPos = touch.position;
-                        break;
-                    case TouchPhase.Ended:
-                        lastPos = touch.position;
-                        if (Mathf.Abs(lastPos.x - firstPos.x) > dragDistance || Mathf.Abs(lastPos.y - firstPos.y) > dragDistance)
-                        {
-                            Debug.Log("Melee");
-                            GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy");
-                            GameObject[] environment = GameObject.FindGameObjectsWithTag("Environment");
-                            GameObject closest = null;
-                            float distance = 100;
-                            Vector3 myPos = transform.position;
-                            foreach (GameObject go in enemy)
-                            {
-                                Vector3 diff = go.transform.position - myPos;
-                                float curDistance = diff.sqrMagnitude;
-                                if (curDistance < distance)
-                                {
-                                    closest = go;
-                                    distance = curDistance;
-                                }
-                            }
-                            if (closest != null)
-                            {
-                                if(closest.tag == "Enemy")
-                                {
-                                    closest.GetComponent<EnemyHP>().hp -= meleeDamage;
-                                }
-
-                                
-                            }
-                        }
-                        else
-                        {
-
-                        }
-                        break;
                 }
             }
-        }*/
+        }
+        
     }
     
     public void SwitchWeapon()
@@ -244,7 +197,7 @@ public class RaycastShoot : MonoBehaviour,IPointerDownHandler
     }
 
     public void OnPointerDown(PointerEventData touchData)
-    {
+    {/*
         Touch touch = Input.GetTouch(0);
         if (!EventSystem.current.IsPointerOverGameObject(touch.fingerId))
         {
@@ -326,7 +279,7 @@ public class RaycastShoot : MonoBehaviour,IPointerDownHandler
                         break;
                 }
             }
-        } 
+        } */
     }
 }
 

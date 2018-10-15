@@ -11,6 +11,7 @@ TagManager:
   - Hazard
   - UI
   - Obstacle
+  - ControlCenter
   layers:
   - Default
   - TransparentFX

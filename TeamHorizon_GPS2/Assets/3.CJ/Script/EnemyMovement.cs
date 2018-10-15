@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
+
     public bool left;
     public bool right;
     public bool down;
@@ -21,11 +22,15 @@ public class EnemyMovement : MonoBehaviour
 
     public float endPosX;
     public float endPosY;
+    private ControlCenter CC;
 
     // When Reaching CheckPoint
     public Transform player;
     public bool EnemyStartAppear = false;
-    public float PlayerZAtCheckpoint;
+
+    public int EnemyArea = 0;
+    int playerArea = 0;
+
     public static bool StartShooting = false;
 
     public float timer;
@@ -41,15 +46,23 @@ public class EnemyMovement : MonoBehaviour
         tempY = this.transform.position.y;
         startPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         rb = GetComponent<Rigidbody>();
+        CC = GameObject.FindGameObjectWithTag("ControlCenter").GetComponent<ControlCenter>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(player.position.z >= PlayerZAtCheckpoint)
+        playerArea = TargetProfile.PlayerArea;
+        if (this.hp <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+
+        if (EnemyArea == playerArea )
         {
             EnemyStartAppear = true;
+            GetComponent<ControlCenter>().OnBattle = true;
         }
 
         if(move == true && EnemyStartAppear == true)
@@ -68,7 +81,7 @@ public class EnemyMovement : MonoBehaviour
             StartShooting = true;
 
             timer += Time.deltaTime;
-            Debug.Log(timer);
+            //Debug.Log(timer);
         }
 
         if (timer >= hideDelayTimer)
