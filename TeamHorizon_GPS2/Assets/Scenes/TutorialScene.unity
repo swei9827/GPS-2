@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -148,12 +148,16 @@ MonoBehaviour:
   right: 1
   down: 0
   top: 0
+  move: 0
   moveSpeed: 2
   endPosX: -77.5
   endPosY: 0
   player: {fileID: 1447162293}
   EnemyStartAppear: 0
   PlayerZAtCheckpoint: 77.8
+  timer: 0
+  hideDelayTimer: 3
+  enemyHide: 0
   hp: 2
 --- !u!136 &2776764
 CapsuleCollider:
@@ -282,12 +286,82 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1447162292}
-  TargetID: 5
   ConnectionNodes: 1
   BattleNodes: 0
   CameraPanNodes: 0
-  SetHazardID: 0
   QTENodes: 0
+  InteractableNodes: 0
+  PortalNodes: 0
+--- !u!1 &20839104
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 20839105}
+  - component: {fileID: 20839107}
+  - component: {fileID: 20839106}
+  m_Layer: 5
+  m_Name: ShieldBG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &20839105
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 20839104}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.79999995, z: 1}
+  m_Children:
+  - {fileID: 730132777}
+  m_Father: {fileID: 1940977822}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -469.85, y: 761.7}
+  m_SizeDelta: {x: -964.2, y: 21.22}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &20839106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 20839104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.43529412}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &20839107
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 20839104}
+  m_CullTransparentMesh: 0
 --- !u!1 &25305781
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,12 +427,16 @@ MonoBehaviour:
   right: 0
   down: 0
   top: 1
+  move: 0
   moveSpeed: 2
   endPosX: 0
   endPosY: 2.5
   player: {fileID: 1447162293}
   EnemyStartAppear: 0
   PlayerZAtCheckpoint: 60.48
+  timer: 0
+  hideDelayTimer: 3
+  enemyHide: 0
   hp: 2
 --- !u!136 &42171407
 CapsuleCollider:
@@ -478,6 +556,96 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &204094677
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 204094681}
+  - component: {fileID: 204094680}
+  - component: {fileID: 204094678}
+  - component: {fileID: 204094679}
+  m_Layer: 5
+  m_Name: HealthBar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &204094678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 204094677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.05260229, g: 1, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: d8456a9bf1257fa499bffe74112c52b0, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 0
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!114 &204094679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 204094677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d57b692fb37b06948a0fca6ec4c36222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startHealth: 100
+  startShield: 100
+  activeShield: 1
+  health: 0
+  shield: 0
+  healthBar: {fileID: 204094678}
+  shieldBar: {fileID: 730132779}
+  healthAfterDamage: 0
+  shieldAfterDamage: 0
+--- !u!222 &204094680
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 204094677}
+  m_CullTransparentMesh: 0
+--- !u!224 &204094681
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 204094677}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1966974550}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -2.11e-10, y: 0.0000066757}
+  m_SizeDelta: {x: 315.8, y: 21.22}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &205402078
 GameObject:
   m_ObjectHideFlags: 0
@@ -604,12 +772,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1447162292}
-  TargetID: 4
   ConnectionNodes: 0
   BattleNodes: 0
   CameraPanNodes: 0
-  SetHazardID: 0
   QTENodes: 1
+  InteractableNodes: 0
+  PortalNodes: 0
 --- !u!1 &267563468
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,12 +819,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1447162292}
-  TargetID: 6
   ConnectionNodes: 0
   BattleNodes: 1
   CameraPanNodes: 0
-  SetHazardID: 0
   QTENodes: 0
+  InteractableNodes: 0
+  PortalNodes: 0
 --- !u!1 &308371612
 GameObject:
   m_ObjectHideFlags: 0
@@ -1124,12 +1292,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1447162292}
-  TargetID: 2
   ConnectionNodes: 1
   BattleNodes: 0
   CameraPanNodes: 0
-  SetHazardID: 0
   QTENodes: 0
+  InteractableNodes: 0
+  PortalNodes: 0
 --- !u!1 &651426099
 GameObject:
   m_ObjectHideFlags: 3
@@ -1318,12 +1486,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1447162292}
-  TargetID: 8
   ConnectionNodes: 1
   BattleNodes: 0
   CameraPanNodes: 0
-  SetHazardID: 0
   QTENodes: 0
+  InteractableNodes: 0
+  PortalNodes: 0
 --- !u!1 &676647347
 GameObject:
   m_ObjectHideFlags: 0
@@ -1359,12 +1527,16 @@ MonoBehaviour:
   right: 0
   down: 0
   top: 0
+  move: 0
   moveSpeed: 2
   endPosX: 74
   endPosY: 0
   player: {fileID: 1447162293}
   EnemyStartAppear: 0
   PlayerZAtCheckpoint: 77.8
+  timer: 0
+  hideDelayTimer: 3
+  enemyHide: 0
   hp: 2
 --- !u!136 &676647349
 CapsuleCollider:
@@ -1553,7 +1725,96 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d33089629526c84428a318ce85e0d513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hazardID: 0
+--- !u!1 &730132776
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 730132777}
+  - component: {fileID: 730132780}
+  - component: {fileID: 730132779}
+  - component: {fileID: 730132778}
+  m_Layer: 5
+  m_Name: ShieldBar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &730132777
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 730132776}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 20839105}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -2.11e-10, y: 0.01001}
+  m_SizeDelta: {x: 315.8, y: 21.2}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &730132778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 730132776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d57b692fb37b06948a0fca6ec4c36222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startHealth: 100
+  startShield: 100
+  activeShield: 1
+  health: 0
+  shield: 0
+  healthBar: {fileID: 204094678}
+  shieldBar: {fileID: 730132779}
+  healthAfterDamage: 0
+  shieldAfterDamage: 0
+--- !u!114 &730132779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 730132776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.98160696, g: 1, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: d8456a9bf1257fa499bffe74112c52b0, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 0
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &730132780
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 730132776}
+  m_CullTransparentMesh: 0
 --- !u!1 &737638083
 GameObject:
   m_ObjectHideFlags: 0
@@ -2235,12 +2496,16 @@ MonoBehaviour:
   right: 0
   down: 0
   top: 1
+  move: 0
   moveSpeed: 2
   endPosX: 0
   endPosY: 2.5
   player: {fileID: 1447162293}
   EnemyStartAppear: 0
   PlayerZAtCheckpoint: 60.48
+  timer: 0
+  hideDelayTimer: 3
+  enemyHide: 0
   hp: 2
 --- !u!136 &1040264273
 CapsuleCollider:
@@ -2734,12 +2999,16 @@ MonoBehaviour:
   right: 1
   down: 0
   top: 0
+  move: 0
   moveSpeed: 2
   endPosX: -77.3
   endPosY: 0
   player: {fileID: 1447162293}
   EnemyStartAppear: 0
   PlayerZAtCheckpoint: 139.8
+  timer: 0
+  hideDelayTimer: 3
+  enemyHide: 0
   hp: 2
 --- !u!136 &1233165066
 CapsuleCollider:
@@ -2837,12 +3106,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1447162292}
+  camera: {fileID: 0}
   LevelTutorial: 1
   Level1: 0
   Level2: 0
   Level3: 0
+  OnBattle: 0
+  OnQTE: 0
+  OnInteractableObject: 0
   BattleCompleted: 0
+  QTESuccess: 0
+  QTEFail: 0
+  InteractSuccess: 0
+  InteractFail: 0
+  HidingSpotSwapTime: 0
   levelStatus: 0
+  locations: []
+  battleArea: []
+  cameraFocus: []
+  hazards: []
 --- !u!4 &1243453463
 Transform:
   m_ObjectHideFlags: 0
@@ -2897,12 +3179,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1447162292}
-  TargetID: 3
   ConnectionNodes: 0
   BattleNodes: 0
   CameraPanNodes: 1
-  SetHazardID: 0
   QTENodes: 0
+  InteractableNodes: 0
+  PortalNodes: 0
 --- !u!1 &1359707408 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 192044, guid: 19682540d8a014522a319b1cf788aee2,
@@ -2978,12 +3260,16 @@ MonoBehaviour:
   right: 0
   down: 0
   top: 0
+  move: 0
   moveSpeed: 2
   endPosX: 74
   endPosY: 0
   player: {fileID: 1447162293}
   EnemyStartAppear: 0
   PlayerZAtCheckpoint: 139.8
+  timer: 0
+  hideDelayTimer: 3
+  enemyHide: 0
   hp: 2
 --- !u!136 &1396779091
 CapsuleCollider:
@@ -3183,16 +3469,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1482cb069caf5444285296d63d71d62c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goal: {fileID: 0}
-  locations:
-  - {fileID: 1590158073}
-  - {fileID: 646534241}
-  - {fileID: 1309515043}
-  - {fileID: 238807181}
-  - {fileID: 2968252}
-  - {fileID: 267563469}
-  - {fileID: 2001464315}
-  - {fileID: 673049075}
   speed: 5
   turnSpeed: 0.3
 --- !u!114 &1447162296
@@ -3348,12 +3624,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1447162292}
-  TargetID: 1
   ConnectionNodes: 0
   BattleNodes: 1
   CameraPanNodes: 0
-  SetHazardID: 0
   QTENodes: 0
+  InteractableNodes: 0
+  PortalNodes: 0
 --- !u!1 &1609160117
 GameObject:
   m_ObjectHideFlags: 0
@@ -3796,12 +4072,16 @@ MonoBehaviour:
   right: 1
   down: 0
   top: 0
+  move: 0
   moveSpeed: 2
   endPosX: 1.2
   endPosY: 0
   player: {fileID: 1447162293}
   EnemyStartAppear: 0
   PlayerZAtCheckpoint: 60.48
+  timer: 0
+  hideDelayTimer: 3
+  enemyHide: 0
   hp: 2
 --- !u!136 &1858199664
 CapsuleCollider:
@@ -3990,6 +4270,171 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1862551059}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1940977818
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1940977822}
+  - component: {fileID: 1940977821}
+  - component: {fileID: 1940977820}
+  - component: {fileID: 1940977819}
+  m_Layer: 5
+  m_Name: Hp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1940977819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1940977818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1940977820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1940977818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+--- !u!223 &1940977821
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1940977818}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &1940977822
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1940977818}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 20839105}
+  - {fileID: 1966974550}
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!1 &1966974549
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1966974550}
+  - component: {fileID: 1966974552}
+  - component: {fileID: 1966974551}
+  m_Layer: 5
+  m_Name: HealthBG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1966974550
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1966974549}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.8, z: 1}
+  m_Children:
+  - {fileID: 204094681}
+  m_Father: {fileID: 1940977822}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -469.85, y: 743.3}
+  m_SizeDelta: {x: -964.2, y: 21.22}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1966974551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1966974549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.43529412}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1966974552
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1966974549}
+  m_CullTransparentMesh: 0
 --- !u!1 &1969420014
 GameObject:
   m_ObjectHideFlags: 0
@@ -4132,12 +4577,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1447162292}
-  TargetID: 7
   ConnectionNodes: 0
   BattleNodes: 1
   CameraPanNodes: 0
-  SetHazardID: 0
   QTENodes: 0
+  InteractableNodes: 0
+  PortalNodes: 0
 --- !u!1 &2003183195
 GameObject:
   m_ObjectHideFlags: 0
@@ -4229,9 +4674,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoomSpeed: 0.1
+  zoomLevel: 0
   target:
   - {fileID: 717029354}
-  hazardID: 0
   cam: {fileID: 2003183198}
 --- !u!114 &2003183200
 MonoBehaviour:
@@ -4244,6 +4689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb4cea816c5de234593c77f44ded08d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!1 &2059891028
 GameObject:
   m_ObjectHideFlags: 0
