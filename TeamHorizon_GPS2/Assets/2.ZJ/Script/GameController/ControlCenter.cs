@@ -13,28 +13,31 @@ public class ControlCenter : MonoBehaviour {
     public bool Level3;
 
     public bool OnBattle;
-    public bool OnQTE;
-    public bool OnInteractableObject;       
+    public bool setEnemyCount;
     public bool BattleCompleted;
-    public bool EnemyEliminated;
+    public bool OnQTE;
     public bool QTESuccess;   
     public bool QTEFail;
+    public bool OnIO;
     public bool InteractSuccess;
     public bool InteractFail;
     public float HidingSpotSwapTime;
     public float levelStatus = 0;
+    public int enemyCount;
 
     public List<Transform> locations = new List<Transform>();
     public List<Transform> battleArea = new List<Transform>();
     public List<Transform> cameraFocus = new List<Transform>();
     public List<GameObject> hazards = new List<GameObject>();
-    //public List<GameObject> enemyArea1 = new List<GameObject>();
 
     //reference
     private ScreenWobble screenWobble;
     EnemySpawn es;
     IEnumerator coroutine;
     ScriptedMovement sMove;
+    bool Moved = false;
+    float timeLeft = 6.0f;
+
     int pos = 1;
 
     void Start()
@@ -52,43 +55,47 @@ public class ControlCenter : MonoBehaviour {
     }
 
     void LevelTutorialScript()
-    {        
+    {            
         if(levelStatus == 1) // Start to first battle phase
-        {           
-            if (!OnBattle)
+        {
+            if (!setEnemyCount)
             {
+                enemyCount = locations[0].GetComponent<TargetProfile>().EnemyCount;
+                setEnemyCount = true;
+            }
+            if (!OnBattle)
+            {                
                 sMove.PlayerMove(0.0f, locations[0]);
                 sMove.PlayerRotate(0.0f, locations[1]);
                 locations[0].GetComponent<TargetProfile>().EnterBattlePhase(1);
             }
             else if (OnBattle)
-            {
+            {                
                 BattlePhase(0,1,0);
                 screenWobble.isMoving = false;
             }
-            if (EnemyMovement.enemyCountArea == 2)
+            if (enemyCount== 0)
             {
-                EnemyEliminated = true;
                 OnBattle = false;
-            }
+            }      
             if (BattleCompleted) // If battle phase completed move to next target
             {
-                coroutine = IncreaseLevelStatus(2, 0.5f);
+                coroutine = IncreaseLevelStatus(2, 0.0f);
                 StartCoroutine(coroutine);        
             }            
         }
         else if(levelStatus == 2) // 2nd target 
         {
-            EnemyEliminated = false;
             BattleCompleted = false;
             OnBattle = false;
+            setEnemyCount = false;
             sMove.PlayerMove(0.0f, locations[1]);
+            sMove.PlayerRotate(0.5f, locations[2]);
             coroutine = IncreaseLevelStatus(3, 1.0f);
             StartCoroutine(coroutine);
         }
         else if(levelStatus == 3) // 3rd target, camera pan to falling tree
-        {
-            sMove.PlayerRotate(0.0f, locations[2]);
+        {            
             sMove.PlayerMove(0.0f, locations[2]);
             coroutine = CameraPanPhase(0.8f,0); 
             StartCoroutine(coroutine);
@@ -99,65 +106,90 @@ public class ControlCenter : MonoBehaviour {
         else if(levelStatus == 4) // 4th target, qte phase
         {
             sMove.PlayerMove(0.0f, locations[3]);
-            if (QTESuccess)
+            screenWobble.isMoving = true;
+            if (player.transform.position == locations[3].GetComponent<Transform>().position)
             {
-                StopAllCoroutines();
-                levelStatus = 5;
-                QTESuccess = false;
-            }
-            else if (QTEFail)
-            {
-                StopAllCoroutines();
-                levelStatus = 5.5f;
-                QTEFail = false;
-            }
+                timeLeft -= Time.deltaTime;
+                OnQTE = true;
+                screenWobble.isMoving = false;
+                if(timeLeft <= 0)
+                {
+                    QTEFail = true;
+                }
+                if (QTESuccess)
+                {
+                    StopAllCoroutines();
+                    levelStatus = 5;
+                }
+                else if (QTEFail)
+                {
+                    StopAllCoroutines();
+                    levelStatus = 5.5f;
+                }
+            }                
         }
         else if(levelStatus == 5.5)
         {
-            sMove.PlayerMove(0.0f, locations[5]);
-            coroutine = IncreaseLevelStatus(5, 2f);
-            StartCoroutine(coroutine);
+            sMove.PlayerMove(0.0f, locations[5]);         
+            coroutine = IncreaseLevelStatus(6.5f, 2.0f);
+            StartCoroutine(coroutine);            
         }
         else if(levelStatus == 5)
         {
             sMove.PlayerMove(0.0f, locations[4]);
-            sMove.PlayerRotate(1.0f, locations[6]);
-            coroutine = IncreaseLevelStatus(6, 1.0f);
+            sMove.PlayerRotate(0.8f, locations[6]);
+            sMove.PlayerMove(0.8f, locations[6]);
+            coroutine = IncreaseLevelStatus(6, 1.3f);
+            StartCoroutine(coroutine);
+        }
+        else if(levelStatus == 6.5)
+        {
+            sMove.PlayerMove(0.0f, locations[4]);
+            sMove.PlayerRotate(0.8f, locations[6]);
+            sMove.PlayerMove(0.8f, locations[6]);
+            coroutine = IncreaseLevelStatus(6, 2f);
             StartCoroutine(coroutine);
         }
         else if(levelStatus == 6)
         {
-            if (!OnBattle)
+            OnQTE = false;
+            QTESuccess = false;
+            QTEFail = false;
+            if (!setEnemyCount)
             {
-                sMove.PlayerMove(0.8f, locations[6]);                
+                enemyCount = locations[6].GetComponent<TargetProfile>().EnemyCount;
+                setEnemyCount = true;
+            }
+            
+            if (!OnBattle)
+            {                                
                 screenWobble.isMoving = true;
+                sMove.PlayerMove(0.0f, locations[6]);
+                sMove.PlayerRotate(0.0f, locations[7]);
                 locations[6].GetComponent<TargetProfile>().EnterBattlePhase(2);                
             }
             else if (OnBattle)
             {
-               // StopAllCoroutines();
                 BattlePhase(2, 3, 1);
                 screenWobble.isMoving = false;
             }
-            if (EnemyMovement.enemyCountArea == 0)
+            if (enemyCount == 0)
             {
-                EnemyEliminated = true;
                 OnBattle = false;
             }
             if (BattleCompleted) // If battle phase completed move to next target
-            {
-                StopAllCoroutines();
+            {                  
                 coroutine = IncreaseLevelStatus(7, 0.5f);
                 StartCoroutine(coroutine);
-            }
-            
+            }            
         }
         else if(levelStatus == 7)
         {
             BattleCompleted = false;
-            EnemyEliminated = false;
             OnBattle = false;
+            setEnemyCount = false;
             sMove.PlayerMove(0.0f, locations[7]);
+            screenWobble.isMoving = false;
             coroutine = CameraPanPhase(2.0f, 1);
             StartCoroutine(coroutine);            
             coroutine = IncreaseLevelStatus(8, 9.0f);
@@ -165,7 +197,25 @@ public class ControlCenter : MonoBehaviour {
         }
         else if(levelStatus == 8)
         {
-            sMove.PlayerMove(0.0f, locations[8]);
+            if (!OnBattle)
+            {
+                screenWobble.isMoving = true;
+                sMove.PlayerMove(0.0f, locations[8]);
+                if(player.transform.position == locations[8].position)
+                {
+                    enemyCount = 1;
+                    OnBattle = true;                    
+                }
+            }
+            else if (OnBattle)
+            {
+                screenWobble.isMoving = false;
+                if(enemyCount <= 0)
+                {
+                    BattleCompleted = true;
+                }
+            }
+            
             if (BattleCompleted) // If battle phase completed move to next target
             {
                 StopAllCoroutines();
@@ -175,6 +225,7 @@ public class ControlCenter : MonoBehaviour {
         }
         else if(levelStatus == 9)
         {
+            OnBattle = false;
             sMove.PlayerMove(0.0f, locations[9]);
             //coroutine = CameraPanPhase(5f,2);
            // StartCoroutine(coroutine);
@@ -183,24 +234,41 @@ public class ControlCenter : MonoBehaviour {
         }
         else if(levelStatus == 10)
         {
-            sMove.PlayerMove(0.0f, locations[10]);
-            coroutine = DelayStop(4.0f);
+            sMove.PlayerMove(0.0f, locations[10]);            
+            coroutine = IncreaseLevelStatus(11, 2.5f);
             StartCoroutine(coroutine);
-            levelStatus = 11;            
         }
         else if(levelStatus == 11)
         {
             sMove.PlayerRotate(0.0f, locations[13]);
             sMove.PlayerMove(1.0f, locations[13]);
+            if(player.transform.position == locations[13].position)
+            {
+                OnIO = true;
+                timeLeft -= Time.deltaTime;
+                screenWobble.isMoving = false;
+                if (timeLeft <= 0)
+                {
+                    QTEFail = true;
+                }
+                if (QTESuccess)
+                {
+                   coroutine = IncreaseLevelStatus(12, 0.0f);
+                   StartCoroutine(coroutine);
+                }
+                else if (QTEFail)
+                {
+                   coroutine = IncreaseLevelStatus(14, 0.0f);
+                   StartCoroutine(coroutine);
+                }
+            }
             if (InteractSuccess)
             {
-                coroutine = IncreaseLevelStatus(12, 0.0f);
-                StartCoroutine(coroutine);
+                
             }
             else if (InteractFail)
             {
-                coroutine = IncreaseLevelStatus(14, 0.0f);
-                StartCoroutine(coroutine);
+                
             }
         }
         else if(levelStatus == 14)
@@ -229,10 +297,15 @@ public class ControlCenter : MonoBehaviour {
             {
                 sMove.PlayerMove(0.0f, locations[14]);
                 sMove.PlayerRotate(1.0f, locations[15]);
+                locations[14].GetComponent<TargetProfile>().EnterBattlePhase(4);
             }
             else if (OnBattle)
             {
                 BattlePhase(4, 5, 3);
+            }
+            if(enemyCount <= 0)
+            {
+                OnBattle = false;
             }
             if (BattleCompleted) // If battle phase completed move to next target
             {
@@ -255,7 +328,7 @@ public class ControlCenter : MonoBehaviour {
         StartCoroutine(coroutine);
     }
 
-    private IEnumerator IncreaseLevelStatus(int num, float waitTime)
+    private IEnumerator IncreaseLevelStatus(float num, float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
         levelStatus = num;

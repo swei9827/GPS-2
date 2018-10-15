@@ -17,9 +17,9 @@ public class Level: MonoBehaviour
         timeLeft = givenTime;		
 	}
 	
-    void setScore(float s)
+    public void setScore(float s)
     {
-        score = s;
+        score += s;
     }
     
     public float getScore()
@@ -33,7 +33,7 @@ public class Level: MonoBehaviour
         float seconds = Mathf.RoundToInt(timeLeft % 60);
 
         timeLeftUI.text = minutes.ToString() + " : " + seconds.ToString();
-        ScoreUI.text = "what is the score formula";
+        ScoreUI.text = score.ToString();
 
         if(levelState == LEVEL_STATE.PLAYING)
         {

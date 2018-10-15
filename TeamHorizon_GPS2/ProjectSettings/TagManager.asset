@@ -12,6 +12,7 @@ TagManager:
   - UI
   - Obstacle
   - ControlCenter
+  - PlayerPoint
   layers:
   - Default
   - TransparentFX

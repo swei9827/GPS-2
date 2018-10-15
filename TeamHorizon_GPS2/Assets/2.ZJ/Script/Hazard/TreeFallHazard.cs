@@ -5,7 +5,20 @@ using UnityEngine;
 public class TreeFallHazard : MonoBehaviour
 {
     float fall = 1;
+    int health = 2;
     public bool FallenTree = false;
+
+    void OnMouseDown()
+    {
+        if (FallenTree)
+        {
+            health -= 1;
+            if (health <= 0)
+            {
+                Destroy(this.gameObject);
+            }
+        }        
+    }
 
     public void TreeFalling()
     {
