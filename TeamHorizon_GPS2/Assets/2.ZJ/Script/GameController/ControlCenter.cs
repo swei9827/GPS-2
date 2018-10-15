@@ -28,7 +28,9 @@ public class ControlCenter : MonoBehaviour {
     public List<Transform> cameraFocus = new List<Transform>();
     public List<GameObject> hazards = new List<GameObject>();
     //public List<GameObject> enemyArea1 = new List<GameObject>();
- 
+
+    //reference
+    private ScreenWobble screenWobble;
 
     IEnumerator coroutine;
     ScriptedMovement sMove;
@@ -37,6 +39,7 @@ public class ControlCenter : MonoBehaviour {
     void Start()
     {
         sMove = player.GetComponent<ScriptedMovement>();
+        screenWobble = GameObject.FindGameObjectWithTag("2ndCamera").GetComponent<ScreenWobble>();
     }
 
     void Update()
@@ -121,6 +124,8 @@ public class ControlCenter : MonoBehaviour {
             {
                 sMove.PlayerMove(1.0f, locations[6]);
                 sMove.PlayerRotate(1.0f, locations[7]);
+                screenWobble.isMoving = true;
+                
             }
             else if (OnBattle)
             {
