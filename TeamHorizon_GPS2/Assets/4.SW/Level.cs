@@ -11,7 +11,7 @@ public class Level: MonoBehaviour
     private float extraTime;
     [SerializeField] private Text timeLeftUI;
     [SerializeField] private Text ScoreUI;
-    private LEVEL_STATE levelState;
+    public LEVEL_STATE levelState;
 
 	void Start () {
         timeLeft = givenTime;		
@@ -41,7 +41,7 @@ public class Level: MonoBehaviour
         }
         else if(levelState == LEVEL_STATE.PAUSED)
         {
-            // show paused menu
+            SetTimeScale(0f);
         }
         else if(levelState == LEVEL_STATE.FINISHED)
         {
@@ -54,9 +54,14 @@ public class Level: MonoBehaviour
     {
         SceneManager.LoadScene(scene);
     }
+
+    public void SetTimeScale(float ts)
+    {
+        Time.timeScale = ts;
+    }
 }
 
-enum LEVEL_STATE
+public enum LEVEL_STATE
 {
     PLAYING,
     PAUSED,
