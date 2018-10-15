@@ -37,5 +37,10 @@ public class Enemy_Bullet : MonoBehaviour {
             //GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Hp>().hp -= 1;
             Destroy(gameObject);
         }
+
+        if(collision.gameObject.CompareTag("Obstacle"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

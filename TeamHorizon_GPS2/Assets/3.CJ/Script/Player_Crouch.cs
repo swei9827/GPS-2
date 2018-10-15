@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Player_Crouch : MonoBehaviour {
 
     public static bool isCrouch = false;
+    public Transform player;
     //public Text text;
 
     // Use this for initialization
@@ -31,11 +32,13 @@ public class Player_Crouch : MonoBehaviour {
             if (isCrouch == true)
             {
                 transform.Translate(new Vector3(0.0f, -1.2f, 0.0f));
+                player.transform.Translate(new Vector3(0.0f, -1.2f, 0.0f));
                 //text.text = "Invulnerable";;
             }
             else
             {
                 transform.Translate(new Vector3(0.0f, 1.2f, 0.0f));
+                player.transform.Translate(new Vector3(0.0f, 1.2f, 0.0f));
                 //text.text = "Vulnerable";
             }
         }

@@ -10,6 +10,7 @@ TagManager:
   - Target
   - Hazard
   - UI
+  - Obstacle
   layers:
   - Default
   - TransparentFX
