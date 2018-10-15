@@ -22,7 +22,7 @@ public class EnemyMovement : MonoBehaviour
 
     public float endPosX;
     public float endPosY;
-    private ControlCenter CC;
+  // private ControlCenter CC;
 
     // When Reaching CheckPoint
     public Transform player;
@@ -48,7 +48,7 @@ public class EnemyMovement : MonoBehaviour
         tempY = this.transform.position.y;
         startPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         rb = GetComponent<Rigidbody>();
-        CC = GameObject.FindGameObjectWithTag("ControlCenter").GetComponent<ControlCenter>();
+       // CC = GameObject.FindGameObjectWithTag("ControlCenter").GetComponent<ControlCenter>();
 
     }
 
@@ -249,7 +249,7 @@ public class EnemyMovement : MonoBehaviour
 
     void StartOnBattle()
     {
-        CC.OnBattle = true;
+        //CC.OnBattle = true;
     }
 }
 

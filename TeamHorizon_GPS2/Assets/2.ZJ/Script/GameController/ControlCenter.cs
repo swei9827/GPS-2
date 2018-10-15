@@ -16,6 +16,7 @@ public class ControlCenter : MonoBehaviour {
     public bool OnQTE;
     public bool OnInteractableObject;       
     public bool BattleCompleted;
+    public bool EnemyEliminated;
     public bool QTESuccess;   
     public bool QTEFail;
     public bool InteractSuccess;
@@ -31,7 +32,7 @@ public class ControlCenter : MonoBehaviour {
 
     //reference
     private ScreenWobble screenWobble;
-
+    EnemySpawn es;
     IEnumerator coroutine;
     ScriptedMovement sMove;
     int pos = 1;
@@ -53,29 +54,34 @@ public class ControlCenter : MonoBehaviour {
     void LevelTutorialScript()
     {        
         if(levelStatus == 1) // Start to first battle phase
-        {
+        {           
             if (!OnBattle)
             {
                 sMove.PlayerMove(0.0f, locations[0]);
                 sMove.PlayerRotate(0.0f, locations[1]);
+                locations[0].GetComponent<TargetProfile>().EnterBattlePhase(1);
             }
             else if (OnBattle)
             {
                 BattlePhase(0,1,0);
-            }
-            if (BattleCompleted) // If battle phase completed move to next target
-            {
-                levelStatus = 2;
-                BattleCompleted = false;
-                OnBattle = false;
+                screenWobble.isMoving = false;
             }
             if (EnemyMovement.enemyCountArea == 2)
             {
-                BattleCompleted = true;
+                EnemyEliminated = true;
+                OnBattle = false;
             }
+            if (BattleCompleted) // If battle phase completed move to next target
+            {
+                coroutine = IncreaseLevelStatus(2, 0.5f);
+                StartCoroutine(coroutine);        
+            }            
         }
         else if(levelStatus == 2) // 2nd target 
         {
+            EnemyEliminated = false;
+            BattleCompleted = false;
+            OnBattle = false;
             sMove.PlayerMove(0.0f, locations[1]);
             coroutine = IncreaseLevelStatus(3, 1.0f);
             StartCoroutine(coroutine);
@@ -86,6 +92,7 @@ public class ControlCenter : MonoBehaviour {
             sMove.PlayerMove(0.0f, locations[2]);
             coroutine = CameraPanPhase(0.8f,0); 
             StartCoroutine(coroutine);
+            screenWobble.isMoving = false;
             coroutine = IncreaseLevelStatus(4, 7.5f);
             StartCoroutine(coroutine);
         }
@@ -122,29 +129,34 @@ public class ControlCenter : MonoBehaviour {
         {
             if (!OnBattle)
             {
-                sMove.PlayerMove(1.0f, locations[6]);
-                sMove.PlayerRotate(1.0f, locations[7]);
+                sMove.PlayerMove(0.8f, locations[6]);                
                 screenWobble.isMoving = true;
-                
+                locations[6].GetComponent<TargetProfile>().EnterBattlePhase(2);                
             }
             else if (OnBattle)
             {
+               // StopAllCoroutines();
                 BattlePhase(2, 3, 1);
+                screenWobble.isMoving = false;
+            }
+            if (EnemyMovement.enemyCountArea == 0)
+            {
+                EnemyEliminated = true;
+                OnBattle = false;
             }
             if (BattleCompleted) // If battle phase completed move to next target
             {
                 StopAllCoroutines();
-                levelStatus = 7;
-                BattleCompleted = false;
-                OnBattle = false;
+                coroutine = IncreaseLevelStatus(7, 0.5f);
+                StartCoroutine(coroutine);
             }
-            if (EnemyMovement.enemyCountArea == 0)
-            {
-                BattleCompleted = true;
-            }
+            
         }
         else if(levelStatus == 7)
         {
+            BattleCompleted = false;
+            EnemyEliminated = false;
+            OnBattle = false;
             sMove.PlayerMove(0.0f, locations[7]);
             coroutine = CameraPanPhase(2.0f, 1);
             StartCoroutine(coroutine);            

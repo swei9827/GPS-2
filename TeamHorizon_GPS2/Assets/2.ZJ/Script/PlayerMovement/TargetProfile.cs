@@ -11,8 +11,9 @@ public class TargetProfile : MonoBehaviour {
     public bool QTENodes;
     public bool InteractableNodes;
     public bool PortalNodes;
-    
+    public int NodeID;
     Transform playerPos;
+    ControlCenter cc;
     bool reached = false;
 
     public static int PlayerArea = 0;
@@ -21,12 +22,13 @@ public class TargetProfile : MonoBehaviour {
     void Start()
     {
         playerPos = player.GetComponent<Transform>();        
+        cc = GameObject.FindGameObjectWithTag("ControlCenter").GetComponent<ControlCenter>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        ShowPlayerStatus(); 
+        ShowPlayerStatus();        
     }
 
     void ShowPlayerStatus()
@@ -36,6 +38,22 @@ public class TargetProfile : MonoBehaviour {
             Debug.Log("Reached Target : " + this.name);
             reached = true;
             PlayerArea++;           
+        }
+    }
+
+    public void EnterBattlePhase(int ID)
+    {
+        if (BattleNodes && reached && !cc.EnemyEliminated && NodeID == ID)
+        {
+            cc.OnBattle = true;
+        }
+        else if (BattleNodes && reached && cc.EnemyEliminated && NodeID == ID)
+        {
+            cc.OnBattle = false;
+            if (playerPos.position == this.transform.position)
+            {
+                cc.BattleCompleted = true;
+            }
         }
     }
 }
