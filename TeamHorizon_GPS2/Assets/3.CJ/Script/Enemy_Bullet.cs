@@ -16,7 +16,7 @@ public class Enemy_Bullet : MonoBehaviour {
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("PlayerPoint").transform;
         plyrHp = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHp>();
     }
 

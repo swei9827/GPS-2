@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -32,17 +32,40 @@ public class Player_Crouch : MonoBehaviour {
             if (isCrouch == true)
             {
                 transform.Translate(new Vector3(0.0f, -1.2f, 0.0f));
-                player.transform.Translate(new Vector3(0.0f, -1.2f, 0.0f));
+                //player.transform.Translate(new Vector3(0.0f, -1.2f, 0.0f));
                 //text.text = "Invulnerable";;
             }
             else
             {
                 transform.Translate(new Vector3(0.0f, 1.2f, 0.0f));
-                player.transform.Translate(new Vector3(0.0f, 1.2f, 0.0f));
+                //player.transform.Translate(new Vector3(0.0f, 1.2f, 0.0f));
                 //text.text = "Vulnerable";
             }
         }
     }
 
- 
+    public void Crouch()
+    {
+        if (isCrouch == false)
+        {
+             isCrouch = true;
+        }
+        else
+        {
+            isCrouch = false;
+        }
+
+        if (isCrouch == true)
+        {
+            transform.Translate(new Vector3(0.0f, -1.2f, 0.0f));
+                //player.transform.Translate(new Vector3(0.0f, -1.2f, 0.0f));
+                //text.text = "Invulnerable";;
+        }
+        else
+        {
+            transform.Translate(new Vector3(0.0f, 1.2f, 0.0f));
+                //player.transform.Translate(new Vector3(0.0f, 1.2f, 0.0f));
+                //text.text = "Vulnerable";
+        }
+    }
 }

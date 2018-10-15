@@ -12,6 +12,7 @@ public class TargetProfile : MonoBehaviour {
     public bool InteractableNodes;
     public bool PortalNodes;
     public int NodeID;
+    public int EnemyCount;
     Transform playerPos;
     ControlCenter cc;
     bool reached = false;
@@ -43,11 +44,11 @@ public class TargetProfile : MonoBehaviour {
 
     public void EnterBattlePhase(int ID)
     {
-        if (BattleNodes && reached && !cc.EnemyEliminated && NodeID == ID)
+        if (BattleNodes && reached && cc.enemyCount != 0 && NodeID == ID)
         {
             cc.OnBattle = true;
         }
-        else if (BattleNodes && reached && cc.EnemyEliminated && NodeID == ID)
+        else if (BattleNodes && reached && cc.enemyCount == 0  && NodeID == ID)
         {
             cc.OnBattle = false;
             if (playerPos.position == this.transform.position)
