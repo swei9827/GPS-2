@@ -10,11 +10,14 @@ public class Enemy_Bullet : MonoBehaviour {
 
     Vector3 playerPos;
 
+    PlayerHp plyrHp;
+
     // Use this for initialization
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        plyrHp = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHp>();
     }
 
     // Update is called once per frame
@@ -34,6 +37,8 @@ public class Enemy_Bullet : MonoBehaviour {
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("HIT");
+            plyrHp.TakeDamage(2.0f);
+            //collision.gameObject.GetComponent<PlayerHp>().TakeDamage(2.0f);
             //GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Hp>().hp -= 1;
             Destroy(gameObject);
         }

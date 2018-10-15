@@ -40,6 +40,8 @@ public class EnemyMovement : MonoBehaviour
 
     public int hp;
 
+    public static int enemyCountArea = 5;
+
     void Start()
     {
         tempX = this.transform.position.x;
@@ -57,17 +59,18 @@ public class EnemyMovement : MonoBehaviour
         if (this.hp <= 0)
         {
             Destroy(this.gameObject);
+            enemyCountArea -= 1;
         }
 
         if (EnemyArea == playerArea )
         {
-            EnemyStartAppear = true;
-            GetComponent<ControlCenter>().OnBattle = true;
+            EnemyStartAppear = true;  
         }
 
         if(move == true && EnemyStartAppear == true)
         {
-            endPosition = new Vector3(-endPosX, this.transform.position.y, this.transform.position.z);
+            endPosition = new Vector3(-endPosX, endPosY, this.transform.position.z);
+            Invoke("StartOnBattle", 3f);
             if (transform.position != endPosition)
             {
                 transform.position = Vector3.MoveTowards(transform.position, endPosition, moveSpeed * Time.deltaTime);
@@ -242,6 +245,11 @@ public class EnemyMovement : MonoBehaviour
         }*/
 
 
+    }
+
+    void StartOnBattle()
+    {
+        CC.OnBattle = true;
     }
 }
 

@@ -31,7 +31,6 @@ public class PlayerHp : MonoBehaviour {
 
     private void Update()
     {
-        
         if(health != healthAfterDamage || shield != shieldAfterDamage)
         {
             health = Mathf.MoveTowards(health, healthAfterDamage, 20f * Time.deltaTime);
@@ -47,7 +46,7 @@ public class PlayerHp : MonoBehaviour {
         if (activeShield == false)
         {
             healthAfterDamage = health - damage;
-            Debug.Log("hehehehe");
+            //Debug.Log("hehehehe");
         }
         else if (activeShield == true)
         {
@@ -57,12 +56,12 @@ public class PlayerHp : MonoBehaviour {
                 shieldAfterDamage = 0;
                 healthAfterDamage = health - tempDmg;
                 activeShield = false;
-                Debug.Log("condition 1");
+               // Debug.Log("condition 1");
             }
             else
             {
                 shieldAfterDamage = shield - damage;
-                Debug.Log("condition 2");
+                //Debug.Log("condition 2");
             }
         }
     }

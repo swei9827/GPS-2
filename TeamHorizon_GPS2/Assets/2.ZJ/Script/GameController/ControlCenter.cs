@@ -27,7 +27,7 @@ public class ControlCenter : MonoBehaviour {
     public List<Transform> battleArea = new List<Transform>();
     public List<Transform> cameraFocus = new List<Transform>();
     public List<GameObject> hazards = new List<GameObject>();
-    public List<GameObject> enemyArea1 = new List<GameObject>();
+    //public List<GameObject> enemyArea1 = new List<GameObject>();
  
 
     IEnumerator coroutine;
@@ -44,11 +44,6 @@ public class ControlCenter : MonoBehaviour {
         if (LevelTutorial)
         {
             LevelTutorialScript();
-            
-        }  
-        if(enemyArea1.Count <= 0)
-        {
-            BattleCompleted = true;
         }
     }
 
@@ -70,7 +65,11 @@ public class ControlCenter : MonoBehaviour {
                 levelStatus = 2;
                 BattleCompleted = false;
                 OnBattle = false;
-            }            
+            }
+            if (EnemyMovement.enemyCountArea == 2)
+            {
+                BattleCompleted = true;
+            }
         }
         else if(levelStatus == 2) // 2nd target 
         {
@@ -133,6 +132,10 @@ public class ControlCenter : MonoBehaviour {
                 levelStatus = 7;
                 BattleCompleted = false;
                 OnBattle = false;
+            }
+            if (EnemyMovement.enemyCountArea == 0)
+            {
+                BattleCompleted = true;
             }
         }
         else if(levelStatus == 7)
