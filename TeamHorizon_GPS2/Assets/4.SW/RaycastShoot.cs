@@ -53,14 +53,18 @@ public class RaycastShoot : MonoBehaviour
                 StartCoroutine(ReloadEffect2(weapon.eachBulletRequire, (weapon.maxAmmo - weapon.currentAmmo)));
             }
         }
-        /*for (int i = 0; i < bulletList.Count; i++)
+        if(weapon.currentAmmo <= 10)
         {
-            bulletList[i].gameObject.SetActive(false);
+            for (int i = 0; i < bulletList.Count; i++)
+            {
+                bulletList[i].gameObject.SetActive(false);
+            }
+            for (int i = 0; i < weapon.currentAmmo; i++)
+            {
+                bulletList[i].gameObject.SetActive(true);
+            }
         }
-        for (int i = 0; i < weapon.currentAmmo; i++)
-        {
-            //bulletList[i].gameObject.SetActive(true);
-        }*/
+        
         MouseShoot();
         //TouchShoot();
     }
