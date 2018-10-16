@@ -68,4 +68,22 @@ public class Player_Crouch : MonoBehaviour {
                 //text.text = "Vulnerable";
         }
     }
+
+    public void onPress()
+    {
+        isCrouch = true;
+        if(isCrouch)
+        {
+            transform.Translate(new Vector3(0.0f, -1.2f, 0.0f));
+        }
+    }
+
+    public void onRelease()
+    {
+        isCrouch = false;
+        if(!isCrouch)
+        {
+            transform.Translate(new Vector3(0.0f, 1.2f, 0.0f));
+        }        
+    }
 }

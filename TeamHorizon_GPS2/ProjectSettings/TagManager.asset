@@ -13,6 +13,9 @@ TagManager:
   - Obstacle
   - ControlCenter
   - PlayerPoint
+  - boxGesture
+  - Interactive
+  - Environment
   layers:
   - Default
   - TransparentFX
