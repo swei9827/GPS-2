@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public GameObject lvlController;
+    public Level lvlController;
     public bool left;
     public bool right;
     public bool down;
@@ -49,6 +49,7 @@ public class EnemyMovement : MonoBehaviour
         startPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         rb = GetComponent<Rigidbody>();
         CC = GameObject.FindGameObjectWithTag("ControlCenter").GetComponent<ControlCenter>();
+        lvlController = GameObject.FindGameObjectWithTag("ControlCenter").GetComponent<Level>();
     }
 
     // Update is called once per frame
@@ -60,7 +61,7 @@ public class EnemyMovement : MonoBehaviour
             Destroy(this.gameObject);
             enemyCountArea -= 1;
             CC.enemyCount -= 1;
-            lvlController.GetComponent<Level>().setScore(1000);
+            lvlController.GetComponent<Level>().setScore(lvlController.GetComponent<Level>().getScore()+1000);
         }
 
         if (EnemyArea == playerArea )

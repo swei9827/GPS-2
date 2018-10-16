@@ -29,7 +29,7 @@ public class RaycastShoot : MonoBehaviour
     {
         dragDistance = Screen.height * 0.15f;
         laserLine = GetComponent<LineRenderer>();
-        bulletLeft.text = weapon.currentAmmo.ToString() + " / " + weapon.maxAmmo.ToString();
+        bulletLeft.text = weapon.currentAmmo.ToString();// + " / " + weapon.maxAmmo.ToString();
         reloading = false;
         gunAudio = GetComponent<AudioSource>();
         CSW = CURRENT_SELECTED_WEAPON.RANGE;
@@ -105,7 +105,7 @@ public class RaycastShoot : MonoBehaviour
                             GameObject bulletEffect = Instantiate(weapon.effect, shootOrigin + ((posF - posN) * weapon.weaponRange), transform.rotation);
                             Destroy(bulletEffect, 1.0f);
                         }
-                        bulletLeft.text = weapon.currentAmmo.ToString() + " / " + weapon.maxAmmo.ToString();
+                        bulletLeft.text = weapon.currentAmmo.ToString();// + " / " + weapon.maxAmmo.ToString();
                     }
                 }
                 else if (CSW == CURRENT_SELECTED_WEAPON.MELEE)
@@ -194,7 +194,7 @@ public class RaycastShoot : MonoBehaviour
                             GameObject bulletEffect = Instantiate(weapon.effect, shootOrigin + ((posF - posN) * weapon.weaponRange), transform.rotation);
                             Destroy(bulletEffect, 1.0f);
                         }
-                        bulletLeft.text = weapon.currentAmmo.ToString() + " / " + weapon.maxAmmo.ToString();
+                        bulletLeft.text = weapon.currentAmmo.ToString();// + " / " + weapon.maxAmmo.ToString();
                     }
                 }
                 else if (CSW == CURRENT_SELECTED_WEAPON.MELEE)
@@ -258,9 +258,9 @@ public class RaycastShoot : MonoBehaviour
     private IEnumerator ShotEffect()
     {
         gunAudio.Play();
-        laserLine.enabled = true;
+        //laserLine.enabled = true;
         yield return shotDuration;
-        laserLine.enabled = false;
+        //laserLine.enabled = false;
     }
 
     private IEnumerator ReloadEffect(float rT)
@@ -268,7 +268,7 @@ public class RaycastShoot : MonoBehaviour
         reloadIndicator.SetActive(true);
         yield return new WaitForSeconds(rT);
         weapon.currentAmmo = weapon.maxAmmo;
-        bulletLeft.text = weapon.currentAmmo.ToString() + " / " + weapon.maxAmmo.ToString();
+        bulletLeft.text = weapon.currentAmmo.ToString();// + " / " + weapon.maxAmmo.ToString();
         reloadIndicator.SetActive(false);
         reloading = false;
     }
@@ -281,7 +281,7 @@ public class RaycastShoot : MonoBehaviour
         {
             yield return new WaitForSeconds(perBullet);
             weapon.currentAmmo++;
-            bulletLeft.text = weapon.currentAmmo.ToString() + " / " + weapon.maxAmmo.ToString();
+            bulletLeft.text = weapon.currentAmmo.ToString();// + " / " + weapon.maxAmmo.ToString();
             Debug.Log("+1");
         }
         reloadIndicator.SetActive(false);

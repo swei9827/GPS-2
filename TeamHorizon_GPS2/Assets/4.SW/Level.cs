@@ -14,12 +14,13 @@ public class Level: MonoBehaviour
     public LEVEL_STATE levelState;
 
 	void Start () {
-        timeLeft = givenTime;		
+        timeLeft = givenTime;
+        score = 0;
 	}
 	
     public void setScore(float s)
     {
-        score += s;
+        score = s;
     }
     
     public float getScore()
