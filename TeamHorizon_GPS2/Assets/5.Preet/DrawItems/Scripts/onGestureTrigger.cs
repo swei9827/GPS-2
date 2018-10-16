@@ -16,7 +16,7 @@ public class onGestureTrigger : MonoBehaviour
             print("YAY!");
 
        {
-           Instantiate(Prefab, Spawnpoint.position, Spawnpoint.rotation);
+           Instantiate(Prefab , Spawnpoint.position, Spawnpoint.rotation);
        }
 
         //if (tag == "boxGesture" && !gameObject.activeSelf)
