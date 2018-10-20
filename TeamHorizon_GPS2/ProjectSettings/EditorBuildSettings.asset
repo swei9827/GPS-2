@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ExperientalTutorialScene.unity
     guid: f9ee0fb8c36aa9b42a08588478ce1ec0
-  - enabled: 1
-    path: Assets/Scenes/StartingScene.unity
-    guid: e252d3c64d765ea4fa4af3e322f3b517
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

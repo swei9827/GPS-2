@@ -22,6 +22,6 @@ public class EnemyHP : MonoBehaviour {
     private void OnMouseDown()
     {
         hp -= 1;
-        Debug.Log(hp);
+        //Debug.Log(hp);
     }
 }
