@@ -11,13 +11,15 @@ public class Enemy_Bullet : MonoBehaviour {
     Vector3 playerPos;
 
     PlayerHp plyrHp;
+    Player_Crouch crouch;
 
     // Use this for initialization
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("PlayerHead").transform;
         plyrHp = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHp>();
+        crouch = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Player_Crouch>();
     }
 
     // Update is called once per frame
@@ -36,11 +38,15 @@ public class Enemy_Bullet : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("HIT");
-            plyrHp.TakeDamage(2.0f);
-            //collision.gameObject.GetComponent<PlayerHp>().TakeDamage(2.0f);
-            //GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Hp>().hp -= 1;
-            Destroy(gameObject);
+            if(crouch.isCrouch == true)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                plyrHp.TakeDamage(2.0f);
+                Destroy(gameObject);
+            }  
         }
 
         if(collision.gameObject.CompareTag("Obstacle"))

@@ -16,6 +16,7 @@ TagManager:
   - boxGesture
   - Interactive
   - Environment
+  - PlayerHead
   layers:
   - Default
   - TransparentFX

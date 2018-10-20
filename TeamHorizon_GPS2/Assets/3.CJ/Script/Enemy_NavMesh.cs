@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class Enemy_NavMesh : MonoBehaviour {
 
     Vector3 playerPos;
+    Vector3 enemyOriginalPos;
     GameObject player;
 
     public Transform target;
@@ -14,8 +15,11 @@ public class Enemy_NavMesh : MonoBehaviour {
     public float DelayTime;
     WaitForSeconds delay;
 
+    bool backOriginalPos = false;
+
     // Use this for initialization
     void Start () {
+        enemyOriginalPos = transform.position;
         agent = GetComponent<NavMeshAgent>();
         StartCoroutine(FindPathRoutine());
         player = GameObject.FindGameObjectWithTag("Player");
@@ -28,11 +32,20 @@ public class Enemy_NavMesh : MonoBehaviour {
         getCurrentPath();
         transform.rotation = Quaternion.LookRotation(playerPos);
         delay = new WaitForSeconds(DelayTime);
+        if(backOriginalPos == true)
+        {
+
+        }
     }
 
     void getCurrentPath()
     {
         path = agent.path;
+    }
+
+    void goBackOriginalPos()
+    {
+
     }
 
     IEnumerator FindPathRoutine()
