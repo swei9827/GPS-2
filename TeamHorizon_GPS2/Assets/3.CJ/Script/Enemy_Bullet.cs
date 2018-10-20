@@ -23,7 +23,7 @@ public class Enemy_Bullet : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        playerPos = new Vector3(player.position.x, player.position.y + 5, player.position.z) * bulletSpeed;
+        playerPos = new Vector3(player.position.x, player.position.y, player.position.z) * bulletSpeed;
 
         transform.rotation = Quaternion.LookRotation(playerPos);
 
