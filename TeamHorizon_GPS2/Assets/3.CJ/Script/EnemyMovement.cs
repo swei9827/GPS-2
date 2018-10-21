@@ -42,6 +42,12 @@ public class EnemyMovement : MonoBehaviour
 
     public static int enemyCountArea = 5;
 
+    public Animator animator;
+    public bool SlothWolf_DamageAnim;
+    public bool SlothWolf_AimingAnim;
+    public bool SlothWolf_ShootingAnim;
+    public static bool EnemyHPreducing = false;
+
     void Start()
     {
         tempX = this.transform.position.x;
@@ -50,6 +56,11 @@ public class EnemyMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         CC = GameObject.FindGameObjectWithTag("ControlCenter").GetComponent<ControlCenter>();
         lvlController = GameObject.FindGameObjectWithTag("ControlCenter").GetComponent<Level>();
+
+        //animator.enabled = false;
+        SlothWolf_DamageAnim = false;
+        SlothWolf_AimingAnim = false;
+        SlothWolf_ShootingAnim = false;
     }
 
     // Update is called once per frame
@@ -113,6 +124,57 @@ public class EnemyMovement : MonoBehaviour
                 move = true;
             }
         }
+
+        //if (Input.GetKeyDown(KeyCode.E))    //ANIM1
+        if (EnemyHPreducing == true) //Damage Anim
+        {
+            animator.enabled = true;
+            SlothWolf_DamageAnim = true;
+            SlothWolf_AimingAnim = false;
+            SlothWolf_ShootingAnim = false;
+        }
+
+        // if (Input.GetKeyDown(KeyCode.R))//ANIM2 
+        if (EnemyStartAppear == true) //Aimaing Anim
+        {
+            animator.enabled = true;
+            SlothWolf_AimingAnim = true;
+            SlothWolf_DamageAnim = false;
+            SlothWolf_ShootingAnim = false;
+        }
+
+        //if (Input.GetKeyDown(KeyCode.T)) //ANIM3
+        if (StartShooting == true) //Shoot Anim
+        {
+            animator.enabled = true;
+            SlothWolf_ShootingAnim = true;
+            SlothWolf_DamageAnim = false;
+            SlothWolf_AimingAnim = false;
+        }
+
+        //----------------------------------------------------
+
+        if (SlothWolf_DamageAnim == true)
+        {
+            animator.SetBool("SlothWolf_DamageAnim", true);
+            animator.SetBool("SlothWolf_AimingAnim", false);
+            animator.SetBool("SlothWolf_ShootingAnim", false);
+        }
+
+        if (SlothWolf_AimingAnim == true)
+        {
+            animator.SetBool("SlothWolf_AimingAnim", true);
+            animator.SetBool("SlothWolf_DamageAnim", false);
+            animator.SetBool("SlothWolf_ShootingAnim", false);
+        }
+
+        if (SlothWolf_ShootingAnim == true)
+        {
+            animator.SetBool("SlothWolf_ShootingAnim", true);
+            animator.SetBool("SlothWolf_AimingAnim", false);
+            animator.SetBool("SlothWolf_DamageAnim", false);
+        }
+
         /*
         if (left == true && right == false && down == false && top == false && EnemyStartAppear == true)
         {
