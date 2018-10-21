@@ -132,6 +132,7 @@ public class Dialogue_Control : MonoBehaviour {
                 else
                 {
                     level.SetTimeScale(1.0f);
+                    Dialogue5Completed = true;
                 }
             }
 
@@ -144,7 +145,7 @@ public class Dialogue_Control : MonoBehaviour {
                     crouchFirstTime = true;
                 }
             }
-            else
+            else if(crouchFirstTime == true && Dialogue5Completed == true)
             {
                 if(hasClick == false)
                 {
