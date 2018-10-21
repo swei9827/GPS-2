@@ -2,364 +2,419 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ControlCenter : MonoBehaviour {
-    
+public class ControlCenter : MonoBehaviour
+{
+
     public GameObject player;
     public Camera camera;
-   
+
     public bool LevelTutorial;
     public bool Level1;
     public bool Level2;
     public bool Level3;
+    public STATUS status;
 
-    public bool OnBattle;
-    public bool setEnemyCount;
-    public bool BattleCompleted;
-    public bool OnQTE;
-    public bool QTESuccess;   
+    public bool QTESuccess;
     public bool QTEFail;
-    public bool OnIO;
     public bool InteractSuccess;
     public bool InteractFail;
-    public float HidingSpotSwapTime;
-    public float levelStatus = 0;
-    public int enemyCount;
+    public int levelStatus = 0;
 
     public List<Transform> locations = new List<Transform>();
     public List<Transform> battleArea = new List<Transform>();
-    public List<Transform> cameraFocus = new List<Transform>();
     public List<GameObject> hazards = new List<GameObject>();
 
     //reference
     private ScreenWobble screenWobble;
-    EnemySpawn es;
     IEnumerator coroutine;
-    ScriptedMovement sMove;
-    bool Moved = false;
-    float timeLeft = 6.0f;
-
-    int pos = 1;
+    ScriptedMovement sMove; 
 
     void Start()
     {
         sMove = player.GetComponent<ScriptedMovement>();
         screenWobble = GameObject.FindGameObjectWithTag("2ndCamera").GetComponent<ScreenWobble>();
+        status = STATUS.MOVING;
     }
 
     void Update()
     {
         if (LevelTutorial)
         {
-            LevelTutorialScript();
+            Tutorial();
+            Debug.Log(player.transform.eulerAngles.y);
         }
     }
 
-    void LevelTutorialScript()
-    {            
-        if(levelStatus == 1) // Start to first battle phase
+    void Tutorial()
+    {
+        // B1
+        if (levelStatus == 1)
         {
-            if (!setEnemyCount)
+            if (status == STATUS.MOVING)
             {
-                enemyCount = locations[0].GetComponent<TargetProfile>().EnemyCount;
-                setEnemyCount = true;
+                sMove.PlayerMove(locations[0]);
+                if (player.transform.position == locations[0].position)
+                {
+                    status = STATUS.BATTLE;
+                }
             }
-            if (!OnBattle)
-            {                
-                sMove.PlayerMove(0.0f, locations[0]);
-                sMove.PlayerRotate(0.0f, locations[1]);
-                locations[0].GetComponent<TargetProfile>().EnterBattlePhase(1);
-            }
-            else if (OnBattle)
-            {                
-                BattlePhase(0,1,0);
-                screenWobble.isMoving = false;
-            }
-            if (enemyCount== 0)
+            if (status == STATUS.BATTLE)
             {
-                OnBattle = false;
-            }      
-            if (BattleCompleted) // If battle phase completed move to next target
+                if (!battleArea[0].GetComponentInParent<HSProfile>().destroyed)
+                {
+                    sMove.PlayerMove(battleArea[0]);
+                }
+                else if (battleArea[0].GetComponentInParent<HSProfile>().destroyed)
+                {
+                    sMove.PlayerMove(battleArea[1]);
+                }
+            }            
+            if (locations[0].GetComponent<TargetProfile>().EnemyCount <= 0)
             {
-                coroutine = IncreaseLevelStatus(2, 0.0f);
-                StartCoroutine(coroutine);        
+                status = STATUS.IDLE;
+            }
+            if (status == STATUS.IDLE)
+            {
+                sMove.PlayerMove(locations[0]);
+                if (player.transform.position == locations[0].position)
+                {
+                    status = STATUS.MOVING;
+                    levelStatus = 2;
+                }
+            }
+        }
+        // First Corner
+        else if (levelStatus == 2)
+        {
+            if (status == STATUS.MOVING)
+            {
+                sMove.PlayerMove(locations[1]);
+                if (player.transform.position == locations[1].position)
+                {
+                    status = STATUS.TURNING;
+                }
+            }
+            if (status == STATUS.TURNING)
+            {
+                sMove.PlayerRotate(locations[2]);
+                if(player.transform.eulerAngles.y > 269 && player.transform.eulerAngles.y < 270.05f)
+                {
+                    levelStatus = 3;
+                    status = STATUS.MOVING;
+                }
             }            
         }
-        else if(levelStatus == 2) // 2nd target 
+        // Falling tree
+        else if(levelStatus == 3)
         {
-            BattleCompleted = false;
-            OnBattle = false;
-            setEnemyCount = false;
-            sMove.PlayerMove(0.0f, locations[1]);
-            sMove.PlayerRotate(0.5f, locations[2]);
-            coroutine = IncreaseLevelStatus(3, 1.0f);
-            StartCoroutine(coroutine);
-        }
-        else if(levelStatus == 3) // 3rd target, camera pan to falling tree
-        {            
-            sMove.PlayerMove(0.0f, locations[2]);
-            coroutine = CameraPanPhase(0.8f,0); 
-            StartCoroutine(coroutine);
-            screenWobble.isMoving = false;
-            coroutine = IncreaseLevelStatus(4, 7.5f);
-            StartCoroutine(coroutine);
-        }
-        else if(levelStatus == 4) // 4th target, qte phase
-        {
-            sMove.PlayerMove(0.0f, locations[3]);
-            screenWobble.isMoving = true;
-            if (player.transform.position == locations[3].GetComponent<Transform>().position)
+            if (status == STATUS.MOVING)
             {
-                timeLeft -= Time.deltaTime;
-                OnQTE = true;
-                screenWobble.isMoving = false;
-                if(timeLeft <= 0)
+                sMove.PlayerMove(locations[2]);
+                if (player.transform.position == locations[2].position)
                 {
-                    QTEFail = true;
+                    status = STATUS.CAMERA;
                 }
-                if (QTESuccess)
+            }
+            if (status == STATUS.CAMERA)
+            {
+                hazards[0].GetComponent<TreeFallHazard>().TreeFalling();
+                camera.GetComponent<PanToTarget>().CameraPan(0);
+                if (camera.GetComponent<PanToTarget>().panComplete)
                 {
-                    StopAllCoroutines();
-                    levelStatus = 5;
+                    status = STATUS.MOVING;
+                    levelStatus = 4;
                 }
-                else if (QTEFail)
-                {
-                    StopAllCoroutines();
-                    levelStatus = 5.5f;
-                }
-            }                
+            }
         }
-        else if(levelStatus == 5.5)
+        // QTE
+        else if(levelStatus == 4)
         {
-            sMove.PlayerMove(0.0f, locations[5]);         
-            coroutine = IncreaseLevelStatus(6.5f, 2.0f);
-            StartCoroutine(coroutine);            
+            if(status == STATUS.MOVING)
+            {
+                sMove.PlayerMove(locations[3]);
+                if (player.transform.position == locations[3].position)
+                {
+                    status = STATUS.QTE;                    
+                }
+            }
+            if (QTESuccess)
+            {
+                levelStatus = 5;
+                status = STATUS.MOVING;                        
+            }
+            else if (QTEFail)
+            {
+                levelStatus = 6;
+                status = STATUS.MOVING;                       
+            }
         }
+        // QTE Success
         else if(levelStatus == 5)
         {
-            sMove.PlayerMove(0.0f, locations[4]);
-            sMove.PlayerRotate(0.8f, locations[6]);
-            sMove.PlayerMove(0.8f, locations[6]);
-            coroutine = IncreaseLevelStatus(6, 1.3f);
-            StartCoroutine(coroutine);
+            if(status == STATUS.MOVING)
+            {
+                sMove.PlayerMove(locations[4]);
+                if(player.transform.position == locations[4].position)
+                {
+                    status = STATUS.TURNING;
+                }
+            }
+            if(status == STATUS.TURNING)
+            {
+                sMove.PlayerRotate(locations[6]);
+                if (player.transform.eulerAngles.y > 359 && player.transform.eulerAngles.y < 360.05f ||
+                    player.transform.eulerAngles.y > 0 && player.transform.eulerAngles.y < 0.8f)
+                {
+                    levelStatus = 7;
+                    status = STATUS.MOVING;
+                }
+            }
         }
-        else if(levelStatus == 6.5)
-        {
-            sMove.PlayerMove(0.0f, locations[4]);
-            sMove.PlayerRotate(0.8f, locations[6]);
-            sMove.PlayerMove(0.8f, locations[6]);
-            coroutine = IncreaseLevelStatus(6, 2f);
-            StartCoroutine(coroutine);
-        }
+        // QTE Fail
         else if(levelStatus == 6)
         {
-            OnQTE = false;
-            QTESuccess = false;
-            QTEFail = false;
-            if (!setEnemyCount)
+            if(status == STATUS.MOVING)
             {
-                enemyCount = locations[6].GetComponent<TargetProfile>().EnemyCount;
-                setEnemyCount = true;
+                sMove.PlayerMove(locations[5]);
+                if (player.transform.position == locations[5].position)
+                {
+                    status = STATUS.IDLE;
+                }
             }
-            
-            if (!OnBattle)
-            {                                
-                screenWobble.isMoving = true;
-                sMove.PlayerMove(0.0f, locations[6]);
-                sMove.PlayerRotate(0.0f, locations[7]);
-                locations[6].GetComponent<TargetProfile>().EnterBattlePhase(2);                
-            }
-            else if (OnBattle)
+            if(status == STATUS.IDLE)
             {
-                BattlePhase(2, 3, 1);
-                screenWobble.isMoving = false;
+                sMove.PlayerMove(locations[4]);
+                if(player.transform.position == locations[4].position)
+                {
+                    status = STATUS.TURNING;
+                }
             }
-            if (enemyCount == 0)
+            if(status == STATUS.TURNING)
             {
-                OnBattle = false;
+                sMove.PlayerRotate(locations[6]);
+                if (player.transform.eulerAngles.y > 0 && player.transform.eulerAngles.y < 0.8f)
+                {
+                    levelStatus = 7;
+                    status = STATUS.MOVING;
+                }
             }
-            if (BattleCompleted) // If battle phase completed move to next target
-            {                  
-                coroutine = IncreaseLevelStatus(7, 0.5f);
-                StartCoroutine(coroutine);
-            }            
         }
+        // B2
         else if(levelStatus == 7)
-        {
-            BattleCompleted = false;
-            OnBattle = false;
-            setEnemyCount = false;
-            sMove.PlayerMove(0.0f, locations[7]);
-            screenWobble.isMoving = false;
-            coroutine = CameraPanPhase(2.0f, 1);
-            StartCoroutine(coroutine);            
-            coroutine = IncreaseLevelStatus(8, 9.0f);
-            StartCoroutine(coroutine);
+        {           
+            if(status == STATUS.MOVING)
+            {
+                QTEFail = false;
+                QTESuccess = false;
+                sMove.PlayerMove(locations[6]);
+                if(player.transform.position == locations[6].position)
+                {
+                    status = STATUS.BATTLE;
+                }
+            }
+            if (status == STATUS.BATTLE)
+            {
+                if (!battleArea[2].GetComponentInParent<HSProfile>().destroyed)
+                {
+                    sMove.PlayerMove(battleArea[2]);
+                }
+                else if (battleArea[2].GetComponentInParent<HSProfile>().destroyed)
+                {
+                    sMove.PlayerMove(battleArea[3]);
+                }
+            }
+            if (locations[6].GetComponent<TargetProfile>().EnemyCount <= 0)
+            {
+                status = STATUS.IDLE;
+            }
+            if (status == STATUS.IDLE)
+            {
+                sMove.PlayerMove(locations[6]);
+                if (player.transform.position == locations[6].position)
+                {
+                    status = STATUS.MOVING;
+                    levelStatus = 8;
+                }
+            }
         }
+        // Camera 2
         else if(levelStatus == 8)
         {
-            if (!OnBattle)
+            if(status == STATUS.MOVING)
             {
-                screenWobble.isMoving = true;
-                sMove.PlayerMove(0.0f, locations[8]);
-                if(player.transform.position == locations[8].position)
+                sMove.PlayerMove(locations[7]);
+                if(player.transform.position == locations[7].position)
                 {
-                    enemyCount = 1;
-                    OnBattle = true;                    
+                    status = STATUS.CAMERA;
                 }
             }
-            else if (OnBattle)
+            if(status == STATUS.CAMERA)
             {
-                screenWobble.isMoving = false;
-                if(enemyCount <= 0)
+                hazards[1].GetComponent<TreeFallHazard>().TreeFalling();
+                camera.GetComponent<PanToTarget>().CameraPan(1);
+                if (camera.GetComponent<PanToTarget>().panComplete)
                 {
-                    BattleCompleted = true;
+                    status = STATUS.MOVING;
+                    levelStatus = 9;
                 }
-            }
-            
-            if (BattleCompleted) // If battle phase completed move to next target
-            {
-                StopAllCoroutines();
-                levelStatus = 9;
-                BattleCompleted = false;
             }
         }
+        // B3
         else if(levelStatus == 9)
         {
-            OnBattle = false;
-            sMove.PlayerMove(0.0f, locations[9]);
-            //coroutine = CameraPanPhase(5f,2);
-           // StartCoroutine(coroutine);
-            coroutine = IncreaseLevelStatus(10, 6f);
-            StartCoroutine(coroutine);
+            if(status == STATUS.MOVING)
+            {
+                sMove.PlayerMove(locations[8]);
+                if(player.transform.position == locations[8].position)
+                {
+                    status = STATUS.BATTLE;
+                }
+            }            
+            if (locations[8].GetComponent<TargetProfile>().EnemyCount <= 0)
+            {
+                status = STATUS.IDLE;
+            }
+            if (status == STATUS.IDLE)
+            {
+                sMove.PlayerMove(locations[9]);     
+                if(player.transform.position == locations[9].position)
+                {
+                    status = STATUS.INTERACTABLE;
+                    levelStatus = 10;
+                }
+            }
         }
+        // Interactable Object
         else if(levelStatus == 10)
         {
-            sMove.PlayerMove(0.0f, locations[10]);            
-            coroutine = IncreaseLevelStatus(11, 2.5f);
-            StartCoroutine(coroutine);
+            if(status == STATUS.INTERACTABLE)
+            {
+                if (InteractSuccess)
+                {
+                    status = STATUS.TURNING;
+                    levelStatus = 11;
+                }
+                else if (InteractFail)
+                {
+                    status = STATUS.TURNING;
+                    levelStatus = 13;
+                }
+            }
         }
+        // B4
         else if(levelStatus == 11)
         {
-            sMove.PlayerRotate(0.0f, locations[13]);
-            sMove.PlayerMove(1.0f, locations[13]);
-            if(player.transform.position == locations[13].position)
+            if(status == STATUS.TURNING)
             {
-                OnIO = true;
-                timeLeft -= Time.deltaTime;
-                screenWobble.isMoving = false;
-                if (timeLeft <= 0)
+                sMove.PlayerRotate(locations[10]);
+                if(player.transform.eulerAngles.y >= 89 && player.transform.eulerAngles.y <= 90.05f)
                 {
-                    QTEFail = true;
-                }
-                if (QTESuccess)
-                {
-                   coroutine = IncreaseLevelStatus(12, 0.0f);
-                   StartCoroutine(coroutine);
-                }
-                else if (QTEFail)
-                {
-                   coroutine = IncreaseLevelStatus(14, 0.0f);
-                   StartCoroutine(coroutine);
+                    status = STATUS.MOVING;
                 }
             }
-            if (InteractSuccess)
+            if(status == STATUS.MOVING)
             {
-                
+                sMove.PlayerMove(locations[10]);
+                if(player.transform.position == locations[10].position)
+                {
+                    status = STATUS.BATTLE;
+                }
             }
-            else if (InteractFail)
+            if (status == STATUS.BATTLE)
             {
-                
+                if (!battleArea[4].GetComponentInParent<HSProfile>().destroyed)
+                {
+                    sMove.PlayerMove(battleArea[4]);
+                }
+                else if (battleArea[4].GetComponentInParent<HSProfile>().destroyed)
+                {
+                    sMove.PlayerMove(battleArea[5]);
+                }
             }
-        }
-        else if(levelStatus == 14)
-        {
-            sMove.PlayerRotate(0.0f, locations[11]);
-            sMove.PlayerMove(2.0f, locations[11]);
-            coroutine = IncreaseLevelStatus(15, 4.0f);
-            StartCoroutine(coroutine);
-        }
-        else if(levelStatus == 15)
-        {
-            StopAllCoroutines();
-            if (BattleCompleted)
+            if (locations[10].GetComponent<TargetProfile>().EnemyCount <= 0)
             {
-                levelStatus = 16;
-                BattleCompleted = false;
+                status = STATUS.IDLE;
+            }
+            if (status == STATUS.IDLE)
+            {
+                sMove.PlayerMove(locations[10]);
+                if (player.transform.position == locations[10].position)
+                {
+                    status = STATUS.MOVING;
+                    levelStatus = 12;
+                }
             }
         }
-        else if(levelStatus == 16)
-        {
-            sMove.PlayerMove(0.0f, locations[12]);
-        }
+        // Right Portal
         else if(levelStatus == 12)
         {
-            if (!OnBattle)
+            if(status == STATUS.MOVING)
             {
-                sMove.PlayerMove(0.0f, locations[14]);
-                sMove.PlayerRotate(1.0f, locations[15]);
-                locations[14].GetComponent<TargetProfile>().EnterBattlePhase(4);
-            }
-            else if (OnBattle)
-            {
-                BattlePhase(4, 5, 3);
-            }
-            if(enemyCount <= 0)
-            {
-                OnBattle = false;
-            }
-            if (BattleCompleted) // If battle phase completed move to next target
-            {
-                StopAllCoroutines();
-                levelStatus = 13;
-                BattleCompleted = false;
-                OnBattle = false;
+                sMove.PlayerMove(locations[11]);
+                if(player.transform.position == locations[11].position)
+                {
+                    status = STATUS.PORTAL;
+                }
             }
         }
+        // B5
         else if(levelStatus == 13)
         {
-            sMove.PlayerMove(0.0f, locations[15]);
-        }       
+            if (status == STATUS.TURNING)
+            {
+                sMove.PlayerRotate(locations[12]);
+                if (player.transform.eulerAngles.y >= 269 && player.transform.eulerAngles.y <= 270.05f)
+                {
+                    status = STATUS.MOVING;
+                }
+            }
+            if (status == STATUS.MOVING)
+            {
+                sMove.PlayerMove(locations[12]);
+                if (player.transform.position == locations[12].position)
+                {
+                    status = STATUS.BATTLE;
+                }
+            }            
+            if (locations[12].GetComponent<TargetProfile>().EnemyCount <= 0)
+            {
+                status = STATUS.IDLE;
+            }
+            if (status == STATUS.IDLE)
+            {
+                sMove.PlayerMove(locations[13]);
+                if (player.transform.position == locations[13].position)
+                {
+                    status = STATUS.PORTAL;
+                }
+            }
+        }
+
     }
 
-    void BattlePhase(int ID1, int ID2, int focusID)
+    public enum STATUS
     {
-        sMove.PlayerRotate(0.0f, cameraFocus[focusID]);
-        coroutine = MoveBetweenHS(ID1, ID2);
-        StartCoroutine(coroutine);
-    }
-
-    private IEnumerator IncreaseLevelStatus(float num, float waitTime)
-    {
-        yield return new WaitForSeconds(waitTime);
-        levelStatus = num;
+        IDLE,
+        MOVING,
+        TURNING,
+        CAMERA,
+        BATTLE,
+        QTE,
+        INTERACTABLE,
+        PORTAL,
+        TOTAL_STATE
     }
 
     private IEnumerator CameraPanPhase(float waitTime, int hazardID)
     {
         yield return new WaitForSeconds(waitTime);
         hazards[hazardID].GetComponent<TreeFallHazard>().TreeFalling();
-        camera.GetComponent<PanToTarget>().CameraPan(hazardID);             
+        camera.GetComponent<PanToTarget>().CameraPan(hazardID);
     }
 
     private IEnumerator DelayStop(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
         StopAllCoroutines();
-    }
-
-    private IEnumerator MoveBetweenHS(int ID1, int ID2)
-    {       
-        if(pos == 1)
-        {
-            sMove.PlayerMove(0.0f, battleArea[ID1]);
-            yield return new WaitForSeconds(HidingSpotSwapTime);
-            pos = 2;
-        }
-        else if(pos == 2)
-        {
-            sMove.PlayerMove(0.0f, battleArea[ID2]);
-            yield return new WaitForSeconds(HidingSpotSwapTime);
-            pos = 1;
-        }               
     }
 }

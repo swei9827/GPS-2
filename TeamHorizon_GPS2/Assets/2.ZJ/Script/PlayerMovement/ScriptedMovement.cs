@@ -10,16 +10,19 @@ public class ScriptedMovement : MonoBehaviour {
 
     private IEnumerator coroutine;
 
-    public void PlayerMove(float waitTime, Transform target)
-    {        
-        coroutine = WaitAndMove(waitTime, target);
-        StartCoroutine(coroutine);
+    public void PlayerMove( Transform target)
+    {
+        step = speed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, target.position, step);
     }    
 
-    public void PlayerRotate(float waitTime, Transform target)
+    public void PlayerRotate(Transform target)
     {
-        coroutine = WaitAndRotate(waitTime, target);
-        StartCoroutine(coroutine);
+        step = speed * Time.deltaTime;
+        Vector3 targetDir = target.position - transform.position;
+        Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, turnSpeed * step, 0.0f);
+        Debug.DrawRay(transform.position, newDir, Color.red);
+        transform.rotation = Quaternion.LookRotation(newDir);
     }
 
     private IEnumerator WaitAndMove(float waitTime, Transform target)
@@ -36,6 +39,6 @@ public class ScriptedMovement : MonoBehaviour {
         Vector3 targetDir = target.position - transform.position;
         Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, turnSpeed * step, 0.0f);
         Debug.DrawRay(transform.position, newDir, Color.red);
-        transform.rotation = Quaternion.LookRotation(newDir);
+        transform.rotation = Quaternion.LookRotation(newDir); 
     }
 }
