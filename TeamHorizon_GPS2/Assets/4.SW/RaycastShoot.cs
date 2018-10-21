@@ -107,6 +107,10 @@ public class RaycastShoot : MonoBehaviour
                             {
 
                             }
+                            else if (hit.collider.CompareTag("Enemy_Destroyable_Bullet"))
+                            {
+                                hit.collider.gameObject.GetComponent<Enemy_Destroyable_Bullet>().hp -= weapon.gunDamage;
+                            }
                         }
                         else
                         {

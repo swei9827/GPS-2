@@ -2,18 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_Bullet : MonoBehaviour {
+public class Enemy_Destroyable_Bullet : MonoBehaviour {
 
     public int bulletSpeed;
     public Transform player;
     Rigidbody rb;
+    public int hp;
 
     Vector3 playerPos;
 
     PlayerHp plyrHp;
     Player_Crouch crouch;
-
-    public static bool hitByBulletForFirstTime = false;
 
     // Use this for initialization
     void Start()
@@ -38,42 +37,27 @@ public class Enemy_Bullet : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
-        if (hitByBulletForFirstTime == false)
+        if (collision.gameObject.CompareTag("Player"))
         {
-            if (collision.gameObject.CompareTag("Player"))
+            if (crouch.isCrouch == true)
             {
-                if (crouch.isCrouch == true)
-                {
-                    Destroy(gameObject);
-                }
-                else
-                {
-                    plyrHp.TakeDamage(2.0f);
-                    Destroy(gameObject);
-                    hitByBulletForFirstTime = true;
-                }
+                Destroy(gameObject);
+            }
+            else
+            {
+                plyrHp.TakeDamage(10.0f);
+                Destroy(gameObject);
             }
         }
-        else
-        {
-            if (collision.gameObject.CompareTag("Player"))
-            {
-                if (crouch.isCrouch == true)
-                {
-                    Destroy(gameObject);
-                }
-                else
-                {
-                    plyrHp.TakeDamage(2.0f);
-                    Destroy(gameObject);
-                }
-            }
-        }
-        
 
-        if(collision.gameObject.CompareTag("Obstacle"))
+        if (collision.gameObject.CompareTag("Obstacle"))
         {
             Destroy(gameObject);
+        }
+
+        if(hp <= 0)
+        {
+            Destroy(this.gameObject);
         }
     }
 }
