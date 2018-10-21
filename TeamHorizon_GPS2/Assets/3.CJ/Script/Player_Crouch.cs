@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Player_Crouch : MonoBehaviour {
 
-    public static bool isCrouch = false;
+    public bool isCrouch = false;
     public Transform player;
     //public Text text;
 

@@ -16,6 +16,8 @@ TagManager:
   - boxGesture
   - Interactive
   - Environment
+  - PlayerHead
+  - Enemy_Destroyable_Bullet
   layers:
   - Default
   - TransparentFX
