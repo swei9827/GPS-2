@@ -42,7 +42,7 @@ public class Dialogue_Control : MonoBehaviour {
     void Start () {
         cc = GameObject.FindGameObjectWithTag("ControlCenter").GetComponent<ControlCenter>();
         level = GameObject.FindGameObjectWithTag("ControlCenter").GetComponent<Level>();
-        weapon = GameObject.FindGameObjectWithTag("Player").GetComponent<RaycastShoot>().gameObject.GetComponent<Weapon>();
+        weapon = GameObject.FindGameObjectWithTag("Player").GetComponent<RaycastShoot>().weapon;
         crouch = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Player_Crouch>();
 	}
 	
@@ -88,7 +88,7 @@ public class Dialogue_Control : MonoBehaviour {
             // After killing one enemy, Dialogue 3 Come out ( Teach Reload, After reload dialogue missing)
             if (cc.enemyCount == 2 && dialogue3Completed == false)
             {
-                if (weapon.clipReload == false)
+                if (weapon.reloading == false)
                 {
                     level.SetTimeScale(0f);
                     tempGameObject = dialogue[2].gameObject;

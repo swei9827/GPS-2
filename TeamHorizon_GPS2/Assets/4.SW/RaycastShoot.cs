@@ -13,7 +13,6 @@ public class RaycastShoot : MonoBehaviour
     private LineRenderer laserLine;
     private float nextFire;
     public Camera camera;
-    private bool reloading;
 
     public int meleeDamage;
 
@@ -35,7 +34,7 @@ public class RaycastShoot : MonoBehaviour
         dragDistance = Screen.height * 0.1f;
         laserLine = GetComponent<LineRenderer>();
         bulletLeft.text = weapon.currentAmmo.ToString();// + " / " + weapon.maxAmmo.ToString();
-        reloading = false;
+        weapon.reloading = false;
         gunAudio = GetComponent<AudioSource>();
         CSW = CURRENT_SELECTED_WEAPON.RANGE;
     }
@@ -46,9 +45,9 @@ public class RaycastShoot : MonoBehaviour
         //Debug.Log(Input.acceleration.x);
 
         // Reload
-        if ((new Vector2(Input.acceleration.x, Input.acceleration.z).magnitude > 2 && reloading == false)) //&& Input.GetButtonDown("Jump")) 
+        if ((new Vector2(Input.acceleration.x, Input.acceleration.z).magnitude > 2 && weapon.reloading == false)) //&& Input.GetButtonDown("Jump")) 
         {
-            reloading = true;
+            weapon.reloading = true;
             if (weapon.clipReload == true)
             {
                 StartCoroutine(ReloadEffect(weapon.reloadTime));
@@ -230,6 +229,10 @@ public class RaycastShoot : MonoBehaviour
                                     {
 
                                     }
+                                    else if (hit.collider.CompareTag("Enemy_Destroyable_Bullet"))
+                                    {
+                                        hit.collider.gameObject.GetComponent<Enemy_Destroyable_Bullet>().hp -= weapon.gunDamage;
+                                    }
                                 }
                             }
                             
@@ -298,7 +301,7 @@ public class RaycastShoot : MonoBehaviour
         weapon.currentAmmo = weapon.maxAmmo;
         bulletLeft.text = weapon.currentAmmo.ToString();// + " / " + weapon.maxAmmo.ToString();
         reloadIndicator.SetActive(false);
-        reloading = false;
+        weapon.reloading = false;
     }
 
     private IEnumerator ReloadEffect2(float perBullet, int bulletCount)
@@ -313,7 +316,7 @@ public class RaycastShoot : MonoBehaviour
             Debug.Log("+1");
         }
         reloadIndicator.SetActive(false);
-        reloading = false;
+        weapon.reloading = false;
     }
 }
 //[CreateAssetMenu(fileName = "New Weapon", menuName = "Weapon")]
@@ -329,6 +332,7 @@ public class Weapon //: ScriptableObject
     public bool clipReload;
     public float eachBulletRequire;
     public GameObject effect;
+    public bool reloading;
 }
 
 public enum CURRENT_SELECTED_WEAPON
