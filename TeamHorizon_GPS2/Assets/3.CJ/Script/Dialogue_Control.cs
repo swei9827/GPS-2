@@ -8,6 +8,7 @@ public class Dialogue_Control : MonoBehaviour {
     ControlCenter cc;
     Level level;
     Player_Crouch crouch;
+    TargetProfile targetProfile;
     bool isPause = false;
 
     GameObject tempGameObject;
@@ -60,11 +61,12 @@ public class Dialogue_Control : MonoBehaviour {
 
         if(cc.levelStatus == 1)
         {
+            targetProfile = level.targetProfile[0].GetComponent<TargetProfile>();
             timer += Time.deltaTime;
             DelayTime = 2.7f;
 
             // When Reach the 1st place, if Dialogue 1 still on the screen , deactive it and call Dialogue 2 out (Tap to Shoot on Target)
-            if(cc.enemyCount == 3)
+            if(targetProfile.EnemyCount == 3)
             {
                 if (hasClick == false)
                 {
@@ -81,12 +83,12 @@ public class Dialogue_Control : MonoBehaviour {
                 {
                     level.SetTimeScale(1.0f);
                     // Start OnBattle When Reach Level Status 1
-                    cc.OnBattle = true;
+                    cc.status = STATUS.BATTLE; 
                 }
             }
 
             // After killing one enemy, Dialogue 3 Come out ( Teach Reload, After reload dialogue missing)
-            if (cc.enemyCount == 2 && dialogue3Completed == false)
+            if (targetProfile.EnemyCount == 2 && dialogue3Completed == false)
             {
                 if (weapon.reloading == false)
                 {

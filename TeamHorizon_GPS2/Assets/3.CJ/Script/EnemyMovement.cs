@@ -37,11 +37,9 @@ public class EnemyMovement : MonoBehaviour
     public int hideDelayTimer = 3;
 
     public bool enemyHide = false;
-
     public int hp;
 
-    public static int enemyCountArea = 5;
-
+    // Animation
     public Animator animator;
     public bool SlothWolf_DamageAnim;
     public bool SlothWolf_AimingAnim;
@@ -70,8 +68,7 @@ public class EnemyMovement : MonoBehaviour
         if (this.hp <= 0)
         {
             Destroy(this.gameObject);
-            enemyCountArea -= 1;
-            CC.enemyCount -= 1;
+            //CC.enemyCount -= 1;
             lvlController.GetComponent<Level>().setScore(lvlController.GetComponent<Level>().getScore()+1000);
         }
 
@@ -309,11 +306,6 @@ public class EnemyMovement : MonoBehaviour
         }*/
 
 
-    }
-
-    void StartOnBattle()
-    {
-        //CC.OnBattle = true;
     }
 }
 
