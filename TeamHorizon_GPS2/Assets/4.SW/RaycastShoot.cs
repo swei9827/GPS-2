@@ -33,7 +33,7 @@ public class RaycastShoot : MonoBehaviour
     {
         dragDistance = Screen.height * 0.1f;
         laserLine = GetComponent<LineRenderer>();
-        bulletLeft.text = weapon.currentAmmo.ToString();// + " / " + weapon.maxAmmo.ToString();
+        bulletLeft.text = weapon.currentAmmo.ToString();
         weapon.reloading = false;
         gunAudio = GetComponent<AudioSource>();
         CSW = CURRENT_SELECTED_WEAPON.RANGE;
