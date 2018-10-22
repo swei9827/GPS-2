@@ -484,7 +484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cf763e44b00e1340bdfc560b3a60bc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 2800000, guid: 45154b52e112aca43be9d1b0244a55a5, type: 3}
+  Texture2D: {fileID: 2800000, guid: 45154b52e112aca43be9d1b0244a55a5, type: 3}
   display: {fileID: 2800000, guid: b113a56155074294ca476c16990e180d, type: 3}
   QTETrigger: 0
   timer: 1
@@ -757,7 +757,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1201191741
 Transform:
   m_ObjectHideFlags: 0
@@ -955,7 +955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cf763e44b00e1340bdfc560b3a60bc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 2800000, guid: 7c50d0933d8890e42985b036f1488c23, type: 3}
+  Texture2D: {fileID: 2800000, guid: 45154b52e112aca43be9d1b0244a55a5, type: 3}
   display: {fileID: 2800000, guid: 5206e9b0c38e9644996e5d36bb521649, type: 3}
   QTETrigger: 0
   timer: 1
@@ -1199,7 +1199,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1802401935
 MonoBehaviour:
   m_ObjectHideFlags: 0

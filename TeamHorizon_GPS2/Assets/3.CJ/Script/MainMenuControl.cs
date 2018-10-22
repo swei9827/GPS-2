@@ -7,6 +7,8 @@ public class MainMenuControl : MonoBehaviour {
 
     public GameObject MenuPage;
     public GameObject SettingPage;
+    public GameObject SelectStage;
+    
 
 	// Use this for initialization
 	void Start () {
@@ -28,10 +30,17 @@ public class MainMenuControl : MonoBehaviour {
         SceneManager.LoadScene(1);
     }
 
+    public void StageSelect()
+    {
+        MenuPage.SetActive(false);
+        SelectStage.SetActive(true);
+
+    }
+
     public void setting()
     {
         MenuPage.SetActive(false);
-        SettingPage.SetActive(true);
+        SettingPage.SetActive(true); 
     }
 
     public void backMenuFromSetting()
