@@ -4,9 +4,10 @@ using System.Collections;
 
 public class GestureScriptExemple : MonoBehaviour {
 
-	public Texture2D text;
+	public Texture2D Texture2D;
 	public Texture2D display;
-	bool iniCount = false;
+	//bool iniCount = false;
+	public bool QTETrigger = false;
 	public float timer = 1.0f;
 	GameObject image;
 
@@ -15,7 +16,7 @@ public class GestureScriptExemple : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		image = GameObject.Find ("Display");
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
 	}
 
 	// Update is called once per frame
@@ -24,38 +25,47 @@ public class GestureScriptExemple : MonoBehaviour {
         {
             return;
         }
-		else if (iniCount) {
+		//else if (iniCount)
+		else if (QTETrigger)
+        {
 			timer -= Time.deltaTime;
 			if (timer <= 0.0f) {
 				image.GetComponent<RawImage> ().enabled = false;
-				iniCount = false;
+                //iniCount = false;
+                QTETrigger = false;
 			}
 		}
 	}
 
 
     //This method is needed for the Gesture to run, here you set Texture for recognition and can set the sucess rate needed to be achived
-	void setGestureConfig()
+    void setGestureConfig()
 	{
         if(player == null)
         {
             Debug.LogError("<b>GestureScript:</b> The code need a reference to the object that has the playerInput script");
             return;
         }
-		player.GetComponent<GesturePlayer.PlayerInput> ().setTextureG (text);
+
+		//player.GetComponent<GesturePlayer.PlayerInput> ().setTextureG (text);
+       // player.GetComponent<GesturePlayer.PlayerInput>().setCorrectRate(0.8f);
+        player.GetComponent<GesturePlayer.PlayerInput>().setTextureG (Texture2D);
         player.GetComponent<GesturePlayer.PlayerInput>().setCorrectRate(0.8f);
 	}
 
+
     //This method happen when the player look to the object and can be used for a variety of things, in this exemple we use to display the Pattern
-	void displayPattern()
+    void displayPattern()
 	{
         if (image == null)
         {
             return;
         }
 		else if (timer > 0.0f) {
-			iniCount = true;
-			image.GetComponent<RawImage> ().texture = display;
+            //iniCount = true;
+            QTETrigger = true;
+
+            image.GetComponent<RawImage> ().texture = display;
 			image.GetComponent<RawImage> ().enabled = true;
 		}
 	}
