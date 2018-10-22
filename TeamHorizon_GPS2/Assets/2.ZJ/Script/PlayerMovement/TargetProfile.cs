@@ -14,6 +14,7 @@ public class TargetProfile : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         playerPos = player.GetComponent<Transform>(); 
     }
 

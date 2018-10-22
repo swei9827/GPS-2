@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ControlCenter : MonoBehaviour
 {
-
     public GameObject player;
     public Camera camera;
 
@@ -31,6 +30,7 @@ public class ControlCenter : MonoBehaviour
 
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         sMove = player.GetComponent<ScriptedMovement>();
         screenWobble = GameObject.FindGameObjectWithTag("2ndCamera").GetComponent<ScreenWobble>();
         status = STATUS.MOVING;
@@ -392,19 +392,6 @@ public class ControlCenter : MonoBehaviour
 
     }
 
-    public enum STATUS
-    {
-        IDLE,
-        MOVING,
-        TURNING,
-        CAMERA,
-        BATTLE,
-        QTE,
-        INTERACTABLE,
-        PORTAL,
-        TOTAL_STATE
-    }
-
     private IEnumerator CameraPanPhase(float waitTime, int hazardID)
     {
         yield return new WaitForSeconds(waitTime);
@@ -418,3 +405,16 @@ public class ControlCenter : MonoBehaviour
         StopAllCoroutines();
     }
 }
+
+public enum STATUS
+    {
+        IDLE,
+        MOVING,
+        TURNING,
+        CAMERA,
+        BATTLE,
+        QTE,
+        INTERACTABLE,
+        PORTAL,
+        TOTAL_STATE
+    }
