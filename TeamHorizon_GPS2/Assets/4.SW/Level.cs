@@ -1,4 +1,6 @@
-﻿using System;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -12,6 +14,7 @@ public class Level: MonoBehaviour
     [SerializeField] private Text timeLeftUI;
     [SerializeField] private Text ScoreUI;
     public LEVEL_STATE levelState;
+    public List<GameObject> targetProfile;
 
 	void Start () {
         timeLeft = givenTime;

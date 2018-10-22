@@ -6,9 +6,11 @@ public class PanToTarget : MonoBehaviour {
 
     public float zoomSpeed;
     public float zoomLevel;
+    public bool panComplete;
     public GameObject[] target;
+
     Quaternion currentRotation;
-    public Camera cam;
+    Camera cam;
     bool rotationSet = false;
     private IEnumerator coroutine;
 
@@ -19,19 +21,6 @@ public class PanToTarget : MonoBehaviour {
 
     public void CameraPan(int targetID)
     {
-        coroutine = WaitAndPan(1.0f, targetID);
-        StartCoroutine(coroutine);
-    }
-
-    void Reset(int targetID)
-    {
-        coroutine = WaitAndReset(1.0f, targetID);
-        StartCoroutine(coroutine);
-    }
-
-    private IEnumerator WaitAndPan(float waitTime, int targetID)
-    {
-        yield return new WaitForSeconds(waitTime);
         if (target[targetID].GetComponentInParent<TreeFallHazard>().FallenTree == false)
         {
             if (!rotationSet)
@@ -46,6 +35,12 @@ public class PanToTarget : MonoBehaviour {
         }
     }
 
+    void Reset(int targetID)
+    {
+        coroutine = WaitAndReset(1.0f, targetID);
+        StartCoroutine(coroutine);       
+    }
+
     private IEnumerator WaitAndReset(float waitTime, int targetID)
     {
         yield return new WaitForSeconds(waitTime);
@@ -54,6 +49,10 @@ public class PanToTarget : MonoBehaviour {
             transform.rotation = Quaternion.Lerp(transform.rotation, currentRotation, 0.8f);
             cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, 40.0f, zoomSpeed);
             rotationSet = false;
+            yield return new WaitForSeconds(0.5f);
+            panComplete = true;
         }
+        yield return new WaitForSeconds(1.0f);
+        panComplete = false;
     }
 }

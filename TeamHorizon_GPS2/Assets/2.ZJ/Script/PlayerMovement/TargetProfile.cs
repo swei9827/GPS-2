@@ -4,17 +4,9 @@ using UnityEngine;
 
 public class TargetProfile : MonoBehaviour {
 
-    public GameObject player;
-    public bool ConnectionNodes;
-    public bool BattleNodes;
-    public bool CameraPanNodes;
-    public bool QTENodes;
-    public bool InteractableNodes;
-    public bool PortalNodes;
-    public int NodeID;
+    public GameObject player;   
     public int EnemyCount;
     Transform playerPos;
-    ControlCenter cc;
     bool reached = false;
 
     public static int PlayerArea = 0;
@@ -22,8 +14,8 @@ public class TargetProfile : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        playerPos = player.GetComponent<Transform>();        
-        cc = GameObject.FindGameObjectWithTag("ControlCenter").GetComponent<ControlCenter>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerPos = player.GetComponent<Transform>(); 
     }
 
     // Update is called once per frame
@@ -37,24 +29,8 @@ public class TargetProfile : MonoBehaviour {
         if (playerPos.position == this.transform.position && !reached)
         {
             Debug.Log("Reached Target : " + this.name);
+            PlayerArea++;
             reached = true;
-            PlayerArea++;           
         }
-    }
-
-    public void EnterBattlePhase(int ID)
-    {
-        if (BattleNodes && reached && cc.enemyCount != 0 && NodeID == ID)
-        {
-            cc.OnBattle = true;
-        }
-        else if (BattleNodes && reached && cc.enemyCount == 0  && NodeID == ID)
-        {
-            cc.OnBattle = false;
-            if (playerPos.position == this.transform.position)
-            {
-                cc.BattleCompleted = true;
-            }
-        }
-    }
+    }    
 }
