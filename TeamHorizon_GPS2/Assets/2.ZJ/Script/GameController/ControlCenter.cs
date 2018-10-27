@@ -279,7 +279,7 @@ public class ControlCenter : MonoBehaviour
                 sMove.PlayerMove(locations[9]);     
                 if(player.transform.position == locations[9].position)
                 {
-                    status = STATUS.INTERACTABLE;
+                    status = STATUS.TURNING;
                     levelStatus = 10;
                 }
             }
@@ -287,6 +287,15 @@ public class ControlCenter : MonoBehaviour
         // Interactable Object
         else if(levelStatus == 10)
         {
+            if(status == STATUS.TURNING)
+            {
+                sMove.PlayerRotate(locations[10]);
+                if((player.transform.eulerAngles.y > 89 && player.transform.eulerAngles.y < 90.05f))
+                {
+                    status = STATUS.INTERACTABLE;
+                }
+            }
+
             if(status == STATUS.INTERACTABLE)
             {
                 if (InteractSuccess)
