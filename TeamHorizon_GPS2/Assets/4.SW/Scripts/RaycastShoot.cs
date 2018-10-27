@@ -33,7 +33,7 @@ public class RaycastShoot : MonoBehaviour
     {
         dragDistance = Screen.height * 0.1f;
         laserLine = GetComponent<LineRenderer>();
-        bulletLeft.text = weapon.currentAmmo.ToString();// + " / " + weapon.maxAmmo.ToString();
+        bulletLeft.text = weapon.currentAmmo.ToString();
         weapon.reloading = false;
         gunAudio = GetComponent<AudioSource>();
         CSW = CURRENT_SELECTED_WEAPON.RANGE;
@@ -235,11 +235,11 @@ public class RaycastShoot : MonoBehaviour
                                     }
                                 }
                             }
-                            
                         }
                         else  // if is a swipe, perform melee
                         {
-                            GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy");
+                            Debug.Log("Melee");
+                            /*GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy");
                             GameObject closest = null;
                             float distance = 100;
                             Vector3 myPos = transform.position;
@@ -259,7 +259,8 @@ public class RaycastShoot : MonoBehaviour
                                 {
                                     closest.GetComponent<EnemyHP>().hp -= meleeDamage;
                                 }
-                            }
+                            }*/
+                            
                         }
                         Debug.Log("NotUI");
                     }
