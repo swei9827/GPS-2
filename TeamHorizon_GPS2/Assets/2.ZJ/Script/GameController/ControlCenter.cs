@@ -41,7 +41,7 @@ public class ControlCenter : MonoBehaviour
         if (LevelTutorial)
         {
             Tutorial();
-            Debug.Log(player.transform.eulerAngles.y);
+            Debug.Log(player.transform.rotation.eulerAngles);
         }
     }
 
@@ -60,11 +60,11 @@ public class ControlCenter : MonoBehaviour
             }
             if (status == STATUS.BATTLE)
             {
-                if (!battleArea[0].GetComponentInParent<HSProfile>().destroyed)
+                if (!battleArea[0].GetComponent<HSProfile>().destroyed)
                 {
                     sMove.PlayerMove(battleArea[0]);
                 }
-                else if (battleArea[0].GetComponentInParent<HSProfile>().destroyed)
+                else if (battleArea[0].GetComponent<HSProfile>().destroyed)
                 {
                     sMove.PlayerMove(battleArea[1]);
                 }
