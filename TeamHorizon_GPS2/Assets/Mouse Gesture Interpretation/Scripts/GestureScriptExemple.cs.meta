@@ -1,10 +1,12 @@
 fileFormatVersion: 2
 guid: 7cf763e44b00e1340bdfc560b3a60bc7
-timeCreated: 1466177047
-licenseType: Store
 MonoImporter:
+  externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Texture2D: {instanceID: 0}
+  - display: {fileID: 2800000, guid: 5206e9b0c38e9644996e5d36bb521649, type: 3}
+  - player: {fileID: 1012436135834862, guid: 76902e06527e94f4c9bff8dcfb5b18ce, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

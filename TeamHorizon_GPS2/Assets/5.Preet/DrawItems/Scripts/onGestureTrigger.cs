@@ -5,9 +5,12 @@ using UnityEngine.UI;
 
 public class onGestureTrigger : MonoBehaviour
 {
+    public bool onQTETrigger = false;
     public Transform Spawnpoint;
     public GameObject Prefab;
     public bool boxGesture;
+
+    
   
 
    
@@ -15,8 +18,14 @@ public class onGestureTrigger : MonoBehaviour
     {
             print("YAY!");
 
+        if(onQTETrigger == true)
+        {
+            this.gameObject.GetComponent<Renderer>().material.color = Color.red;
+        }
+
        {
-           Instantiate(Prefab , Spawnpoint.position, Spawnpoint.rotation);
+            onQTETrigger = true;
+            Instantiate(Prefab , Spawnpoint.position, Spawnpoint.rotation);
        }
 
         //if (tag == "boxGesture" && !gameObject.activeSelf)
