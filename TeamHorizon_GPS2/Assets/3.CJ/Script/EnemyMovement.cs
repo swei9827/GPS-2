@@ -31,10 +31,11 @@ public class EnemyMovement : MonoBehaviour
     public int EnemyArea = 0;
     int playerArea = 0;
 
+    [SerializeField]
     public static bool StartShooting = false;
 
-    public float timer;
-    public int hideDelayTimer = 3;
+    public float timer = 0;
+    public int hideDelayTimer;
 
     public bool enemyHide = false;
     public int hp;
@@ -80,7 +81,6 @@ public class EnemyMovement : MonoBehaviour
         if(move == true && EnemyStartAppear == true)
         {
             endPosition = new Vector3(-endPosX, endPosY, this.transform.position.z);
-            Invoke("StartOnBattle", 3f);
             if (transform.position != endPosition)
             {
                 transform.position = Vector3.MoveTowards(transform.position, endPosition, moveSpeed * Time.deltaTime);

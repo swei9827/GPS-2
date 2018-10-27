@@ -33,6 +33,11 @@ public class Enemy_Destroyable_Bullet : MonoBehaviour {
         rb.velocity = (player.position - transform.position).normalized * bulletSpeed;
 
         Destroy(gameObject, 5f);
+
+        if(Input.GetMouseButton(0))
+        {
+            Destroy(gameObject);
+        }
     }
 
     void OnCollisionEnter(Collision collision)
