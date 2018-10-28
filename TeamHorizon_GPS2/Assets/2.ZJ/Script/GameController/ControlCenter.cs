@@ -41,7 +41,6 @@ public class ControlCenter : MonoBehaviour
         if (LevelTutorial)
         {
             Tutorial();
-            Debug.Log(player.transform.rotation.eulerAngles);
         }
     }
 
