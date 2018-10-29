@@ -5,7 +5,7 @@ using UnityEngine;
 public class TreeFallHazard : MonoBehaviour
 {
     float fall = 1;
-    int health = 2;
+    public int health = 2;
     public bool FallenTree = false;
     private Material mat;
 
@@ -24,6 +24,10 @@ public class TreeFallHazard : MonoBehaviour
                 newColor.a -= Time.deltaTime;
                 mat.color = newColor;
                 gameObject.GetComponent<MeshRenderer>().material = mat;
+            }
+            else
+            {
+                Destroy(this.gameObject);
             }
         }
     }

@@ -21,20 +21,5 @@ public class MeleeTest : MonoBehaviour {
         transform.LookAt(worldPos);
     }
 
-    private void OnCollisionEnter(Collision col)
-    {
-        if(col.gameObject.tag == "Enemy")
-        {
-
-        }
-        else if(col.gameObject.tag == "Environment")
-        {
-            hitEnvironment = true;
-        }
-        else if(col.gameObject.tag == "InteractableEnvironment")
-        {
-
-        }
-    }
 }
     
