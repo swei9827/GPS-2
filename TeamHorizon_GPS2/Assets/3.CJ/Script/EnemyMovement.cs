@@ -5,10 +5,6 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     public Level lvlController;
-    public bool left;
-    public bool right;
-    public bool down;
-    public bool top;
 
     public bool move;
 
@@ -22,6 +18,7 @@ public class EnemyMovement : MonoBehaviour
 
     public float endPosX;
     public float endPosY;
+    public float endPosZ;
     private ControlCenter CC;
 
     // When Reaching CheckPoint
@@ -80,7 +77,7 @@ public class EnemyMovement : MonoBehaviour
 
         if(move == true && EnemyStartAppear == true)
         {
-            endPosition = new Vector3(-endPosX, endPosY, this.transform.position.z);
+            endPosition = new Vector3(endPosX, endPosY, endPosZ);
             if (transform.position != endPosition)
             {
                 transform.position = Vector3.MoveTowards(transform.position, endPosition, moveSpeed * Time.deltaTime);

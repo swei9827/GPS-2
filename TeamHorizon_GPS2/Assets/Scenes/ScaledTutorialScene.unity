@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4408,8 +4408,10 @@ GameObject:
   m_Component:
   - component: {fileID: 111735541}
   - component: {fileID: 111735542}
+  - component: {fileID: 111735543}
+  - component: {fileID: 111735544}
   m_Layer: 0
-  m_Name: Enemy_08
+  m_Name: EnemyBehind(Area12)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4423,11 +4425,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 111735540}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 11.389, y: 0.3, z: 71.08}
+  m_LocalPosition: {x: 11.389, y: 0.3, z: 69.4}
   m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000005}
   m_Children:
   - {fileID: 21683526}
   - {fileID: 1499350649}
+  - {fileID: 613195524}
   m_Father: {fileID: 241320052}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -4450,6 +4453,52 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &111735543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 111735540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5d59cfd7dc1132439fc977b0104d84d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lvlController: {fileID: 2050459572}
+  move: 1
+  moveSpeed: 2
+  endPosX: 13
+  endPosY: 0.3
+  endPosZ: 71.08
+  player: {fileID: 1577847618}
+  EnemyStartAppear: 0
+  EnemyArea: 11
+  timer: 0
+  hideDelayTimer: 2
+  enemyHide: 0
+  hp: 2
+  animator: {fileID: 0}
+  SlothWolf_DamageAnim: 0
+  SlothWolf_AimingAnim: 0
+  SlothWolf_ShootingAnim: 0
+--- !u!114 &111735544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 111735540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633d22b77c0549748a62215bf5837a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpawn: {fileID: 613195524}
+  bulletPrefab: {fileID: 1764963883137122, guid: cde03a857d38fc64e853c21bf9434a49,
+    type: 2}
+  timer: 0
+  shootDelayTime: 3
+  EnemyArea: 12
+  playerArea: 0
 --- !u!1 &118787777
 GameObject:
   m_ObjectHideFlags: 0
@@ -4895,8 +4944,10 @@ GameObject:
   m_Component:
   - component: {fileID: 133416344}
   - component: {fileID: 133416345}
+  - component: {fileID: 133416346}
+  - component: {fileID: 133416347}
   m_Layer: 0
-  m_Name: Enemy_10
+  m_Name: EnemyFront(Area15)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4910,11 +4961,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 133416343}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -61.953, y: 0.3, z: 75.87}
+  m_LocalPosition: {x: -61.953, y: 0.3, z: 76.28}
   m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000005}
   m_Children:
   - {fileID: 309614005}
   - {fileID: 875806367}
+  - {fileID: 211965431}
   m_Father: {fileID: 241320052}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -4937,6 +4989,52 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &133416346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 133416343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5d59cfd7dc1132439fc977b0104d84d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lvlController: {fileID: 0}
+  move: 1
+  moveSpeed: 2
+  endPosX: -61.953
+  endPosY: 0.3
+  endPosZ: 75.87
+  player: {fileID: 1577847618}
+  EnemyStartAppear: 0
+  EnemyArea: 15
+  timer: 0
+  hideDelayTimer: 3
+  enemyHide: 0
+  hp: 2
+  animator: {fileID: 0}
+  SlothWolf_DamageAnim: 0
+  SlothWolf_AimingAnim: 0
+  SlothWolf_ShootingAnim: 0
+--- !u!114 &133416347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 133416343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633d22b77c0549748a62215bf5837a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpawn: {fileID: 211965431}
+  bulletPrefab: {fileID: 1764963883137122, guid: cde03a857d38fc64e853c21bf9434a49,
+    type: 2}
+  timer: 0
+  shootDelayTime: 3
+  EnemyArea: 15
+  playerArea: 0
 --- !u!1 &135658660
 GameObject:
   m_ObjectHideFlags: 0
@@ -5713,8 +5811,10 @@ GameObject:
   m_Component:
   - component: {fileID: 146069476}
   - component: {fileID: 146069477}
+  - component: {fileID: 146069478}
+  - component: {fileID: 146069479}
   m_Layer: 0
-  m_Name: Enemy_04
+  m_Name: EnemyRight(Area6)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5728,11 +5828,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 146069475}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -22.074, y: 0.3, z: -76.7}
+  m_LocalPosition: {x: -20.79, y: 0.3, z: -76.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 132038110}
   - {fileID: 723986114}
+  - {fileID: 835885652}
   m_Father: {fileID: 241320052}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -5755,6 +5856,52 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &146069478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 146069475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5d59cfd7dc1132439fc977b0104d84d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lvlController: {fileID: 2050459572}
+  move: 1
+  moveSpeed: 2
+  endPosX: -22.07
+  endPosY: 0.2
+  endPosZ: -76.7
+  player: {fileID: 1577847618}
+  EnemyStartAppear: 0
+  EnemyArea: 6
+  timer: 0
+  hideDelayTimer: 2
+  enemyHide: 0
+  hp: 2
+  animator: {fileID: 0}
+  SlothWolf_DamageAnim: 0
+  SlothWolf_AimingAnim: 0
+  SlothWolf_ShootingAnim: 0
+--- !u!114 &146069479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 146069475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633d22b77c0549748a62215bf5837a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpawn: {fileID: 835885652}
+  bulletPrefab: {fileID: 1764963883137122, guid: cde03a857d38fc64e853c21bf9434a49,
+    type: 2}
+  timer: 0
+  shootDelayTime: 3
+  EnemyArea: 6
+  playerArea: 0
 --- !u!1 &147890996
 GameObject:
   m_ObjectHideFlags: 0
@@ -8649,6 +8796,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 211019441}
   m_Mesh: {fileID: 4300292, guid: f93d5b656c6dbd34c811a28a7c0d7861, type: 3}
+--- !u!1 &211965430
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 211965431}
+  m_Layer: 0
+  m_Name: BulletSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &211965431
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 211965430}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 133416344}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &218144481
 GameObject:
   m_ObjectHideFlags: 0
@@ -18288,8 +18463,10 @@ GameObject:
   m_Component:
   - component: {fileID: 494383414}
   - component: {fileID: 494383415}
+  - component: {fileID: 494383416}
+  - component: {fileID: 494383417}
   m_Layer: 0
-  m_Name: Enemy_07
+  m_Name: EnemyFront(Area12)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18308,6 +18485,7 @@ Transform:
   m_Children:
   - {fileID: 1726187024}
   - {fileID: 1613068332}
+  - {fileID: 974299738}
   m_Father: {fileID: 241320052}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -18330,6 +18508,52 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &494383416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 494383413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5d59cfd7dc1132439fc977b0104d84d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lvlController: {fileID: 2050459572}
+  move: 1
+  moveSpeed: 5
+  endPosX: -3.5
+  endPosY: 0.3
+  endPosZ: 75.26
+  player: {fileID: 1577847618}
+  EnemyStartAppear: 0
+  EnemyArea: 11
+  timer: 0
+  hideDelayTimer: 2
+  enemyHide: 0
+  hp: 2
+  animator: {fileID: 0}
+  SlothWolf_DamageAnim: 0
+  SlothWolf_AimingAnim: 0
+  SlothWolf_ShootingAnim: 0
+--- !u!114 &494383417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 494383413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633d22b77c0549748a62215bf5837a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpawn: {fileID: 974299738}
+  bulletPrefab: {fileID: 1764963883137122, guid: cde03a857d38fc64e853c21bf9434a49,
+    type: 2}
+  timer: 0
+  shootDelayTime: 3
+  EnemyArea: 12
+  playerArea: 0
 --- !u!1 &495250492
 GameObject:
   m_ObjectHideFlags: 0
@@ -18998,6 +19222,34 @@ Transform:
   - {fileID: 1777145602}
   m_Father: {fileID: 1113216539}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &519956058
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 519956059}
+  m_Layer: 0
+  m_Name: BulletSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &519956059
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 519956058}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.262, y: 1.59, z: -2.423}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1332349993}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &523859973
 GameObject:
@@ -21988,6 +22240,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 602412801}
   m_Mesh: {fileID: 4300298, guid: f93d5b656c6dbd34c811a28a7c0d7861, type: 3}
+--- !u!1 &604069128
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 604069129}
+  m_Layer: 0
+  m_Name: BulletSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &604069129
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 604069128}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.262, y: 1.59, z: -2.423}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2083502006}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &604473357
 GameObject:
   m_ObjectHideFlags: 0
@@ -22327,6 +22607,34 @@ Transform:
   - {fileID: 1974741212}
   m_Father: {fileID: 1513583302}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &613195523
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 613195524}
+  m_Layer: 0
+  m_Name: BulletSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &613195524
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 613195523}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.262, y: 1.59, z: -2.423}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 111735541}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &613990802
 GameObject:
@@ -29717,6 +30025,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 817454404}
   m_Mesh: {fileID: 4300304, guid: f93d5b656c6dbd34c811a28a7c0d7861, type: 3}
+--- !u!1 &817496464
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 817496465}
+  m_Layer: 0
+  m_Name: BulletSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &817496465
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 817496464}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.262, y: 1.59, z: -2.423}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 976359991}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &817634258
 GameObject:
   m_ObjectHideFlags: 0
@@ -30375,6 +30711,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 835448533}
   m_Mesh: {fileID: 4301094, guid: f93d5b656c6dbd34c811a28a7c0d7861, type: 3}
+--- !u!1 &835885651
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 835885652}
+  m_Layer: 0
+  m_Name: BulletSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &835885652
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 835885651}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.262, y: 1.59, z: -2.423}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 146069476}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &839534653
 GameObject:
   m_ObjectHideFlags: 0
@@ -30859,7 +31223,7 @@ Prefab:
     - target: {fileID: 114331427859031928, guid: a231a9832252beb449cd3495b620f30b,
         type: 2}
       propertyPath: EnemyCount
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1506761545032920, guid: a231a9832252beb449cd3495b620f30b, type: 2}
       propertyPath: m_Name
@@ -35489,6 +35853,34 @@ Transform:
   m_Father: {fileID: 104500337}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &974299737
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 974299738}
+  m_Layer: 0
+  m_Name: BulletSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &974299738
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 974299737}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.262, y: 1.59, z: -2.423}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 494383414}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &974619093
 GameObject:
   m_ObjectHideFlags: 0
@@ -35637,8 +36029,10 @@ GameObject:
   m_Component:
   - component: {fileID: 976359991}
   - component: {fileID: 976359992}
+  - component: {fileID: 976359993}
+  - component: {fileID: 976359994}
   m_Layer: 0
-  m_Name: Enemy_02
+  m_Name: EnemyRight(Area0)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35652,11 +36046,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 976359990}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 67.513, y: 0.3, z: -104.279}
+  m_LocalPosition: {x: 68.4, y: 0.3, z: -103.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1452799934}
   - {fileID: 1087322759}
+  - {fileID: 817496465}
   m_Father: {fileID: 241320052}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -35679,6 +36074,52 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &976359993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 976359990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5d59cfd7dc1132439fc977b0104d84d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lvlController: {fileID: 2050459572}
+  move: 1
+  moveSpeed: 2
+  endPosX: 67.26
+  endPosY: 0.2
+  endPosZ: -103.7
+  player: {fileID: 1577847618}
+  EnemyStartAppear: 0
+  EnemyArea: 0
+  timer: 0
+  hideDelayTimer: 2
+  enemyHide: 0
+  hp: 2
+  animator: {fileID: 0}
+  SlothWolf_DamageAnim: 0
+  SlothWolf_AimingAnim: 0
+  SlothWolf_ShootingAnim: 0
+--- !u!114 &976359994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 976359990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633d22b77c0549748a62215bf5837a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpawn: {fileID: 817496465}
+  bulletPrefab: {fileID: 1764963883137122, guid: cde03a857d38fc64e853c21bf9434a49,
+    type: 2}
+  timer: 0
+  shootDelayTime: 3
+  EnemyArea: 0
+  playerArea: 0
 --- !u!1 &978708717
 GameObject:
   m_ObjectHideFlags: 0
@@ -38472,7 +38913,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1087322758}
   m_LocalRotation: {x: -0.7071068, y: 0.000000061817246, z: 0.000000061817246, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 1.0038787, z: 0}
+  m_LocalPosition: {x: -0.94, y: 1.0038787, z: -0.69}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 976359991}
@@ -41563,8 +42004,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1168948015}
   - component: {fileID: 1168948016}
+  - component: {fileID: 1168948017}
+  - component: {fileID: 1168948018}
   m_Layer: 0
-  m_Name: Enemy_09
+  m_Name: EnemyBehind(Area15)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41578,11 +42021,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1168948014}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -63.489, y: 0.3, z: 71.819}
+  m_LocalPosition: {x: -63.489, y: 0.3, z: 71.09}
   m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000005}
   m_Children:
   - {fileID: 2003503872}
   - {fileID: 2135041607}
+  - {fileID: 2048259312}
   m_Father: {fileID: 241320052}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -41605,6 +42049,52 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1168948017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1168948014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5d59cfd7dc1132439fc977b0104d84d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lvlController: {fileID: 0}
+  move: 1
+  moveSpeed: 2
+  endPosX: -63.48
+  endPosY: 0.3
+  endPosZ: 71.819
+  player: {fileID: 1577847618}
+  EnemyStartAppear: 0
+  EnemyArea: 15
+  timer: 0
+  hideDelayTimer: 2
+  enemyHide: 0
+  hp: 3
+  animator: {fileID: 0}
+  SlothWolf_DamageAnim: 0
+  SlothWolf_AimingAnim: 0
+  SlothWolf_ShootingAnim: 0
+--- !u!114 &1168948018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1168948014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633d22b77c0549748a62215bf5837a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpawn: {fileID: 2048259312}
+  bulletPrefab: {fileID: 1764963883137122, guid: cde03a857d38fc64e853c21bf9434a49,
+    type: 2}
+  timer: 0
+  shootDelayTime: 3
+  EnemyArea: 15
+  playerArea: 0
 --- !u!1 &1169288829
 GameObject:
   m_ObjectHideFlags: 0
@@ -43574,6 +44064,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1223520411}
   m_Mesh: {fileID: 4300478, guid: f93d5b656c6dbd34c811a28a7c0d7861, type: 3}
+--- !u!1 &1223974414
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1223974415}
+  m_Layer: 0
+  m_Name: PlayerHead
+  m_TagString: PlayerHead
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1223974415
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1223974414}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.58, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1577847618}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1225565017
 GameObject:
   m_ObjectHideFlags: 0
@@ -47919,8 +48437,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1332349993}
   - component: {fileID: 1332349994}
+  - component: {fileID: 1332349995}
+  - component: {fileID: 1332349996}
   m_Layer: 0
-  m_Name: Enemy_03
+  m_Name: EnemyLeft(Area6)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47934,11 +48454,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1332349992}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -24.971, y: 0.3, z: -77.744}
+  m_LocalPosition: {x: -26.36, y: 0.3, z: -77.744}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 878120489}
   - {fileID: 573764518}
+  - {fileID: 519956059}
   m_Father: {fileID: 241320052}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -47961,6 +48482,52 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1332349995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1332349992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5d59cfd7dc1132439fc977b0104d84d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lvlController: {fileID: 2050459572}
+  move: 1
+  moveSpeed: 2
+  endPosX: -24.97
+  endPosY: 0.2
+  endPosZ: -77.744
+  player: {fileID: 1577847618}
+  EnemyStartAppear: 0
+  EnemyArea: 6
+  timer: 0
+  hideDelayTimer: 2
+  enemyHide: 0
+  hp: 2
+  animator: {fileID: 0}
+  SlothWolf_DamageAnim: 0
+  SlothWolf_AimingAnim: 0
+  SlothWolf_ShootingAnim: 0
+--- !u!114 &1332349996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1332349992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633d22b77c0549748a62215bf5837a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpawn: {fileID: 519956059}
+  bulletPrefab: {fileID: 1764963883137122, guid: cde03a857d38fc64e853c21bf9434a49,
+    type: 2}
+  timer: 0
+  shootDelayTime: 3
+  EnemyArea: 6
+  playerArea: 0
 --- !u!1 &1332998521
 GameObject:
   m_ObjectHideFlags: 0
@@ -48517,8 +49084,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1345332492}
   - component: {fileID: 1345332493}
+  - component: {fileID: 1345332494}
+  - component: {fileID: 1345332495}
   m_Layer: 0
-  m_Name: Enemy_00
+  m_Name: EnemyMiddle(Area0)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48532,11 +49101,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1345332491}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 64.81, y: 0.3, z: -102.84}
+  m_LocalPosition: {x: 65.69, y: 0.3, z: -102.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1817940505}
   - {fileID: 1386326187}
+  - {fileID: 1459907927}
   m_Father: {fileID: 241320052}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -48559,6 +49129,52 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1345332494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1345332491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5d59cfd7dc1132439fc977b0104d84d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lvlController: {fileID: 2050459572}
+  move: 1
+  moveSpeed: 2
+  endPosX: 64.8
+  endPosY: 0
+  endPosZ: -102.84
+  player: {fileID: 1577847618}
+  EnemyStartAppear: 0
+  EnemyArea: 0
+  timer: 0
+  hideDelayTimer: 2
+  enemyHide: 0
+  hp: 2
+  animator: {fileID: 0}
+  SlothWolf_DamageAnim: 0
+  SlothWolf_AimingAnim: 0
+  SlothWolf_ShootingAnim: 0
+--- !u!114 &1345332495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1345332491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633d22b77c0549748a62215bf5837a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpawn: {fileID: 1459907927}
+  bulletPrefab: {fileID: 1764963883137122, guid: cde03a857d38fc64e853c21bf9434a49,
+    type: 2}
+  timer: 0
+  shootDelayTime: 3
+  EnemyArea: 0
+  playerArea: 0
 --- !u!1 &1348608208
 GameObject:
   m_ObjectHideFlags: 0
@@ -49429,7 +50045,7 @@ Prefab:
     - target: {fileID: 114331427859031928, guid: a231a9832252beb449cd3495b620f30b,
         type: 2}
       propertyPath: EnemyCount
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1506761545032920, guid: a231a9832252beb449cd3495b620f30b, type: 2}
       propertyPath: m_Name
@@ -53041,6 +53657,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1241288481}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1459907926
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1459907927}
+  m_Layer: 0
+  m_Name: BulletSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1459907927
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1459907926}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.262, y: 1.59, z: -2.423}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1345332492}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1460103215
 GameObject:
@@ -56859,6 +57503,7 @@ Transform:
   m_Children:
   - {fileID: 1460103216}
   - {fileID: 1671293125}
+  - {fileID: 1223974415}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -61085,8 +61730,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1689561628}
   - component: {fileID: 1689561629}
+  - component: {fileID: 1689561630}
+  - component: {fileID: 1689561631}
   m_Layer: 0
-  m_Name: Enemy_01
+  m_Name: EnemyLeft(Area0)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61100,11 +61747,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1689561627}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 63.53, y: 0.3, z: -102.84}
+  m_LocalPosition: {x: 63.17, y: 0.3, z: -102.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 915615320}
   - {fileID: 1507525119}
+  - {fileID: 1914794308}
   m_Father: {fileID: 241320052}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -61127,6 +61775,52 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1689561630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1689561627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5d59cfd7dc1132439fc977b0104d84d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lvlController: {fileID: 2050459572}
+  move: 1
+  moveSpeed: 3.5
+  endPosX: 62.2
+  endPosY: 0.2
+  endPosZ: -102.84
+  player: {fileID: 1577847618}
+  EnemyStartAppear: 0
+  EnemyArea: 0
+  timer: 0
+  hideDelayTimer: 2
+  enemyHide: 0
+  hp: 2
+  animator: {fileID: 0}
+  SlothWolf_DamageAnim: 0
+  SlothWolf_AimingAnim: 0
+  SlothWolf_ShootingAnim: 0
+--- !u!114 &1689561631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1689561627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633d22b77c0549748a62215bf5837a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpawn: {fileID: 1914794308}
+  bulletPrefab: {fileID: 1764963883137122, guid: cde03a857d38fc64e853c21bf9434a49,
+    type: 2}
+  timer: 0
+  shootDelayTime: 3
+  EnemyArea: 0
+  playerArea: 0
 --- !u!1 &1692173975
 GameObject:
   m_ObjectHideFlags: 0
@@ -61766,7 +62460,7 @@ Prefab:
     - target: {fileID: 114331427859031928, guid: a231a9832252beb449cd3495b620f30b,
         type: 2}
       propertyPath: EnemyCount
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1506761545032920, guid: a231a9832252beb449cd3495b620f30b, type: 2}
       propertyPath: m_Name
@@ -62426,8 +63120,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1723137984}
   - component: {fileID: 1723137985}
+  - component: {fileID: 1723137986}
+  - component: {fileID: 1723137987}
   m_Layer: 0
-  m_Name: Enemy_05
+  m_Name: EnemyLeft(Area9)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62441,11 +63137,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1723137983}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -26.866, y: 0.3, z: 0.25}
+  m_LocalPosition: {x: -27.42, y: 0.3, z: 0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1444395511}
   - {fileID: 1592228675}
+  - {fileID: 1910929388}
   m_Father: {fileID: 241320052}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -62468,6 +63165,52 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1723137986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1723137983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5d59cfd7dc1132439fc977b0104d84d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lvlController: {fileID: 0}
+  move: 1
+  moveSpeed: 2
+  endPosX: -26.4
+  endPosY: 0.3
+  endPosZ: 0.25
+  player: {fileID: 1577847618}
+  EnemyStartAppear: 0
+  EnemyArea: 8
+  timer: 0
+  hideDelayTimer: 2
+  enemyHide: 0
+  hp: 2
+  animator: {fileID: 0}
+  SlothWolf_DamageAnim: 0
+  SlothWolf_AimingAnim: 0
+  SlothWolf_ShootingAnim: 0
+--- !u!114 &1723137987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1723137983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633d22b77c0549748a62215bf5837a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpawn: {fileID: 1910929388}
+  bulletPrefab: {fileID: 1764963883137122, guid: cde03a857d38fc64e853c21bf9434a49,
+    type: 2}
+  timer: 0
+  shootDelayTime: 3
+  EnemyArea: 9
+  playerArea: 0
 --- !u!1 &1723272199
 GameObject:
   m_ObjectHideFlags: 0
@@ -62682,7 +63425,7 @@ Prefab:
     - target: {fileID: 114331427859031928, guid: a231a9832252beb449cd3495b620f30b,
         type: 2}
       propertyPath: EnemyCount
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1506761545032920, guid: a231a9832252beb449cd3495b620f30b, type: 2}
       propertyPath: m_Name
@@ -69007,6 +69750,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1910269910}
   m_Mesh: {fileID: 4300132, guid: f93d5b656c6dbd34c811a28a7c0d7861, type: 3}
+--- !u!1 &1910929387
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1910929388}
+  m_Layer: 0
+  m_Name: BulletSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1910929388
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1910929387}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.262, y: 1.59, z: -2.423}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1723137984}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1912784324
 GameObject:
   m_ObjectHideFlags: 0
@@ -69159,6 +69930,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1913172268}
   m_Mesh: {fileID: 4300630, guid: f93d5b656c6dbd34c811a28a7c0d7861, type: 3}
+--- !u!1 &1914794307
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1914794308}
+  m_Layer: 0
+  m_Name: BulletSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1914794308
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1914794307}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.262, y: 1.59, z: -2.423}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1689561628}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1914802619
 GameObject:
   m_ObjectHideFlags: 0
@@ -74471,6 +75270,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2046188112}
   m_Mesh: {fileID: 4300526, guid: f93d5b656c6dbd34c811a28a7c0d7861, type: 3}
+--- !u!1 &2048259311
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2048259312}
+  m_Layer: 0
+  m_Name: BulletSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2048259312
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2048259311}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.262, y: 1.59, z: -2.423}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1168948015}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2049599015
 GameObject:
   m_ObjectHideFlags: 0
@@ -76126,8 +76953,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2083502006}
   - component: {fileID: 2083502007}
+  - component: {fileID: 2083502008}
+  - component: {fileID: 2083502009}
   m_Layer: 0
-  m_Name: Enemy_06
+  m_Name: EnemyRight(Area9)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76141,11 +76970,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2083502005}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -21.65, y: 0.3, z: 1.505}
+  m_LocalPosition: {x: -21.16, y: 0.3, z: 1.505}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 782559006}
   - {fileID: 1794686193}
+  - {fileID: 604069129}
   m_Father: {fileID: 241320052}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -76168,6 +76998,52 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2083502008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2083502005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5d59cfd7dc1132439fc977b0104d84d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lvlController: {fileID: 0}
+  move: 1
+  moveSpeed: 2
+  endPosX: -21.65
+  endPosY: 0.3
+  endPosZ: 1.505
+  player: {fileID: 1577847618}
+  EnemyStartAppear: 0
+  EnemyArea: 9
+  timer: 0
+  hideDelayTimer: 2
+  enemyHide: 0
+  hp: 2
+  animator: {fileID: 0}
+  SlothWolf_DamageAnim: 0
+  SlothWolf_AimingAnim: 0
+  SlothWolf_ShootingAnim: 0
+--- !u!114 &2083502009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2083502005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633d22b77c0549748a62215bf5837a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpawn: {fileID: 604069129}
+  bulletPrefab: {fileID: 1764963883137122, guid: cde03a857d38fc64e853c21bf9434a49,
+    type: 2}
+  timer: 0
+  shootDelayTime: 3
+  EnemyArea: 9
+  playerArea: 0
 --- !u!1 &2083915064
 GameObject:
   m_ObjectHideFlags: 0
