@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class Level: MonoBehaviour
 {
     private float score;
+    public float currency;
     [SerializeField]private float givenTime;
     private float timeLeft;
     private float extraTime;
@@ -15,10 +16,13 @@ public class Level: MonoBehaviour
     [SerializeField] private Text ScoreUI;
     public LEVEL_STATE levelState;
     public List<GameObject> targetProfile;
+    public bool isContinue;
+    public GameObject conclusionUI; // UI while level finished
 
 	void Start () {
         timeLeft = givenTime;
         score = 0;
+        isContinue = false;
 	}
 	
     public void setScore(float s)
@@ -36,7 +40,7 @@ public class Level: MonoBehaviour
         float minutes = Mathf.Floor(timeLeft / 60);
         float seconds = Mathf.RoundToInt(timeLeft % 60);
 
-        timeLeftUI.text = minutes.ToString() + " : " + seconds.ToString();
+        timeLeftUI.text = minutes.ToString("00") + " : " + seconds.ToString("00");
         ScoreUI.text = score.ToString();
 
         if(levelState == LEVEL_STATE.PLAYING)
@@ -49,8 +53,22 @@ public class Level: MonoBehaviour
         }
         else if(levelState == LEVEL_STATE.FINISHED)
         {
-            //player currency +=  timeLeft* xxx;
-            //show score + etc
+            if (Input.touchCount > 0)
+            {
+                Touch touch = Input.GetTouch(0);
+                if (touch.phase == TouchPhase.Began)
+                {
+                    isContinue = true;
+                }
+            }
+
+            conclusionUI.SetActive(true);
+            if(isContinue)
+            {
+                currency += timeLeft * 10;
+            }
+            
+
         }
 	}
 
