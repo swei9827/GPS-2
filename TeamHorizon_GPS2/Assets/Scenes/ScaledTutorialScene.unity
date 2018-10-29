@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3657,7 +3657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad810de5ec706f4ba0aa0b36822b584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fall: -90
+  health: 2
   FallenTree: 0
 --- !u!65 &96559928
 BoxCollider:
@@ -9883,7 +9883,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &241320052
 Transform:
   m_ObjectHideFlags: 0
@@ -13351,7 +13351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad810de5ec706f4ba0aa0b36822b584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fall: -90
+  health: 2
   FallenTree: 0
 --- !u!1 &352033570
 GameObject:
@@ -29566,7 +29566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad810de5ec706f4ba0aa0b36822b584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fall: -90
+  health: 2
   FallenTree: 0
 --- !u!65 &806142312
 BoxCollider:
@@ -41760,7 +41760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad810de5ec706f4ba0aa0b36822b584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fall: -90
+  health: 2
   FallenTree: 0
 --- !u!65 &1158543924
 BoxCollider:
@@ -59450,7 +59450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad810de5ec706f4ba0aa0b36822b584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fall: 90
+  health: 2
   FallenTree: 0
 --- !u!23 &1630792669
 MeshRenderer:
@@ -62932,7 +62932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad810de5ec706f4ba0aa0b36822b584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fall: 90
+  health: 2
   FallenTree: 0
 --- !u!23 &1716569479
 MeshRenderer:
@@ -67493,7 +67493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad810de5ec706f4ba0aa0b36822b584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fall: -90
+  health: 2
   FallenTree: 0
 --- !u!65 &1847100800
 BoxCollider:
@@ -75452,6 +75452,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1577847610}
   camera: {fileID: 1671293120}
+  cameraRotatePos:
+  - 0
+  - -10
+  - 0
+  - 10
+  - 90
+  - 88
   LevelTutorial: 1
   Level1: 0
   Level2: 0
