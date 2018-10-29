@@ -6,6 +6,7 @@ public class ControlCenter : MonoBehaviour
 {
     public GameObject player;
     public Camera camera;
+    public float[] cameraRotatePos;
 
     public bool LevelTutorial;
     public bool Level1;
@@ -61,16 +62,27 @@ public class ControlCenter : MonoBehaviour
             {
                 if (!battleArea[0].GetComponent<HSProfile>().destroyed)
                 {
+                    camera.transform.rotation = Quaternion.Euler(0, Mathf.Lerp(camera.transform.rotation.y, cameraRotatePos[0], Time.time * 0.5f), 0);
                     sMove.PlayerMove(battleArea[0]);
                 }
                 else if (battleArea[0].GetComponent<HSProfile>().destroyed)
                 {
+                    camera.transform.rotation = Quaternion.Euler(0, Mathf.Lerp(camera.transform.rotation.y, cameraRotatePos[1], Time.time * 0.5f), 0);
                     sMove.PlayerMove(battleArea[1]);
+                    /*
+                    if(player.transform.position == battleArea[1].position)
+                    {
+                       
+                    } */                   
                 }
             }            
             if (locations[0].GetComponent<TargetProfile>().EnemyCount <= 0)
             {
-                status = STATUS.IDLE;
+                camera.transform.rotation = Quaternion.Euler(0, Mathf.Lerp(camera.transform.rotation.y, 0, Time.time * 0.2f), 0);
+                if(camera.transform.rotation.y == 0)
+                {
+                    status = STATUS.IDLE;
+                }              
             }
             if (status == STATUS.IDLE)
             {
@@ -215,16 +227,22 @@ public class ControlCenter : MonoBehaviour
             {
                 if (!battleArea[2].GetComponentInParent<HSProfile>().destroyed)
                 {
+                    camera.transform.rotation = Quaternion.Euler(0, Mathf.Lerp(camera.transform.rotation.y, cameraRotatePos[2], Time.time * 0.5f), 0);
                     sMove.PlayerMove(battleArea[2]);
                 }
                 else if (battleArea[2].GetComponentInParent<HSProfile>().destroyed)
                 {
+                    camera.transform.rotation = Quaternion.Euler(0, Mathf.Lerp(camera.transform.rotation.y, cameraRotatePos[3], Time.time * 0.5f), 0);
                     sMove.PlayerMove(battleArea[3]);
                 }
             }
             if (locations[6].GetComponent<TargetProfile>().EnemyCount <= 0)
             {
-                status = STATUS.IDLE;
+                camera.transform.rotation = Quaternion.Euler(0, Mathf.Lerp(camera.transform.rotation.y, 0, Time.time * 0.2f), 0);
+                if (camera.transform.rotation.y == 0)
+                {
+                    status = STATUS.IDLE;
+                }
             }
             if (status == STATUS.IDLE)
             {
@@ -332,16 +350,22 @@ public class ControlCenter : MonoBehaviour
             {
                 if (!battleArea[4].GetComponentInParent<HSProfile>().destroyed)
                 {
+                    camera.transform.rotation = Quaternion.Euler(0, Mathf.Lerp(camera.transform.rotation.y, cameraRotatePos[4], Time.time * 0.5f), 0);
                     sMove.PlayerMove(battleArea[4]);
                 }
                 else if (battleArea[4].GetComponentInParent<HSProfile>().destroyed)
                 {
+                    camera.transform.rotation = Quaternion.Euler(0, Mathf.Lerp(camera.transform.rotation.y, cameraRotatePos[5], Time.time * 0.5f), 0);
                     sMove.PlayerMove(battleArea[5]);
                 }
             }
             if (locations[10].GetComponent<TargetProfile>().EnemyCount <= 0)
             {
-                status = STATUS.IDLE;
+                camera.transform.rotation = Quaternion.Euler(0, Mathf.Lerp(camera.transform.rotation.y, 90, Time.time * 0.2f), 0);
+                if (camera.transform.rotation.y > 0 && camera.transform.rotation.y < 1)
+                {
+                    status = STATUS.IDLE;
+                }
             }
             if (status == STATUS.IDLE)
             {

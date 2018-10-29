@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3657,7 +3657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad810de5ec706f4ba0aa0b36822b584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fall: -90
+  health: 2
   FallenTree: 0
 --- !u!65 &96559928
 BoxCollider:
@@ -7598,6 +7598,8 @@ GameObject:
   - component: {fileID: 198714299}
   - component: {fileID: 198714301}
   - component: {fileID: 198714300}
+  - component: {fileID: 198714303}
+  - component: {fileID: 198714302}
   m_Layer: 0
   m_Name: BlockingTree_01
   m_TagString: Untagged
@@ -7663,6 +7665,31 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 198714298}
   m_Mesh: {fileID: 4300376, guid: f93d5b656c6dbd34c811a28a7c0d7861, type: 3}
+--- !u!114 &198714302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 198714298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3bdf82ebb505cc4297195cf0e8d2625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slowDuration: 2
+  slowSpeed: 2
+--- !u!65 &198714303
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 198714298}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8268535, y: 5.027073, z: 1.4980278}
+  m_Center: {x: 0.95286703, y: 0.64154273, z: -1.0718311}
 --- !u!1 &198866589
 GameObject:
   m_ObjectHideFlags: 0
@@ -9883,7 +9910,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &241320052
 Transform:
   m_ObjectHideFlags: 0
@@ -13351,7 +13378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad810de5ec706f4ba0aa0b36822b584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fall: -90
+  health: 2
   FallenTree: 0
 --- !u!1 &352033570
 GameObject:
@@ -16140,6 +16167,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 423521115}
+  - component: {fileID: 423521117}
+  - component: {fileID: 423521116}
   m_Layer: 0
   m_Name: Hazard_01
   m_TagString: Untagged
@@ -16160,6 +16189,31 @@ Transform:
   m_Father: {fileID: 1716569476}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &423521116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 423521114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3bdf82ebb505cc4297195cf0e8d2625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slowDuration: 2
+  slowSpeed: 2
+--- !u!65 &423521117
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 423521114}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 6}
+  m_Center: {x: 0, y: 0.9, z: 1}
 --- !u!1 &424019580
 GameObject:
   m_ObjectHideFlags: 0
@@ -29566,7 +29620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad810de5ec706f4ba0aa0b36822b584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fall: -90
+  health: 2
   FallenTree: 0
 --- !u!65 &806142312
 BoxCollider:
@@ -39853,6 +39907,8 @@ GameObject:
   - component: {fileID: 1122039807}
   - component: {fileID: 1122039809}
   - component: {fileID: 1122039808}
+  - component: {fileID: 1122039811}
+  - component: {fileID: 1122039810}
   m_Layer: 0
   m_Name: BlockingTree_02
   m_TagString: Untagged
@@ -39918,6 +39974,31 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1122039806}
   m_Mesh: {fileID: 4300376, guid: f93d5b656c6dbd34c811a28a7c0d7861, type: 3}
+--- !u!114 &1122039810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1122039806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3bdf82ebb505cc4297195cf0e8d2625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slowDuration: 2
+  slowSpeed: 2
+--- !u!65 &1122039811
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1122039806}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8268535, y: 5.027073, z: 1.4980278}
+  m_Center: {x: 0.95286703, y: 0.64154273, z: -1.0718311}
 --- !u!1 &1123712553
 GameObject:
   m_ObjectHideFlags: 0
@@ -41760,7 +41841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad810de5ec706f4ba0aa0b36822b584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fall: -90
+  health: 2
   FallenTree: 0
 --- !u!65 &1158543924
 BoxCollider:
@@ -50275,6 +50356,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1378582095}
+  - component: {fileID: 1378582097}
+  - component: {fileID: 1378582096}
   m_Layer: 0
   m_Name: Hazard_00
   m_TagString: Untagged
@@ -50295,6 +50378,31 @@ Transform:
   m_Father: {fileID: 1630792667}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1378582096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1378582094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3bdf82ebb505cc4297195cf0e8d2625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slowDuration: 2
+  slowSpeed: 2
+--- !u!65 &1378582097
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1378582094}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 6}
+  m_Center: {x: 0, y: 0.9, z: 1}
 --- !u!1 &1382850747
 GameObject:
   m_ObjectHideFlags: 0
@@ -57272,6 +57380,7 @@ GameObject:
   - component: {fileID: 1577847613}
   - component: {fileID: 1577847612}
   - component: {fileID: 1577847611}
+  - component: {fileID: 1577847615}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -57299,7 +57408,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1577847610}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 2.22, z: 1}
@@ -57491,6 +57600,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!54 &1577847615
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1577847610}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &1577847618
 Transform:
   m_ObjectHideFlags: 0
@@ -59450,7 +59574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad810de5ec706f4ba0aa0b36822b584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fall: 90
+  health: 2
   FallenTree: 0
 --- !u!23 &1630792669
 MeshRenderer:
@@ -62932,7 +63056,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad810de5ec706f4ba0aa0b36822b584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fall: 90
+  health: 2
   FallenTree: 0
 --- !u!23 &1716569479
 MeshRenderer:
@@ -65952,6 +66076,8 @@ GameObject:
   - component: {fileID: 1797430568}
   - component: {fileID: 1797430570}
   - component: {fileID: 1797430569}
+  - component: {fileID: 1797430571}
+  - component: {fileID: 1797430572}
   m_Layer: 0
   m_Name: BlockingTree_00
   m_TagString: Untagged
@@ -66017,6 +66143,31 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1797430567}
   m_Mesh: {fileID: 4300376, guid: f93d5b656c6dbd34c811a28a7c0d7861, type: 3}
+--- !u!65 &1797430571
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1797430567}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8268535, y: 5.027073, z: 1.4980278}
+  m_Center: {x: 0.95286703, y: 0.64154273, z: -1.0718311}
+--- !u!114 &1797430572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1797430567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3bdf82ebb505cc4297195cf0e8d2625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slowDuration: 2
+  slowSpeed: 2
 --- !u!1 &1799910422
 GameObject:
   m_ObjectHideFlags: 0
@@ -67493,7 +67644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad810de5ec706f4ba0aa0b36822b584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fall: -90
+  health: 2
   FallenTree: 0
 --- !u!65 &1847100800
 BoxCollider:
@@ -75452,6 +75603,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1577847610}
   camera: {fileID: 1671293120}
+  cameraRotatePos:
+  - 0
+  - -10
+  - 0
+  - 10
+  - 90
+  - 88
   LevelTutorial: 1
   Level1: 0
   Level2: 0
