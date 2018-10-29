@@ -5,10 +5,6 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     public Level lvlController;
-    public bool left;
-    public bool right;
-    public bool down;
-    public bool top;
 
     public bool move;
 
@@ -22,6 +18,7 @@ public class EnemyMovement : MonoBehaviour
 
     public float endPosX;
     public float endPosY;
+    public float endPosZ;
     private ControlCenter CC;
 
     // When Reaching CheckPoint
@@ -31,10 +28,11 @@ public class EnemyMovement : MonoBehaviour
     public int EnemyArea = 0;
     int playerArea = 0;
 
+    [SerializeField]
     public static bool StartShooting = false;
 
-    public float timer;
-    public int hideDelayTimer = 3;
+    public float timer = 0;
+    public int hideDelayTimer;
 
     public bool enemyHide = false;
     public int hp;
@@ -79,8 +77,7 @@ public class EnemyMovement : MonoBehaviour
 
         if(move == true && EnemyStartAppear == true)
         {
-            endPosition = new Vector3(-endPosX, endPosY, this.transform.position.z);
-            Invoke("StartOnBattle", 3f);
+            endPosition = new Vector3(endPosX, endPosY, endPosZ);
             if (transform.position != endPosition)
             {
                 transform.position = Vector3.MoveTowards(transform.position, endPosition, moveSpeed * Time.deltaTime);
