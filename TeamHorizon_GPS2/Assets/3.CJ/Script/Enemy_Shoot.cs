@@ -13,11 +13,17 @@ public class Enemy_Shoot : MonoBehaviour {
 
     public int EnemyArea = 0;
     public int playerArea = 0;
+    public ControlCenter CC;
+
+    private void Start()
+    {
+        CC = GameObject.FindGameObjectWithTag("ControlCenter").GetComponent<ControlCenter>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        playerArea = TargetProfile.PlayerArea;
+        playerArea = CC.levelStatus;
         timer += Time.deltaTime;
         startShoot = EnemyMovement.StartShooting;
         if(timer  > shootDelayTime)
