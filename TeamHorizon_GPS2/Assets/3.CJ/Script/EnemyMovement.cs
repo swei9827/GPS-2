@@ -62,7 +62,7 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerArea = TargetProfile.PlayerArea;
+        playerArea = CC.levelStatus;
         if (this.hp <= 0)
         {
             Destroy(this.gameObject);

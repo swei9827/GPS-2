@@ -9,8 +9,6 @@ public class TargetProfile : MonoBehaviour {
     Transform playerPos;
     bool reached = false;
 
-    public static int PlayerArea = 0;
-
     // Use this for initialization
     void Start()
     {
@@ -29,7 +27,6 @@ public class TargetProfile : MonoBehaviour {
         if (playerPos.position == this.transform.position && !reached)
         {
             Debug.Log("Reached Target : " + this.name);
-            PlayerArea++;
             reached = true;
         }
     }    

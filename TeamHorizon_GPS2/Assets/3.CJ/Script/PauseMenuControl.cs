@@ -5,12 +5,11 @@ using UnityEngine;
 public class PauseMenuControl : MonoBehaviour {
 
     public GameObject PauseMenu;
-    Level level;
+    public Level level;
 
 	// Use this for initialization
 	void Start () {
         level = GameObject.FindGameObjectWithTag("ControlCenter").GetComponent<Level>();
-
     }
 	
 	// Update is called once per frame

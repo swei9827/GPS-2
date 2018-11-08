@@ -43,6 +43,11 @@ public class Level: MonoBehaviour
         timeLeftUI.text = minutes.ToString("00") + " : " + seconds.ToString("00");
         ScoreUI.text = score.ToString();
 
+        if(timeLeft <= 0)
+        {
+            LoadScene(0);
+        }
+
         if(levelState == LEVEL_STATE.PLAYING)
         {
             timeLeft -= Time.deltaTime;
