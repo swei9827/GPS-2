@@ -31,7 +31,7 @@ public class ControlCenter : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        //player = GameObject.FindGameObjectWithTag("Player");
         sMove = player.GetComponent<ScriptedMovement>();
         screenWobble = GameObject.FindGameObjectWithTag("2ndCamera").GetComponent<ScreenWobble>();
         status = STATUS.MOVING;

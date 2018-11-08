@@ -5,9 +5,13 @@ using UnityEngine;
 public class TreeFallHazard : MonoBehaviour
 {
     float fall = 90;
-    public int health = 2;
+    public int health;
     public bool FallenTree = false;
+    public float slowDuration;
+    public float slowSpeed;
+    public GameObject Player;
     private Material mat;
+    float originalSpeed = 10.0f;
 
     private void Start()
     {
@@ -29,6 +33,15 @@ public class TreeFallHazard : MonoBehaviour
             {
                 Destroy(this.gameObject);
             }
+        }
+    }
+
+    void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.CompareTag("Player") && health > 0)
+        {
+            Player.GetComponent<ScriptedMovement>().speed = slowSpeed;
+            StartCoroutine(ResetSpeed(slowDuration));
         }
     }
 
@@ -79,6 +92,12 @@ public class TreeFallHazard : MonoBehaviour
 
             transform.rotation = Quaternion.Euler(-Mathf.Clamp(fall, 5, 90), transform.localEulerAngles.y, transform.localEulerAngles.z);
         }
+    }
+
+    private IEnumerator ResetSpeed(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        GameObject.FindGameObjectWithTag("Player").GetComponent<ScriptedMovement>().speed = originalSpeed;
     }
 
 }
