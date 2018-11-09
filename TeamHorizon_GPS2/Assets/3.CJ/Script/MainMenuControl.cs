@@ -8,7 +8,9 @@ public class MainMenuControl : MonoBehaviour {
     public GameObject MenuPage;
     public GameObject SettingPage;
     public GameObject SelectStage;
-    
+    public GameObject CreditPage1;
+    public GameObject CreditPage2;
+    public GameObject StageSelectPage;
 
 	// Use this for initialization
 	void Start () {
@@ -34,18 +36,38 @@ public class MainMenuControl : MonoBehaviour {
     {
         MenuPage.SetActive(false);
         SelectStage.SetActive(true);
-
     }
 
-    public void setting()
+    public void Setting()
     {
         MenuPage.SetActive(false);
         SettingPage.SetActive(true); 
     }
 
-    public void backMenuFromSetting()
+    public void BackMenuPage()
     {
         SettingPage.SetActive(false);
+        CreditPage1.SetActive(false);
+        CreditPage2.SetActive(false);
+        StageSelectPage.SetActive(false);
         MenuPage.SetActive(true);
+    }
+
+    public void CreditPage()
+    {
+        MenuPage.SetActive(false);
+        CreditPage1.SetActive(true);
+    }
+
+    public void CreditChangeSecondPageButton()
+    {
+        CreditPage1.SetActive(false);
+        CreditPage2.SetActive(true);
+    }
+
+    public void CreditBackFirstPageButton()
+    {
+        CreditPage2.SetActive(false);
+        CreditPage1.SetActive(true);
     }
 }
