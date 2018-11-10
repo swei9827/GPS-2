@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class ScriptedMovement : MonoBehaviour {
 
@@ -41,4 +42,6 @@ public class ScriptedMovement : MonoBehaviour {
         Debug.DrawRay(transform.position, newDir, Color.red);
         transform.rotation = Quaternion.LookRotation(newDir); 
     }
+
+
 }

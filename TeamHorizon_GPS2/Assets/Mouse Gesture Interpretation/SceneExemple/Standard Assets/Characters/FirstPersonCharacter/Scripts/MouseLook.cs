@@ -52,7 +52,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 camera.localRotation = m_CameraTargetRot;
             }
 
-            UpdateCursorLock();
+            //UpdateCursorLock();
         }
 
         public void SetCursorLock(bool value)
@@ -72,7 +72,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 InternalLockUpdate();
         }
 
-        private void InternalLockUpdate()
+        public void InternalLockUpdate()
         {
             if(Input.GetKeyUp(KeyCode.Escape))
             {
@@ -80,18 +80,21 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             else if(Input.GetMouseButtonUp(0))
             {
-                m_cursorIsLocked = true;
+                //m_cursorIsLocked = true;
+                m_cursorIsLocked = false;
             }
 
             if (m_cursorIsLocked)
             {
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
+                //Cursor.lockState = CursorLockMode.Locked;
+                //Cursor.visible = false;
+                Cursor.visible = true;
             }
             else if (!m_cursorIsLocked)
             {
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
+               
             }
         }
 

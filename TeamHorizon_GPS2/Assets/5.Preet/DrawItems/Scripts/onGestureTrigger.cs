@@ -10,31 +10,36 @@ public class onGestureTrigger : MonoBehaviour
     public GameObject Prefab;
     public bool boxGesture;
 
-    
-  
 
-   
     void OnTriggerEnter(Collider other)
     {
-            print("YAY!");
-
-        if(onQTETrigger == true)
+        //print("QTE TRIGGET ON");
+        if(other.gameObject.tag == "Player")
         {
-            this.gameObject.GetComponent<Renderer>().material.color = Color.red;
+            print("QTE TRIGGET ON");
+            onQTETrigger = true;
+            if (onQTETrigger == true)
+            {
+                this.gameObject.GetComponent<Renderer>().material.color = Color.red;
+                Prefab.SetActive(true);
+                //Instantiate(Prefab, Spawnpoint.position, Spawnpoint.rotation);
+                Time.timeScale = 0.1f; //time.timescale = 0.5; // to slow doen the game during qte
+            }
+            Destroy(gameObject);
         }
 
-       {
-            onQTETrigger = true;
-            Instantiate(Prefab , Spawnpoint.position, Spawnpoint.rotation);
-       }
+        
 
-        //if (tag == "boxGesture" && !gameObject.activeSelf)
+                //if (tag == "boxGesture" && !gameObject.activeSelf)
         //  if (other.gameObject.tag == "boxGesture" && boxGesture == false)
         //    {
         //  Prefab.SetActive(true);
         //  }
 
-        Time.timeScale = 0.1f; //time.timescale = 0.5; // to slow doen the game during qte
-    }
 
+    }
+  //  private void OnCollisionStay2D(Collision2D collision)
+   // {
+        
+  //  }
 }
