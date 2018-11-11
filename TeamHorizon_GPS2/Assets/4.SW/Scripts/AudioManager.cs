@@ -1,14 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+using System;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour {
 
     public AudioSource efxSource;
     public AudioSource musicSource;
+    public AudioMixerGroup mixerGroup;
     public static AudioManager instance = null;
     public float lowPitchRange = 0.95f;
     public float highPitchRange = 1.05f;
+    //public List<AudioClip> musicList;
+    public Sound[] sounds;
 
     /*public static AudioManager Instance
     {
@@ -31,9 +37,38 @@ public class AudioManager : MonoBehaviour {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
+
+        foreach (Sound s in sounds)
+        {
+            s.source = gameObject.AddComponent<AudioSource>();
+            s.source.clip = s.clip;
+            s.source.loop = s.loop;
+
+            s.source.outputAudioMixerGroup = mixerGroup;
+        }
     }
 
-    public void PlaySingle(AudioClip clip)
+    private void Start()
+    {
+        Play("Opening");
+    }
+
+    public void Play(string sound)
+    {
+        Sound s = Array.Find(sounds, item => item.name == sound);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + " not found!");
+            return;
+        }
+
+        s.source.volume = s.volume * (1f + UnityEngine.Random.Range(-s.volumeVariance / 2f, s.volumeVariance / 2f));
+        s.source.pitch = s.pitch * (1f + UnityEngine.Random.Range(-s.pitchVariance / 2f, s.pitchVariance / 2f));
+
+        s.source.Play();
+    }
+
+    /*public void PlaySingle(AudioClip clip)
     {
         //Set the clip of our efxSource audio source to the clip passed in as a parameter.
         efxSource.clip = clip;
@@ -58,5 +93,5 @@ public class AudioManager : MonoBehaviour {
 
         //Play the clip.
         efxSource.Play();
-    }
+    }*/
 }

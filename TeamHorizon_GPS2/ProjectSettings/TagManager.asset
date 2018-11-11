@@ -18,6 +18,7 @@ TagManager:
   - Environment
   - PlayerHead
   - Enemy_Destroyable_Bullet
+  - GameAudioSource
   layers:
   - Default
   - TransparentFX

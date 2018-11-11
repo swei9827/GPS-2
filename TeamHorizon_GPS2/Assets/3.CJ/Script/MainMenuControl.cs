@@ -30,6 +30,7 @@ public class MainMenuControl : MonoBehaviour {
     public void StartGame()
     {
         SceneManager.LoadScene(1);
+        FindObjectOfType<AudioManager>().Play("Stage 1");
     }
 
     public void StageSelect()
