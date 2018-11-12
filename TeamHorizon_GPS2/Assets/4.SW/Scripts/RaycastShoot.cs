@@ -56,18 +56,26 @@ public class RaycastShoot : MonoBehaviour
             {
                 StartCoroutine(ReloadEffect2(weapon.eachBulletRequire, (weapon.maxAmmo - weapon.currentAmmo)));
             }
+            for (int i = 0; i < weapon.currentAmmo; i++)
+            {
+                Animator anim = bulletList[i].GetComponent<Animator>();
+                anim.Play("bulletIdle");
+            }
         }
-        if(weapon.currentAmmo <= 10)
+        /*if(weapon.currentAmmo <= 10)
         {
             for (int i = 0; i < bulletList.Count; i++)
             {
-                bulletList[i].gameObject.SetActive(false);
+                Animator anim = bulletList[i].GetComponent<Animator>();
+                anim
             }
             for (int i = 0; i < weapon.currentAmmo; i++)
             {
-                bulletList[i].gameObject.SetActive(true);
+                Animation anim = bulletList[i].GetComponent<Animation>();
+                anim.Play("bulletIdle");
+                //bulletList[i].gameObject.SetActive(true);
             }
-        }
+        }*/
         
         //MouseShoot();
         TouchShoot();
@@ -175,6 +183,8 @@ public class RaycastShoot : MonoBehaviour
                                 Vector3 posN = camera.ScreenToWorldPoint(posNear);
                                 RaycastHit hit;
                                 weapon.currentAmmo--;
+                                Animator anim = bulletList[weapon.currentAmmo].GetComponent<Animator>();
+                                anim.Play("bulletAnim");
                                 Vector3 shootOrigin = camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.0f));
                                 laserLine.SetPosition(0, shootOrigin);
                                 if (Physics.Raycast(shootOrigin, posF - posN, out hit, weapon.weaponRange))
