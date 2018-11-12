@@ -1957,6 +1957,7 @@ GameObject:
   - component: {fileID: 49852395}
   - component: {fileID: 49852394}
   - component: {fileID: 49852393}
+  - component: {fileID: 49852396}
   m_Layer: 0
   m_Name: Bullet (4)
   m_TagString: Untagged
@@ -2066,6 +2067,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &49852396
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 49852391}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a6656cd3432f8e241a5ccbbedda91da0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &51003369
 GameObject:
   m_ObjectHideFlags: 0
@@ -3907,6 +3926,8 @@ MonoBehaviour:
   slowDuration: 0
   slowSpeed: 0
   Player: {fileID: 0}
+  nextMelee: 0
+  meleeHit: 0.2
 --- !u!65 &96559928
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4354,6 +4375,11 @@ Transform:
   m_Father: {fileID: 479566976}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &104940217 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4804351585465562, guid: 3c7b8fafb32ef4040a4a491e992882de,
+    type: 2}
+  m_PrefabInternal: {fileID: 110083120}
 --- !u!1 &106940536
 GameObject:
   m_ObjectHideFlags: 0
@@ -4461,6 +4487,59 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 108983649}
   m_Mesh: {fileID: 4300264, guid: f93d5b656c6dbd34c811a28a7c0d7861, type: 3}
+--- !u!1001 &110083120
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1460103216}
+    m_Modifications:
+    - target: {fileID: 4804351585465562, guid: 3c7b8fafb32ef4040a4a491e992882de, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804351585465562, guid: 3c7b8fafb32ef4040a4a491e992882de, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804351585465562, guid: 3c7b8fafb32ef4040a4a491e992882de, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804351585465562, guid: 3c7b8fafb32ef4040a4a491e992882de, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804351585465562, guid: 3c7b8fafb32ef4040a4a491e992882de, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804351585465562, guid: 3c7b8fafb32ef4040a4a491e992882de, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804351585465562, guid: 3c7b8fafb32ef4040a4a491e992882de, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804351585465562, guid: 3c7b8fafb32ef4040a4a491e992882de, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23984584128854522, guid: 3c7b8fafb32ef4040a4a491e992882de,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114601808960570074, guid: 3c7b8fafb32ef4040a4a491e992882de,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114601808960570074, guid: 3c7b8fafb32ef4040a4a491e992882de, type: 2}
+  m_SourcePrefab: {fileID: 100100000, guid: 3c7b8fafb32ef4040a4a491e992882de, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &110415527
 GameObject:
   m_ObjectHideFlags: 0
@@ -8106,6 +8185,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3bdf82ebb505cc4297195cf0e8d2625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextMelee: 0
+  meleeHit: 0.2
   TBHealth: 2
   slowDuration: 1
   slowSpeed: 2
@@ -14039,6 +14120,8 @@ MonoBehaviour:
   slowDuration: 0
   slowSpeed: 0
   Player: {fileID: 0}
+  nextMelee: 0
+  meleeHit: 0.2
 --- !u!1 &352033570
 GameObject:
   m_ObjectHideFlags: 0
@@ -19298,6 +19381,7 @@ GameObject:
   - component: {fileID: 486080559}
   - component: {fileID: 486080558}
   - component: {fileID: 486080557}
+  - component: {fileID: 486080560}
   m_Layer: 0
   m_Name: Bullet (9)
   m_TagString: Untagged
@@ -19407,6 +19491,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &486080560
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 486080555}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a6656cd3432f8e241a5ccbbedda91da0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &487996550
 GameObject:
   m_ObjectHideFlags: 0
@@ -31803,6 +31905,8 @@ MonoBehaviour:
   slowDuration: 0
   slowSpeed: 0
   Player: {fileID: 0}
+  nextMelee: 0
+  meleeHit: 0.2
 --- !u!65 &806142312
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33201,6 +33305,7 @@ GameObject:
   - component: {fileID: 844344665}
   - component: {fileID: 844344664}
   - component: {fileID: 844344663}
+  - component: {fileID: 844344666}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -33310,6 +33415,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &844344666
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 844344661}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a6656cd3432f8e241a5ccbbedda91da0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &844682905
 GameObject:
   m_ObjectHideFlags: 0
@@ -36916,6 +37039,7 @@ GameObject:
   - component: {fileID: 929389844}
   - component: {fileID: 929389843}
   - component: {fileID: 929389842}
+  - component: {fileID: 929389845}
   m_Layer: 0
   m_Name: Bullet (2)
   m_TagString: Untagged
@@ -37025,6 +37149,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &929389845
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 929389840}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a6656cd3432f8e241a5ccbbedda91da0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &931491939
 GameObject:
   m_ObjectHideFlags: 0
@@ -38140,6 +38282,7 @@ GameObject:
   - component: {fileID: 960058215}
   - component: {fileID: 960058214}
   - component: {fileID: 960058213}
+  - component: {fileID: 960058216}
   m_Layer: 0
   m_Name: Bullet (6)
   m_TagString: Untagged
@@ -38249,6 +38392,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &960058216
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 960058211}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a6656cd3432f8e241a5ccbbedda91da0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &964988735
 GameObject:
   m_ObjectHideFlags: 0
@@ -42975,6 +43136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3bdf82ebb505cc4297195cf0e8d2625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextMelee: 0
+  meleeHit: 0.2
   TBHealth: 2
   slowDuration: 1
   slowSpeed: 2
@@ -44649,6 +44812,7 @@ GameObject:
   - component: {fileID: 1152695474}
   - component: {fileID: 1152695473}
   - component: {fileID: 1152695472}
+  - component: {fileID: 1152695475}
   m_Layer: 0
   m_Name: Bullet (3)
   m_TagString: Untagged
@@ -44758,6 +44922,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1152695475
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1152695470}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a6656cd3432f8e241a5ccbbedda91da0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1154023871
 Prefab:
   m_ObjectHideFlags: 0
@@ -44960,6 +45142,8 @@ MonoBehaviour:
   slowDuration: 0
   slowSpeed: 0
   Player: {fileID: 0}
+  nextMelee: 0
+  meleeHit: 0.2
 --- !u!65 &1158543924
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -57966,7 +58150,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 104940217}
   m_Father: {fileID: 1577847618}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -61948,7 +62133,17 @@ MonoBehaviour:
     reloading: 0
   camera: {fileID: 1671293120}
   meleeDamage: 2
-  bulletList: []
+  bulletList:
+  - {fileID: 844344663}
+  - {fileID: 1972614041}
+  - {fileID: 929389842}
+  - {fileID: 1152695472}
+  - {fileID: 49852393}
+  - {fileID: 1838539833}
+  - {fileID: 960058213}
+  - {fileID: 1963356577}
+  - {fileID: 1881400376}
+  - {fileID: 486080557}
   reloadIndicator: {fileID: 1822775094}
   bulletLeft: {fileID: 1014359199}
   meleeBlade: {fileID: 0}
@@ -64047,6 +64242,8 @@ MonoBehaviour:
   slowDuration: 1
   slowSpeed: 2
   Player: {fileID: 1577847610}
+  nextMelee: 0
+  meleeHit: 0.2
 --- !u!23 &1630792669
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -68013,6 +68210,8 @@ MonoBehaviour:
   slowDuration: 1
   slowSpeed: 2
   Player: {fileID: 1577847610}
+  nextMelee: 0
+  meleeHit: 0.2
 --- !u!23 &1716569479
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -71344,6 +71543,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3bdf82ebb505cc4297195cf0e8d2625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextMelee: 0
+  meleeHit: 0.2
   TBHealth: 2
   slowDuration: 1
   slowSpeed: 2
@@ -72707,6 +72908,7 @@ GameObject:
   - component: {fileID: 1838539835}
   - component: {fileID: 1838539834}
   - component: {fileID: 1838539833}
+  - component: {fileID: 1838539836}
   m_Layer: 0
   m_Name: Bullet (5)
   m_TagString: Untagged
@@ -72816,6 +73018,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1838539836
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1838539831}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a6656cd3432f8e241a5ccbbedda91da0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1840638664
 GameObject:
   m_ObjectHideFlags: 0
@@ -73058,6 +73278,8 @@ MonoBehaviour:
   slowDuration: 0
   slowSpeed: 0
   Player: {fileID: 0}
+  nextMelee: 0
+  meleeHit: 0.2
 --- !u!65 &1847100800
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -74345,6 +74567,7 @@ GameObject:
   - component: {fileID: 1881400378}
   - component: {fileID: 1881400377}
   - component: {fileID: 1881400376}
+  - component: {fileID: 1881400379}
   m_Layer: 0
   m_Name: Bullet (8)
   m_TagString: Untagged
@@ -74454,6 +74677,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1881400379
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1881400374}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a6656cd3432f8e241a5ccbbedda91da0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1882178468
 GameObject:
   m_ObjectHideFlags: 0
@@ -77300,6 +77541,7 @@ GameObject:
   - component: {fileID: 1963356579}
   - component: {fileID: 1963356578}
   - component: {fileID: 1963356577}
+  - component: {fileID: 1963356580}
   m_Layer: 0
   m_Name: Bullet (7)
   m_TagString: Untagged
@@ -77409,6 +77651,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1963356580
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1963356575}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a6656cd3432f8e241a5ccbbedda91da0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1964157604
 GameObject:
   m_ObjectHideFlags: 0
@@ -77876,6 +78136,8 @@ GameObject:
   - component: {fileID: 1972614043}
   - component: {fileID: 1972614042}
   - component: {fileID: 1972614041}
+  - component: {fileID: 1972614044}
+  - component: {fileID: 1972614045}
   m_Layer: 0
   m_Name: Bullet (1)
   m_TagString: Untagged
@@ -77985,6 +78247,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1972614044
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1972614039}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a6656cd3432f8e241a5ccbbedda91da0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!111 &1972614045
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1972614039}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 9302e3538a62fb443ac451d60805c4cd, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 9302e3538a62fb443ac451d60805c4cd, type: 2}
+  - {fileID: 7400000, guid: 1edd53f0a2354724a876230de8c962bb, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1974151232
 GameObject:
   m_ObjectHideFlags: 0
