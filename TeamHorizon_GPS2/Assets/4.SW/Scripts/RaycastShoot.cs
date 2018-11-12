@@ -45,7 +45,7 @@ public class RaycastShoot : MonoBehaviour
         //Debug.Log(Input.acceleration.x);
 
         // Reload
-        if ((new Vector2(Input.acceleration.x, Input.acceleration.z).magnitude > 2 && weapon.reloading == false)) //&& Input.GetButtonDown("Jump")) 
+        if ((new Vector2(Input.acceleration.x, Input.acceleration.z).magnitude > 1.5 && weapon.reloading == false)) //&& Input.GetButtonDown("Jump")) 
         {
             weapon.reloading = true;
             if (weapon.clipReload == true)
