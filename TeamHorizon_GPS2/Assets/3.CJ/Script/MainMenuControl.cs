@@ -12,8 +12,8 @@ public class MainMenuControl : MonoBehaviour {
     public GameObject CreditPage2;
     public GameObject StageSelectPage;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -34,7 +34,7 @@ public class MainMenuControl : MonoBehaviour {
         audio.Stop("OpeningBGM");
         audio.Stop("Opening");
         audio.Play("Stage 1");
-
+        Time.timeScale = 1.0f;
     }
 
     public void StageSelect()

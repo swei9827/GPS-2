@@ -55,7 +55,8 @@ public class EnemyMovement : MonoBehaviour
     public bool Soldier_ShootingAnim;
     public bool Soldier_DeadAnim;
     public bool Soldier_ThrowBarrelAnim;
-    
+
+    public List<TargetProfile> targetProfile;
 
     public static bool EnemyHPreducing = false;
 
@@ -96,8 +97,28 @@ public class EnemyMovement : MonoBehaviour
         playerArea = CC.levelStatus;
         if (this.hp <= 0)
         {
+            if (EnemyArea == 1)
+            {
+                targetProfile[0].EnemyCount -= 1;
+            }
+            else if (EnemyArea == 7)
+            {
+                targetProfile[1].EnemyCount -= 1;
+            }
+            else if (EnemyArea == 9)
+            {
+                targetProfile[2].EnemyCount -= 1;
+            }
+            else if (EnemyArea == 11)
+            {
+                targetProfile[3].EnemyCount -= 1;
+            }
+            else if (EnemyArea == 13)
+            {
+                targetProfile[4].EnemyCount -= 1;
+            }
+
             Destroy(this.gameObject);
-            //CC.enemyCount -= 1;
             lvlController.GetComponent<Level>().setScore(lvlController.GetComponent<Level>().getScore()+1000);
         }
 

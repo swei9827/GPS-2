@@ -43,8 +43,8 @@ public class Level: MonoBehaviour
         float minutes = Mathf.Floor(timeLeft / 60);
         float seconds = Mathf.RoundToInt(timeLeft % 60);
 
-        //timeLeftUI.text = minutes.ToString("00") + " : " + seconds.ToString("00");
-        //ScoreUI.text = score.ToString();
+        timeLeftUI.text = minutes.ToString("00") + " : " + seconds.ToString("00");
+        ScoreUI.text = score.ToString();
 
         if(timeLeft <= 0)
         {

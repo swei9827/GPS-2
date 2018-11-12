@@ -4750,8 +4750,9 @@ GameObject:
   - component: {fileID: 111735542}
   - component: {fileID: 111735543}
   - component: {fileID: 111735544}
+  - component: {fileID: 111735545}
   m_Layer: 0
-  m_Name: EnemyBehind(Area12)
+  m_Name: EnemyBehind(LevelStatus11)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4832,6 +4833,12 @@ MonoBehaviour:
   Soldier_ShootingAnim: 0
   Soldier_DeadAnim: 0
   Soldier_ThrowBarrelAnim: 0
+  targetProfile:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &111735544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4851,6 +4858,18 @@ MonoBehaviour:
   EnemyArea: 12
   playerArea: 0
   CC: {fileID: 0}
+--- !u!65 &111735545
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 111735540}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.7, z: 1}
+  m_Center: {x: 0.35, y: 1.11, z: -2.8}
 --- !u!1 &118787777
 GameObject:
   m_ObjectHideFlags: 0
@@ -5298,8 +5317,9 @@ GameObject:
   - component: {fileID: 133416345}
   - component: {fileID: 133416346}
   - component: {fileID: 133416347}
+  - component: {fileID: 133416348}
   m_Layer: 0
-  m_Name: EnemyFront(Area15)
+  m_Name: EnemyFront(LevelStatus13)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5361,7 +5381,7 @@ MonoBehaviour:
   player: {fileID: 1577847618}
   EnemyStartAppear: 0
   ThrowBarrel: 0
-  EnemyArea: 15
+  EnemyArea: 13
   timer: 0
   hideDelayTimer: 3
   enemyHide: 0
@@ -5380,6 +5400,12 @@ MonoBehaviour:
   Soldier_ShootingAnim: 0
   Soldier_DeadAnim: 0
   Soldier_ThrowBarrelAnim: 0
+  targetProfile:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &133416347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5399,6 +5425,18 @@ MonoBehaviour:
   EnemyArea: 15
   playerArea: 0
   CC: {fileID: 0}
+--- !u!65 &133416348
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 133416343}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.7, z: 1}
+  m_Center: {x: 0.35, y: 1.11, z: -2.8}
 --- !u!1 &135658660
 GameObject:
   m_ObjectHideFlags: 0
@@ -6177,6 +6215,7 @@ GameObject:
   - component: {fileID: 146069477}
   - component: {fileID: 146069478}
   - component: {fileID: 146069479}
+  - component: {fileID: 146069480}
   m_Layer: 0
   m_Name: EnemyRight(LevelStatus7)
   m_TagString: Enemy
@@ -6259,6 +6298,12 @@ MonoBehaviour:
   Soldier_ShootingAnim: 0
   Soldier_DeadAnim: 0
   Soldier_ThrowBarrelAnim: 0
+  targetProfile:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &146069479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6278,6 +6323,18 @@ MonoBehaviour:
   EnemyArea: 7
   playerArea: 0
   CC: {fileID: 0}
+--- !u!65 &146069480
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 146069475}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.7, z: 1}
+  m_Center: {x: 0.35, y: 1.11, z: -2.8}
 --- !u!1 &147890996
 GameObject:
   m_ObjectHideFlags: 0
@@ -13922,6 +13979,12 @@ Transform:
   m_Father: {fileID: 723283172}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &341326710 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114736805700731810, guid: 3e07023663ff629408986ce07bb8e58b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1982707716}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &342366320
 GameObject:
   m_ObjectHideFlags: 0
@@ -14062,7 +14125,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0.49, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -15714,11 +15777,11 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1022980816}
   m_FillRect: {fileID: 347221131}
   m_HandleRect: {fileID: 1022980815}
-  m_Direction: 0
+  m_Direction: 1
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 0.5
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.245
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -19896,8 +19959,9 @@ GameObject:
   - component: {fileID: 494383415}
   - component: {fileID: 494383416}
   - component: {fileID: 494383417}
+  - component: {fileID: 494383418}
   m_Layer: 0
-  m_Name: EnemyFront(Area12)
+  m_Name: EnemyFront(LevelStatus11)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19978,6 +20042,12 @@ MonoBehaviour:
   Soldier_ShootingAnim: 0
   Soldier_DeadAnim: 0
   Soldier_ThrowBarrelAnim: 0
+  targetProfile:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &494383417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19997,6 +20067,18 @@ MonoBehaviour:
   EnemyArea: 12
   playerArea: 0
   CC: {fileID: 0}
+--- !u!65 &494383418
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 494383413}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.7, z: 1}
+  m_Center: {x: 0.35, y: 1.11, z: -2.8}
 --- !u!1 &495250492
 GameObject:
   m_ObjectHideFlags: 0
@@ -22694,7 +22776,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100004, guid: 710933ecd115c974d8fef693fb6b792f, type: 3}
+  - {fileID: 2100000, guid: 2c23285589cc8e24dbc985ac09c1487d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -27971,7 +28053,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100004, guid: 710933ecd115c974d8fef693fb6b792f, type: 3}
+  - {fileID: 2100000, guid: 2c23285589cc8e24dbc985ac09c1487d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -29876,6 +29958,116 @@ Transform:
   m_Father: {fileID: 185472426}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &769391546
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 224477141605316392, guid: 4a7ae002daf89ec47b24494551c2fcf7,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 224477141605316392, guid: 4a7ae002daf89ec47b24494551c2fcf7,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224477141605316392, guid: 4a7ae002daf89ec47b24494551c2fcf7,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224477141605316392, guid: 4a7ae002daf89ec47b24494551c2fcf7,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224477141605316392, guid: 4a7ae002daf89ec47b24494551c2fcf7,
+        type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224477141605316392, guid: 4a7ae002daf89ec47b24494551c2fcf7,
+        type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224477141605316392, guid: 4a7ae002daf89ec47b24494551c2fcf7,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224477141605316392, guid: 4a7ae002daf89ec47b24494551c2fcf7,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224477141605316392, guid: 4a7ae002daf89ec47b24494551c2fcf7,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 224477141605316392, guid: 4a7ae002daf89ec47b24494551c2fcf7,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224477141605316392, guid: 4a7ae002daf89ec47b24494551c2fcf7,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224477141605316392, guid: 4a7ae002daf89ec47b24494551c2fcf7,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224477141605316392, guid: 4a7ae002daf89ec47b24494551c2fcf7,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224477141605316392, guid: 4a7ae002daf89ec47b24494551c2fcf7,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224477141605316392, guid: 4a7ae002daf89ec47b24494551c2fcf7,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224477141605316392, guid: 4a7ae002daf89ec47b24494551c2fcf7,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224477141605316392, guid: 4a7ae002daf89ec47b24494551c2fcf7,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224477141605316392, guid: 4a7ae002daf89ec47b24494551c2fcf7,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224477141605316392, guid: 4a7ae002daf89ec47b24494551c2fcf7,
+        type: 2}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114823683700456660, guid: 4a7ae002daf89ec47b24494551c2fcf7,
+        type: 2}
+      propertyPath: BrightnessSliderInGame
+      value: 
+      objectReference: {fileID: 389830236}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4a7ae002daf89ec47b24494551c2fcf7, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &770109494
 GameObject:
   m_ObjectHideFlags: 0
@@ -35183,7 +35375,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100004, guid: 710933ecd115c974d8fef693fb6b792f, type: 3}
+  - {fileID: 2100000, guid: 2c23285589cc8e24dbc985ac09c1487d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -39253,8 +39445,9 @@ GameObject:
   - component: {fileID: 976359992}
   - component: {fileID: 976359993}
   - component: {fileID: 976359994}
+  - component: {fileID: 976359995}
   m_Layer: 0
-  m_Name: EnemyRight(Area0)
+  m_Name: EnemyRight(LevelStatus1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39335,13 +39528,19 @@ MonoBehaviour:
   Soldier_ShootingAnim: 0
   Soldier_DeadAnim: 0
   Soldier_ThrowBarrelAnim: 0
+  targetProfile:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &976359994
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 976359990}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 633d22b77c0549748a62215bf5837a93, type: 3}
   m_Name: 
@@ -39354,6 +39553,18 @@ MonoBehaviour:
   EnemyArea: 1
   playerArea: 0
   CC: {fileID: 0}
+--- !u!65 &976359995
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 976359990}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.7, z: 1}
+  m_Center: {x: 0.35, y: 1.11, z: -2.8}
 --- !u!1 &978708717
 GameObject:
   m_ObjectHideFlags: 0
@@ -40377,8 +40588,8 @@ RectTransform:
   m_Father: {fileID: 1326395424}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0.49, y: 0}
+  m_AnchorMax: {x: 0.49, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -42586,7 +42797,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100004, guid: 710933ecd115c974d8fef693fb6b792f, type: 3}
+  - {fileID: 2100000, guid: 2c23285589cc8e24dbc985ac09c1487d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -45892,8 +46103,9 @@ GameObject:
   - component: {fileID: 1168948016}
   - component: {fileID: 1168948017}
   - component: {fileID: 1168948018}
+  - component: {fileID: 1168948019}
   m_Layer: 0
-  m_Name: EnemyBehind(Area15)
+  m_Name: EnemyBehind(LevelStatus13)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45955,7 +46167,7 @@ MonoBehaviour:
   player: {fileID: 1577847618}
   EnemyStartAppear: 0
   ThrowBarrel: 0
-  EnemyArea: 15
+  EnemyArea: 13
   timer: 0
   hideDelayTimer: 2
   enemyHide: 0
@@ -45974,6 +46186,12 @@ MonoBehaviour:
   Soldier_ShootingAnim: 0
   Soldier_DeadAnim: 0
   Soldier_ThrowBarrelAnim: 0
+  targetProfile:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &1168948018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45993,6 +46211,18 @@ MonoBehaviour:
   EnemyArea: 15
   playerArea: 0
   CC: {fileID: 0}
+--- !u!65 &1168948019
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1168948014}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.7, z: 1}
+  m_Center: {x: 0.35, y: 1.11, z: -2.8}
 --- !u!1 &1169288829
 GameObject:
   m_ObjectHideFlags: 0
@@ -46024,6 +46254,12 @@ Transform:
   m_Father: {fileID: 1412484015}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1170085508 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114618387845678564, guid: 3e07023663ff629408986ce07bb8e58b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1982707716}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1170412755
 GameObject:
   m_ObjectHideFlags: 0
@@ -52795,6 +53031,7 @@ GameObject:
   - component: {fileID: 1332349994}
   - component: {fileID: 1332349995}
   - component: {fileID: 1332349996}
+  - component: {fileID: 1332349997}
   m_Layer: 0
   m_Name: EnemyLeft(LevelStatus7)
   m_TagString: Enemy
@@ -52877,6 +53114,12 @@ MonoBehaviour:
   Soldier_ShootingAnim: 0
   Soldier_DeadAnim: 0
   Soldier_ThrowBarrelAnim: 0
+  targetProfile:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &1332349996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52896,6 +53139,18 @@ MonoBehaviour:
   EnemyArea: 7
   playerArea: 0
   CC: {fileID: 0}
+--- !u!65 &1332349997
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1332349992}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.7, z: 1}
+  m_Center: {x: 0.35, y: 1.11, z: -2.8}
 --- !u!1 &1332998521
 GameObject:
   m_ObjectHideFlags: 0
@@ -53456,7 +53711,7 @@ GameObject:
   - component: {fileID: 1345332495}
   - component: {fileID: 1345332496}
   m_Layer: 0
-  m_Name: EnemyMiddle(Area0)
+  m_Name: EnemyMiddle(LevelStatus1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53537,13 +53792,19 @@ MonoBehaviour:
   Soldier_ShootingAnim: 0
   Soldier_DeadAnim: 0
   Soldier_ThrowBarrelAnim: 0
+  targetProfile:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &1345332495
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1345332491}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 633d22b77c0549748a62215bf5837a93, type: 3}
   m_Name: 
@@ -53566,8 +53827,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 2, z: 1}
-  m_Center: {x: 0.5, y: 1, z: -2.5}
+  m_Size: {x: 1, y: 1.7, z: 1}
+  m_Center: {x: 0.35, y: 1.11, z: -2.8}
 --- !u!1 &1348608208
 GameObject:
   m_ObjectHideFlags: 0
@@ -55108,7 +55369,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100004, guid: 710933ecd115c974d8fef693fb6b792f, type: 3}
+  - {fileID: 2100000, guid: 2c23285589cc8e24dbc985ac09c1487d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -58626,7 +58887,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
+  m_AnchoredPosition: {x: 5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1453517378
@@ -59901,7 +60162,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100004, guid: 710933ecd115c974d8fef693fb6b792f, type: 3}
+  - {fileID: 2100000, guid: 2c23285589cc8e24dbc985ac09c1487d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -60244,7 +60505,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100004, guid: 710933ecd115c974d8fef693fb6b792f, type: 3}
+  - {fileID: 2100000, guid: 2c23285589cc8e24dbc985ac09c1487d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -62522,6 +62783,7 @@ GameObject:
   - component: {fileID: 1577847615}
   - component: {fileID: 1577847616}
   - component: {fileID: 1577847617}
+  - component: {fileID: 1577847619}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -62829,6 +63091,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1577847619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1577847610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d57b692fb37b06948a0fca6ec4c36222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startHealth: 100
+  startShield: 100
+  activeShield: 1
+  health: 0
+  shield: 0
+  healthBar: {fileID: 1170085508}
+  shieldBar: {fileID: 341326710}
+  healthAfterDamage: 0
+  shieldAfterDamage: 0
 --- !u!1 &1578295135
 GameObject:
   m_ObjectHideFlags: 0
@@ -63167,7 +63449,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100004, guid: 710933ecd115c974d8fef693fb6b792f, type: 3}
+  - {fileID: 2100000, guid: 2c23285589cc8e24dbc985ac09c1487d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -64063,7 +64345,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100004, guid: 710933ecd115c974d8fef693fb6b792f, type: 3}
+  - {fileID: 2100000, guid: 2c23285589cc8e24dbc985ac09c1487d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -67788,7 +68070,7 @@ GameObject:
   - component: {fileID: 1689561631}
   - component: {fileID: 1689561632}
   m_Layer: 0
-  m_Name: EnemyLeft(Area0)
+  m_Name: EnemyLeft(LevelStatus1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67869,13 +68151,19 @@ MonoBehaviour:
   Soldier_ShootingAnim: 0
   Soldier_DeadAnim: 0
   Soldier_ThrowBarrelAnim: 0
+  targetProfile:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &1689561631
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1689561627}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 633d22b77c0549748a62215bf5837a93, type: 3}
   m_Name: 
@@ -67898,8 +68186,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.7, z: 1}
+  m_Center: {x: 0.35, y: 1.11, z: -2.8}
 --- !u!1 &1692173975
 GameObject:
   m_ObjectHideFlags: 0
@@ -69218,8 +69506,9 @@ GameObject:
   - component: {fileID: 1723137985}
   - component: {fileID: 1723137986}
   - component: {fileID: 1723137987}
+  - component: {fileID: 1723137988}
   m_Layer: 0
-  m_Name: EnemyLeft(Area9)
+  m_Name: EnemyLeft(LevelStatus9)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69281,7 +69570,7 @@ MonoBehaviour:
   player: {fileID: 1577847618}
   EnemyStartAppear: 0
   ThrowBarrel: 0
-  EnemyArea: 8
+  EnemyArea: 9
   timer: 0
   hideDelayTimer: 2
   enemyHide: 0
@@ -69300,6 +69589,12 @@ MonoBehaviour:
   Soldier_ShootingAnim: 0
   Soldier_DeadAnim: 0
   Soldier_ThrowBarrelAnim: 0
+  targetProfile:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &1723137987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69319,6 +69614,18 @@ MonoBehaviour:
   EnemyArea: 9
   playerArea: 0
   CC: {fileID: 0}
+--- !u!65 &1723137988
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1723137983}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.7, z: 1}
+  m_Center: {x: 0.35, y: 1.11, z: -2.8}
 --- !u!1 &1723272199
 GameObject:
   m_ObjectHideFlags: 0
@@ -71832,7 +72139,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100004, guid: 710933ecd115c974d8fef693fb6b792f, type: 3}
+  - {fileID: 2100000, guid: 2c23285589cc8e24dbc985ac09c1487d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -79545,12 +79852,62 @@ Prefab:
     - target: {fileID: 114984943770849330, guid: 3e07023663ff629408986ce07bb8e58b,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 223705691154277694, guid: 3e07023663ff629408986ce07bb8e58b,
         type: 2}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224232430106258576, guid: 3e07023663ff629408986ce07bb8e58b,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 8.099976
+      objectReference: {fileID: 0}
+    - target: {fileID: 224232430106258576, guid: 3e07023663ff629408986ce07bb8e58b,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 4.100006
+      objectReference: {fileID: 0}
+    - target: {fileID: 114583260031801512, guid: 3e07023663ff629408986ce07bb8e58b,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114317472397826422, guid: 3e07023663ff629408986ce07bb8e58b,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224232430106258576, guid: 3e07023663ff629408986ce07bb8e58b,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 224232430106258576, guid: 3e07023663ff629408986ce07bb8e58b,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: -315.91998
+      objectReference: {fileID: 0}
+    - target: {fileID: 224232430106258576, guid: 3e07023663ff629408986ce07bb8e58b,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0.95900005
+      objectReference: {fileID: 0}
+    - target: {fileID: 224232430106258576, guid: 3e07023663ff629408986ce07bb8e58b,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: -57.95999
+      objectReference: {fileID: 0}
+    - target: {fileID: 224232430106258576, guid: 3e07023663ff629408986ce07bb8e58b,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0.88522226
+      objectReference: {fileID: 0}
+    - target: {fileID: 224232430106258576, guid: 3e07023663ff629408986ce07bb8e58b,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e07023663ff629408986ce07bb8e58b, type: 2}
@@ -83552,7 +83909,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4953502078115890, guid: a16ad742412f30549b1d62d029b6d30d, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1631002652807538, guid: a16ad742412f30549b1d62d029b6d30d, type: 2}
       propertyPath: m_IsActive
@@ -84821,8 +85178,9 @@ GameObject:
   - component: {fileID: 2083502007}
   - component: {fileID: 2083502008}
   - component: {fileID: 2083502009}
+  - component: {fileID: 2083502010}
   m_Layer: 0
-  m_Name: EnemyRight(Area9)
+  m_Name: EnemyRight(LevelStatus9)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84903,6 +85261,12 @@ MonoBehaviour:
   Soldier_ShootingAnim: 0
   Soldier_DeadAnim: 0
   Soldier_ThrowBarrelAnim: 0
+  targetProfile:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &2083502009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84922,6 +85286,18 @@ MonoBehaviour:
   EnemyArea: 9
   playerArea: 0
   CC: {fileID: 0}
+--- !u!65 &2083502010
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2083502005}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.7, z: 1}
+  m_Center: {x: 0.35, y: 1.11, z: -2.8}
 --- !u!1 &2083915064
 GameObject:
   m_ObjectHideFlags: 0
@@ -87051,7 +87427,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100004, guid: 710933ecd115c974d8fef693fb6b792f, type: 3}
+  - {fileID: 2100000, guid: 2c23285589cc8e24dbc985ac09c1487d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
