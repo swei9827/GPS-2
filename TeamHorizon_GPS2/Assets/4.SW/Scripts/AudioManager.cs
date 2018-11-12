@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour {
 
-    public AudioSource efxSource;
-    public AudioSource musicSource;
+    //public AudioSource efxSource;
+    //public AudioSource musicSource;
     public AudioMixerGroup mixerGroup;
     public static AudioManager instance = null;
     public float lowPitchRange = 0.95f;
@@ -51,6 +51,7 @@ public class AudioManager : MonoBehaviour {
     private void Start()
     {
         Play("Opening");
+        Play("OpeningBGM");
     }
 
     public void Play(string sound)

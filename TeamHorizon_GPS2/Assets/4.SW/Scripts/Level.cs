@@ -17,7 +17,10 @@ public class Level: MonoBehaviour
     public LEVEL_STATE levelState;
     public List<GameObject> targetProfile;
     public bool isContinue;
-    public GameObject conclusionUI; // UI while level finished
+    public GameObject levelEndUI; // UI while level finished
+    public Text endScore;
+    public Text bonusTimeScore;
+    public Text totalScore;
 
 	void Start () {
         timeLeft = givenTime;
@@ -56,25 +59,6 @@ public class Level: MonoBehaviour
         {
             SetTimeScale(0f);
         }
-        else if(levelState == LEVEL_STATE.FINISHED)
-        {
-            if (Input.touchCount > 0)
-            {
-                Touch touch = Input.GetTouch(0);
-                if (touch.phase == TouchPhase.Began)
-                {
-                    isContinue = true;
-                }
-            }
-
-            conclusionUI.SetActive(true);
-            if(isContinue)
-            {
-                currency += timeLeft * 10;
-            }
-            
-
-        }
 	}
 
     public void LoadScene(int scene)
@@ -85,6 +69,14 @@ public class Level: MonoBehaviour
     public void SetTimeScale(float ts)
     {
         Time.timeScale = ts;
+    }
+
+    public void LevelCleared()
+    {
+        levelEndUI.SetActive(true);
+        endScore.text = score.ToString();
+        bonusTimeScore.text = (timeLeft * 256.0f).ToString();
+        totalScore.text = score + (timeLeft * 256.0f).ToString();
     }
 }
 
