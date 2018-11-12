@@ -54,14 +54,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1509864684046508}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.09, y: 1.42, z: 3.93}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 65.7, y: 2.16, z: -135.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4986078429619158}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &4986078429619158
 Transform:
   m_ObjectHideFlags: 1
@@ -196,8 +196,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cf763e44b00e1340bdfc560b3a60bc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 2800000, guid: 7c50d0933d8890e42985b036f1488c23, type: 3}
+  cc: {fileID: 0}
+  QTESuccess: 0
+  QTEFail: 0
+  Texture2D: {fileID: 0}
   display: {fileID: 2800000, guid: 5206e9b0c38e9644996e5d36bb521649, type: 3}
   QTETrigger: 0
   timer: 1
+  QTETime: 1
   player: {fileID: 0}

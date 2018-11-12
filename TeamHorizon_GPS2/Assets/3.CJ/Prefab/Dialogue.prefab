@@ -3305,6 +3305,7 @@ MonoBehaviour:
   - {fileID: 1906942495376418}
   - {fileID: 1529843686198246}
   - {fileID: 1083869113698296}
+  crouchButton: {fileID: 0}
 --- !u!114 &114742685010189914
 MonoBehaviour:
   m_ObjectHideFlags: 1

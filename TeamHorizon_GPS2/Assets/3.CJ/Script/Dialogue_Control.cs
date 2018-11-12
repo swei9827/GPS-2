@@ -43,7 +43,7 @@ public class Dialogue_Control : MonoBehaviour {
     void Start () {
         cc = GameObject.FindGameObjectWithTag("ControlCenter").GetComponent<ControlCenter>();
         level = GameObject.FindGameObjectWithTag("ControlCenter").GetComponent<Level>();
-        weapon = GameObject.FindGameObjectWithTag("Player").GetComponent<RaycastShoot>().weapon;
+       // weapon = GameObject.FindGameObjectWithTag("Player").GetComponent<RaycastShoot>().weapon;
         crouch = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Player_Crouch>();
 	}
 	

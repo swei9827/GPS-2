@@ -155,5 +155,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onQTETrigger: 0
   Spawnpoint: {fileID: 4706497699014074}
-  Prefab: {fileID: 0}
+  Prefab: {fileID: 1509864684046508, guid: a8f9b5f9b13a0824ca4099ddf98ddb49, type: 2}
   boxGesture: 0
