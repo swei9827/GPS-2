@@ -5,6 +5,8 @@ using UnityEngine;
 public class TreeBlockHazard : MonoBehaviour {
 
     private IEnumerator coroutine;
+    public float nextMelee = 0.0f;
+    public float meleeHit = 0.2f;
     public int TBHealth;
     public float slowDuration;
     public float slowSpeed;
@@ -30,6 +32,14 @@ public class TreeBlockHazard : MonoBehaviour {
                 Player.GetComponent<ScriptedMovement>().speed = slowSpeed;
                 coroutine = ResetSpeed(slowDuration);
                 StartCoroutine(coroutine);
+            }
+            else if(collision.gameObject.CompareTag("PlayerBlade"))
+            {
+                if(Time.deltaTime > nextMelee)
+                {
+                    nextMelee = Time.deltaTime + meleeHit;
+                    TBHealth -= 2;
+                } 
             }
         }          
     }

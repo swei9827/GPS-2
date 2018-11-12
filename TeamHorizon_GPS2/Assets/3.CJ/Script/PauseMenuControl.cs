@@ -1,10 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenuControl : MonoBehaviour {
 
     public GameObject PauseMenu;
+    public GameObject PauseMenuMainPage;
+    public GameObject SettingPageInPauseMenu;
+    public GameObject PlayerReturnMainMenuConfirmationPage;
     public Level level;
 
 	// Use this for initialization
@@ -32,5 +36,45 @@ public class PauseMenuControl : MonoBehaviour {
     {
         PauseMenu.SetActive(false);
         level.SetTimeScale(1.0f);
+    }
+
+    // Confirmation player want to quit to main menu scene
+    public void ConfirmPlayerWantToReturnMainMenuScene()
+    {
+        PauseMenuMainPage.SetActive(false);
+        PlayerReturnMainMenuConfirmationPage.SetActive(true);
+    }
+
+    public void PlayerAnswerNo()
+    {
+        PlayerReturnMainMenuConfirmationPage.SetActive(false);
+        PauseMenuMainPage.SetActive(true);
+    }
+
+    public void PlayerAnswerYes()
+    {
+        ReturnMainMenu();
+    }
+
+    public void ReturnMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void RetryLevel()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void SettingPage()
+    {
+        PauseMenuMainPage.SetActive(false);
+        SettingPageInPauseMenu.SetActive(true);
+    }
+
+    public void ReturnToPauseMenuPageFromSettingPage()
+    {
+        SettingPageInPauseMenu.SetActive(false);
+        PauseMenuMainPage.SetActive(true);
     }
 }

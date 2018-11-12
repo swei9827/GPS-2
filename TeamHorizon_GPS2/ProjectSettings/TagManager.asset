@@ -18,6 +18,9 @@ TagManager:
   - Environment
   - PlayerHead
   - Enemy_Destroyable_Bullet
+  - PlayerBlade
+  - B_Slider_MainMenu
+  - B_Slider_Game
   layers:
   - Default
   - TransparentFX

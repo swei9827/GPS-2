@@ -48,6 +48,7 @@ public class EnemyMovement : MonoBehaviour
     {
         tempX = this.transform.position.x;
         tempY = this.transform.position.y;
+        animator = this.GetComponent<Animator>();
         startPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         rb = GetComponent<Rigidbody>();
         CC = GameObject.FindGameObjectWithTag("ControlCenter").GetComponent<ControlCenter>();

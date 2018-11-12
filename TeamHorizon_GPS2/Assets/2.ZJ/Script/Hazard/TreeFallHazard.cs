@@ -12,6 +12,8 @@ public class TreeFallHazard : MonoBehaviour
     public GameObject Player;
     private Material mat;
     float originalSpeed = 10.0f;
+    public float nextMelee = 0.0f;
+    public float meleeHit = 0.2f;
 
     private void Start()
     {
@@ -42,6 +44,14 @@ public class TreeFallHazard : MonoBehaviour
         {
             Player.GetComponent<ScriptedMovement>().speed = slowSpeed;
             StartCoroutine(ResetSpeed(slowDuration));
+        }
+        else if (collision.gameObject.CompareTag("PlayerBlade"))
+        {
+            if (Time.deltaTime > nextMelee)
+            {
+                nextMelee = Time.deltaTime + meleeHit;
+                health -= 2;
+            }
         }
     }
 
