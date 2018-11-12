@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -255,31 +255,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ExcludedPropertiesInInspector:
-  - m_Script
-  m_LockStageInInspector: 
-  m_StreamingVersion: 20170927
-  m_Priority: 10
-  m_StandbyUpdate: 2
-  m_LookAt: {fileID: 1865196921}
-  m_Follow: {fileID: 1865196921}
-  m_Lens:
-    FieldOfView: 40
-    OrthographicSize: 10
-    NearClipPlane: 0.1
-    FarClipPlane: 5000
-    Dutch: 0
-    LensShift: {x: 0, y: 0}
-  m_Transitions:
-    m_BlendHint: 0
-    m_InheritPosition: 0
-    m_OnCameraLive:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-  m_LegacyBlendHint: 0
-  m_ComponentOwner: {fileID: 1286559765}
 --- !u!1 &13913663
 GameObject:
   m_ObjectHideFlags: 0
@@ -1238,6 +1213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCrouch: 0
   player: {fileID: 0}
+  cc: {fileID: 0}
 --- !u!1 &204193799
 GameObject:
   m_ObjectHideFlags: 0
@@ -1703,6 +1679,8 @@ MonoBehaviour:
   slowDuration: 0
   slowSpeed: 0
   Player: {fileID: 0}
+  nextMelee: 0
+  meleeHit: 0.2
 --- !u!23 &315877056
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2792,6 +2770,8 @@ MonoBehaviour:
   slowDuration: 0
   slowSpeed: 0
   Player: {fileID: 0}
+  nextMelee: 0
+  meleeHit: 0.2
 --- !u!1 &464073064
 GameObject:
   m_ObjectHideFlags: 0
@@ -6175,6 +6155,8 @@ MonoBehaviour:
   slowDuration: 0
   slowSpeed: 0
   Player: {fileID: 0}
+  nextMelee: 0
+  meleeHit: 0.2
 --- !u!23 &1230656096
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6357,14 +6339,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa7155796051b734daa718462081dc5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BindingMode: 3
-  m_FollowOffset: {x: 0, y: 1.6, z: 0}
-  m_XDamping: 0
-  m_YDamping: 0
-  m_ZDamping: 0
-  m_PitchDamping: 0
-  m_YawDamping: 0
-  m_RollDamping: 0
 --- !u!114 &1286559768
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -6811,6 +6785,7 @@ MonoBehaviour:
   locations: []
   battleArea: []
   hazards: []
+  BADestroyed: 0
 --- !u!4 &1388831730
 Transform:
   m_ObjectHideFlags: 0
@@ -6871,6 +6846,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseMenu: {fileID: 1871423433}
+  PauseMenuMainPage: {fileID: 0}
+  SettingPageInPauseMenu: {fileID: 0}
+  PlayerReturnMainMenuConfirmationPage: {fileID: 0}
   level: {fileID: 0}
 --- !u!1 &1408881580
 GameObject:
@@ -7836,6 +7814,11 @@ Prefab:
       propertyPath: bulletLeft
       value: 
       objectReference: {fileID: 512234149}
+    - target: {fileID: 120281537786234830, guid: b5e35e5a21c36c44c986ec6a2007d7a3,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5e35e5a21c36c44c986ec6a2007d7a3, type: 2}
   m_IsPrefabAsset: 0
@@ -8614,6 +8597,8 @@ MonoBehaviour:
   slowDuration: 0
   slowSpeed: 0
   Player: {fileID: 0}
+  nextMelee: 0
+  meleeHit: 0.2
 --- !u!23 &1847833540
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9018,11 +9003,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1056916466656494, guid: b5e35e5a21c36c44c986ec6a2007d7a3,
     type: 2}
   m_PrefabInternal: {fileID: 1703647948}
---- !u!4 &1865196921 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4644230364988982, guid: b5e35e5a21c36c44c986ec6a2007d7a3,
-    type: 2}
-  m_PrefabInternal: {fileID: 1703647948}
 --- !u!1 &1870111948
 GameObject:
   m_ObjectHideFlags: 0
@@ -9344,31 +9324,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowDebugText: 0
-  m_ShowCameraFrustum: 1
-  m_IgnoreTimeScale: 0
-  m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
-  m_DefaultBlend:
-    m_Style: 1
-    m_Time: 2
-    m_CustomCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  m_CustomBlends: {fileID: 0}
-  m_CameraCutEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Cinemachine.CinemachineBrain+BrainEvent, Cinemachine, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  m_CameraActivatedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!81 &1949954973
 AudioListener:
   m_ObjectHideFlags: 0
