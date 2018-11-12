@@ -23,7 +23,7 @@ public class onGestureTrigger : MonoBehaviour
                 this.gameObject.GetComponent<Renderer>().material.color = Color.red;
                 Prefab.SetActive(true);
                 //Instantiate(Prefab, Spawnpoint.position, Spawnpoint.rotation);
-                Time.timeScale = 0.1f; //time.timescale = 0.5; // to slow doen the game during qte
+                Time.timeScale = 0.01f; //time.timescale = 0.5; // to slow doen the game during qte
             }
             Destroy(gameObject);
         }

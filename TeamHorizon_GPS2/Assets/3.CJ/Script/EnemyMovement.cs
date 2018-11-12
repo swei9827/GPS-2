@@ -24,6 +24,7 @@ public class EnemyMovement : MonoBehaviour
     // When Reaching CheckPoint
     public Transform player;
     public bool EnemyStartAppear = false;
+    public bool ThrowBarrel = false;
 
     public int EnemyArea = 0;
     int playerArea = 0;
@@ -42,6 +43,20 @@ public class EnemyMovement : MonoBehaviour
     public bool SlothWolf_DamageAnim;
     public bool SlothWolf_AimingAnim;
     public bool SlothWolf_ShootingAnim;
+
+    public bool Bison_DamageAnim;
+    public bool Bison_AimingAnim;
+    public bool Bison_ShootingAnim;
+    public bool Bison_DeadAnim;
+    public bool Bison_ThrowBarrelAnim;
+
+    public bool Soldier_AimingAnim;
+    public bool Soldier_DamageAnim;
+    public bool Soldier_ShootingAnim;
+    public bool Soldier_DeadAnim;
+    public bool Soldier_ThrowBarrelAnim;
+    
+
     public static bool EnemyHPreducing = false;
 
     void Start()
@@ -55,9 +70,24 @@ public class EnemyMovement : MonoBehaviour
         lvlController = GameObject.FindGameObjectWithTag("ControlCenter").GetComponent<Level>();
 
         //animator.enabled = false;
+        //SLOTH
         SlothWolf_DamageAnim = false;
         SlothWolf_AimingAnim = false;
         SlothWolf_ShootingAnim = false;
+
+        //BISON
+        Bison_DamageAnim = false;
+        Bison_AimingAnim = false;
+        Bison_ShootingAnim = false;
+        Bison_DeadAnim = false;
+        Bison_ThrowBarrelAnim = false;
+
+        //SOLDIER
+        Soldier_AimingAnim = false;
+        Soldier_DamageAnim = false;
+        Soldier_ShootingAnim = false;
+        Soldier_DeadAnim = false;
+        Soldier_ThrowBarrelAnim = false;
     }
 
     // Update is called once per frame
@@ -147,7 +177,7 @@ public class EnemyMovement : MonoBehaviour
             SlothWolf_AimingAnim = false;
         }
 
-        //----------------------------------------------------
+        //Enemy1 Sloth Animation ========================================================= Enemy1 Sloth Animation =========================================================
 
         if (SlothWolf_DamageAnim == true)
         {
@@ -168,6 +198,111 @@ public class EnemyMovement : MonoBehaviour
             animator.SetBool("SlothWolf_ShootingAnim", true);
             animator.SetBool("SlothWolf_AimingAnim", false);
             animator.SetBool("SlothWolf_DamageAnim", false);
+        }
+
+        //Enemy2 Bison Animation ========================================================= Enemy2 Bison Animation =========================================================
+
+        //if (Input.GetKeyDown(KeyCode.E))    //ANIM2
+        if (EnemyHPreducing == true) //Damage Anim
+        {
+            animator.enabled = true;
+            Bison_DamageAnim = true;
+            Bison_AimingAnim = false;
+            Bison_ShootingAnim = false;
+            Bison_DeadAnim = false;
+            Bison_ThrowBarrelAnim = false;
+        }
+
+        // if (Input.GetKeyDown(KeyCode.R))//ANIM2 
+        if (EnemyStartAppear == true) //Aimaing Anim
+        {
+            animator.enabled = true;
+            Bison_AimingAnim = true;
+            Bison_DamageAnim = false;
+            Bison_ShootingAnim = false;
+            Bison_DeadAnim = false;
+            Bison_ThrowBarrelAnim = false;
+        }
+
+        //if (Input.GetKeyDown(KeyCode.T)) //ANIM3
+        if (StartShooting == true) //Shoot Anim
+        {
+            animator.enabled = true;
+            Bison_ShootingAnim = true;
+            Bison_DamageAnim = false;
+            Bison_AimingAnim = false;
+            Bison_DeadAnim = false;
+            Bison_ThrowBarrelAnim = false;
+        }
+
+        //if (Input.GetKeyDown(KeyCode.D)) //ANIM3
+        if ( this.hp<= 0) //death Anim
+        {
+            animator.enabled = true;
+            Bison_DeadAnim = true;
+            Bison_ShootingAnim = false;
+            Bison_DamageAnim = false;
+            Bison_AimingAnim = false;
+            Bison_ThrowBarrelAnim = false;
+        }
+
+        //if (Input.GetKeyDown(KeyCode.T)) //ANIM3
+        if (ThrowBarrel == true) //death Anim
+        {
+            animator.enabled = true;
+            Bison_ThrowBarrelAnim = true;
+            Bison_DeadAnim = false;
+            Bison_ShootingAnim = false;
+            Bison_DamageAnim = false;
+            Bison_AimingAnim = false;
+        }
+
+        //----------------------------------------------------
+
+        if (Bison_DamageAnim == true)
+        {
+            animator.SetBool("Bison_DamageAnim", true);
+            animator.SetBool("Bison_AimingAnim", false);
+            animator.SetBool("Bison_ShootingAnim", false);
+            animator.SetBool("Bison_DamageAnim", false);
+            animator.SetBool("Bison_DeadAnim", false);
+        }
+
+        if (Bison_AimingAnim == true)
+        {
+            animator.SetBool("Bison_AimingAnim", true);
+            animator.SetBool("Bison_DamageAnim", false);
+            animator.SetBool("Bison_ShootingAnim", false);
+            animator.SetBool("Bison_DamageAnim", false);
+            animator.SetBool("Bison_DeadAnim", false);
+        }
+
+        if (Bison_ShootingAnim == true)
+        {
+            animator.SetBool("Bison_ShootingAnim", true);
+            animator.SetBool("Bison_AimingAnim", false);
+            animator.SetBool("Bison_DamageAnim", false);
+            animator.SetBool("Bison_DamageAnim", false);
+            animator.SetBool("Bison_DeadAnim", false);
+        }
+
+        if (Bison_DeadAnim == true)
+        {
+            animator.SetBool("Bison_DeadAnim", true);
+            animator.SetBool("Bison_ShootingAnim", false);
+            animator.SetBool("Bison_AimingAnim", false);
+            animator.SetBool("Bison_DamageAnim", false);
+            animator.SetBool("Bison_ThrowBarrelAnim", true);
+
+        }
+
+        if (Bison_ThrowBarrelAnim == true)
+        {
+            animator.SetBool("Bison_ThrowBarrelAnim", true);
+            animator.SetBool("Bison_ShootingAnim", false);
+            animator.SetBool("Bison_AimingAnim", false);
+            animator.SetBool("Bison_DamageAnim", false);
+            animator.SetBool("Bison_DeadAnim", false);
         }
 
         /*

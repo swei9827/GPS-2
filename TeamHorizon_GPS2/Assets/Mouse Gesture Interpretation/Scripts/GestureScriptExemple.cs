@@ -59,7 +59,7 @@ public class GestureScriptExemple : MonoBehaviour
 		//player.GetComponent<GesturePlayer.PlayerInput> ().setTextureG (text);
        // player.GetComponent<GesturePlayer.PlayerInput>().setCorrectRate(0.8f);
         player.GetComponent<GesturePlayer.PlayerInput>().setTextureG (Texture2D);
-        player.GetComponent<GesturePlayer.PlayerInput>().setCorrectRate(0.8f);
+        player.GetComponent<GesturePlayer.PlayerInput>().setCorrectRate(1.0f);
 	}
 
 
