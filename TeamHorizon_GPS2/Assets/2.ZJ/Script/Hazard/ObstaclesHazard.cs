@@ -6,6 +6,9 @@ public class ObstaclesHazard : MonoBehaviour {
     int health = 2;
     public float nextMelee = 0.0f;
     public float meleeHit = 0.2f;
+    public float slowDuration;
+    public float slowSpeed;
+    float originalSpeed = 10.0f;
 
     void OnMouseDown()
     {
@@ -16,15 +19,7 @@ public class ObstaclesHazard : MonoBehaviour {
         }
     }
 
-    void OnTriggerEnter(Collider collision)
-    {
-        if (collision.gameObject.CompareTag("PlayerBlade"))
-        {
-            if (Time.deltaTime > nextMelee)
-            {
-                nextMelee = Time.deltaTime + meleeHit;
-                health -= 2;
-            }
-        }
-    }
+   
+
+    
 }

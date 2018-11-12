@@ -33,7 +33,8 @@ public class TreeBlockHazard : MonoBehaviour {
                 coroutine = ResetSpeed(slowDuration);
                 StartCoroutine(coroutine);
             }
-            else if(collision.gameObject.CompareTag("PlayerBlade"))
+
+            if (collision.gameObject.CompareTag("PlayerBlade"))
             {
                 if(Time.deltaTime > nextMelee)
                 {

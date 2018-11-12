@@ -44,15 +44,15 @@ public class TreeFallHazard : MonoBehaviour
         {
             Player.GetComponent<ScriptedMovement>().speed = slowSpeed;
             StartCoroutine(ResetSpeed(slowDuration));
-        }
-        else if (collision.gameObject.CompareTag("PlayerBlade"))
+        }/*
+        if (collision.gameObject.CompareTag("PlayerBlade"))
         {
             if (Time.deltaTime > nextMelee)
             {
                 nextMelee = Time.deltaTime + meleeHit;
                 health -= 2;
             }
-        }
+        }*/
     }
 
     void OnMouseDown()

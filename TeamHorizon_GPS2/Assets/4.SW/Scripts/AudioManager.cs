@@ -68,6 +68,18 @@ public class AudioManager : MonoBehaviour {
         s.source.Play();
     }
 
+    public void Stop(string sound)
+    {
+        Sound s = Array.Find(sounds, item => item.name == sound);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + " not found!");
+            return;
+        }
+
+        s.source.Stop();
+    }
+
     /*public void PlaySingle(AudioClip clip)
     {
         //Set the clip of our efxSource audio source to the clip passed in as a parameter.

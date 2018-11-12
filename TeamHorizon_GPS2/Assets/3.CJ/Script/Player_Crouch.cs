@@ -7,6 +7,7 @@ public class Player_Crouch : MonoBehaviour {
 
     public bool isCrouch = false;
     public Transform player;
+    public ControlCenter cc;
     //public Text text;
 
     // Use this for initialization
@@ -72,7 +73,7 @@ public class Player_Crouch : MonoBehaviour {
     public void onPress()
     {
         isCrouch = true;
-        if(isCrouch)
+        if(isCrouch && cc.GetComponent<ControlCenter>().status == STATUS.CROUCH)
         {
             transform.Translate(new Vector3(0.0f, -1.2f, 0.0f));
         }
@@ -81,7 +82,7 @@ public class Player_Crouch : MonoBehaviour {
     public void onRelease()
     {
         isCrouch = false;
-        if(!isCrouch)
+        if(!isCrouch && cc.GetComponent<ControlCenter>().status == STATUS.CROUCH)
         {
             transform.Translate(new Vector3(0.0f, 1.2f, 0.0f));
         }        

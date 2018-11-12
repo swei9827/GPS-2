@@ -2636,6 +2636,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114524710356533030, guid: a16ad742412f30549b1d62d029b6d30d,
+        type: 2}
+      propertyPath: sounds.Array.data[0].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114524710356533030, guid: a16ad742412f30549b1d62d029b6d30d,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a16ad742412f30549b1d62d029b6d30d, type: 2}
   m_IsPrefabAsset: 0
@@ -4761,7 +4771,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2005077433}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c888632ad3dfa04db9a36d1b7737a2d, type: 3}
   m_Name: 

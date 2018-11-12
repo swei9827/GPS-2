@@ -27,7 +27,8 @@ public class ControlCenter : MonoBehaviour
     //reference
     private ScreenWobble screenWobble;
     IEnumerator coroutine;
-    ScriptedMovement sMove; 
+    ScriptedMovement sMove;
+    public bool BADestroyed = false;
 
     void Start()
     {
@@ -62,22 +63,36 @@ public class ControlCenter : MonoBehaviour
             {
                 if (!battleArea[0].GetComponent<HSProfile>().destroyed)
                 {
-                    camera.transform.rotation = Quaternion.Euler(0, Mathf.Lerp(camera.transform.rotation.y, cameraRotatePos[0], Time.time * 0.5f), 0);
+                    camera.transform.rotation = Quaternion.Euler(0, Mathf.Lerp(camera.transform.rotation.y, cameraRotatePos[0], Time.time * 0.5f), 0);                 
                     sMove.PlayerMove(battleArea[0]);
+                    if(player.transform.position == battleArea[0].position)
+                    {
+                        status = STATUS.CROUCH;
+                    }
                 }
                 else if (battleArea[0].GetComponent<HSProfile>().destroyed)
                 {
                     camera.transform.rotation = Quaternion.Euler(0, Mathf.Lerp(camera.transform.rotation.y, cameraRotatePos[1], Time.time * 0.5f), 0);
                     sMove.PlayerMove(battleArea[1]);
-                    /*
-                    if(player.transform.position == battleArea[1].position)
+                    if (player.transform.position == battleArea[1].position)
                     {
-                       
-                    } */                   
+                        status = STATUS.CROUCH;
+                    }
                 }
-            }            
+            } 
+
+            if(status == STATUS.CROUCH)
+            {               
+                if (battleArea[0].GetComponent<HSProfile>().destroyed && !BADestroyed)
+                {
+                    status = STATUS.BATTLE;
+                    BADestroyed = true;
+                }
+            }
+
             if (locations[0].GetComponent<TargetProfile>().EnemyCount <= 0)
             {
+                BADestroyed = false;
                 camera.transform.rotation = Quaternion.Euler(0, Mathf.Lerp(camera.transform.rotation.y, 0, Time.time * 0.2f), 0);
                 if(camera.transform.rotation.y == 0)
                 {
@@ -229,13 +244,31 @@ public class ControlCenter : MonoBehaviour
                 {
                     camera.transform.rotation = Quaternion.Euler(0, Mathf.Lerp(camera.transform.rotation.y, cameraRotatePos[2], Time.time * 0.5f), 0);
                     sMove.PlayerMove(battleArea[2]);
+                    if (player.transform.position == battleArea[2].position)
+                    {
+                        status = STATUS.CROUCH;
+                    }
                 }
                 else if (battleArea[2].GetComponentInParent<HSProfile>().destroyed)
                 {
                     camera.transform.rotation = Quaternion.Euler(0, Mathf.Lerp(camera.transform.rotation.y, cameraRotatePos[3], Time.time * 0.5f), 0);
                     sMove.PlayerMove(battleArea[3]);
+                    if (player.transform.position == battleArea[2].position)
+                    {
+                        status = STATUS.CROUCH;
+                    }
                 }
             }
+
+            if (status == STATUS.CROUCH)
+            {
+                if (battleArea[2].GetComponent<HSProfile>().destroyed && !BADestroyed)
+                {
+                    status = STATUS.BATTLE;
+                    BADestroyed = true;
+                }
+            }
+
             if (locations[6].GetComponent<TargetProfile>().EnemyCount <= 0)
             {
                 camera.transform.rotation = Quaternion.Euler(0, Mathf.Lerp(camera.transform.rotation.y, 0, Time.time * 0.2f), 0);
@@ -352,13 +385,31 @@ public class ControlCenter : MonoBehaviour
                 {
                     camera.transform.rotation = Quaternion.Euler(0, Mathf.Lerp(camera.transform.rotation.y, cameraRotatePos[4], Time.time * 0.5f), 0);
                     sMove.PlayerMove(battleArea[4]);
+                    if (player.transform.position == battleArea[4].position)
+                    {
+                        status = STATUS.CROUCH;
+                    }
                 }
                 else if (battleArea[4].GetComponentInParent<HSProfile>().destroyed)
                 {
                     camera.transform.rotation = Quaternion.Euler(0, Mathf.Lerp(camera.transform.rotation.y, cameraRotatePos[5], Time.time * 0.5f), 0);
                     sMove.PlayerMove(battleArea[5]);
+                    if (player.transform.position == battleArea[4].position)
+                    {
+                        status = STATUS.CROUCH;
+                    }
                 }
             }
+
+            if (status == STATUS.CROUCH)
+            {
+                if (battleArea[2].GetComponent<HSProfile>().destroyed && !BADestroyed)
+                {
+                    status = STATUS.BATTLE;
+                    BADestroyed = true;
+                }
+            }
+
             if (locations[10].GetComponent<TargetProfile>().EnemyCount <= 0)
             {
                 camera.transform.rotation = Quaternion.Euler(0, Mathf.Lerp(camera.transform.rotation.y, 90, Time.time * 0.2f), 0);
@@ -445,6 +496,7 @@ public enum STATUS
         TURNING,
         CAMERA,
         BATTLE,
+        CROUCH,
         QTE,
         INTERACTABLE,
         PORTAL,
