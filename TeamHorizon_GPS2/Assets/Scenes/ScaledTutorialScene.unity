@@ -4806,6 +4806,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lvlController: {fileID: 2050459572}
+  tp: {fileID: 1571995795}
   move: 1
   moveSpeed: 2
   endPosX: 13
@@ -5373,6 +5374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lvlController: {fileID: 0}
+  tp: {fileID: 878326306}
   move: 1
   moveSpeed: 2
   endPosX: -61.953
@@ -6271,6 +6273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lvlController: {fileID: 2050459572}
+  tp: {fileID: 1060160348}
   move: 1
   moveSpeed: 2
   endPosX: -22.07
@@ -20015,6 +20018,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lvlController: {fileID: 2050459572}
+  tp: {fileID: 1571995795}
   move: 1
   moveSpeed: 5
   endPosX: -3.5
@@ -35579,6 +35583,12 @@ Transform:
   m_Father: {fileID: 1332349993}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &878326306 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114331427859031928, guid: a231a9832252beb449cd3495b620f30b,
+    type: 2}
+  m_PrefabInternal: {fileID: 795884345}
+  m_Script: {fileID: 11500000, guid: af7e1057935d63a46a7f0cfcfcc70971, type: 3}
 --- !u!1 &878730604
 GameObject:
   m_ObjectHideFlags: 0
@@ -39501,6 +39511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lvlController: {fileID: 2050459572}
+  tp: {fileID: 1520313767}
   move: 1
   moveSpeed: 2
   endPosX: 67.26
@@ -42347,6 +42358,12 @@ Transform:
   m_Father: {fileID: 542340853}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1060160348 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114331427859031928, guid: a231a9832252beb449cd3495b620f30b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1708859538}
+  m_Script: {fileID: 11500000, guid: af7e1057935d63a46a7f0cfcfcc70971, type: 3}
 --- !u!1 &1065980619
 GameObject:
   m_ObjectHideFlags: 0
@@ -46159,6 +46176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lvlController: {fileID: 0}
+  tp: {fileID: 878326306}
   move: 1
   moveSpeed: 2
   endPosX: -63.48
@@ -53087,6 +53105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lvlController: {fileID: 2050459572}
+  tp: {fileID: 1060160348}
   move: 1
   moveSpeed: 2
   endPosX: -24.97
@@ -53765,6 +53784,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lvlController: {fileID: 2050459572}
+  tp: {fileID: 1520313767}
   move: 1
   moveSpeed: 2
   endPosX: 64.8
@@ -60958,6 +60978,12 @@ Transform:
   m_Father: {fileID: 1500076169}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1520313767 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114331427859031928, guid: a231a9832252beb449cd3495b620f30b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154023871}
+  m_Script: {fileID: 11500000, guid: af7e1057935d63a46a7f0cfcfcc70971, type: 3}
 --- !u!1 &1522110666
 GameObject:
   m_ObjectHideFlags: 0
@@ -62444,6 +62470,12 @@ Transform:
   m_Father: {fileID: 792970754}
   m_RootOrder: 214
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1571995795 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114331427859031928, guid: a231a9832252beb449cd3495b620f30b,
+    type: 2}
+  m_PrefabInternal: {fileID: 851494589}
+  m_Script: {fileID: 11500000, guid: af7e1057935d63a46a7f0cfcfcc70971, type: 3}
 --- !u!1 &1572227148
 GameObject:
   m_ObjectHideFlags: 0
@@ -67855,6 +67887,12 @@ Transform:
   m_Father: {fileID: 1570121809}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1676157506 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114331427859031928, guid: a231a9832252beb449cd3495b620f30b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1731676054}
+  m_Script: {fileID: 11500000, guid: af7e1057935d63a46a7f0cfcfcc70971, type: 3}
 --- !u!1 &1677601917
 GameObject:
   m_ObjectHideFlags: 0
@@ -68124,6 +68162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lvlController: {fileID: 2050459572}
+  tp: {fileID: 1520313767}
   move: 1
   moveSpeed: 3.5
   endPosX: 62.2
@@ -69562,6 +69601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lvlController: {fileID: 0}
+  tp: {fileID: 1676157506}
   move: 1
   moveSpeed: 2
   endPosX: -26.4
@@ -85234,6 +85274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lvlController: {fileID: 0}
+  tp: {fileID: 1676157506}
   move: 1
   moveSpeed: 2
   endPosX: -21.65

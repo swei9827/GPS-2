@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     public Level lvlController;
+    public TargetProfile tp;
 
     public bool move;
 
@@ -97,26 +98,7 @@ public class EnemyMovement : MonoBehaviour
         playerArea = CC.levelStatus;
         if (this.hp <= 0)
         {
-            if (EnemyArea == 1)
-            {
-                targetProfile[0].EnemyCount -= 1;
-            }
-            else if (EnemyArea == 7)
-            {
-                targetProfile[1].EnemyCount -= 1;
-            }
-            else if (EnemyArea == 9)
-            {
-                targetProfile[2].EnemyCount -= 1;
-            }
-            else if (EnemyArea == 11)
-            {
-                targetProfile[3].EnemyCount -= 1;
-            }
-            else if (EnemyArea == 13)
-            {
-                targetProfile[4].EnemyCount -= 1;
-            }
+            tp.EnemyCount -= 1;
 
             Destroy(this.gameObject);
             lvlController.GetComponent<Level>().setScore(lvlController.GetComponent<Level>().getScore()+1000);
