@@ -2604,6 +2604,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114524710356533030, guid: a16ad742412f30549b1d62d029b6d30d,
+        type: 2}
+      propertyPath: sounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4953502078115890, guid: a16ad742412f30549b1d62d029b6d30d, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2646,6 +2651,47 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114524710356533030, guid: a16ad742412f30549b1d62d029b6d30d,
+        type: 2}
+      propertyPath: sounds.Array.data[2].name
+      value: OpeningBGM
+      objectReference: {fileID: 0}
+    - target: {fileID: 114524710356533030, guid: a16ad742412f30549b1d62d029b6d30d,
+        type: 2}
+      propertyPath: sounds.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 00fdcf233e9cea74781f62476555473f, type: 3}
+    - target: {fileID: 114524710356533030, guid: a16ad742412f30549b1d62d029b6d30d,
+        type: 2}
+      propertyPath: sounds.Array.data[2].volume
+      value: 0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 114524710356533030, guid: a16ad742412f30549b1d62d029b6d30d,
+        type: 2}
+      propertyPath: sounds.Array.data[2].volumeVariance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114524710356533030, guid: a16ad742412f30549b1d62d029b6d30d,
+        type: 2}
+      propertyPath: sounds.Array.data[2].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114524710356533030, guid: a16ad742412f30549b1d62d029b6d30d,
+        type: 2}
+      propertyPath: sounds.Array.data[2].pitchVariance
+      value: 0.155
+      objectReference: {fileID: 0}
+    - target: {fileID: 114524710356533030, guid: a16ad742412f30549b1d62d029b6d30d,
+        type: 2}
+      propertyPath: sounds.Array.data[2].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114524710356533030, guid: a16ad742412f30549b1d62d029b6d30d,
+        type: 2}
+      propertyPath: sounds.Array.data[2].mixerGroup
+      value: 
+      objectReference: {fileID: 243335218154334276, guid: 6fe0f7ea1824249418e9607a4c839bb4,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a16ad742412f30549b1d62d029b6d30d, type: 2}
   m_IsPrefabAsset: 0
