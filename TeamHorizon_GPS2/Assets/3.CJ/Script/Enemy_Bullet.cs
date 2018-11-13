@@ -6,6 +6,7 @@ public class Enemy_Bullet : MonoBehaviour {
 
     public int bulletSpeed;
     public Transform player;
+    public float bulletDamage;  
     Rigidbody rb;
 
     Vector3 playerPos;
@@ -36,11 +37,11 @@ public class Enemy_Bullet : MonoBehaviour {
         Destroy(gameObject, 5f);
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter (Collider collider)
     {
         if (hitByBulletForFirstTime == false)
         {
-            if (collision.gameObject.CompareTag("Player"))
+            if (collider.gameObject.CompareTag("Player"))
             {
                 if (crouch.isCrouch == true)
                 {
@@ -48,7 +49,7 @@ public class Enemy_Bullet : MonoBehaviour {
                 }
                 else
                 {
-                    plyrHp.TakeDamage(2.0f);
+                    plyrHp.TakeDamage(bulletDamage);
                     Destroy(gameObject);
                     hitByBulletForFirstTime = true;
                 }
@@ -56,7 +57,7 @@ public class Enemy_Bullet : MonoBehaviour {
         }
         else
         {
-            if (collision.gameObject.CompareTag("Player"))
+            if (collider.gameObject.CompareTag("Player"))
             {
                 if (crouch.isCrouch == true)
                 {
@@ -71,7 +72,7 @@ public class Enemy_Bullet : MonoBehaviour {
         }
         
 
-        if(collision.gameObject.CompareTag("Obstacle"))
+        if(collider.gameObject.CompareTag("Obstacle"))
         {
             Destroy(gameObject);
         }

@@ -9,7 +9,7 @@ public class Enemy_Shoot : MonoBehaviour {
     bool startShoot = false;
 
     public float timer;
-    public int shootDelayTime;
+    public float shootDelayTime;
 
     public int EnemyArea = 0;
     public int playerArea = 0;

@@ -21,6 +21,7 @@ public class Level: MonoBehaviour
     public Text endScore;
     public Text bonusTimeScore;
     public Text totalScore;
+    public GameObject loseUI;
 
 	void Start () {
         timeLeft = givenTime;
@@ -48,16 +49,24 @@ public class Level: MonoBehaviour
 
         if(timeLeft <= 0)
         {
-            LoadScene(0);
+            loseUI.SetActive(true);
+            SetTimeScale(0.0f);       
         }
 
         if(levelState == LEVEL_STATE.PLAYING)
         {
-            timeLeft -= Time.deltaTime;
-        }
+            if(timeLeft > 0)
+            {
+                timeLeft -= Time.deltaTime;
+            }           
+        }/*
         else if(levelState == LEVEL_STATE.PAUSED)
         {
             SetTimeScale(0f);
+        }*/
+        if(timeLeft <= 0)
+        {
+            timeLeft = 0;
         }
 	}
 

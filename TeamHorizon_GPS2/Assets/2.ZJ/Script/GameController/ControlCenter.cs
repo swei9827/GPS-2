@@ -19,16 +19,17 @@ public class ControlCenter : MonoBehaviour
     public bool InteractSuccess;
     public bool InteractFail;
     public int levelStatus = 0;
-
+    public GameObject winUI;
     public List<Transform> locations = new List<Transform>();
     public List<Transform> battleArea = new List<Transform>();
     public List<GameObject> hazards = new List<GameObject>();
+    public List<GameObject> qtes = new List<GameObject>();
 
     //reference
     private ScreenWobble screenWobble;
     IEnumerator coroutine;
     ScriptedMovement sMove;
-    public bool BADestroyed = false;
+    bool BADestroyed = false;
 
     void Start()
     {
@@ -162,6 +163,10 @@ public class ControlCenter : MonoBehaviour
                 {
                     status = STATUS.QTE;                    
                 }
+            }
+            if(status == STATUS.QTE)
+            {
+                qtes[0].SetActive(true);
             }
             if (QTESuccess)
             {
@@ -437,6 +442,7 @@ public class ControlCenter : MonoBehaviour
                 if(player.transform.position == locations[11].position)
                 {
                     status = STATUS.PORTAL;
+                    winUI.SetActive(true);
                 }
             }
         }
@@ -469,10 +475,10 @@ public class ControlCenter : MonoBehaviour
                 if (player.transform.position == locations[13].position)
                 {
                     status = STATUS.PORTAL;
+                    winUI.SetActive(true);
                 }
-            }
+            }           
         }
-
     }
 
     private IEnumerator CameraPanPhase(float waitTime, int hazardID)

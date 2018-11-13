@@ -20,6 +20,8 @@ public class PlayerHp : MonoBehaviour {
     public float healthAfterDamage;
     public float shieldAfterDamage;
 
+    public GameObject loseUI;
+
     // Use this for initialization
     void Start () {
         //healthBar = GetComponent<Image>();
@@ -37,6 +39,11 @@ public class PlayerHp : MonoBehaviour {
             shield = Mathf.MoveTowards(shield, shieldAfterDamage, 20f * Time.deltaTime);
             shieldBar.fillAmount = shield / startShield;
             healthBar.fillAmount = health / startHealth;
+        }
+        
+        if(health <= 0)
+        {
+            loseUI.SetActive(true);
         }
         
     }

@@ -114,6 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpeed: 5
   player: {fileID: 0}
+  bulletDamage: 50
 --- !u!135 &135850012570780194
 SphereCollider:
   m_ObjectHideFlags: 1
