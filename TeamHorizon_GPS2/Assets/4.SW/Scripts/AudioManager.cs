@@ -50,7 +50,6 @@ public class AudioManager : MonoBehaviour {
 
     private void Start()
     {
-        Play("Opening");
         Play("OpeningBGM");
     }
 
