@@ -474,8 +474,8 @@ public class ControlCenter : MonoBehaviour
                 sMove.PlayerMove(locations[13]);
                 if (player.transform.position == locations[13].position)
                 {
-                    status = STATUS.PORTAL;
-                    winUI.SetActive(true);
+                    Level level = GetComponent<Level>();
+                    level.LevelCleared();
                 }
             }           
         }

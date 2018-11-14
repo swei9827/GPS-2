@@ -76603,7 +76603,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1910783122
 RectTransform:
   m_ObjectHideFlags: 0
@@ -79498,12 +79498,12 @@ Prefab:
     - target: {fileID: 224232430106258576, guid: 3e07023663ff629408986ce07bb8e58b,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 8.099976
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224232430106258576, guid: 3e07023663ff629408986ce07bb8e58b,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 4.100006
+      value: 0.000030517578
       objectReference: {fileID: 0}
     - target: {fileID: 114583260031801512, guid: 3e07023663ff629408986ce07bb8e58b,
         type: 2}
@@ -79518,32 +79518,32 @@ Prefab:
     - target: {fileID: 224232430106258576, guid: 3e07023663ff629408986ce07bb8e58b,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0.05
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224232430106258576, guid: 3e07023663ff629408986ce07bb8e58b,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: -315.91998
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224232430106258576, guid: 3e07023663ff629408986ce07bb8e58b,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0.95900005
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224232430106258576, guid: 3e07023663ff629408986ce07bb8e58b,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: -57.95999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224232430106258576, guid: 3e07023663ff629408986ce07bb8e58b,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0.88522226
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224232430106258576, guid: 3e07023663ff629408986ce07bb8e58b,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0.3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114280747484744544, guid: 3e07023663ff629408986ce07bb8e58b,
         type: 2}
@@ -79594,6 +79594,10 @@ Prefab:
       propertyPath: shieldBar
       value: 
       objectReference: {fileID: 341326710}
+    - target: {fileID: 1431768022257824, guid: 3e07023663ff629408986ce07bb8e58b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e07023663ff629408986ce07bb8e58b, type: 2}
   m_IsPrefabAsset: 0
