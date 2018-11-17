@@ -21,6 +21,10 @@ TagManager:
   - PlayerBlade
   - B_Slider_MainMenu
   - B_Slider_Game
+  - EnemyHead
+  - EnemyTorso
+  - EnemyLegL
+  - EnemyLegR
   layers:
   - Default
   - TransparentFX

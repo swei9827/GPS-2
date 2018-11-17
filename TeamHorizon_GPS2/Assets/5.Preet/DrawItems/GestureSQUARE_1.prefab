@@ -610,7 +610,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1995695332755842}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0895379, y: 3, z: 46.3}
+  m_LocalPosition: {x: 0.0895379, y: 3.35, z: 46.3}
   m_LocalScale: {x: 5, y: 5, z: 0.01}
   m_Children:
   - {fileID: 4565968078421638}
@@ -1925,3 +1925,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitMaterial: {fileID: 2100000, guid: 2826a72036f8be443a159fda7d4e2d60, type: 2}
   numBoxDestroyed: 18
+  hasBeenHit: 0
+  Prefab: {fileID: 1995695332755842}
+  Spawnpoint: {fileID: 1045008286214570, guid: 33bd32b7ddc7cf64ca4576f3b8fd9705, type: 2}
+  allBoxesHit: 0
+  GestureBoxCount: 18
+  beenClicked: 0
+  timeLeft: 3
+  timeMoving: 0

@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2314,6 +2314,43 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 52626718}
   m_Mesh: {fileID: 4300218, guid: f93d5b656c6dbd34c811a28a7c0d7861, type: 3}
+--- !u!1 &53480929 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1506761545032920, guid: a231a9832252beb449cd3495b620f30b,
+    type: 2}
+  m_PrefabInternal: {fileID: 795884345}
+--- !u!95 &53480930
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 53480929}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2297a9fa44b544f43beecdfd8b710d8b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!111 &53480931
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 53480929}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 37e2519e2a054fb4884eed476dc92b15, type: 3}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &53774306
 GameObject:
   m_ObjectHideFlags: 0
@@ -5019,6 +5056,9 @@ MonoBehaviour:
   player: {fileID: 1577847618}
   EnemyStartAppear: 0
   ThrowBarrel: 0
+  ThrowGranade: 0
+  StabSlash: 0
+  Running: 0
   EnemyArea: 11
   timer: 0
   hideDelayTimer: 2
@@ -5033,11 +5073,13 @@ MonoBehaviour:
   Bison_ShootingAnim: 0
   Bison_DeadAnim: 0
   Bison_ThrowBarrelAnim: 0
-  Soldier_AimingAnim: 0
   Soldier_DamageAnim: 0
+  Soldier_AimingAnim: 0
   Soldier_ShootingAnim: 0
   Soldier_DeadAnim: 0
-  Soldier_ThrowBarrelAnim: 0
+  Soldier_StabSlashAnim: 0
+  Soldier_RunningAnim: 0
+  Soldier_GranadeAnim: 0
   targetProfile:
   - {fileID: 0}
   - {fileID: 0}
@@ -5587,6 +5629,9 @@ MonoBehaviour:
   player: {fileID: 1577847618}
   EnemyStartAppear: 0
   ThrowBarrel: 0
+  ThrowGranade: 0
+  StabSlash: 0
+  Running: 0
   EnemyArea: 13
   timer: 0
   hideDelayTimer: 3
@@ -5601,11 +5646,13 @@ MonoBehaviour:
   Bison_ShootingAnim: 0
   Bison_DeadAnim: 0
   Bison_ThrowBarrelAnim: 0
-  Soldier_AimingAnim: 0
   Soldier_DamageAnim: 0
+  Soldier_AimingAnim: 0
   Soldier_ShootingAnim: 0
   Soldier_DeadAnim: 0
-  Soldier_ThrowBarrelAnim: 0
+  Soldier_StabSlashAnim: 0
+  Soldier_RunningAnim: 0
+  Soldier_GranadeAnim: 0
   targetProfile:
   - {fileID: 0}
   - {fileID: 0}
@@ -6486,6 +6533,9 @@ MonoBehaviour:
   player: {fileID: 1577847618}
   EnemyStartAppear: 0
   ThrowBarrel: 0
+  ThrowGranade: 0
+  StabSlash: 0
+  Running: 0
   EnemyArea: 7
   timer: 0
   hideDelayTimer: 2
@@ -6500,11 +6550,13 @@ MonoBehaviour:
   Bison_ShootingAnim: 0
   Bison_DeadAnim: 0
   Bison_ThrowBarrelAnim: 0
-  Soldier_AimingAnim: 0
   Soldier_DamageAnim: 0
+  Soldier_AimingAnim: 0
   Soldier_ShootingAnim: 0
   Soldier_DeadAnim: 0
-  Soldier_ThrowBarrelAnim: 0
+  Soldier_StabSlashAnim: 0
+  Soldier_RunningAnim: 0
+  Soldier_GranadeAnim: 0
   targetProfile:
   - {fileID: 0}
   - {fileID: 0}
@@ -7142,6 +7194,43 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 165730309}
   m_Mesh: {fileID: 4300190, guid: f93d5b656c6dbd34c811a28a7c0d7861, type: 3}
+--- !u!1 &167667860 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1506761545032920, guid: a231a9832252beb449cd3495b620f30b,
+    type: 2}
+  m_PrefabInternal: {fileID: 936388963}
+--- !u!95 &167667862
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 167667860}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2297a9fa44b544f43beecdfd8b710d8b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!111 &167667863
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 167667860}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 37e2519e2a054fb4884eed476dc92b15, type: 3}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &167814486
 GameObject:
   m_ObjectHideFlags: 0
@@ -8828,6 +8917,43 @@ Transform:
   m_Father: {fileID: 792970754}
   m_RootOrder: 57
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &203232547 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1506761545032920, guid: a231a9832252beb449cd3495b620f30b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1260462037}
+--- !u!95 &203232549
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 203232547}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2297a9fa44b544f43beecdfd8b710d8b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!111 &203232550
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 203232547}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 37e2519e2a054fb4884eed476dc92b15, type: 3}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &204065553
 GameObject:
   m_ObjectHideFlags: 0
@@ -14224,6 +14350,43 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 346084770}
   m_Mesh: {fileID: 4300626, guid: f93d5b656c6dbd34c811a28a7c0d7861, type: 3}
+--- !u!1 &346413458 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1506761545032920, guid: a231a9832252beb449cd3495b620f30b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1901531894}
+--- !u!95 &346413460
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 346413458}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2297a9fa44b544f43beecdfd8b710d8b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!111 &346413461
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 346413458}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 37e2519e2a054fb4884eed476dc92b15, type: 3}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &347221130
 GameObject:
   m_ObjectHideFlags: 0
@@ -20072,6 +20235,9 @@ MonoBehaviour:
   player: {fileID: 1577847618}
   EnemyStartAppear: 0
   ThrowBarrel: 0
+  ThrowGranade: 0
+  StabSlash: 0
+  Running: 0
   EnemyArea: 11
   timer: 0
   hideDelayTimer: 2
@@ -20086,11 +20252,13 @@ MonoBehaviour:
   Bison_ShootingAnim: 0
   Bison_DeadAnim: 0
   Bison_ThrowBarrelAnim: 0
-  Soldier_AimingAnim: 0
   Soldier_DamageAnim: 0
+  Soldier_AimingAnim: 0
   Soldier_ShootingAnim: 0
   Soldier_DeadAnim: 0
-  Soldier_ThrowBarrelAnim: 0
+  Soldier_StabSlashAnim: 0
+  Soldier_RunningAnim: 0
+  Soldier_GranadeAnim: 0
   targetProfile:
   - {fileID: 0}
   - {fileID: 0}
@@ -29189,7 +29357,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4756411539734810, guid: a231a9832252beb449cd3495b620f30b, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114331427859031928, guid: a231a9832252beb449cd3495b620f30b,
         type: 2}
@@ -31982,7 +32150,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4756411539734810, guid: a231a9832252beb449cd3495b620f30b, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 114331427859031928, guid: a231a9832252beb449cd3495b620f30b,
         type: 2}
@@ -34672,7 +34840,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4756411539734810, guid: a231a9832252beb449cd3495b620f30b, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 114331427859031928, guid: a231a9832252beb449cd3495b620f30b,
         type: 2}
@@ -38507,7 +38675,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4756411539734810, guid: a231a9832252beb449cd3495b620f30b, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114331427859031928, guid: a231a9832252beb449cd3495b620f30b,
         type: 2}
@@ -39943,6 +40111,9 @@ MonoBehaviour:
   player: {fileID: 1577847618}
   EnemyStartAppear: 0
   ThrowBarrel: 0
+  ThrowGranade: 0
+  StabSlash: 0
+  Running: 0
   EnemyArea: 1
   timer: 0
   hideDelayTimer: 2
@@ -39957,11 +40128,13 @@ MonoBehaviour:
   Bison_ShootingAnim: 0
   Bison_DeadAnim: 0
   Bison_ThrowBarrelAnim: 0
-  Soldier_AimingAnim: 0
   Soldier_DamageAnim: 0
+  Soldier_AimingAnim: 0
   Soldier_ShootingAnim: 0
   Soldier_DeadAnim: 0
-  Soldier_ThrowBarrelAnim: 0
+  Soldier_StabSlashAnim: 0
+  Soldier_RunningAnim: 0
+  Soldier_GranadeAnim: 0
   targetProfile:
   - {fileID: 0}
   - {fileID: 0}
@@ -46069,16 +46242,6 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1577847610}
-    - target: {fileID: 114331427859031928, guid: a231a9832252beb449cd3495b620f30b,
-        type: 2}
-      propertyPath: BattleNodes
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114331427859031928, guid: a231a9832252beb449cd3495b620f30b,
-        type: 2}
-      propertyPath: EnemyCount
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a231a9832252beb449cd3495b620f30b, type: 2}
   m_IsPrefabAsset: 0
@@ -46596,6 +46759,9 @@ MonoBehaviour:
   player: {fileID: 1577847618}
   EnemyStartAppear: 0
   ThrowBarrel: 0
+  ThrowGranade: 0
+  StabSlash: 0
+  Running: 0
   EnemyArea: 13
   timer: 0
   hideDelayTimer: 2
@@ -46610,11 +46776,13 @@ MonoBehaviour:
   Bison_ShootingAnim: 0
   Bison_DeadAnim: 0
   Bison_ThrowBarrelAnim: 0
-  Soldier_AimingAnim: 0
   Soldier_DamageAnim: 0
+  Soldier_AimingAnim: 0
   Soldier_ShootingAnim: 0
   Soldier_DeadAnim: 0
-  Soldier_ThrowBarrelAnim: 0
+  Soldier_StabSlashAnim: 0
+  Soldier_RunningAnim: 0
+  Soldier_GranadeAnim: 0
   targetProfile:
   - {fileID: 0}
   - {fileID: 0}
@@ -46720,6 +46888,43 @@ Transform:
   m_Father: {fileID: 314891711}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1170884114 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1506761545032920, guid: a231a9832252beb449cd3495b620f30b,
+    type: 2}
+  m_PrefabInternal: {fileID: 2000842271}
+--- !u!95 &1170884116
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1170884114}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2297a9fa44b544f43beecdfd8b710d8b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!111 &1170884117
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1170884114}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 37e2519e2a054fb4884eed476dc92b15, type: 3}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1172348430
 GameObject:
   m_ObjectHideFlags: 0
@@ -49549,7 +49754,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4756411539734810, guid: a231a9832252beb449cd3495b620f30b, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 114331427859031928, guid: a231a9832252beb449cd3495b620f30b,
         type: 2}
@@ -50455,7 +50660,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4756411539734810, guid: a231a9832252beb449cd3495b620f30b, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114331427859031928, guid: a231a9832252beb449cd3495b620f30b,
         type: 2}
@@ -52066,6 +52271,43 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1298315095}
   m_Mesh: {fileID: 4300844, guid: f93d5b656c6dbd34c811a28a7c0d7861, type: 3}
+--- !u!1 &1298369447 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1506761545032920, guid: a231a9832252beb449cd3495b620f30b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1236272234}
+--- !u!95 &1298369449
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1298369447}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2297a9fa44b544f43beecdfd8b710d8b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!111 &1298369450
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1298369447}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 37e2519e2a054fb4884eed476dc92b15, type: 3}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1301297876
 GameObject:
   m_ObjectHideFlags: 0
@@ -52388,6 +52630,43 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1310082381}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1310261712 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1506761545032920, guid: a231a9832252beb449cd3495b620f30b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1375031232}
+--- !u!95 &1310261714
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1310261712}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2297a9fa44b544f43beecdfd8b710d8b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!111 &1310261715
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1310261712}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 37e2519e2a054fb4884eed476dc92b15, type: 3}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1311534250
 GameObject:
   m_ObjectHideFlags: 0
@@ -53108,6 +53387,43 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1325617750}
   m_Mesh: {fileID: 4300064, guid: f93d5b656c6dbd34c811a28a7c0d7861, type: 3}
+--- !u!1 &1326151428 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1506761545032920, guid: a231a9832252beb449cd3495b620f30b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1750801653}
+--- !u!95 &1326151430
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1326151428}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2297a9fa44b544f43beecdfd8b710d8b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!111 &1326151431
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1326151428}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 37e2519e2a054fb4884eed476dc92b15, type: 3}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1326185297
 GameObject:
   m_ObjectHideFlags: 0
@@ -53514,6 +53830,9 @@ MonoBehaviour:
   player: {fileID: 1577847618}
   EnemyStartAppear: 0
   ThrowBarrel: 0
+  ThrowGranade: 0
+  StabSlash: 0
+  Running: 0
   EnemyArea: 7
   timer: 0
   hideDelayTimer: 2
@@ -53528,11 +53847,13 @@ MonoBehaviour:
   Bison_ShootingAnim: 0
   Bison_DeadAnim: 0
   Bison_ThrowBarrelAnim: 0
-  Soldier_AimingAnim: 0
   Soldier_DamageAnim: 0
+  Soldier_AimingAnim: 0
   Soldier_ShootingAnim: 0
   Soldier_DeadAnim: 0
-  Soldier_ThrowBarrelAnim: 0
+  Soldier_StabSlashAnim: 0
+  Soldier_RunningAnim: 0
+  Soldier_GranadeAnim: 0
   targetProfile:
   - {fileID: 0}
   - {fileID: 0}
@@ -54193,6 +54514,9 @@ MonoBehaviour:
   player: {fileID: 1577847618}
   EnemyStartAppear: 0
   ThrowBarrel: 0
+  ThrowGranade: 0
+  StabSlash: 0
+  Running: 0
   EnemyArea: 1
   timer: 0
   hideDelayTimer: 2
@@ -54207,11 +54531,13 @@ MonoBehaviour:
   Bison_ShootingAnim: 0
   Bison_DeadAnim: 0
   Bison_ThrowBarrelAnim: 0
-  Soldier_AimingAnim: 0
   Soldier_DamageAnim: 0
+  Soldier_AimingAnim: 0
   Soldier_ShootingAnim: 0
   Soldier_DeadAnim: 0
-  Soldier_ThrowBarrelAnim: 0
+  Soldier_StabSlashAnim: 0
+  Soldier_RunningAnim: 0
+  Soldier_GranadeAnim: 0
   targetProfile:
   - {fileID: 0}
   - {fileID: 0}
@@ -54623,7 +54949,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4756411539734810, guid: a231a9832252beb449cd3495b620f30b, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114331427859031928, guid: a231a9832252beb449cd3495b620f30b,
         type: 2}
@@ -55104,7 +55430,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4756411539734810, guid: a231a9832252beb449cd3495b620f30b, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 114331427859031928, guid: a231a9832252beb449cd3495b620f30b,
         type: 2}
@@ -58350,6 +58676,43 @@ Transform:
   m_Father: {fileID: 99908832}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1424123991 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1506761545032920, guid: a231a9832252beb449cd3495b620f30b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1731676054}
+--- !u!95 &1424123992
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1424123991}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2297a9fa44b544f43beecdfd8b710d8b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!111 &1424123993
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1424123991}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 37e2519e2a054fb4884eed476dc92b15, type: 3}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1425085740
 GameObject:
   m_ObjectHideFlags: 0
@@ -61325,6 +61688,48 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300856, guid: f93d5b656c6dbd34c811a28a7c0d7861, type: 3}
+--- !u!1001 &1524546499
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4736418363804570, guid: b4b4179a51d7bf44c9dc871208a8279f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -14.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736418363804570, guid: b4b4179a51d7bf44c9dc871208a8279f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736418363804570, guid: b4b4179a51d7bf44c9dc871208a8279f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -104.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736418363804570, guid: b4b4179a51d7bf44c9dc871208a8279f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736418363804570, guid: b4b4179a51d7bf44c9dc871208a8279f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736418363804570, guid: b4b4179a51d7bf44c9dc871208a8279f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736418363804570, guid: b4b4179a51d7bf44c9dc871208a8279f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736418363804570, guid: b4b4179a51d7bf44c9dc871208a8279f, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b4b4179a51d7bf44c9dc871208a8279f, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1526115877
 GameObject:
   m_ObjectHideFlags: 0
@@ -65048,6 +65453,43 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1623495591 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1506761545032920, guid: a231a9832252beb449cd3495b620f30b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1708859538}
+--- !u!95 &1623495592
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1623495591}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2297a9fa44b544f43beecdfd8b710d8b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!111 &1623495593
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1623495591}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 37e2519e2a054fb4884eed476dc92b15, type: 3}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1623886777
 GameObject:
   m_ObjectHideFlags: 0
@@ -68923,7 +69365,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4756411539734810, guid: a231a9832252beb449cd3495b620f30b, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114331427859031928, guid: a231a9832252beb449cd3495b620f30b,
         type: 2}
@@ -69823,6 +70265,9 @@ MonoBehaviour:
   player: {fileID: 1577847618}
   EnemyStartAppear: 0
   ThrowBarrel: 0
+  ThrowGranade: 0
+  StabSlash: 0
+  Running: 0
   EnemyArea: 9
   timer: 0
   hideDelayTimer: 2
@@ -69837,11 +70282,13 @@ MonoBehaviour:
   Bison_ShootingAnim: 0
   Bison_DeadAnim: 0
   Bison_ThrowBarrelAnim: 0
-  Soldier_AimingAnim: 0
   Soldier_DamageAnim: 0
+  Soldier_AimingAnim: 0
   Soldier_ShootingAnim: 0
   Soldier_DeadAnim: 0
-  Soldier_ThrowBarrelAnim: 0
+  Soldier_StabSlashAnim: 0
+  Soldier_RunningAnim: 0
+  Soldier_GranadeAnim: 0
   targetProfile:
   - {fileID: 0}
   - {fileID: 0}
@@ -70078,7 +70525,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4756411539734810, guid: a231a9832252beb449cd3495b620f30b, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 114331427859031928, guid: a231a9832252beb449cd3495b620f30b,
         type: 2}
@@ -70839,7 +71286,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4756411539734810, guid: a231a9832252beb449cd3495b620f30b, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 114331427859031928, guid: a231a9832252beb449cd3495b620f30b,
         type: 2}
@@ -70894,6 +71341,43 @@ Transform:
   m_Father: {fileID: 759874739}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1752448349 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1506761545032920, guid: a231a9832252beb449cd3495b620f30b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1360720162}
+--- !u!95 &1752448351
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1752448349}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2297a9fa44b544f43beecdfd8b710d8b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!111 &1752448352
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1752448349}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 37e2519e2a054fb4884eed476dc92b15, type: 3}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1753378996
 GameObject:
   m_ObjectHideFlags: 0
@@ -71217,6 +71701,43 @@ Transform:
   m_Father: {fileID: 245387656}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1762170012 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1506761545032920, guid: a231a9832252beb449cd3495b620f30b,
+    type: 2}
+  m_PrefabInternal: {fileID: 851494589}
+--- !u!95 &1762170013
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1762170012}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2297a9fa44b544f43beecdfd8b710d8b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!111 &1762170014
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1762170012}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 37e2519e2a054fb4884eed476dc92b15, type: 3}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1762368080
 GameObject:
   m_ObjectHideFlags: 0
@@ -74980,6 +75501,43 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1851717616}
   m_Mesh: {fileID: 4300850, guid: f93d5b656c6dbd34c811a28a7c0d7861, type: 3}
+--- !u!1 &1852159490 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1506761545032920, guid: a231a9832252beb449cd3495b620f30b,
+    type: 2}
+  m_PrefabInternal: {fileID: 738323223}
+--- !u!95 &1852159492
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1852159490}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2297a9fa44b544f43beecdfd8b710d8b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!111 &1852159493
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1852159490}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 37e2519e2a054fb4884eed476dc92b15, type: 3}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1852912128
 GameObject:
   m_ObjectHideFlags: 0
@@ -75037,7 +75595,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1916425506}
-  - {fileID: 573254708}
   - {fileID: 1446515178}
   - {fileID: 285609025}
   - {fileID: 751976411}
@@ -75050,6 +75607,7 @@ Transform:
   - {fileID: 102278108}
   - {fileID: 1166328586}
   - {fileID: 559051691}
+  - {fileID: 573254708}
   m_Father: {fileID: 2139795611}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -76830,7 +77388,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4756411539734810, guid: a231a9832252beb449cd3495b620f30b, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114331427859031928, guid: a231a9832252beb449cd3495b620f30b,
         type: 2}
@@ -80094,6 +80652,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224984453287765276, guid: 3e07023663ff629408986ce07bb8e58b,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e07023663ff629408986ce07bb8e58b, type: 2}
   m_IsPrefabAsset: 0
@@ -81202,7 +81765,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4756411539734810, guid: a231a9832252beb449cd3495b620f30b, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114331427859031928, guid: a231a9832252beb449cd3495b620f30b,
         type: 2}
@@ -85372,6 +85935,9 @@ MonoBehaviour:
   player: {fileID: 1577847618}
   EnemyStartAppear: 0
   ThrowBarrel: 0
+  ThrowGranade: 0
+  StabSlash: 0
+  Running: 0
   EnemyArea: 9
   timer: 0
   hideDelayTimer: 2
@@ -85386,11 +85952,13 @@ MonoBehaviour:
   Bison_ShootingAnim: 0
   Bison_DeadAnim: 0
   Bison_ThrowBarrelAnim: 0
-  Soldier_AimingAnim: 0
   Soldier_DamageAnim: 0
+  Soldier_AimingAnim: 0
   Soldier_ShootingAnim: 0
   Soldier_DeadAnim: 0
-  Soldier_ThrowBarrelAnim: 0
+  Soldier_StabSlashAnim: 0
+  Soldier_RunningAnim: 0
+  Soldier_GranadeAnim: 0
   targetProfile:
   - {fileID: 0}
   - {fileID: 0}

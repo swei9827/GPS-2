@@ -5,41 +5,47 @@ using UnityEngine.UI;
 
 public class onGestureTrigger : MonoBehaviour
 {
+    GestureManager gm;
     public bool onQTETrigger = false;
     public Transform Spawnpoint;
-    public GameObject Prefab;
+
+    public GameObject Prefab;//gesturedrawing prefab
     public bool boxGesture;
 
 
+    void Start()
+    {
+        
+    }
+
     void OnTriggerEnter(Collider other)
     {
+
         //print("QTE TRIGGET ON");
-        if(other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
-            print("QTE TRIGGET ON");
+            print("QTE TRIGGER ON");
             onQTETrigger = true;
+
             if (onQTETrigger == true)
             {
-                this.gameObject.GetComponent<Renderer>().material.color = Color.red;
-                Prefab.SetActive(true);
-                //Instantiate(Prefab, Spawnpoint.position, Spawnpoint.rotation);
-                Time.timeScale = 0.01f; //time.timescale = 0.5; // to slow doen the game during qte
+                Transform player = GameObject.FindGameObjectWithTag("Player").transform;
+
+                
+
+                GameObject QTE = Instantiate(Prefab, new Vector3(Spawnpoint.position.x + player.position.x, Spawnpoint.position.y + player.position.y, Spawnpoint.position.z + player.position.z), player.rotation);
+                QTE.transform.parent = GameObject.FindGameObjectWithTag("Player").transform;
+
+
+                gm = GameObject.FindGameObjectWithTag("boxGesture").GetComponent<GestureManager>();
+
+
+                Time.timeScale = 0.1f; //time.timescale = 0.5; // to slow doen the game during qte
+                //gm.timeMoving = true; //time duration for qte drawing
+
             }
             Destroy(gameObject);
         }
 
-        
-
-                //if (tag == "boxGesture" && !gameObject.activeSelf)
-        //  if (other.gameObject.tag == "boxGesture" && boxGesture == false)
-        //    {
-        //  Prefab.SetActive(true);
-        //  }
-
-
     }
-  //  private void OnCollisionStay2D(Collision2D collision)
-   // {
-        
-  //  }
 }
