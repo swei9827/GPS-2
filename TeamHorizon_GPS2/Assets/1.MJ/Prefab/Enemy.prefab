@@ -900,6 +900,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4049991892911272}
+  - component: {fileID: 65808857112854074}
   m_Layer: 0
   m_Name: Bip001 L Calf
   m_TagString: Untagged
@@ -1453,6 +1454,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4860669810516578}
+  - component: {fileID: 65639904008895806}
   m_Layer: 0
   m_Name: Bip001 Pelvis
   m_TagString: Untagged
@@ -1874,6 +1876,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4918020953546086}
+  - component: {fileID: 65238430195606512}
   m_Layer: 0
   m_Name: Bip001 HeadNub
   m_TagString: Untagged
@@ -2521,6 +2524,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4478188915743076}
+  - component: {fileID: 65825177886303868}
   m_Layer: 0
   m_Name: Bip001 R Calf
   m_TagString: Untagged
@@ -5736,7 +5740,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1959833722705304}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.6696327, y: -10.963491, z: 83.27237}
+  m_LocalPosition: {x: -1.6696327, y: -10.963491, z: 93.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4175376341488892}
@@ -9374,6 +9378,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2.22, z: 1}
   m_Center: {x: 0, y: 1.11, z: 0}
+--- !u!65 &65238430195606512
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1414982411025728}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.28685844, y: 0.20531833, z: 0.30058485}
+  m_Center: {x: 0.08161828, y: 0.06897973, z: 0.009176331}
 --- !u!65 &65410047576374300
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -9422,6 +9438,42 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2.22, z: 1}
   m_Center: {x: 0, y: 1.11, z: 0}
+--- !u!65 &65639904008895806
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1326901870159660}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5575919, y: 0.32163614, z: 0.4189211}
+  m_Center: {x: -0.2212041, y: -0.018509336, z: -0.0017703671}
+--- !u!65 &65808857112854074
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1199576106810840}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.2010317, z: 0.20404698}
+  m_Center: {x: 0.000000015443334, y: -0.11038841, z: 0.2133192}
+--- !u!65 &65825177886303868
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1534667995368382}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5883744, y: 0.16269878, z: 0.2386476}
+  m_Center: {x: -0.10191889, y: -0.024781434, z: -0.23524056}
 --- !u!95 &95016557421169514
 Animator:
   serializedVersion: 3
@@ -9591,6 +9643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lvlController: {fileID: 0}
+  tp: {fileID: 0}
   move: 0
   moveSpeed: 0
   endPosX: 0
@@ -9598,6 +9651,10 @@ MonoBehaviour:
   endPosZ: 0
   player: {fileID: 0}
   EnemyStartAppear: 0
+  ThrowBarrel: 0
+  ThrowGranade: 0
+  StabSlash: 0
+  Running: 0
   EnemyArea: 1
   timer: 0
   hideDelayTimer: 3
@@ -9607,6 +9664,19 @@ MonoBehaviour:
   SlothWolf_DamageAnim: 0
   SlothWolf_AimingAnim: 0
   SlothWolf_ShootingAnim: 0
+  Bison_DamageAnim: 0
+  Bison_AimingAnim: 0
+  Bison_ShootingAnim: 0
+  Bison_DeadAnim: 0
+  Bison_ThrowBarrelAnim: 0
+  Soldier_DamageAnim: 0
+  Soldier_AimingAnim: 0
+  Soldier_ShootingAnim: 0
+  Soldier_DeadAnim: 0
+  Soldier_StabSlashAnim: 0
+  Soldier_RunningAnim: 0
+  Soldier_GranadeAnim: 0
+  targetProfile: []
 --- !u!114 &114114235903581184
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9619,6 +9689,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lvlController: {fileID: 0}
+  tp: {fileID: 0}
   move: 0
   moveSpeed: 0
   endPosX: 0
@@ -9626,6 +9697,10 @@ MonoBehaviour:
   endPosZ: 0
   player: {fileID: 0}
   EnemyStartAppear: 0
+  ThrowBarrel: 0
+  ThrowGranade: 0
+  StabSlash: 0
+  Running: 0
   EnemyArea: 1
   timer: 0
   hideDelayTimer: 3
@@ -9635,6 +9710,19 @@ MonoBehaviour:
   SlothWolf_DamageAnim: 0
   SlothWolf_AimingAnim: 0
   SlothWolf_ShootingAnim: 0
+  Bison_DamageAnim: 0
+  Bison_AimingAnim: 0
+  Bison_ShootingAnim: 0
+  Bison_DeadAnim: 0
+  Bison_ThrowBarrelAnim: 0
+  Soldier_DamageAnim: 0
+  Soldier_AimingAnim: 0
+  Soldier_ShootingAnim: 0
+  Soldier_DeadAnim: 0
+  Soldier_StabSlashAnim: 0
+  Soldier_RunningAnim: 0
+  Soldier_GranadeAnim: 0
+  targetProfile: []
 --- !u!114 &114187595850045184
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9678,6 +9766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lvlController: {fileID: 0}
+  tp: {fileID: 0}
   move: 0
   moveSpeed: 0
   endPosX: 0
@@ -9685,6 +9774,10 @@ MonoBehaviour:
   endPosZ: 0
   player: {fileID: 0}
   EnemyStartAppear: 0
+  ThrowBarrel: 0
+  ThrowGranade: 0
+  StabSlash: 0
+  Running: 0
   EnemyArea: 0
   timer: 0
   hideDelayTimer: 3
@@ -9694,6 +9787,19 @@ MonoBehaviour:
   SlothWolf_DamageAnim: 0
   SlothWolf_AimingAnim: 0
   SlothWolf_ShootingAnim: 0
+  Bison_DamageAnim: 0
+  Bison_AimingAnim: 0
+  Bison_ShootingAnim: 0
+  Bison_DeadAnim: 0
+  Bison_ThrowBarrelAnim: 0
+  Soldier_DamageAnim: 0
+  Soldier_AimingAnim: 0
+  Soldier_ShootingAnim: 0
+  Soldier_DeadAnim: 0
+  Soldier_StabSlashAnim: 0
+  Soldier_RunningAnim: 0
+  Soldier_GranadeAnim: 0
+  targetProfile: []
 --- !u!114 &114464128818829076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9803,6 +9909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lvlController: {fileID: 0}
+  tp: {fileID: 0}
   move: 0
   moveSpeed: 0
   endPosX: 0
@@ -9810,6 +9917,10 @@ MonoBehaviour:
   endPosZ: 0
   player: {fileID: 0}
   EnemyStartAppear: 0
+  ThrowBarrel: 0
+  ThrowGranade: 0
+  StabSlash: 0
+  Running: 0
   EnemyArea: 0
   timer: 0
   hideDelayTimer: 3
@@ -9819,6 +9930,19 @@ MonoBehaviour:
   SlothWolf_DamageAnim: 0
   SlothWolf_AimingAnim: 0
   SlothWolf_ShootingAnim: 0
+  Bison_DamageAnim: 0
+  Bison_AimingAnim: 0
+  Bison_ShootingAnim: 0
+  Bison_DeadAnim: 0
+  Bison_ThrowBarrelAnim: 0
+  Soldier_DamageAnim: 0
+  Soldier_AimingAnim: 0
+  Soldier_ShootingAnim: 0
+  Soldier_DeadAnim: 0
+  Soldier_StabSlashAnim: 0
+  Soldier_RunningAnim: 0
+  Soldier_GranadeAnim: 0
+  targetProfile: []
 --- !u!114 &114718418109299298
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9855,6 +9979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lvlController: {fileID: 0}
+  tp: {fileID: 0}
   move: 0
   moveSpeed: 0
   endPosX: 0
@@ -9862,6 +9987,10 @@ MonoBehaviour:
   endPosZ: 0
   player: {fileID: 0}
   EnemyStartAppear: 0
+  ThrowBarrel: 0
+  ThrowGranade: 0
+  StabSlash: 0
+  Running: 0
   EnemyArea: 0
   timer: 0
   hideDelayTimer: 3
@@ -9871,6 +10000,19 @@ MonoBehaviour:
   SlothWolf_DamageAnim: 0
   SlothWolf_AimingAnim: 0
   SlothWolf_ShootingAnim: 0
+  Bison_DamageAnim: 0
+  Bison_AimingAnim: 0
+  Bison_ShootingAnim: 0
+  Bison_DeadAnim: 0
+  Bison_ThrowBarrelAnim: 0
+  Soldier_DamageAnim: 0
+  Soldier_AimingAnim: 0
+  Soldier_ShootingAnim: 0
+  Soldier_DeadAnim: 0
+  Soldier_StabSlashAnim: 0
+  Soldier_RunningAnim: 0
+  Soldier_GranadeAnim: 0
+  targetProfile: []
 --- !u!114 &114819264993126942
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9883,6 +10025,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lvlController: {fileID: 0}
+  tp: {fileID: 0}
   move: 0
   moveSpeed: 0
   endPosX: 0
@@ -9890,6 +10033,10 @@ MonoBehaviour:
   endPosZ: 0
   player: {fileID: 0}
   EnemyStartAppear: 0
+  ThrowBarrel: 0
+  ThrowGranade: 0
+  StabSlash: 0
+  Running: 0
   EnemyArea: 1
   timer: 0
   hideDelayTimer: 3
@@ -9899,6 +10046,19 @@ MonoBehaviour:
   SlothWolf_DamageAnim: 0
   SlothWolf_AimingAnim: 0
   SlothWolf_ShootingAnim: 0
+  Bison_DamageAnim: 0
+  Bison_AimingAnim: 0
+  Bison_ShootingAnim: 0
+  Bison_DeadAnim: 0
+  Bison_ThrowBarrelAnim: 0
+  Soldier_DamageAnim: 0
+  Soldier_AimingAnim: 0
+  Soldier_ShootingAnim: 0
+  Soldier_DeadAnim: 0
+  Soldier_StabSlashAnim: 0
+  Soldier_RunningAnim: 0
+  Soldier_GranadeAnim: 0
+  targetProfile: []
 --- !u!137 &137084497374419050
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

@@ -187,7 +187,19 @@ public class RaycastShoot : MonoBehaviour
                                             laserLine.SetPosition(1, hit.point);
                                             GameObject bulletEffect = Instantiate(weapon.effect, hit.point, transform.rotation);
                                             Destroy(bulletEffect, 1.0f);
-                                            if (hit.collider.CompareTag("Enemy"))
+                                            if (hit.collider.CompareTag("EnemyTorso"))
+                                            {
+                                                hit.collider.gameObject.GetComponent<EnemyMovement>().hp -= weapon.gunDamage;
+                                            }
+                                            else if (hit.collider.CompareTag("EnemyHead"))
+                                            {
+                                                hit.collider.gameObject.GetComponent<EnemyMovement>().hp -= weapon.gunDamage*2;
+                                            }
+                                            else if (hit.collider.CompareTag("EnemyLegL"))
+                                            {
+                                                hit.collider.gameObject.GetComponent<EnemyMovement>().hp -= weapon.gunDamage;
+                                            }
+                                            else if (hit.collider.CompareTag("EnemyLegR"))
                                             {
                                                 hit.collider.gameObject.GetComponent<EnemyMovement>().hp -= weapon.gunDamage;
                                             }
