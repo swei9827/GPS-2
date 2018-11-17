@@ -8,6 +8,9 @@ public class Player_Crouch : MonoBehaviour {
     public bool isCrouch = false;
     public Transform player;
     public ControlCenter cc;
+
+    int playerArea = 0;
+
     //public Text text;
 
     // Use this for initialization
@@ -19,6 +22,7 @@ public class Player_Crouch : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        playerArea = cc.levelStatus;
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (isCrouch == false)
@@ -32,12 +36,20 @@ public class Player_Crouch : MonoBehaviour {
 
             if (isCrouch == true)
             {
+                if(playerArea == 1)
+                {
+                    transform.Translate(new Vector3(-1.2f, 0.0f, 0.0f));
+                }
                 transform.Translate(new Vector3(0.0f, -1.2f, 0.0f));
                 //player.transform.Translate(new Vector3(0.0f, -1.2f, 0.0f));
                 //text.text = "Invulnerable";;
             }
             else
             {
+                if(playerArea == 1)
+                {
+                    transform.Translate(new Vector3(1.2f, 0.0f, 0.0f));
+                }
                 transform.Translate(new Vector3(0.0f, 1.2f, 0.0f));
                 //player.transform.Translate(new Vector3(0.0f, 1.2f, 0.0f));
                 //text.text = "Vulnerable";
@@ -58,15 +70,53 @@ public class Player_Crouch : MonoBehaviour {
 
         if (isCrouch == true)
         {
-            transform.Translate(new Vector3(0.0f, -1.2f, 0.0f));
-                //player.transform.Translate(new Vector3(0.0f, -1.2f, 0.0f));
-                //text.text = "Invulnerable";;
+            if (playerArea == 1)
+            {
+                transform.Translate(new Vector3(-1.2f, 0.0f, 0.0f));
+            }
+            else if(playerArea == 7)
+            {
+                transform.Translate(new Vector3(1.2f, 0.0f, 0.0f));
+            }
+            else if(playerArea == 9)
+            {
+                transform.Translate(new Vector3(0.0f, -1.2f, 0.0f));
+            }
+            else if (playerArea == 11)
+            {
+                transform.Translate(new Vector3(-1.2f, 0.0f, 0.0f));
+            }
+            else if (playerArea == 13)
+            {
+                transform.Translate(new Vector3(0.0f, -1.2f, 0.0f));
+            }
+            //player.transform.Translate(new Vector3(0.0f, -1.2f, 0.0f));
+            //text.text = "Invulnerable";;
         }
         else
         {
-            transform.Translate(new Vector3(0.0f, 1.2f, 0.0f));
-                //player.transform.Translate(new Vector3(0.0f, 1.2f, 0.0f));
-                //text.text = "Vulnerable";
+            if (playerArea == 1)
+            {
+                transform.Translate(new Vector3(1.2f, 0.0f, 0.0f));
+            }
+            else if (playerArea == 7)
+            {
+                transform.Translate(new Vector3(-1.2f, 0.0f, 0.0f));
+            }
+            else if (playerArea == 9)
+            {
+                transform.Translate(new Vector3(0.0f, 1.2f, 0.0f));
+            }
+            else if (playerArea == 11)
+            {
+                transform.Translate(new Vector3(1.2f, 0.0f, 0.0f));
+            }
+            else if (playerArea == 13)
+            {
+                transform.Translate(new Vector3(0.0f, 1.2f, 0.0f));
+            }
+            //player.transform.Translate(new Vector3(0.0f, 1.2f, 0.0f));
+            //text.text = "Vulnerable";
         }
     }
 
