@@ -89,7 +89,7 @@ public class Dialogue_Control : MonoBehaviour {
 
             // After killing one enemy, Dialogue 3 Come out ( Teach Reload, After reload dialogue missing)
             if (targetProfile.EnemyCount == 2 && dialogue3Completed == false)
-            {
+            {/*
                 if (weapon.reloading == false)
                 {
                     level.SetTimeScale(0f);
@@ -101,7 +101,7 @@ public class Dialogue_Control : MonoBehaviour {
                     tempGameObject.SetActive(false);
                     level.SetTimeScale(1.0f);
                     dialogue3Completed = true;
-                }
+                }*/
             }
 
             // Hit by bullet for 1st time, Dialogue 4 Come out (Be aware of HP Dialogue)
