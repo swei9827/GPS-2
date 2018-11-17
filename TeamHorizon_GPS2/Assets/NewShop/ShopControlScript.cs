@@ -10,7 +10,11 @@ public class ShopControlScript : MonoBehaviour {
     int isItemSold;
 
     public Text currencyAmountText;
-    public Text itemRPGPrice;
+    public Text Upgrade1_price;
+    public Text Upgrade2_price;
+    public Text Upgrade3_price;
+    public Text Health_price;
+    public Text Sheild_price;
 
     public Button buyButton;
 
@@ -26,17 +30,49 @@ public class ShopControlScript : MonoBehaviour {
         currencyAmountText.text = " Currency: " + currencyAmount.ToString() + "$";
 
         isItemSold = PlayerPrefs.GetInt("IsItemSold");
-        if (currencyAmount >= 5 && isItemSold == 0)
+        if (currencyAmount >= 500 && isItemSold == 0)
             buyButton.interactable = true;
         else
             buyButton.interactable = false;
 	}
 
-    public void buyRPG()
+    public void Upgrade1()
     {
-        currencyAmount -= 5;
-        PlayerPrefs.SetInt("IsRifleSold", 1);
-        itemRPGPrice.text = "SOLD";
+        currencyAmount -= 500;
+        PlayerPrefs.SetInt("IsItemSold", 1);
+        Upgrade1_price.text = "SOLD";
+        buyButton.gameObject.SetActive(false);
+    }
+
+    public void Upgrade2()
+    {
+        currencyAmount -= 1000;
+        PlayerPrefs.SetInt("IsItemSold", 1);
+        Upgrade2_price.text = "SOLD";
+        buyButton.gameObject.SetActive(false);
+    }
+
+    public void Upgrade3()
+    {
+        currencyAmount -= 1500;
+        PlayerPrefs.SetInt("IsItemSold", 1);
+        Upgrade3_price.text = "SOLD";
+        buyButton.gameObject.SetActive(false);
+    }
+
+    public void Health()
+    {
+        currencyAmount -= 100;
+        PlayerPrefs.SetInt("IsItemSold", 1);
+        Upgrade2_price.text = "SOLD";
+        buyButton.gameObject.SetActive(false);
+    }
+
+    public void Sheild()
+    {
+        currencyAmount -= 200;
+        PlayerPrefs.SetInt("IsItemSold", 1);
+        Upgrade2_price.text = "SOLD";
         buyButton.gameObject.SetActive(false);
     }
 
@@ -50,7 +86,7 @@ public class ShopControlScript : MonoBehaviour {
     {
         currencyAmount = 0;
         buyButton.gameObject.SetActive(true);
-        itemRPGPrice.text = "Price : $500";
+       // Upgrade1_price.text = "Price : $500";
         PlayerPrefs.DeleteAll();
         
     }
