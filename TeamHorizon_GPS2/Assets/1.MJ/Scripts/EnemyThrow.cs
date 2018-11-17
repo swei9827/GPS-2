@@ -6,22 +6,41 @@ public class EnemyThrow : MonoBehaviour {
 
     GameObject prefab;
     public Transform Player;
-    int MinDist = 10;
-    int MoveSpeed = 4;
+    public int MinDist = 0;
+    public int MoveSpeed = 4;
+    public bool isAttacking = false;
 
 
-	void Start () {
+
+    void Start () {
+        
         prefab = Resources.Load("Projectile") as GameObject;
-	}
-	
+
+
+    }
+
+    private IEnumerator EnemyGrenade()
+    {
+
+        if (Vector3.Distance(transform.position, Player.position) >= MinDist)
+        {
+            if(isAttacking == false)
+            {
+                GameObject projectile = Instantiate(prefab) as GameObject;
+         
+                isAttacking = true;
+                yield return new WaitForSeconds(2f);
+                isAttacking = false;
+                
+            }
+           
+        }
+
+    }
+
+
 	// Update is called once per frame
 	void Update () {
-		if(Vector3.Distance(transform.position, Player.position) >= MinDist)
-        {
-            GameObject projectile = Instantiate(prefab) as GameObject;
-            projectile.transform.position = transform.position += transform.forward * MoveSpeed * Time.deltaTime; ;
-            Rigidbody rb = projectile.GetComponent<Rigidbody>();
-            rb.velocity = transform.forward * 40;
-        }
-	}
+        StartCoroutine(EnemyGrenade());
+    }
 }

@@ -7,15 +7,15 @@ public class EnemyMelee : MonoBehaviour {
 
     public Transform Player;
     int MoveSpeed = 4;
-    int MaxDist = 10;
-    int MinDist = 5;
+    public int MaxDist = 10;
+    public int MinDist = 5;
 
-
+    Vector3 p;
 
 
     void Start()
     {
-
+        p = transform.position;
     }
 
     void Update()
@@ -35,6 +35,11 @@ public class EnemyMelee : MonoBehaviour {
             }
 
         }
+    }
+
+    void EnemyMeleeAttack()
+    {
+
     }
 
 }
