@@ -62,20 +62,22 @@ public class RaycastShoot : MonoBehaviour
                 anim.Play("bulletIdle");
             }
         }
-        /*if(weapon.currentAmmo <= 10)
+
+        if (weapon.currentAmmo <= 10)
         {
             for (int i = 0; i < bulletList.Count; i++)
             {
-                Animator anim = bulletList[i].GetComponent<Animator>();
-                anim
+                //Animator anim = bulletList[i].GetComponent<Animator>();
+                //anim
+                bulletList[i].gameObject.SetActive(false);
             }
             for (int i = 0; i < weapon.currentAmmo; i++)
             {
-                Animation anim = bulletList[i].GetComponent<Animation>();
-                anim.Play("bulletIdle");
-                //bulletList[i].gameObject.SetActive(true);
+                //Animation anim = bulletList[i].GetComponent<Animation>();
+                //anim.Play("bulletIdle");
+                bulletList[i].gameObject.SetActive(true);
             }
-        }*/
+        }
         
         //MouseShoot();
         TouchShoot();
