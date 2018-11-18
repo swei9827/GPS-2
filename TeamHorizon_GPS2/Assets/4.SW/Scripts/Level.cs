@@ -12,15 +12,19 @@ public class Level: MonoBehaviour
     [SerializeField]private float givenTime;
     private float timeLeft;
     private float extraTime;
-    [SerializeField] private Text timeLeftUI;
-    [SerializeField] private Text ScoreUI;
+    
     public LEVEL_STATE levelState;
     public List<GameObject> targetProfile;
     public bool isContinue;
-    public GameObject levelEndUI; // UI while level finished
+    
+    //!  UI
+    public Text timeLeftUI;
+    public Text ScoreUI;
     public Text endScore;
     public Text bonusTimeScore;
     public Text totalScore;
+
+    public GameObject winUI;
     public GameObject loseUI;
 
 	void Start () {
@@ -51,7 +55,6 @@ public class Level: MonoBehaviour
         {
             loseUI.SetActive(true);
             SetTimeScale(0.0f);
-
         }
 
         if(levelState == LEVEL_STATE.PLAYING)
@@ -59,16 +62,13 @@ public class Level: MonoBehaviour
             if(timeLeft > 0)
             {
                 timeLeft -= Time.deltaTime;
+                if (timeLeft <= 0)
+                {
+                    timeLeft = 0;
+                    levelState = LEVEL_STATE.FINISHED;
+                }
             }           
-        }/*
-        else if(levelState == LEVEL_STATE.PAUSED)
-        {
-            SetTimeScale(0f);
-        }*/
-        if(timeLeft <= 0)
-        {
-            timeLeft = 0;
-        }
+        }        
 	}
 
     public void LoadScene(int scene)
@@ -83,7 +83,7 @@ public class Level: MonoBehaviour
 
     public void LevelCleared()
     {
-        levelEndUI.SetActive(true);
+        winUI.SetActive(true);
         endScore.text = score.ToString();
         bonusTimeScore.text = (timeLeft * 256.0f).ToString();
         totalScore.text = score + (timeLeft * 256.0f).ToString();
