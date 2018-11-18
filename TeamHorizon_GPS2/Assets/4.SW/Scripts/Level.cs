@@ -50,7 +50,8 @@ public class Level: MonoBehaviour
         if(timeLeft <= 0)
         {
             loseUI.SetActive(true);
-            SetTimeScale(0.0f);       
+            SetTimeScale(0.0f);
+
         }
 
         if(levelState == LEVEL_STATE.PLAYING)
