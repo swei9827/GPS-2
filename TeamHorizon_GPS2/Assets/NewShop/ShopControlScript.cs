@@ -84,7 +84,7 @@ public class ShopControlScript : MonoBehaviour {
 
     public void resetPlayerPrefs()
     {
-        currencyAmount = 0;
+        currencyAmount = 10000;
         buyButton.gameObject.SetActive(true);
        // Upgrade1_price.text = "Price : $500";
         PlayerPrefs.DeleteAll();

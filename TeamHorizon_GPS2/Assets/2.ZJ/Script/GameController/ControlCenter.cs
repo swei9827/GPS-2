@@ -507,6 +507,11 @@ public class ControlCenter : MonoBehaviour
 
     }
 
+    void GoToShop() //if enemy dies, increase currency
+    {
+
+    }
+
 }
 
 public enum STATUS
