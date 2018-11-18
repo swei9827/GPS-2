@@ -57,29 +57,13 @@ public class RaycastShoot : MonoBehaviour
             }
         }
 
-        if (currentAmmo <= 10)
-        {
-            for (int i = 0; i < bulletList.Count; i++)
-            {
-                //Animator anim = bulletList[i].GetComponent<Animator>();
-                //anim
-                bulletList[i].gameObject.SetActive(false);
-            }
-            for (int i = 0; i < currentAmmo; i++)
-            {
-                //Animation anim = bulletList[i].GetComponent<Animation>();
-                //anim.Play("bulletIdle");
-                bulletList[i].gameObject.SetActive(true);
-            }
-        }
-
-        //MouseShoot();
-        TouchShoot();
+        MouseShoot();
+        //TouchShoot();
     }
 
     public void MouseShoot()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             if (!EventSystem.current.IsPointerOverGameObject())
             {
@@ -93,6 +77,11 @@ public class RaycastShoot : MonoBehaviour
                     Vector3 posN = playerCamera.ScreenToWorldPoint(posNear);
                     RaycastHit hit;
                     currentAmmo--;
+                    if(currentAmmo < 10)
+                    {
+                        Animator anim = bulletList[currentAmmo].GetComponent<Animator>();
+                        anim.Play("bulletAnim");
+                    }
                     Vector3 shootOrigin = playerCamera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.0f));
                     laserLine.SetPosition(0, shootOrigin);
                     if (Physics.Raycast(shootOrigin, posF - posN, out hit, weapon.range))
@@ -100,6 +89,10 @@ public class RaycastShoot : MonoBehaviour
                         laserLine.SetPosition(1, hit.point);
                         GameObject bulletEffect = Instantiate(weapon.effect, hit.point, transform.rotation);
                         Destroy(bulletEffect, 1.0f);
+                        if(hit.collider.CompareTag("Enemy"))
+                        {
+                            hit.collider.gameObject.GetComponent<EnemyMovement>().hp -= weapon.damage;
+                        }
                         if (hit.collider.CompareTag("EnemyTorso"))
                         {
                             //hit.collider.gameObject.GetComponent<EnemyHP>().hitTorso(weapon.damage);
@@ -159,7 +152,7 @@ public class RaycastShoot : MonoBehaviour
                     lastPos = touch.position;
                     if (!isUItouch)
                     {
-                        if (Time.time > nextFire && currentAmmo > 0)
+                        if (Time.time > nextFire && currentAmmo > 0 && !isReloading)
                         {
                             nextFire = Time.time + weapon.fireRate;
                             StartCoroutine(ShotEffect());
@@ -197,7 +190,7 @@ public class RaycastShoot : MonoBehaviour
                     lastPos = touch.position;
                     if (!isUItouch)
                     {
-                        if (Time.time > nextFire && currentAmmo > 0)
+                        if (Time.time > nextFire && currentAmmo > 0 && !isReloading)
                         {
                             nextFire = Time.time + weapon.fireRate;
                             StartCoroutine(ShotEffect());
@@ -240,6 +233,24 @@ public class RaycastShoot : MonoBehaviour
         }
     }
 
+    public void CrouchReload()
+    {
+        isReloading = true;
+        if (weapon.clipReload == true)
+        {
+            StartCoroutine(ReloadEffect(weapon.reloadTime));
+        }
+        else
+        {
+            StartCoroutine(ReloadEffect2(weapon.eachBulletRequire, (weapon.maxAmmo - currentAmmo)));
+        }
+        for (int i = 0; i < currentAmmo; i++)
+        {
+            Animator anim = bulletList[i].GetComponent<Animator>();
+            anim.Play("bulletIdle");
+        }
+    }
+
     private IEnumerator ShotEffect()
     {
         weaponAudio.Play();
@@ -253,7 +264,21 @@ public class RaycastShoot : MonoBehaviour
         reloadIndicator.SetActive(true);
         yield return new WaitForSeconds(rT);
         currentAmmo = weapon.maxAmmo;
-        bulletLeft.text = currentAmmo.ToString();// + " / " + weapon.maxAmmo.ToString();
+        if(currentAmmo >= 10)
+        {
+            for(int i = 0; i<10;i++)
+            {
+                bulletList[i].GetComponent<Animator>().Play("bulletIdle");
+            }
+        }
+        else
+        {
+            for (int i = 0; i < currentAmmo; i++)
+            {
+                bulletList[i].GetComponent<Animator>().Play("bulletIdle");
+            }
+        }
+        bulletLeft.text = currentAmmo.ToString();
         reloadIndicator.SetActive(false);
         isReloading = false;
     }
@@ -261,13 +286,11 @@ public class RaycastShoot : MonoBehaviour
     private IEnumerator ReloadEffect2(float perBullet, int bulletCount)
     {
         reloadIndicator.SetActive(true);
-        Debug.Log(bulletCount);
         for (int i = 0; i < bulletCount; i++)
         {
             yield return new WaitForSeconds(perBullet);
             currentAmmo++;
-            bulletLeft.text = currentAmmo.ToString();// + " / " + weapon.maxAmmo.ToString();
-            Debug.Log("+1");
+            bulletLeft.text = currentAmmo.ToString();
         }
         reloadIndicator.SetActive(false);
         isReloading = false;

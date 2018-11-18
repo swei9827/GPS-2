@@ -40,7 +40,7 @@ public class ControlCenter : MonoBehaviour
         screenWobble = GameObject.FindGameObjectWithTag("2ndCamera").GetComponent<ScreenWobble>();
         status = STATUS.MOVING;
 
-        enHP = GameObject.FindGameObjectWithTag("EnemyHP").GetComponent<EnemyHP>();
+        //enHP = GameObject.FindGameObjectWithTag("EnemyHP").GetComponent<EnemyHP>();
     }
 
     void Update()

@@ -37,7 +37,7 @@ public class PlayerHp : MonoBehaviour {
         healthAfterDamage = health;
         shieldAfterDamage = shield;
 
-        StartCoroutine(coroutine);
+        //StartCoroutine(coroutine);
 	}
 
     private void Update()
