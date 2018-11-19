@@ -5097,14 +5097,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 633d22b77c0549748a62215bf5837a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawn: {fileID: 613195524}
-  bulletPrefab: {fileID: 1764963883137122, guid: cde03a857d38fc64e853c21bf9434a49,
-    type: 2}
   timer: 0
   shootDelayTime: 1
   EnemyArea: 12
   playerArea: 0
   CC: {fileID: 2050459573}
+  bulletDamage: 2.5
 --- !u!65 &111735545
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5670,14 +5668,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 633d22b77c0549748a62215bf5837a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawn: {fileID: 211965431}
-  bulletPrefab: {fileID: 1764963883137122, guid: cde03a857d38fc64e853c21bf9434a49,
-    type: 2}
   timer: 0
   shootDelayTime: 1
   EnemyArea: 15
   playerArea: 0
   CC: {fileID: 2050459573}
+  bulletDamage: 2.5
 --- !u!65 &133416348
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6574,14 +6570,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 633d22b77c0549748a62215bf5837a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawn: {fileID: 835885652}
-  bulletPrefab: {fileID: 1764963883137122, guid: cde03a857d38fc64e853c21bf9434a49,
-    type: 2}
   timer: 0
   shootDelayTime: 1
   EnemyArea: 7
   playerArea: 0
   CC: {fileID: 2050459573}
+  bulletDamage: 2.5
 --- !u!65 &146069480
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20276,14 +20270,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 633d22b77c0549748a62215bf5837a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawn: {fileID: 974299738}
-  bulletPrefab: {fileID: 1764963883137122, guid: cde03a857d38fc64e853c21bf9434a49,
-    type: 2}
   timer: 0
   shootDelayTime: 1
   EnemyArea: 12
   playerArea: 0
   CC: {fileID: 2050459573}
+  bulletDamage: 2.5
 --- !u!65 &494383418
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40152,14 +40144,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 633d22b77c0549748a62215bf5837a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawn: {fileID: 817496465}
-  bulletPrefab: {fileID: 1764963883137122, guid: cde03a857d38fc64e853c21bf9434a49,
-    type: 2}
   timer: 0
   shootDelayTime: 1
   EnemyArea: 1
   playerArea: 0
   CC: {fileID: 2050459573}
+  bulletDamage: 2.5
 --- !u!65 &976359995
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -46810,14 +46800,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 633d22b77c0549748a62215bf5837a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawn: {fileID: 2048259312}
-  bulletPrefab: {fileID: 1764963883137122, guid: cde03a857d38fc64e853c21bf9434a49,
-    type: 2}
   timer: 0
   shootDelayTime: 1
   EnemyArea: 15
   playerArea: 0
   CC: {fileID: 2050459573}
+  bulletDamage: 2.5
 --- !u!65 &1168948019
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -53881,14 +53869,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 633d22b77c0549748a62215bf5837a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawn: {fileID: 519956059}
-  bulletPrefab: {fileID: 1764963883137122, guid: cde03a857d38fc64e853c21bf9434a49,
-    type: 2}
   timer: 0
   shootDelayTime: 1
   EnemyArea: 7
   playerArea: 0
   CC: {fileID: 2050459573}
+  bulletDamage: 2.5
 --- !u!65 &1332349997
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -54564,14 +54550,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 633d22b77c0549748a62215bf5837a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawn: {fileID: 1459907927}
-  bulletPrefab: {fileID: 1764963883137122, guid: cde03a857d38fc64e853c21bf9434a49,
-    type: 2}
   timer: 0
   shootDelayTime: 1
   EnemyArea: 1
   playerArea: 0
   CC: {fileID: 2050459573}
+  bulletDamage: 2.5
 --- !u!65 &1345332496
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -70298,14 +70282,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 633d22b77c0549748a62215bf5837a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawn: {fileID: 1910929388}
-  bulletPrefab: {fileID: 1764963883137122, guid: cde03a857d38fc64e853c21bf9434a49,
-    type: 2}
   timer: 0
   shootDelayTime: 1
   EnemyArea: 9
   playerArea: 0
   CC: {fileID: 2050459573}
+  bulletDamage: 2.5
 --- !u!65 &1723137988
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -84060,15 +84042,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currency: 0
   givenTime: 180
-  timeLeftUI: {fileID: 472129064}
-  ScoreUI: {fileID: 1672604815}
   levelState: 0
   targetProfile: []
   isContinue: 0
-  levelEndUI: {fileID: 1910783121}
+  timeLeftUI: {fileID: 472129064}
+  ScoreUI: {fileID: 1672604815}
   endScore: {fileID: 1949757528}
   bonusTimeScore: {fileID: 1314763861}
   totalScore: {fileID: 633870355}
+  winUI: {fileID: 0}
   loseUI: {fileID: 1621961340}
 --- !u!114 &2050459573
 MonoBehaviour:
@@ -85969,14 +85951,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 633d22b77c0549748a62215bf5837a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawn: {fileID: 604069129}
-  bulletPrefab: {fileID: 1764963883137122, guid: cde03a857d38fc64e853c21bf9434a49,
-    type: 2}
   timer: 0
   shootDelayTime: 1
   EnemyArea: 9
   playerArea: 0
   CC: {fileID: 2050459573}
+  bulletDamage: 2.5
 --- !u!65 &2083502010
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Enemy_Shoot : MonoBehaviour {
 
-    [SerializeField] Transform bulletSpawn;
-    [SerializeField] private GameObject bulletPrefab;
     bool startShoot = false;
 
     public float timer;
@@ -15,9 +13,17 @@ public class Enemy_Shoot : MonoBehaviour {
     public int playerArea = 0;
     public ControlCenter CC;
 
+    public float bulletDamage;
+    PlayerHp plyrHp;
+    Player_Crouch crouch;
+
+    int tempRand = 0;
+
     private void Start()
     {
         CC = GameObject.FindGameObjectWithTag("ControlCenter").GetComponent<ControlCenter>();
+        plyrHp = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHp>();
+        crouch = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Player_Crouch>();
     }
 
     // Update is called once per frame
@@ -42,6 +48,18 @@ public class Enemy_Shoot : MonoBehaviour {
 
     void Fire()
     {
-        GameObject bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+        tempRand = Random.Range(0, 3);
+        if(tempRand == 2)
+        {
+            if (crouch.isCrouch == true)
+            {
+                
+            }
+            else
+            {
+                plyrHp.TakeDamage(bulletDamage);
+                //hitByBulletForFirstTime = true;
+            }
+        }
     }
 }
