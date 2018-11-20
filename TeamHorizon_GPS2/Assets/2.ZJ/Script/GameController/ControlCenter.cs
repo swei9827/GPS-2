@@ -35,12 +35,9 @@ public class ControlCenter : MonoBehaviour
 
     void Start()
     {
-        //player = GameObject.FindGameObjectWithTag("Player");
         sMove = player.GetComponent<ScriptedMovement>();
         screenWobble = GameObject.FindGameObjectWithTag("2ndCamera").GetComponent<ScreenWobble>();
         status = STATUS.MOVING;
-
-        //enHP = GameObject.FindGameObjectWithTag("EnemyHP").GetComponent<EnemyHP>();
     }
 
     void Update()
@@ -497,21 +494,6 @@ public class ControlCenter : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         StopAllCoroutines();
     }
-
-    void CollectCurrency() //if enemy dies, increase currency
-    {
-        if(enHP.hp <=0)
-        {
-            ToShopControlScript.currencyAmount += 100;
-        }
-
-    }
-
-    void GoToShop() //if enemy dies, increase currency
-    {
-
-    }
-
 }
 
 public enum STATUS

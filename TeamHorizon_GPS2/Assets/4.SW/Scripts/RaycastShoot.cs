@@ -57,8 +57,8 @@ public class RaycastShoot : MonoBehaviour
             }
         }
 
-        MouseShoot();
-        //TouchShoot();
+        //MouseShoot();
+        TouchShoot();
     }
 
     public void MouseShoot()
@@ -93,26 +93,13 @@ public class RaycastShoot : MonoBehaviour
                         {
                             hit.collider.gameObject.GetComponent<EnemyMovement>().hp -= weapon.damage;
                         }
-                        if (hit.collider.CompareTag("EnemyTorso"))
-                        {
-                            //hit.collider.gameObject.GetComponent<EnemyHP>().hitTorso(weapon.damage);
-                            hit.collider.gameObject.GetComponent<EnemyMovement>().hp -= weapon.damage;
-                        }
                         else if (hit.collider.CompareTag("EnemyHead"))
                         {
-                            hit.collider.gameObject.GetComponent<EnemyMovement>().hp -= weapon.damage * 2;
+                            Debug.Log("Hit Head");
                         }
-                        else if (hit.collider.CompareTag("EnemyLegL"))
+                        else if (hit.collider.CompareTag("EnemyBody"))
                         {
-                            hit.collider.gameObject.GetComponent<EnemyMovement>().hp -= weapon.damage;
-                        }
-                        else if (hit.collider.CompareTag("EnemyLegR"))
-                        {
-                            hit.collider.gameObject.GetComponent<EnemyMovement>().hp -= weapon.damage;
-                        }
-                        else if (hit.collider.CompareTag("Environment"))
-                        {
-
+                            Debug.Log("Hit Body");
                         }
                         else if (hit.collider.CompareTag("Enemy_Destroyable_Bullet"))
                         {
@@ -175,6 +162,21 @@ public class RaycastShoot : MonoBehaviour
                                 {
                                     hit.collider.gameObject.GetComponent<EnemyMovement>().hp -= weapon.damage;
                                 }
+                                else if (hit.collider.CompareTag("EnemyHead"))
+                                {
+                                    Debug.Log("Hit Head");
+                                    hit.collider.gameObject.GetComponentInParent<EnemyMovement>().DamageCalculation(weapon.damage, 1);
+                                }
+                                else if (hit.collider.CompareTag("EnemyBody"))
+                                {
+                                    Debug.Log ("Hit Body");
+                                    hit.collider.gameObject.GetComponentInParent<EnemyMovement>().DamageCalculation(weapon.damage, 2);
+                                }
+                                else if (hit.collider.CompareTag("EnemyHand"))
+                                {
+                                    Debug.Log("Hit Hand");
+                                    hit.collider.gameObject.GetComponentInParent<EnemyMovement>().DamageCalculation(weapon.damage, 3);
+                                }                               
                                 else if (hit.collider.CompareTag("Enemy_Destroyable_Bullet"))
                                 {
                                     hit.collider.gameObject.GetComponent<Enemy_Destroyable_Bullet>().hp -= weapon.damage;
@@ -212,6 +214,21 @@ public class RaycastShoot : MonoBehaviour
                                 if (hit.collider.CompareTag("Enemy"))
                                 {
                                     hit.collider.gameObject.GetComponent<EnemyMovement>().hp -= weapon.damage;
+                                }
+                                else if (hit.collider.CompareTag("EnemyHead"))
+                                {
+                                    Debug.Log("Hit Head");
+                                    hit.collider.gameObject.GetComponentInParent<EnemyMovement>().DamageCalculation(weapon.damage, 1);
+                                }
+                                else if (hit.collider.CompareTag("EnemyBody"))
+                                {
+                                    Debug.Log("Hit Body");
+                                    hit.collider.gameObject.GetComponentInParent<EnemyMovement>().DamageCalculation(weapon.damage, 2);
+                                }
+                                else if (hit.collider.CompareTag("EnemyHand"))
+                                {
+                                    Debug.Log("Hit Hand");
+                                    hit.collider.gameObject.GetComponentInParent<EnemyMovement>().DamageCalculation(weapon.damage, 3);
                                 }
                                 else if (hit.collider.CompareTag("Environment"))
                                 {

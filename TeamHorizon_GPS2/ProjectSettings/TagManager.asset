@@ -22,9 +22,8 @@ TagManager:
   - B_Slider_MainMenu
   - B_Slider_Game
   - EnemyHead
-  - EnemyTorso
-  - EnemyLegL
-  - EnemyLegR
+  - EnemyBody
+  - EnemyHand
   layers:
   - Default
   - TransparentFX

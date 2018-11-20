@@ -99,6 +99,22 @@ public class EnemyMovement : MonoBehaviour
         Soldier_GranadeAnim = false;
     }
 
+    public void DamageCalculation(int damage, int damagePart)
+    {
+        if(damagePart == 1)
+        {
+            hp -= damage * 2;
+        }
+        else if(damagePart == 2)
+        {
+            hp -= damage;
+        }
+        else if(damagePart == 3)
+        {
+            hp -= damage / 2;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
