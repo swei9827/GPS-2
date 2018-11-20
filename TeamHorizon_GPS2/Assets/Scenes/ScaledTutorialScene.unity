@@ -4603,6 +4603,7 @@ GameObject:
   - component: {fileID: 111735542}
   - component: {fileID: 111735543}
   - component: {fileID: 111735544}
+  - component: {fileID: 111735545}
   m_Layer: 0
   m_Name: EnemyBehind(LevelStatus11)
   m_TagString: Enemy
@@ -4714,6 +4715,24 @@ MonoBehaviour:
   playerArea: 0
   CC: {fileID: 2050459573}
   bulletDamage: 2.5
+--- !u!114 &111735545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 111735540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83628b44cb9b64745917ce080f270fb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyMaterial: {fileID: 0}
+  red: 0
+  green: 0
+  blue: 0
+  flashingIn: 1
+  startedFlashing: 0
+  damaged: 0
 --- !u!1 &118787777
 GameObject:
   m_ObjectHideFlags: 0
@@ -5068,6 +5087,7 @@ GameObject:
   - component: {fileID: 133416345}
   - component: {fileID: 133416346}
   - component: {fileID: 133416347}
+  - component: {fileID: 133416348}
   m_Layer: 0
   m_Name: EnemyFront(LevelStatus13)
   m_TagString: Enemy
@@ -5179,6 +5199,24 @@ MonoBehaviour:
   playerArea: 0
   CC: {fileID: 2050459573}
   bulletDamage: 2.5
+--- !u!114 &133416348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 133416343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83628b44cb9b64745917ce080f270fb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyMaterial: {fileID: 0}
+  red: 0
+  green: 0
+  blue: 0
+  flashingIn: 1
+  startedFlashing: 0
+  damaged: 0
 --- !u!1 &135658660
 GameObject:
   m_ObjectHideFlags: 0
@@ -5957,6 +5995,7 @@ GameObject:
   - component: {fileID: 146069477}
   - component: {fileID: 146069478}
   - component: {fileID: 146069479}
+  - component: {fileID: 146069480}
   m_Layer: 0
   m_Name: EnemyRight(LevelStatus7)
   m_TagString: Enemy
@@ -6068,6 +6107,24 @@ MonoBehaviour:
   playerArea: 0
   CC: {fileID: 2050459573}
   bulletDamage: 2.5
+--- !u!114 &146069480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 146069475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83628b44cb9b64745917ce080f270fb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyMaterial: {fileID: 0}
+  red: 0
+  green: 0
+  blue: 0
+  flashingIn: 1
+  startedFlashing: 0
+  damaged: 0
 --- !u!1 &147890996
 GameObject:
   m_ObjectHideFlags: 0
@@ -18982,6 +19039,7 @@ GameObject:
   - component: {fileID: 494383415}
   - component: {fileID: 494383416}
   - component: {fileID: 494383417}
+  - component: {fileID: 494383418}
   m_Layer: 0
   m_Name: EnemyFront(LevelStatus11)
   m_TagString: Enemy
@@ -19093,6 +19151,24 @@ MonoBehaviour:
   playerArea: 0
   CC: {fileID: 2050459573}
   bulletDamage: 2.5
+--- !u!114 &494383418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 494383413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83628b44cb9b64745917ce080f270fb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyMaterial: {fileID: 0}
+  red: 0
+  green: 0
+  blue: 0
+  flashingIn: 1
+  startedFlashing: 0
+  damaged: 0
 --- !u!1 &495250492
 GameObject:
   m_ObjectHideFlags: 0
@@ -38102,6 +38178,7 @@ GameObject:
   - component: {fileID: 976359992}
   - component: {fileID: 976359993}
   - component: {fileID: 976359994}
+  - component: {fileID: 976359995}
   m_Layer: 0
   m_Name: EnemyRight(LevelStatus1)
   m_TagString: Enemy
@@ -38213,6 +38290,24 @@ MonoBehaviour:
   playerArea: 0
   CC: {fileID: 2050459573}
   bulletDamage: 2.5
+--- !u!114 &976359995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 976359990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83628b44cb9b64745917ce080f270fb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyMaterial: {fileID: 0}
+  red: 0
+  green: 0
+  blue: 0
+  flashingIn: 1
+  startedFlashing: 0
+  damaged: 0
 --- !u!1 &978708717
 GameObject:
   m_ObjectHideFlags: 0
@@ -44637,6 +44732,7 @@ GameObject:
   - component: {fileID: 1168948016}
   - component: {fileID: 1168948017}
   - component: {fileID: 1168948018}
+  - component: {fileID: 1168948019}
   m_Layer: 0
   m_Name: EnemyBehind(LevelStatus13)
   m_TagString: Enemy
@@ -44748,6 +44844,24 @@ MonoBehaviour:
   playerArea: 0
   CC: {fileID: 2050459573}
   bulletDamage: 2.5
+--- !u!114 &1168948019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1168948014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83628b44cb9b64745917ce080f270fb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyMaterial: {fileID: 0}
+  red: 0
+  green: 0
+  blue: 0
+  flashingIn: 1
+  startedFlashing: 0
+  damaged: 0
 --- !u!1 &1168994967
 GameObject:
   m_ObjectHideFlags: 0
@@ -51461,6 +51575,7 @@ GameObject:
   - component: {fileID: 1332349994}
   - component: {fileID: 1332349995}
   - component: {fileID: 1332349996}
+  - component: {fileID: 1332349997}
   m_Layer: 0
   m_Name: EnemyLeft(LevelStatus7)
   m_TagString: Enemy
@@ -51572,6 +51687,24 @@ MonoBehaviour:
   playerArea: 0
   CC: {fileID: 2050459573}
   bulletDamage: 2.5
+--- !u!114 &1332349997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1332349992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83628b44cb9b64745917ce080f270fb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyMaterial: {fileID: 0}
+  red: 0
+  green: 0
+  blue: 0
+  flashingIn: 1
+  startedFlashing: 0
+  damaged: 0
 --- !u!1 &1332998521
 GameObject:
   m_ObjectHideFlags: 0
@@ -52085,6 +52218,8 @@ GameObject:
   - component: {fileID: 1345332493}
   - component: {fileID: 1345332494}
   - component: {fileID: 1345332495}
+  - component: {fileID: 1345332496}
+  - component: {fileID: 1345332497}
   m_Layer: 0
   m_Name: EnemyMiddle(LevelStatus1)
   m_TagString: Enemy
@@ -52195,6 +52330,36 @@ MonoBehaviour:
   playerArea: 0
   CC: {fileID: 2050459573}
   bulletDamage: 2.5
+--- !u!114 &1345332496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1345332491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83628b44cb9b64745917ce080f270fb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyMaterial: {fileID: 0}
+  red: 0
+  green: 0
+  blue: 0
+  flashingIn: 1
+  startedFlashing: 0
+  damaged: 0
+--- !u!65 &1345332497
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1345332491}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 4, z: 2}
+  m_Center: {x: 1, y: 0, z: -3}
 --- !u!1 &1348608208
 GameObject:
   m_ObjectHideFlags: 0
@@ -67847,6 +68012,7 @@ GameObject:
   - component: {fileID: 1723137985}
   - component: {fileID: 1723137986}
   - component: {fileID: 1723137987}
+  - component: {fileID: 1723137988}
   m_Layer: 0
   m_Name: EnemyLeft(LevelStatus9)
   m_TagString: Enemy
@@ -67958,6 +68124,24 @@ MonoBehaviour:
   playerArea: 0
   CC: {fileID: 2050459573}
   bulletDamage: 2.5
+--- !u!114 &1723137988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1723137983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83628b44cb9b64745917ce080f270fb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyMaterial: {fileID: 0}
+  red: 0
+  green: 0
+  blue: 0
+  flashingIn: 1
+  startedFlashing: 0
+  damaged: 0
 --- !u!1 &1723272199
 GameObject:
   m_ObjectHideFlags: 0
@@ -82684,6 +82868,7 @@ GameObject:
   - component: {fileID: 2083502007}
   - component: {fileID: 2083502008}
   - component: {fileID: 2083502009}
+  - component: {fileID: 2083502010}
   m_Layer: 0
   m_Name: EnemyRight(LevelStatus9)
   m_TagString: Enemy
@@ -82795,6 +82980,24 @@ MonoBehaviour:
   playerArea: 0
   CC: {fileID: 2050459573}
   bulletDamage: 2.5
+--- !u!114 &2083502010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2083502005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83628b44cb9b64745917ce080f270fb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyMaterial: {fileID: 0}
+  red: 0
+  green: 0
+  blue: 0
+  flashingIn: 1
+  startedFlashing: 0
+  damaged: 0
 --- !u!1 &2083915064
 GameObject:
   m_ObjectHideFlags: 0
