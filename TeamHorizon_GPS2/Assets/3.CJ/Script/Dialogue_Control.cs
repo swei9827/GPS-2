@@ -23,10 +23,14 @@ public class Dialogue_Control : MonoBehaviour {
     bool hasClick = false;
     bool hasClick2 = false;
     bool hasClick3 = false;
+    bool hasClick4 = false;
+    bool hasClick5 = false;
 
     Weapon weapon;
 
     float timer;
+    float tempTimer;
+    float tempTimer2;
     float DelayTime;
 
     // Dialogue 1 Completed
@@ -36,7 +40,7 @@ public class Dialogue_Control : MonoBehaviour {
     bool Dialogue2Completed = false;
 
     // Dialogue 3 completed boolean
-    bool dialogue3Completed = false;
+    bool Dialogue3Completed = false;
 
     // Dialogue 4
     bool hitByBulletForFirstTime = false;
@@ -84,20 +88,59 @@ public class Dialogue_Control : MonoBehaviour {
                             Dialogue2Completed = true;
                         }
                     }
-                }
+                } 
             }
             
             if(Dialogue2Completed == true)
             {
-                if(hasClick3 == false)
+                DelayTime = 3.0f;
+                tempTimer += Time.deltaTime;
+                if(tempTimer >= DelayTime)
+                {
+                    if (hasClick3 == false)
+                    {
+                        level.SetTimeScale(0.0f);
+                        dialogue[2].SetActive(true);
+                    }
+                    else
+                    {
+                        level.SetTimeScale(1.0f);
+                        Dialogue3Completed = true;
+                    }
+                } 
+            }
+
+            if (Dialogue3Completed == true)
+            {
+                DelayTime = 1.0f;
+                tempTimer2 += Time.deltaTime;
+                if (tempTimer2 >= DelayTime)
+                {
+                    if (hasClick4 == false)
+                    {
+                        level.SetTimeScale(0.0f);
+                        dialogue[3].SetActive(true);
+                    }
+                    else
+                    {
+                        level.SetTimeScale(1.0f);
+                        Dialogue4Completed = true;
+                    }
+                }
+            }
+
+            if(Dialogue4Completed == true)
+            {
+                if (hasClick5 == false)
                 {
                     level.SetTimeScale(0.0f);
-                    dialogue[2].SetActive(true);
+                    crouchButton.SetActive(true);
+                    dialogue[4].SetActive(true);
                 }
                 else
                 {
                     level.SetTimeScale(1.0f);
-                    dialogue3Completed = true;
+                    Dialogue5Completed = true;
                 }
             }
         }
@@ -138,6 +181,22 @@ public class Dialogue_Control : MonoBehaviour {
         if (hasClick3 == false)
         {
             hasClick3 = true;
+        }
+    }
+
+    public void HasClickTheDialogue4()
+    {
+        if (hasClick4 == false)
+        {
+            hasClick4 = true;
+        }
+    }
+
+    public void HasClickTheDialogue5()
+    {
+        if (hasClick5 == false)
+        {
+            hasClick5 = true;
         }
     }
 }

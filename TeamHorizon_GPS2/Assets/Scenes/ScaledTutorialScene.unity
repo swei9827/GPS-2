@@ -30598,6 +30598,16 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114570550598066112, guid: 8acf12389237e1b469d9d7740477ae9a,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114028129493097170, guid: 8acf12389237e1b469d9d7740477ae9a,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4214586521756764, guid: 8acf12389237e1b469d9d7740477ae9a, type: 2}
       propertyPath: m_LocalPosition.x
       value: 273.38464
@@ -30634,7 +30644,7 @@ Prefab:
         type: 2}
       propertyPath: crouchButton
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1643940758}
     - target: {fileID: 1334127487207048, guid: 8acf12389237e1b469d9d7740477ae9a, type: 2}
       propertyPath: m_IsActive
       value: 1
@@ -30696,6 +30706,56 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: HasClickTheDialogue3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114570550598066112, guid: 8acf12389237e1b469d9d7740477ae9a,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114570550598066112, guid: 8acf12389237e1b469d9d7740477ae9a,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114570550598066112, guid: 8acf12389237e1b469d9d7740477ae9a,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 488868246}
+    - target: {fileID: 114570550598066112, guid: 8acf12389237e1b469d9d7740477ae9a,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: HasClickTheDialogue4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114570550598066112, guid: 8acf12389237e1b469d9d7740477ae9a,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114028129493097170, guid: 8acf12389237e1b469d9d7740477ae9a,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114028129493097170, guid: 8acf12389237e1b469d9d7740477ae9a,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114028129493097170, guid: 8acf12389237e1b469d9d7740477ae9a,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 488868246}
+    - target: {fileID: 114028129493097170, guid: 8acf12389237e1b469d9d7740477ae9a,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: HasClickTheDialogue5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114028129493097170, guid: 8acf12389237e1b469d9d7740477ae9a,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8acf12389237e1b469d9d7740477ae9a, type: 2}
@@ -66475,7 +66535,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1643940759
 RectTransform:
   m_ObjectHideFlags: 0
