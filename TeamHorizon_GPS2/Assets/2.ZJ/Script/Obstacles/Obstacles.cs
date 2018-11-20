@@ -13,7 +13,7 @@ public class Obstacles : MonoBehaviour {
     public float slowSpeed;
     float originalSpeed = 10.0f;
 
-    void OnMouseDown()
+    public void ObstaclesDamage()
     {
         float distance = Vector3.Distance(Player.position, transform.position);
         if(distance <= MaxDistance)

@@ -181,6 +181,22 @@ public class RaycastShoot : MonoBehaviour
                                 {
                                     hit.collider.gameObject.GetComponent<Enemy_Destroyable_Bullet>().hp -= weapon.damage;
                                 }
+                                else if (hit.collider.CompareTag("FallingTree"))
+                                {
+                                    hit.collider.gameObject.GetComponent<TreeFallHazard>().TreeFallDamage();
+                                }
+                                else if (hit.collider.CompareTag("BlockingTree"))
+                                {
+                                    hit.collider.gameObject.GetComponent<TreeBlockHazard>().TreeBlockDamage();
+                                }
+                                else if (hit.collider.CompareTag("Obstacle"))
+                                {
+                                    hit.collider.gameObject.GetComponent<Obstacles>().ObstaclesDamage();
+                                }
+                                else if (hit.collider.CompareTag("Interactive"))
+                                {
+                                    hit.collider.gameObject.GetComponent<IObstacles>().IObstaclesDamage();
+                                }
                             }
                             bulletLeft.text = currentAmmo.ToString();
                         }
@@ -237,6 +253,22 @@ public class RaycastShoot : MonoBehaviour
                                 else if (hit.collider.CompareTag("Enemy_Destroyable_Bullet"))
                                 {
                                     hit.collider.gameObject.GetComponent<Enemy_Destroyable_Bullet>().hp -= weapon.damage;
+                                }
+                                else if (hit.collider.CompareTag("FallingTree"))
+                                {
+                                    hit.collider.gameObject.GetComponent<TreeFallHazard>().TreeFallDamage();
+                                }
+                                else if (hit.collider.CompareTag("BlockingTree"))
+                                {
+                                    hit.collider.gameObject.GetComponent<TreeBlockHazard>().TreeBlockDamage();
+                                }
+                                else if (hit.collider.CompareTag("Obstacle"))
+                                {
+                                    hit.collider.gameObject.GetComponent<Obstacles>().ObstaclesDamage();
+                                }
+                                else if (hit.collider.CompareTag("Interactive"))
+                                {
+                                    hit.collider.gameObject.GetComponent<IObstacles>().IObstaclesDamage();
                                 }
                             }
                             bulletLeft.text = currentAmmo.ToString();

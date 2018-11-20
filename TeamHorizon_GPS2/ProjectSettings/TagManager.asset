@@ -8,7 +8,6 @@ TagManager:
   - Enemy_Bullet
   - 2ndCamera
   - Target
-  - Hazard
   - UI
   - Obstacle
   - ControlCenter
@@ -24,6 +23,8 @@ TagManager:
   - EnemyHead
   - EnemyBody
   - EnemyHand
+  - FallingTree
+  - BlockingTree
   layers:
   - Default
   - TransparentFX

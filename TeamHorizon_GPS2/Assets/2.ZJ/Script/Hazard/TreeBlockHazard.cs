@@ -14,7 +14,7 @@ public class TreeBlockHazard : MonoBehaviour {
     public float MaxDistance;
     float originalSpeed = 10.0f;
 
-    void OnMouseDown()
+    public void TreeBlockDamage()
     {
         float distance = Vector3.Distance(Player.position, transform.position);
         if (distance <= MaxDistance)

@@ -10,7 +10,7 @@ public class IObstacles : MonoBehaviour {
     public float MaxDistance;
     public GameObject GameController;
 
-    void OnMouseDown()
+    public void IObstaclesDamage()
     {
         float distance = Vector3.Distance(Player.position, transform.position);
         if (distance <= MaxDistance)
