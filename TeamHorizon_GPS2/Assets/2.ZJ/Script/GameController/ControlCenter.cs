@@ -31,8 +31,6 @@ public class ControlCenter : MonoBehaviour
     ScriptedMovement sMove;
     bool BADestroyed = false;
 
-    public EnemyHP enHP;
-
     void Start()
     {
         sMove = player.GetComponent<ScriptedMovement>();
