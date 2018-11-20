@@ -3075,6 +3075,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Tree: 1
   ETHealth: 10
+  Player: {fileID: 1577847618}
+  MaxDistance: 15
 --- !u!23 &74993020
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23014,6 +23016,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Tree: 1
   ETHealth: 10
+  Player: {fileID: 1577847618}
+  MaxDistance: 15
 --- !u!23 &599028985
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -44482,6 +44486,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Tree: 1
   ETHealth: 10
+  Player: {fileID: 1577847618}
+  MaxDistance: 15
 --- !u!23 &1165257329
 MeshRenderer:
   m_ObjectHideFlags: 0

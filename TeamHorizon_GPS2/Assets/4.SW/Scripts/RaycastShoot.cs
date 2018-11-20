@@ -181,6 +181,10 @@ public class RaycastShoot : MonoBehaviour
                                 {
                                     hit.collider.gameObject.GetComponent<Enemy_Destroyable_Bullet>().hp -= weapon.damage;
                                 }
+                                else if (hit.collider.CompareTag("Environment"))
+                                {
+                                    hit.collider.gameObject.GetComponent<EnvironementTrigger>().ETDamage(); ;
+                                }
                                 else if (hit.collider.CompareTag("FallingTree"))
                                 {
                                     hit.collider.gameObject.GetComponent<TreeFallHazard>().TreeFallDamage();
@@ -246,13 +250,13 @@ public class RaycastShoot : MonoBehaviour
                                     Debug.Log("Hit Hand");
                                     hit.collider.gameObject.GetComponentInParent<EnemyMovement>().DamageCalculation(weapon.damage, 3);
                                 }
-                                else if (hit.collider.CompareTag("Environment"))
-                                {
-
-                                }
                                 else if (hit.collider.CompareTag("Enemy_Destroyable_Bullet"))
                                 {
                                     hit.collider.gameObject.GetComponent<Enemy_Destroyable_Bullet>().hp -= weapon.damage;
+                                }
+                                else if (hit.collider.CompareTag("Environment"))
+                                {
+                                    hit.collider.gameObject.GetComponent<EnvironementTrigger>().ETDamage(); ;
                                 }
                                 else if (hit.collider.CompareTag("FallingTree"))
                                 {

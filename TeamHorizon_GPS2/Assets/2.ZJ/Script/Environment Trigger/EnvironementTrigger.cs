@@ -6,7 +6,18 @@ public class EnvironementTrigger : MonoBehaviour {
 
     public bool Tree;
     public int ETHealth;
+    public Transform Player;
+    public float MaxDistance;
     float fall = 90;
+
+    public void ETDamage()
+    {
+        float distance = Vector3.Distance(Player.position, transform.position);
+        if (distance <= MaxDistance)
+        {
+            ETHealth -= 1;
+        }
+    }
 
     void Update()
     {
