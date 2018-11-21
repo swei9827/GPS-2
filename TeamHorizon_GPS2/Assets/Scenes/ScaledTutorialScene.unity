@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4332,6 +4332,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 108983649}
   m_Mesh: {fileID: 4300264, guid: f93d5b656c6dbd34c811a28a7c0d7861, type: 3}
+--- !u!224 &109446162 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 224072694922037622, guid: 3e07023663ff629408986ce07bb8e58b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1982707716}
 --- !u!1001 &110083120
 Prefab:
   m_ObjectHideFlags: 0
@@ -17453,6 +17458,11 @@ Transform:
   m_Father: {fileID: 710105968}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &454229915 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 224990851521877624, guid: 3e07023663ff629408986ce07bb8e58b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1982707716}
 --- !u!1 &459097185
 GameObject:
   m_ObjectHideFlags: 0
@@ -38848,6 +38858,106 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.4, y: 0.5, z: 1.12}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1008291242
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1089616158837454, guid: 3e07023663ff629408986ce07bb8e58b,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1008291246}
+  - component: {fileID: 1008291245}
+  - component: {fileID: 1008291244}
+  - component: {fileID: 1008291243}
+  m_Layer: 5
+  m_Name: HealthBarCover
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1008291243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114618387845678564, guid: 3e07023663ff629408986ce07bb8e58b,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1008291242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 1, b: 0.11812568, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: d8456a9bf1257fa499bffe74112c52b0, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 0
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!114 &1008291244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114583260031801512, guid: 3e07023663ff629408986ce07bb8e58b,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1008291242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d57b692fb37b06948a0fca6ec4c36222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startHealth: 100
+  startShield: 100
+  activeShield: 1
+  health: 0
+  shield: 0
+  healthBar: {fileID: 1170085508}
+  shieldBar: {fileID: 341326710}
+  healthBarCover: {fileID: 1008291243}
+  shieldBarCover: {fileID: 1717336194}
+  healthAfterDamage: 0
+  shieldAfterDamage: 0
+  BulletHolePic: {fileID: 0}
+  InvulnerableTime: 0
+  loseUI: {fileID: 0}
+--- !u!222 &1008291245
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 222446507087476056, guid: 3e07023663ff629408986ce07bb8e58b,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1008291242}
+  m_CullTransparentMesh: 0
+--- !u!224 &1008291246
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 224211635319542642, guid: 3e07023663ff629408986ce07bb8e58b,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1008291242}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 454229915}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1011041406
 GameObject:
   m_ObjectHideFlags: 0
@@ -61453,6 +61563,8 @@ MonoBehaviour:
   shield: 0
   healthBar: {fileID: 1170085508}
   shieldBar: {fileID: 341326710}
+  healthBarCover: {fileID: 1008291243}
+  shieldBarCover: {fileID: 1717336194}
   healthAfterDamage: 0
   shieldAfterDamage: 0
   BulletHolePic: {fileID: 8400525}
@@ -67818,6 +67930,106 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2, z: 6}
   m_Center: {x: 0, y: 0.9, z: 3.1}
+--- !u!1 &1717336192
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1887984200489736, guid: 3e07023663ff629408986ce07bb8e58b,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1717336193}
+  - component: {fileID: 1717336196}
+  - component: {fileID: 1717336195}
+  - component: {fileID: 1717336194}
+  m_Layer: 5
+  m_Name: ShieldBarCover
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1717336193
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 224076297790058128, guid: 3e07023663ff629408986ce07bb8e58b,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1717336192}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 109446162}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1717336194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114736805700731810, guid: 3e07023663ff629408986ce07bb8e58b,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1717336192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.99518895, g: 1, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: d8456a9bf1257fa499bffe74112c52b0, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 0
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!114 &1717336195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114317472397826422, guid: 3e07023663ff629408986ce07bb8e58b,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1717336192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d57b692fb37b06948a0fca6ec4c36222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startHealth: 100
+  startShield: 100
+  activeShield: 1
+  health: 0
+  shield: 0
+  healthBar: {fileID: 1170085508}
+  shieldBar: {fileID: 341326710}
+  healthBarCover: {fileID: 1008291243}
+  shieldBarCover: {fileID: 1717336194}
+  healthAfterDamage: 0
+  shieldAfterDamage: 0
+  BulletHolePic: {fileID: 0}
+  InvulnerableTime: 0
+  loseUI: {fileID: 0}
+--- !u!222 &1717336196
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 222017561115071390, guid: 3e07023663ff629408986ce07bb8e58b,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1717336192}
+  m_CullTransparentMesh: 0
 --- !u!1 &1718819091
 GameObject:
   m_ObjectHideFlags: 0
@@ -77741,7 +77953,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1236253662167800, guid: 3e07023663ff629408986ce07bb8e58b, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114583260031801512, guid: 3e07023663ff629408986ce07bb8e58b,
         type: 2}
@@ -77792,6 +78004,71 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114618387845678564, guid: 3e07023663ff629408986ce07bb8e58b,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114618387845678564, guid: 3e07023663ff629408986ce07bb8e58b,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114618387845678564, guid: 3e07023663ff629408986ce07bb8e58b,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0.010103226
+      objectReference: {fileID: 0}
+    - target: {fileID: 114736805700731810, guid: 3e07023663ff629408986ce07bb8e58b,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114736805700731810, guid: 3e07023663ff629408986ce07bb8e58b,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.115766264
+      objectReference: {fileID: 0}
+    - target: {fileID: 114583260031801512, guid: 3e07023663ff629408986ce07bb8e58b,
+        type: 2}
+      propertyPath: shieldBarCover
+      value: 
+      objectReference: {fileID: 1717336194}
+    - target: {fileID: 114583260031801512, guid: 3e07023663ff629408986ce07bb8e58b,
+        type: 2}
+      propertyPath: healthBarCover
+      value: 
+      objectReference: {fileID: 1008291243}
+    - target: {fileID: 114317472397826422, guid: 3e07023663ff629408986ce07bb8e58b,
+        type: 2}
+      propertyPath: healthBarCover
+      value: 
+      objectReference: {fileID: 1008291243}
+    - target: {fileID: 114317472397826422, guid: 3e07023663ff629408986ce07bb8e58b,
+        type: 2}
+      propertyPath: shieldBarCover
+      value: 
+      objectReference: {fileID: 1717336194}
+    - target: {fileID: 114280747484744544, guid: 3e07023663ff629408986ce07bb8e58b,
+        type: 2}
+      propertyPath: healthBarCover
+      value: 
+      objectReference: {fileID: 1008291243}
+    - target: {fileID: 114280747484744544, guid: 3e07023663ff629408986ce07bb8e58b,
+        type: 2}
+      propertyPath: shieldBarCover
+      value: 
+      objectReference: {fileID: 1717336194}
+    - target: {fileID: 114984943770849330, guid: 3e07023663ff629408986ce07bb8e58b,
+        type: 2}
+      propertyPath: healthBarCover
+      value: 
+      objectReference: {fileID: 1008291243}
+    - target: {fileID: 114984943770849330, guid: 3e07023663ff629408986ce07bb8e58b,
+        type: 2}
+      propertyPath: shieldBarCover
+      value: 
+      objectReference: {fileID: 1717336194}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e07023663ff629408986ce07bb8e58b, type: 2}
   m_IsPrefabAsset: 0
