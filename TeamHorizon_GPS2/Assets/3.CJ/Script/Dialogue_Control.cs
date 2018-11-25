@@ -25,6 +25,7 @@ public class Dialogue_Control : MonoBehaviour {
     bool hasClick3 = false;
     bool hasClick4 = false;
     bool hasClick5 = false;
+    bool hasClick6 = false;
 
     Weapon weapon;
 
@@ -49,6 +50,8 @@ public class Dialogue_Control : MonoBehaviour {
     // Dialogue 5
     bool Dialogue5Completed = false;
 
+    bool Dialogue6Completed = false;
+
 
 
     // Use this for initialization
@@ -61,7 +64,7 @@ public class Dialogue_Control : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if(cc.levelStatus == 1)
+        if(cc.levelStatus == 1 && Dialogue6Completed == false)
         {
             if(hasClick == false)
             {
@@ -143,10 +146,51 @@ public class Dialogue_Control : MonoBehaviour {
                     Dialogue5Completed = true;
                 }
             }
+
+            if (Dialogue5Completed == true)
+            {
+                if (hasClick6 == false)
+                {
+                    level.SetTimeScale(0.0f);
+                    crouchButton.SetActive(true);
+                    dialogue[5].SetActive(true);
+                }
+                else
+                {
+                    level.SetTimeScale(1.0f);
+                    Dialogue6Completed = true;
+                }
+            }
+        }
+        if(Dialogue6Completed == true)
+        {
+            timer = 0;
+            tempTimer = 0;
+            tempTimer2 = 0;
+
+            hasClick = false;
+            hasClick2 = false;
+            hasClick3 = false;
+            hasClick4 = false;
+            hasClick5 = false;
+            hasClick6 = false;
         }
         if(cc.levelStatus == 2)
         {
-
+            DelayTime = 1.5f;
+            timer += Time.deltaTime;
+            if(timer >= DelayTime)
+            {
+                if(hasClick == false)
+                {
+                    level.SetTimeScale(0.0f);
+                    dialogue[6].SetActive(true);
+                }
+                else
+                {
+                    level.SetTimeScale(1.0f);
+                }
+            }
         }
     }
 
@@ -197,6 +241,14 @@ public class Dialogue_Control : MonoBehaviour {
         if (hasClick5 == false)
         {
             hasClick5 = true;
+        }
+    }
+
+    public void HasClickTheDialogue6()
+    {
+        if (hasClick6 == false)
+        {
+            hasClick6 = true;
         }
     }
 }

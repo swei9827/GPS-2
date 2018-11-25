@@ -12,46 +12,59 @@ public class DamageFlash : MonoBehaviour {
     public bool startedFlashing = false;
     public bool damaged = false;
     public WaitForSeconds updateRate =  new WaitForSeconds(0.05f);
+    private float timeCounter;
     
 	void Start () {
-        enemyMaterial = this.GetComponent<Renderer>().material;
+        enemyMaterial = this.transform.GetChild(1).GetComponent<Renderer>().material;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if(damaged)
         {
-            enemyMaterial.color = new Color32((byte)red, (byte)green, (byte)blue, 255);
+            enemyMaterial.color = new Color32((byte)255, (byte)green, (byte)blue, 255);
         }
 	}
 
     IEnumerator Flash()
     {
+        damaged = true;
         while(damaged)
         {
             yield return updateRate;
+            timeCounter += 0.05f;
             if(flashingIn)
             {
-                if(red <= 80)
+                if(blue <= 0)
                 {
                     flashingIn = false;
                 }
                 else
                 {
-                    red -= 25;
+                    blue -= 25;
+                    green -= 25;
                 }
             }
             else
             {
-                if(red >= 250)
+                if(blue >= 80)
                 {
                     flashingIn = true;
                 }
                 else
                 {
-                    red += 25;
+                    blue += 25;
+                    green += 25;
                 }
             }
-        }
+
+            if (timeCounter >= 1.5f)
+            {
+                timeCounter = 0;
+                damaged = false;
+                enemyMaterial.color = new Color32(255, 255, 255, 255);
+                yield break;
+            }
+        }        
     }
 }

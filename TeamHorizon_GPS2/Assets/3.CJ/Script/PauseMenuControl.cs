@@ -10,6 +10,7 @@ public class PauseMenuControl : MonoBehaviour {
     public GameObject SettingPageInPauseMenu;
     public GameObject PlayerReturnMainMenuConfirmationPage;
     public Level level;
+    public static bool canPause;
 
 	// Use this for initialization
 	void Start () {

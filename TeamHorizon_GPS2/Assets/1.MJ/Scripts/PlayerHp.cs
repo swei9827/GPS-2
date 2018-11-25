@@ -14,6 +14,8 @@ public class PlayerHp : MonoBehaviour {
 
     public Image healthBar;
     public Image shieldBar;
+    public Image healthBarCover;
+    public Image shieldBarCover;
 
     private float tempDmg = 0;
     float testDamage;
@@ -50,6 +52,11 @@ public class PlayerHp : MonoBehaviour {
             shield = Mathf.MoveTowards(shield, shieldAfterDamage, 20f * Time.deltaTime);
             shieldBar.fillAmount = shield / startShield;
             healthBar.fillAmount = health / startHealth;
+            healthBarCover.fillAmount = health / startHealth;
+            shieldBarCover.fillAmount = shield / startShield;
+
+
+
         }
         
         if(health <= 0)

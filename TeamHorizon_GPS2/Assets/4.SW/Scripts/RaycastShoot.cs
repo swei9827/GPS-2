@@ -57,8 +57,8 @@ public class RaycastShoot : MonoBehaviour
             }
         }
 
-        //MouseShoot();
-        TouchShoot();
+        MouseShoot();
+        //TouchShoot();
     }
 
     public void MouseShoot()
@@ -92,18 +92,49 @@ public class RaycastShoot : MonoBehaviour
                         if(hit.collider.CompareTag("Enemy"))
                         {
                             hit.collider.gameObject.GetComponent<EnemyMovement>().hp -= weapon.damage;
+                            hit.collider.gameObject.GetComponentInParent<DamageFlash>().StartCoroutine("Flash");
                         }
                         else if (hit.collider.CompareTag("EnemyHead"))
                         {
                             Debug.Log("Hit Head");
+                            hit.collider.gameObject.GetComponentInParent<EnemyMovement>().DamageCalculation(weapon.damage, 1);
+                            hit.collider.gameObject.GetComponentInParent<DamageFlash>().StartCoroutine("Flash");
                         }
                         else if (hit.collider.CompareTag("EnemyBody"))
                         {
                             Debug.Log("Hit Body");
+                            hit.collider.gameObject.GetComponentInParent<EnemyMovement>().DamageCalculation(weapon.damage, 2);
+                            hit.collider.gameObject.GetComponentInParent<DamageFlash>().StartCoroutine("Flash");
+                        }
+                        else if (hit.collider.CompareTag("EnemyHand"))
+                        {
+                            Debug.Log("Hit Hand");
+                            hit.collider.gameObject.GetComponentInParent<EnemyMovement>().DamageCalculation(weapon.damage, 3);
+                            hit.collider.gameObject.GetComponentInParent<DamageFlash>().StartCoroutine("Flash");
                         }
                         else if (hit.collider.CompareTag("Enemy_Destroyable_Bullet"))
                         {
                             hit.collider.gameObject.GetComponent<Enemy_Destroyable_Bullet>().hp -= weapon.damage;
+                        }
+                        else if (hit.collider.CompareTag("Environment"))
+                        {
+                            hit.collider.gameObject.GetComponent<EnvironementTrigger>().ETDamage(); ;
+                        }
+                        else if (hit.collider.CompareTag("FallingTree"))
+                        {
+                            hit.collider.gameObject.GetComponent<TreeFallHazard>().TreeFallDamage();
+                        }
+                        else if (hit.collider.CompareTag("BlockingTree"))
+                        {
+                            hit.collider.gameObject.GetComponent<TreeBlockHazard>().TreeBlockDamage();
+                        }
+                        else if (hit.collider.CompareTag("Obstacle"))
+                        {
+                            hit.collider.gameObject.GetComponent<Obstacles>().ObstaclesDamage();
+                        }
+                        else if (hit.collider.CompareTag("Interactive"))
+                        {
+                            hit.collider.gameObject.GetComponent<IObstacles>().IObstaclesDamage();
                         }
                     }
                     else
