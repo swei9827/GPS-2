@@ -498,10 +498,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 631269408}
   m_HandleRect: {fileID: 804408197}
   m_Direction: 0
-  m_MinValue: -80
+  m_MinValue: -60
   m_MaxValue: 0
-  m_WholeNumbers: 0
-  m_Value: 0
+  m_WholeNumbers: 1
+  m_Value: -30
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -2664,7 +2664,7 @@ Prefab:
     - target: {fileID: 114524710356533030, guid: a16ad742412f30549b1d62d029b6d30d,
         type: 2}
       propertyPath: sounds.Array.data[2].volume
-      value: 0.28
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114524710356533030, guid: a16ad742412f30549b1d62d029b6d30d,
         type: 2}
@@ -2692,6 +2692,11 @@ Prefab:
       value: 
       objectReference: {fileID: 243335218154334276, guid: 6fe0f7ea1824249418e9607a4c839bb4,
         type: 2}
+    - target: {fileID: 114524710356533030, guid: a16ad742412f30549b1d62d029b6d30d,
+        type: 2}
+      propertyPath: sounds.Array.data[1].volume
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a16ad742412f30549b1d62d029b6d30d, type: 2}
   m_IsPrefabAsset: 0
