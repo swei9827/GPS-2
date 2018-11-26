@@ -40,7 +40,6 @@
 		return o;
 	}
 
-
 	half frag(v2f i) : COLOR
 	{
 		//arbitrary number of iterations for now
@@ -122,7 +121,6 @@
 
 		return o;
 	}
-
 
 	half4 frag(v2f i) : COLOR
 	{
