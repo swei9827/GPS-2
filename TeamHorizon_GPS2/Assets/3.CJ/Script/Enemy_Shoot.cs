@@ -60,6 +60,6 @@ public class Enemy_Shoot : MonoBehaviour {
                 plyrHp.TakeDamage(bulletDamage);
                 //hitByBulletForFirstTime = true;
             }
-        }
+        } 
     }
 }
