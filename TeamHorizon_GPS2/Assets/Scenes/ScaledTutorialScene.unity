@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -77953,7 +77953,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1236253662167800, guid: 3e07023663ff629408986ce07bb8e58b, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114583260031801512, guid: 3e07023663ff629408986ce07bb8e58b,
         type: 2}
@@ -78069,6 +78069,26 @@ Prefab:
       propertyPath: shieldBarCover
       value: 
       objectReference: {fileID: 1717336194}
+    - target: {fileID: 224020108718644898, guid: 3e07023663ff629408986ce07bb8e58b,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224990851521877624, guid: 3e07023663ff629408986ce07bb8e58b,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 224232430106258576, guid: 3e07023663ff629408986ce07bb8e58b,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224072694922037622, guid: 3e07023663ff629408986ce07bb8e58b,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e07023663ff629408986ce07bb8e58b, type: 2}
   m_IsPrefabAsset: 0
