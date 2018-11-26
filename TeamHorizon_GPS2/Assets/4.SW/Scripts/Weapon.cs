@@ -8,9 +8,6 @@ public class Weapon : ScriptableObject
     [Tooltip("Weapon Damage")]
     public int damage;
 
-    [Tooltip("Weapon Firerate in second format - the lower the firerate, the faster the weapon firespeed")]
-    public float fireRate;
-
     [Tooltip("Weapon Range, recommend value 500 - infinite")]
     public float range;
 

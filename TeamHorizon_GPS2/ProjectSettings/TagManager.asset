@@ -25,6 +25,8 @@ TagManager:
   - EnemyHand
   - FallingTree
   - BlockingTree
+  - Hazard
+  - Props
   layers:
   - Default
   - TransparentFX
