@@ -35,7 +35,7 @@ public class RaycastShoot : MonoBehaviour
     void Update()
     {
         // Reload
-        if ((new Vector2(Input.acceleration.x, Input.acceleration.z).magnitude > 1.5 && isReloading == false)) //&& Input.GetButtonDown("Jump")) 
+        if (((new Vector2(Input.acceleration.x, Input.acceleration.z).magnitude > 1.5 || Input.GetButtonDown("Jump"))&& isReloading == false))
         {
             isReloading = true;
             if (weapon.clipReload == true)
@@ -52,14 +52,13 @@ public class RaycastShoot : MonoBehaviour
                 anim.Play("bulletIdle");
             }
         }
-
-        MouseShoot();
-        //TouchShoot();
+        //MouseShoot();
+        TouchShoot();
     }
 
     public void MouseShoot()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
             if (!EventSystem.current.IsPointerOverGameObject())
             {
@@ -143,7 +142,7 @@ public class RaycastShoot : MonoBehaviour
                 else
                 {
                     reloadNotice.SetActive(true);
-                    //reloadNotice.PlayAnimation("ReloadNotice");
+                    reloadNotice.GetComponent<Animator>().Play("ReloadNotice");
                 }
             }
         }
@@ -160,6 +159,12 @@ public class RaycastShoot : MonoBehaviour
                     if (EventSystem.current.IsPointerOverGameObject(touch.fingerId))
                     {
                         isUItouch = true;
+                    }
+
+                    if(currentAmmo <= 0)
+                    {
+                        reloadNotice.SetActive(true);
+                        reloadNotice.GetComponent<Animator>().Play("ReloadNotice");
                     }
                     Debug.Log("Began");
                     break;
@@ -362,6 +367,7 @@ public class RaycastShoot : MonoBehaviour
         bulletLeft.text = currentAmmo.ToString();
         reloadIndicator.SetActive(false);
         isReloading = false;
+        reloadNotice.SetActive(false);
     }
 
     private IEnumerator ReloadEffect2(float perBullet, int bulletCount)
@@ -375,5 +381,6 @@ public class RaycastShoot : MonoBehaviour
         }
         reloadIndicator.SetActive(false);
         isReloading = false;
+        reloadNotice.SetActive(false);
     }
 }
