@@ -52,8 +52,8 @@ public class RaycastShoot : MonoBehaviour
                 anim.Play("bulletIdle");
             }
         }
-        //MouseShoot();
-        TouchShoot();
+        MouseShoot();
+        //TouchShoot();
     }
 
     public void MouseShoot()
@@ -75,6 +75,11 @@ public class RaycastShoot : MonoBehaviour
                     {
                         Animator anim = bulletList[currentAmmo].GetComponent<Animator>();
                         anim.Play("bulletAnim");
+                    }
+                    else if(currentAmmo == 0)
+                    {
+                        reloadNotice.SetActive(true);
+                        reloadNotice.GetComponent<Animator>().Play("ReloadNotice");
                     }
                     Vector3 shootOrigin = playerCamera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.0f));
                     laserLine.SetPosition(0, shootOrigin);
@@ -256,6 +261,11 @@ public class RaycastShoot : MonoBehaviour
                             {
                                 Animator anim = bulletList[currentAmmo].GetComponent<Animator>();
                                 anim.Play("bulletAnim");
+                            }
+                            else if (currentAmmo == 0)
+                            {
+                                reloadNotice.SetActive(true);
+                                reloadNotice.GetComponent<Animator>().Play("ReloadNotice");
                             }
                             Vector3 shootOrigin = playerCamera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.0f));
                             laserLine.SetPosition(0, shootOrigin);
