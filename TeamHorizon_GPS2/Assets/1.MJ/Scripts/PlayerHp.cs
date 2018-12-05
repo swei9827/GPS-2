@@ -26,7 +26,7 @@ public class PlayerHp : MonoBehaviour {
     bool Invulnerable = false;
     public GameObject BulletHolePic;
     float timer;
-    public float InvulnerableTime;
+    public float InvulnerableTime = 2.0f;
     private IEnumerator coroutine;
 
     public GameObject loseUI;
@@ -45,7 +45,12 @@ public class PlayerHp : MonoBehaviour {
     private void Update()
     {
         timer += Time.deltaTime;
-        
+        if (timer >= InvulnerableTime)
+        {
+            BulletHolePic.SetActive(false);
+            timer = 0;
+        }
+
         if (health != healthAfterDamage || shield != shieldAfterDamage)
         {
             health = Mathf.MoveTowards(health, healthAfterDamage, 20f * Time.deltaTime);
@@ -70,7 +75,7 @@ public class PlayerHp : MonoBehaviour {
     {
         if (Invulnerable == false)
         {
-            BulletHolePic.SetActive(false);
+            BulletHolePic.SetActive(true);
             if (activeShield == false)
             {
                 healthAfterDamage = health - damage;
@@ -95,8 +100,7 @@ public class PlayerHp : MonoBehaviour {
         }
         else
         {
-            BulletHolePic.SetActive(true);
-            StartCoroutine("WaitForSeconds", 2.0f);
+            
         }
     }
 

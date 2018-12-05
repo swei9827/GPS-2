@@ -6,6 +6,7 @@ public class EnemyMovement : MonoBehaviour
 {
     public Level lvlController;
     public TargetProfile tp;
+    public ENEMYTYPE enemyType;
 
     public bool move;
 
@@ -178,337 +179,337 @@ public class EnemyMovement : MonoBehaviour
 
         //Enemy1 Sloth Animation ========================================================= Enemy1 Sloth Animation =========================================================
         //if (Input.GetKeyDown(KeyCode.E))    //ANIM1
-        if (EnemyHPreducing == true) //Damage Anim
+        if (enemyType == ENEMYTYPE.SLOTH_WOLF)
         {
-            animator.enabled = true;
-            SlothWolf_DamageAnim = true;
-            SlothWolf_AimingAnim = false;
-            SlothWolf_ShootingAnim = false;
+            if (EnemyHPreducing == true) //Damage Anim
+            {
+                animator.enabled = true;
+                SlothWolf_DamageAnim = true;
+                SlothWolf_AimingAnim = false;
+                SlothWolf_ShootingAnim = false;
+            }
+
+            // if (Input.GetKeyDown(KeyCode.R))//ANIM2 
+            if (EnemyStartAppear == true) //Aimaing Anim
+            {
+                animator.enabled = true;
+                SlothWolf_AimingAnim = true;
+                SlothWolf_DamageAnim = false;
+                SlothWolf_ShootingAnim = false;
+            }
+
+            //if (Input.GetKeyDown(KeyCode.T)) //ANIM3
+            if (StartShooting == true) //Shoot Anim
+            {
+                animator.enabled = true;
+                SlothWolf_ShootingAnim = true;
+                SlothWolf_DamageAnim = false;
+                SlothWolf_AimingAnim = false;
+            }
+            //----------------------------------------------------
+            if (SlothWolf_DamageAnim == true)
+            {
+                animator.SetBool("SlothWolf_DamageAnim", true);
+                animator.SetBool("SlothWolf_AimingAnim", false);
+                animator.SetBool("SlothWolf_ShootingAnim", false);
+            }
+
+            if (SlothWolf_AimingAnim == true)
+            {
+                animator.SetBool("SlothWolf_AimingAnim", true);
+                animator.SetBool("SlothWolf_DamageAnim", false);
+                animator.SetBool("SlothWolf_ShootingAnim", false);
+            }
+
+            if (SlothWolf_ShootingAnim == true)
+            {
+                animator.SetBool("SlothWolf_ShootingAnim", true);
+                animator.SetBool("SlothWolf_AimingAnim", false);
+                animator.SetBool("SlothWolf_DamageAnim", false);
+            }
         }
-
-        // if (Input.GetKeyDown(KeyCode.R))//ANIM2 
-        if (EnemyStartAppear == true) //Aimaing Anim
-        {
-            animator.enabled = true;
-            SlothWolf_AimingAnim = true;
-            SlothWolf_DamageAnim = false;
-            SlothWolf_ShootingAnim = false;
-        }
-
-        //if (Input.GetKeyDown(KeyCode.T)) //ANIM3
-        if (StartShooting == true) //Shoot Anim
-        {
-            animator.enabled = true;
-            SlothWolf_ShootingAnim = true;
-            SlothWolf_DamageAnim = false;
-            SlothWolf_AimingAnim = false;
-        }
-
-
-        //----------------------------------------------------
-        if (SlothWolf_DamageAnim == true)
-        {
-            animator.SetBool("SlothWolf_DamageAnim", true);
-            animator.SetBool("SlothWolf_AimingAnim", false);
-            animator.SetBool("SlothWolf_ShootingAnim", false);
-        }
-
-        if (SlothWolf_AimingAnim == true)
-        {
-            animator.SetBool("SlothWolf_AimingAnim", true);
-            animator.SetBool("SlothWolf_DamageAnim", false);
-            animator.SetBool("SlothWolf_ShootingAnim", false);
-        }
-
-        if (SlothWolf_ShootingAnim == true)
-        {
-            animator.SetBool("SlothWolf_ShootingAnim", true);
-            animator.SetBool("SlothWolf_AimingAnim", false);
-            animator.SetBool("SlothWolf_DamageAnim", false);
-        }
-
         //Enemy2 Bison Animation ========================================================= Enemy2 Bison Animation =========================================================
-
         //if (Input.GetKeyDown(KeyCode.E))    //ANIM2
-        if (EnemyHPreducing == true) //Damage Anim
+        else if (enemyType == ENEMYTYPE.BISON)
         {
-            animator.enabled = true;
-            Bison_DamageAnim = true;
-            Bison_AimingAnim = false;
-            Bison_ShootingAnim = false;
-            Bison_DeadAnim = false;
-            Bison_ThrowBarrelAnim = false;
+            if (EnemyHPreducing == true) //Damage Anim
+            {
+                animator.enabled = true;
+                Bison_DamageAnim = true;
+                Bison_AimingAnim = false;
+                Bison_ShootingAnim = false;
+                Bison_DeadAnim = false;
+                Bison_ThrowBarrelAnim = false;
+            }
+
+            // if (Input.GetKeyDown(KeyCode.R))//ANIM2 
+            if (EnemyStartAppear == true) //Aimaing Anim
+            {
+                animator.enabled = true;
+                Bison_AimingAnim = true;
+                Bison_DamageAnim = false;
+                Bison_ShootingAnim = false;
+                Bison_DeadAnim = false;
+                Bison_ThrowBarrelAnim = false;
+            }
+
+            //if (Input.GetKeyDown(KeyCode.T)) //ANIM2
+            if (StartShooting == true) //Shoot Anim
+            {
+                animator.enabled = true;
+                Bison_ShootingAnim = true;
+                Bison_DamageAnim = false;
+                Bison_AimingAnim = false;
+                Bison_DeadAnim = false;
+                Bison_ThrowBarrelAnim = false;
+            }
+
+            //if (Input.GetKeyDown(KeyCode.D)) //ANIM2
+            if (this.hp <= 0) //death Anim
+            {
+                animator.enabled = true;
+                Bison_DeadAnim = true;
+                Bison_ShootingAnim = false;
+                Bison_DamageAnim = false;
+                Bison_AimingAnim = false;
+                Bison_ThrowBarrelAnim = false;
+            }
+
+            //if (Input.GetKeyDown(KeyCode.T)) //ANIM3
+            if (ThrowBarrel == true) //death Anim
+            {
+                animator.enabled = true;
+                Bison_ThrowBarrelAnim = true;
+                Bison_DeadAnim = false;
+                Bison_ShootingAnim = false;
+                Bison_DamageAnim = false;
+                Bison_AimingAnim = false;
+            }
+
+            //----------------------------------------------------
+            if (Bison_DamageAnim == true)
+            {
+                animator.SetBool("Bison_DamageAnim", true);
+                animator.SetBool("Bison_AimingAnim", false);
+                animator.SetBool("Bison_ShootingAnim", false);
+                animator.SetBool("Bison_DamageAnim", false);
+                animator.SetBool("Bison_DeadAnim", false);
+            }
+
+            if (Bison_AimingAnim == true)
+            {
+                animator.SetBool("Bison_AimingAnim", true);
+                animator.SetBool("Bison_DamageAnim", false);
+                animator.SetBool("Bison_ShootingAnim", false);
+                animator.SetBool("Bison_DamageAnim", false);
+                animator.SetBool("Bison_DeadAnim", false);
+            }
+
+            if (Bison_ShootingAnim == true)
+            {
+                animator.SetBool("Bison_ShootingAnim", true);
+                animator.SetBool("Bison_AimingAnim", false);
+                animator.SetBool("Bison_DamageAnim", false);
+                animator.SetBool("Bison_DamageAnim", false);
+                animator.SetBool("Bison_DeadAnim", false);
+            }
+
+            if (Bison_DeadAnim == true)
+            {
+                animator.SetBool("Bison_DeadAnim", true);
+                animator.SetBool("Bison_ShootingAnim", false);
+                animator.SetBool("Bison_AimingAnim", false);
+                animator.SetBool("Bison_DamageAnim", false);
+                animator.SetBool("Bison_ThrowBarrelAnim", true);
+
+            }
+
+            if (Bison_ThrowBarrelAnim == true)
+            {
+                animator.SetBool("Bison_ThrowBarrelAnim", true);
+                animator.SetBool("Bison_ShootingAnim", false);
+                animator.SetBool("Bison_AimingAnim", false);
+                animator.SetBool("Bison_DamageAnim", false);
+                animator.SetBool("Bison_DeadAnim", false);
+            }
         }
-
-        // if (Input.GetKeyDown(KeyCode.R))//ANIM2 
-        if (EnemyStartAppear == true) //Aimaing Anim
-        {
-            animator.enabled = true;
-            Bison_AimingAnim = true;
-            Bison_DamageAnim = false;
-            Bison_ShootingAnim = false;
-            Bison_DeadAnim = false;
-            Bison_ThrowBarrelAnim = false;
-        }
-
-        //if (Input.GetKeyDown(KeyCode.T)) //ANIM2
-        if (StartShooting == true) //Shoot Anim
-        {
-            animator.enabled = true;
-            Bison_ShootingAnim = true;
-            Bison_DamageAnim = false;
-            Bison_AimingAnim = false;
-            Bison_DeadAnim = false;
-            Bison_ThrowBarrelAnim = false;
-        }
-
-        //if (Input.GetKeyDown(KeyCode.D)) //ANIM2
-        if (this.hp <= 0) //death Anim
-        {
-            animator.enabled = true;
-            Bison_DeadAnim = true;
-            Bison_ShootingAnim = false;
-            Bison_DamageAnim = false;
-            Bison_AimingAnim = false;
-            Bison_ThrowBarrelAnim = false;
-        }
-
-        //if (Input.GetKeyDown(KeyCode.T)) //ANIM3
-        if (ThrowBarrel == true) //death Anim
-        {
-            animator.enabled = true;
-            Bison_ThrowBarrelAnim = true;
-            Bison_DeadAnim = false;
-            Bison_ShootingAnim = false;
-            Bison_DamageAnim = false;
-            Bison_AimingAnim = false;
-        }
-
-        //----------------------------------------------------
-
-        if (Bison_DamageAnim == true)
-        {
-            animator.SetBool("Bison_DamageAnim", true);
-            animator.SetBool("Bison_AimingAnim", false);
-            animator.SetBool("Bison_ShootingAnim", false);
-            animator.SetBool("Bison_DamageAnim", false);
-            animator.SetBool("Bison_DeadAnim", false);
-        }
-
-        if (Bison_AimingAnim == true)
-        {
-            animator.SetBool("Bison_AimingAnim", true);
-            animator.SetBool("Bison_DamageAnim", false);
-            animator.SetBool("Bison_ShootingAnim", false);
-            animator.SetBool("Bison_DamageAnim", false);
-            animator.SetBool("Bison_DeadAnim", false);
-        }
-
-        if (Bison_ShootingAnim == true)
-        {
-            animator.SetBool("Bison_ShootingAnim", true);
-            animator.SetBool("Bison_AimingAnim", false);
-            animator.SetBool("Bison_DamageAnim", false);
-            animator.SetBool("Bison_DamageAnim", false);
-            animator.SetBool("Bison_DeadAnim", false);
-        }
-
-        if (Bison_DeadAnim == true)
-        {
-            animator.SetBool("Bison_DeadAnim", true);
-            animator.SetBool("Bison_ShootingAnim", false);
-            animator.SetBool("Bison_AimingAnim", false);
-            animator.SetBool("Bison_DamageAnim", false);
-            animator.SetBool("Bison_ThrowBarrelAnim", true);
-
-        }
-
-        if (Bison_ThrowBarrelAnim == true)
-        {
-            animator.SetBool("Bison_ThrowBarrelAnim", true);
-            animator.SetBool("Bison_ShootingAnim", false);
-            animator.SetBool("Bison_AimingAnim", false);
-            animator.SetBool("Bison_DamageAnim", false);
-            animator.SetBool("Bison_DeadAnim", false);
-        }
-
-
         //Enemy3 Soldier  Animation ========================================================= Enemy3 Soldier Animation =========================================================
-
         //if (Input.GetKeyDown(KeyCode.P))    //ANIM3
-        if (EnemyHPreducing == true) //Damage Anim
+        else if (enemyType == ENEMYTYPE.SOILDER)
         {
-            animator.enabled = true;
-            Soldier_DamageAnim = true;
-            Soldier_AimingAnim = false;
-            Soldier_ShootingAnim = false;
-            Soldier_DeadAnim = false;
-            Soldier_StabSlashAnim = false;
-            Soldier_RunningAnim = false;
-            Soldier_GranadeAnim = false;
+            if (EnemyHPreducing == true) //Damage Anim
+            {
+                animator.enabled = true;
+                Soldier_DamageAnim = true;
+                Soldier_AimingAnim = false;
+                Soldier_ShootingAnim = false;
+                Soldier_DeadAnim = false;
+                Soldier_StabSlashAnim = false;
+                Soldier_RunningAnim = false;
+                Soldier_GranadeAnim = false;
+            }
+
+            // if (Input.GetKeyDown(KeyCode.R))//ANIM2 
+            if (EnemyStartAppear == true) //Aimaing Anim
+            {
+                animator.enabled = true;
+                Soldier_AimingAnim = true;
+                Soldier_DamageAnim = false;
+                Soldier_ShootingAnim = false;
+                Soldier_DeadAnim = false;
+                Soldier_StabSlashAnim = false;
+                Soldier_RunningAnim = false;
+                Soldier_GranadeAnim = false;
+            }
+
+            //if (Input.GetKeyDown(KeyCode.T)) //ANIM2
+            if (StartShooting == true) //Shoot Anim
+            {
+                animator.enabled = true;
+                Soldier_ShootingAnim = true;
+                Soldier_AimingAnim = false;
+                Soldier_DamageAnim = false;
+                Soldier_DeadAnim = false;
+                Soldier_StabSlashAnim = false;
+                Soldier_RunningAnim = false;
+                Soldier_GranadeAnim = false;
+            }
+
+            //if (Input.GetKeyDown(KeyCode.D)) //ANIM2
+            if (this.hp <= 0) //death Anim
+            {
+                animator.enabled = true;
+                Soldier_DeadAnim = true;
+                Soldier_ShootingAnim = false;
+                Soldier_AimingAnim = false;
+                Soldier_DamageAnim = false;
+                Soldier_StabSlashAnim = false;
+                Soldier_RunningAnim = false;
+                Soldier_GranadeAnim = false;
+            }
+
+            //if (Input.GetKeyDown(KeyCode.T)) //ANIM3
+            if (ThrowGranade == true) //granade Anim
+            {
+                animator.enabled = true;
+                Soldier_GranadeAnim = true;
+                Soldier_DeadAnim = false;
+                Soldier_ShootingAnim = false;
+                Soldier_AimingAnim = false;
+                Soldier_DamageAnim = false;
+                Soldier_StabSlashAnim = false;
+                Soldier_RunningAnim = false;
+            }
+
+            //if (Input.GetKeyDown(KeyCode.O)) //ANIM3
+            if (StabSlash == true) //stabslash Anim
+            {
+                animator.enabled = true;
+                Soldier_StabSlashAnim = true;
+                Soldier_GranadeAnim = false;
+                Soldier_DeadAnim = false;
+                Soldier_ShootingAnim = false;
+                Soldier_AimingAnim = false;
+                Soldier_DamageAnim = false;
+                Soldier_RunningAnim = false;
+            }
+
+            //if (Input.GetKeyDown(KeyCode.O)) //ANIM3
+            if (Running == true) //running Anim
+            {
+                animator.enabled = true;
+                Soldier_RunningAnim = true;
+                Soldier_StabSlashAnim = false;
+                Soldier_GranadeAnim = false;
+                Soldier_DeadAnim = false;
+                Soldier_ShootingAnim = false;
+                Soldier_AimingAnim = false;
+                Soldier_DamageAnim = false;
+            }
+
+            //----------------------------------------------------
+
+            if (Soldier_DamageAnim == true)
+            {
+                animator.SetBool("Soldier_DamageAnim", true);
+                animator.SetBool("Soldier_AimingAnim", false);
+                animator.SetBool("Soldier_ShootingAnim", false);
+                animator.SetBool("Soldier_DeadAnim", false);
+                animator.SetBool("Soldier_RunningAnim", false);
+                animator.SetBool("Soldier_GranadeAnim", false);
+                animator.SetBool("Soldier_StabSlashAnim", false);
+            }
+
+            if (Soldier_AimingAnim == true)
+            {
+                animator.SetBool("Soldier_DamageAnim", false);
+                animator.SetBool("Soldier_AimingAnim", true);
+                animator.SetBool("Soldier_ShootingAnim", false);
+                animator.SetBool("Soldier_DeadAnim", false);
+                animator.SetBool("Soldier_RunningAnim", false);
+                animator.SetBool("Soldier_GranadeAnim", false);
+                animator.SetBool("Soldier_StabSlashAnim", false);
+            }
+
+            if (Soldier_ShootingAnim == true)
+            {
+                animator.SetBool("Soldier_DamageAnim", false);
+                animator.SetBool("Soldier_AimingAnim", false);
+                animator.SetBool("Soldier_ShootingAnim", true);
+                animator.SetBool("Soldier_DeadAnim", false);
+                animator.SetBool("Soldier_RunningAnim", false);
+                animator.SetBool("Soldier_GranadeAnim", false);
+                animator.SetBool("Soldier_StabSlashAnim", false);
+            }
+
+            if (Soldier_DeadAnim == true)
+            {
+                animator.SetBool("Soldier_DamageAnim", false);
+                animator.SetBool("Soldier_AimingAnim", false);
+                animator.SetBool("Soldier_ShootingAnim", false);
+                animator.SetBool("Soldier_DeadAnim", true);
+                animator.SetBool("Soldier_RunningAnim", false);
+                animator.SetBool("Soldier_GranadeAnim", false);
+                animator.SetBool("Soldier_StabSlashAnim", false);
+
+            }
+
+            if (Soldier_RunningAnim == true)
+            {
+                animator.SetBool("Soldier_DamageAnim", false);
+                animator.SetBool("Soldier_AimingAnim", false);
+                animator.SetBool("Soldier_ShootingAnim", false);
+                animator.SetBool("Soldier_DeadAnim", false);
+                animator.SetBool("Soldier_RunningAnim", true);
+                animator.SetBool("Soldier_GranadeAnim", false);
+                animator.SetBool("Soldier_StabSlashAnim", false);
+
+            }
+
+            if (Soldier_GranadeAnim == true)
+            {
+                animator.SetBool("Soldier_DamageAnim", false);
+                animator.SetBool("Soldier_AimingAnim", false);
+                animator.SetBool("Soldier_ShootingAnim", false);
+                animator.SetBool("Soldier_DeadAnim", false);
+                animator.SetBool("Soldier_RunningAnim", false);
+                animator.SetBool("Soldier_GranadeAnim", true);
+                animator.SetBool("Soldier_StabSlashAnim", false);
+
+            }
+
+            if (Soldier_StabSlashAnim == true)
+            {
+                animator.SetBool("Soldier_DamageAnim", false);
+                animator.SetBool("Soldier_AimingAnim", false);
+                animator.SetBool("Soldier_ShootingAnim", false);
+                animator.SetBool("Soldier_DeadAnim", false);
+                animator.SetBool("Soldier_RunningAnim", false);
+                animator.SetBool("Soldier_GranadeAnim", false);
+                animator.SetBool("Soldier_StabSlashAnim", true);
+
+            }
         }
-
-        // if (Input.GetKeyDown(KeyCode.R))//ANIM2 
-        if (EnemyStartAppear == true) //Aimaing Anim
-        {
-            animator.enabled = true;
-            Soldier_AimingAnim = true;
-            Soldier_DamageAnim = false;
-            Soldier_ShootingAnim = false;
-            Soldier_DeadAnim = false;
-            Soldier_StabSlashAnim = false;
-            Soldier_RunningAnim = false;
-            Soldier_GranadeAnim = false;
-        }
-
-        //if (Input.GetKeyDown(KeyCode.T)) //ANIM2
-        if (StartShooting == true) //Shoot Anim
-        {
-            animator.enabled = true;
-            Soldier_ShootingAnim = true;
-            Soldier_AimingAnim = false;
-            Soldier_DamageAnim = false;
-            Soldier_DeadAnim = false;
-            Soldier_StabSlashAnim = false;
-            Soldier_RunningAnim = false;
-            Soldier_GranadeAnim = false;
-        }
-
-        //if (Input.GetKeyDown(KeyCode.D)) //ANIM2
-        if (this.hp <= 0) //death Anim
-        {
-            animator.enabled = true;
-            Soldier_DeadAnim = true;
-            Soldier_ShootingAnim = false;
-            Soldier_AimingAnim = false;
-            Soldier_DamageAnim = false;
-            Soldier_StabSlashAnim = false;
-            Soldier_RunningAnim = false;
-            Soldier_GranadeAnim = false;
-        }
-
-        //if (Input.GetKeyDown(KeyCode.T)) //ANIM3
-        if (ThrowGranade == true) //granade Anim
-        {
-            animator.enabled = true;
-            Soldier_GranadeAnim = true;
-            Soldier_DeadAnim = false;
-            Soldier_ShootingAnim = false;
-            Soldier_AimingAnim = false;
-            Soldier_DamageAnim = false;
-            Soldier_StabSlashAnim = false;
-            Soldier_RunningAnim = false;
-        }
-
-        //if (Input.GetKeyDown(KeyCode.O)) //ANIM3
-        if (StabSlash == true) //stabslash Anim
-        {
-            animator.enabled = true;
-            Soldier_StabSlashAnim = true;
-            Soldier_GranadeAnim = false;
-            Soldier_DeadAnim = false;
-            Soldier_ShootingAnim = false;
-            Soldier_AimingAnim = false;
-            Soldier_DamageAnim = false;
-            Soldier_RunningAnim = false;
-        }
-
-        //if (Input.GetKeyDown(KeyCode.O)) //ANIM3
-        if (Running == true) //running Anim
-        {
-            animator.enabled = true;
-            Soldier_RunningAnim = true;
-            Soldier_StabSlashAnim = false;
-            Soldier_GranadeAnim = false;
-            Soldier_DeadAnim = false;
-            Soldier_ShootingAnim = false;
-            Soldier_AimingAnim = false;
-            Soldier_DamageAnim = false;
-        }
-
-        //----------------------------------------------------
-
-        if (Soldier_DamageAnim == true)
-        {
-            animator.SetBool("Soldier_DamageAnim", true);
-            animator.SetBool("Soldier_AimingAnim", false);
-            animator.SetBool("Soldier_ShootingAnim", false);
-            animator.SetBool("Soldier_DeadAnim", false);
-            animator.SetBool("Soldier_RunningAnim", false);
-            animator.SetBool("Soldier_GranadeAnim", false);
-            animator.SetBool("Soldier_StabSlashAnim", false);
-        }
-
-        if (Soldier_AimingAnim == true)
-        {
-            animator.SetBool("Soldier_DamageAnim", false);
-            animator.SetBool("Soldier_AimingAnim", true);
-            animator.SetBool("Soldier_ShootingAnim", false);
-            animator.SetBool("Soldier_DeadAnim", false);
-            animator.SetBool("Soldier_RunningAnim", false);
-            animator.SetBool("Soldier_GranadeAnim", false);
-            animator.SetBool("Soldier_StabSlashAnim", false);
-        }
-
-        if (Soldier_ShootingAnim == true)
-        {
-            animator.SetBool("Soldier_DamageAnim", false);
-            animator.SetBool("Soldier_AimingAnim", false);
-            animator.SetBool("Soldier_ShootingAnim", true);
-            animator.SetBool("Soldier_DeadAnim", false);
-            animator.SetBool("Soldier_RunningAnim", false);
-            animator.SetBool("Soldier_GranadeAnim", false);
-            animator.SetBool("Soldier_StabSlashAnim", false);
-        }
-
-        if (Soldier_DeadAnim == true)
-        {
-            animator.SetBool("Soldier_DamageAnim", false);
-            animator.SetBool("Soldier_AimingAnim", false);
-            animator.SetBool("Soldier_ShootingAnim", false);
-            animator.SetBool("Soldier_DeadAnim", true);
-            animator.SetBool("Soldier_RunningAnim", false);
-            animator.SetBool("Soldier_GranadeAnim", false);
-            animator.SetBool("Soldier_StabSlashAnim", false);
-
-        }
-
-        if (Soldier_RunningAnim == true)
-        {
-            animator.SetBool("Soldier_DamageAnim", false);
-            animator.SetBool("Soldier_AimingAnim", false);
-            animator.SetBool("Soldier_ShootingAnim", false);
-            animator.SetBool("Soldier_DeadAnim", false);
-            animator.SetBool("Soldier_RunningAnim", true);
-            animator.SetBool("Soldier_GranadeAnim", false);
-            animator.SetBool("Soldier_StabSlashAnim", false);
-
-        }
-
-        if (Soldier_GranadeAnim == true)
-        {
-            animator.SetBool("Soldier_DamageAnim", false);
-            animator.SetBool("Soldier_AimingAnim", false);
-            animator.SetBool("Soldier_ShootingAnim", false);
-            animator.SetBool("Soldier_DeadAnim", false);
-            animator.SetBool("Soldier_RunningAnim", false);
-            animator.SetBool("Soldier_GranadeAnim", true);
-            animator.SetBool("Soldier_StabSlashAnim", false);
-
-        }
-
-        if (Soldier_StabSlashAnim == true)
-        {
-            animator.SetBool("Soldier_DamageAnim", false);
-            animator.SetBool("Soldier_AimingAnim", false);
-            animator.SetBool("Soldier_ShootingAnim", false);
-            animator.SetBool("Soldier_DeadAnim", false);
-            animator.SetBool("Soldier_RunningAnim", false);
-            animator.SetBool("Soldier_GranadeAnim", false);
-            animator.SetBool("Soldier_StabSlashAnim", true);
-
-        }
-
         /*
         if (left == true && right == false && down == false && top == false && EnemyStartAppear == true)
         {
@@ -644,5 +645,12 @@ public class EnemyMovement : MonoBehaviour
 
 
     }
+}
+
+public enum ENEMYTYPE
+{
+    SLOTH_WOLF,
+    BISON,
+    SOILDER
 }
 
