@@ -11,6 +11,11 @@ public class ScriptedMovement : MonoBehaviour {
 
     private IEnumerator coroutine;
 
+    void Update()
+    {
+        Debug.Log(transform.eulerAngles.y);
+    }
+
     public void PlayerMove( Transform target)
     {
         step = speed * Time.deltaTime;

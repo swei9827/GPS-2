@@ -27,6 +27,7 @@ TagManager:
   - BlockingTree
   - Hazard
   - Props
+  - FallingTreeV2
   layers:
   - Default
   - TransparentFX

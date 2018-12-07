@@ -123,6 +123,10 @@ public class RaycastShoot : MonoBehaviour
                         {
                             hit.collider.gameObject.GetComponent<TreeFallHazard>().TreeFallDamage();
                         }
+                        else if (hit.collider.CompareTag("FallingTreeV2"))
+                        {
+                            hit.collider.gameObject.GetComponent<TreeFallHazardWithDistanceChecker>().TreeV2FallDamage();
+                        }
                         else if (hit.collider.CompareTag("BlockingTree"))
                         {
                             hit.collider.gameObject.GetComponent<TreeBlockHazard>().TreeBlockDamage();
@@ -304,6 +308,10 @@ public class RaycastShoot : MonoBehaviour
                                 else if (hit.collider.CompareTag("FallingTree"))
                                 {
                                     hit.collider.gameObject.GetComponent<TreeFallHazard>().TreeFallDamage();
+                                }
+                                else if (hit.collider.CompareTag("FallingTreeV2"))
+                                {
+                                    hit.collider.gameObject.GetComponent<TreeFallHazardWithDistanceChecker>().TreeV2FallDamage();
                                 }
                                 else if (hit.collider.CompareTag("BlockingTree"))
                                 {
