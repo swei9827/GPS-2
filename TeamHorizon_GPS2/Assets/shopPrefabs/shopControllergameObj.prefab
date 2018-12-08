@@ -82,9 +82,9 @@ MonoBehaviour:
   txtScore: {fileID: 114150204420953728, guid: 466777cffff7c9940b7f2469903668a0, type: 2}
   HealthValue: 100
   ShieldValue: 100
-  ClipVale: 400
-  DamageValue: 20000
-  ReloadTimeValue: 50000
+  ClipVale: 100
+  DamageValue: 100
+  ReloadTimeValue: 100
   ImgClipSequence:
   - {fileID: 1537175422741652, guid: c86327c84e2c267408dad959ad3b5d36, type: 2}
   - {fileID: 1373467930152460, guid: 7d9a630437f64b744ba8efcc9f1da85b, type: 2}

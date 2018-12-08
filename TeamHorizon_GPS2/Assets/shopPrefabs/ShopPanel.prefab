@@ -385,22 +385,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1333315792243202
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4190275611614582}
-  - component: {fileID: 114989285334367600}
-  m_Layer: 0
-  m_Name: shopController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
 --- !u!1 &1361745084676880
 GameObject:
   m_ObjectHideFlags: 1
@@ -777,7 +761,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1641518980466982
 GameObject:
   m_ObjectHideFlags: 1
@@ -1032,6 +1016,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1855942043765580
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4646985193954830}
+  - component: {fileID: 114409723546041782}
+  m_Layer: 0
+  m_Name: shopController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1856448681783186
 GameObject:
   m_ObjectHideFlags: 0
@@ -1253,19 +1253,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4190275611614582
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1333315792243202}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 115.763855, y: 129.96994, z: -8.645121}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 224656255730452494}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4580226296817548
 Transform:
   m_ObjectHideFlags: 1
@@ -1278,6 +1265,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 224656255730452494}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4646985193954830
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1855942043765580}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 115.763855, y: 129.96994, z: -8.645121}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224656255730452494}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4875669012172012
 Transform:
@@ -1492,7 +1492,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1900
+  m_Text: 900
 --- !u!114 &114156165400464846
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1903,7 +1903,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114989285334367600}
+      - m_Target: {fileID: 0}
         m_MethodName: OnReadyButtonClick
         m_Mode: 1
         m_Arguments:
@@ -2096,6 +2096,58 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114409723546041782
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1855942043765580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcaec1d404066d141a5c15b000417377, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShopPanel: {fileID: 1633995668481572}
+  scoreAmountText: {fileID: 114150204420953728}
+  Upgrade1_price: {fileID: 114485575237686528}
+  Upgrade2_price: {fileID: 114082984152284536}
+  Upgrade3_price: {fileID: 114575757423419748}
+  Health_price: {fileID: 114352328359166042}
+  Sheild_price: {fileID: 114731883312846714}
+  buyButton1: {fileID: 114971921786592754}
+  buyButton2: {fileID: 114628927790563964}
+  buyButton3: {fileID: 114926051919936366}
+  buyButton4: {fileID: 114413696236023372}
+  buyButton5: {fileID: 114167876169930782}
+  buyButton6: {fileID: 0}
+  healthBar: {fileID: 114433500028916524, guid: 213bb5bda32fc544baf2adb30fea8890,
+    type: 2}
+  shieldBar: {fileID: 114290341671463780, guid: 5c66f53ca0c99d8449b835b8c7b8fdd9,
+    type: 2}
+  txtScore: {fileID: 114150204420953728}
+  HealthValue: 100
+  ShieldValue: 100
+  ClipVale: 100
+  DamageValue: 100
+  ReloadTimeValue: 100
+  ImgClipSequence:
+  - {fileID: 1537175422741652, guid: c86327c84e2c267408dad959ad3b5d36, type: 2}
+  - {fileID: 1373467930152460, guid: 7d9a630437f64b744ba8efcc9f1da85b, type: 2}
+  - {fileID: 1663774464983030, guid: 16212a0a13ab33142a7cca6ea4b40985, type: 2}
+  - {fileID: 1341536420041402, guid: 8aaad1770dfdea949afea149a9fb543b, type: 2}
+  - {fileID: 1429822605699738, guid: 2fc0214e6464f92428fcbd098fc7617b, type: 2}
+  ImgDamageSequence:
+  - {fileID: 1710217443990616, guid: c9f5b9a21da1b7f42bb069664d3134b8, type: 2}
+  - {fileID: 1566913302799062, guid: 1336a7aaaf878b84a868e5fd89d8506c, type: 2}
+  - {fileID: 1209096000589082, guid: bfed79deba010954ea8be6984f03dd51, type: 2}
+  - {fileID: 1789451920276160, guid: dc9ca79ccae55de4caabedfc11aac41d, type: 2}
+  - {fileID: 1228767304467208, guid: 6a5a460b0ba9f7a4c8d65ae9b0d0854a, type: 2}
+  ImgReloadTimeSequence:
+  - {fileID: 1104836937243792, guid: 06e7d09f607a91a41a8a20d6cdee2178, type: 2}
+  - {fileID: 1505666939589712, guid: 88851f6a20fae6b4eb85716ec5d42397, type: 2}
+  - {fileID: 1355505235883560, guid: 7b7a4cf87fef4944bb36d6711937b4f2, type: 2}
+  - {fileID: 1000915049188468, guid: 57a9d44196556ba48904c7749367e918, type: 2}
+  - {fileID: 1965540859416680, guid: 02d35e6ff7e809e44bdf89ae89d750d4, type: 2}
 --- !u!114 &114413696236023372
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2201,9 +2253,9 @@ MonoBehaviour:
   txtScore: {fileID: 114150204420953728}
   HealthValue: 100
   ShieldValue: 100
-  ClipVale: 400
-  DamageValue: 20000
-  ReloadTimeValue: 50000
+  ClipVale: 100
+  DamageValue: 100
+  ReloadTimeValue: 100
   ImgClipSequence:
   - {fileID: 1537175422741652, guid: c86327c84e2c267408dad959ad3b5d36, type: 2}
   - {fileID: 1373467930152460, guid: 7d9a630437f64b744ba8efcc9f1da85b, type: 2}
@@ -2908,12 +2960,12 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 114118895864031646}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114989285334367600}
+      - m_Target: {fileID: 0}
         m_MethodName: OnDamagePurchaseButtonClick
         m_Mode: 1
         m_Arguments:
@@ -3334,7 +3386,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114989285334367600}
+      - m_Target: {fileID: 0}
         m_MethodName: resetPlayerPrefs
         m_Mode: 1
         m_Arguments:
@@ -3507,12 +3559,12 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 114137451771119166}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114989285334367600}
+      - m_Target: {fileID: 0}
         m_MethodName: OnReloadTimePurchaseButtonClick
         m_Mode: 1
         m_Arguments:
@@ -3678,7 +3730,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114989285334367600}
+      - m_Target: {fileID: 0}
         m_MethodName: OnClipSizePurchaseButtonClick
         m_Mode: 1
         m_Arguments:
@@ -3691,41 +3743,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114989285334367600
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1333315792243202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcaec1d404066d141a5c15b000417377, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShopPanel: {fileID: 0}
-  scoreAmountText: {fileID: 114150204420953728}
-  Upgrade1_price: {fileID: 114485575237686528}
-  Upgrade2_price: {fileID: 114082984152284536}
-  Upgrade3_price: {fileID: 114575757423419748}
-  Health_price: {fileID: 114352328359166042}
-  Sheild_price: {fileID: 114731883312846714}
-  buyButton1: {fileID: 114971921786592754}
-  buyButton2: {fileID: 114628927790563964}
-  buyButton3: {fileID: 114926051919936366}
-  buyButton4: {fileID: 114413696236023372}
-  buyButton5: {fileID: 114167876169930782}
-  buyButton6: {fileID: 0}
-  healthBar: {fileID: 0}
-  shieldBar: {fileID: 0}
-  txtScore: {fileID: 0}
-  HealthValue: 0
-  ShieldValue: 0
-  ClipVale: 0
-  DamageValue: 0
-  ReloadTimeValue: 0
-  ImgClipSequence: []
-  ImgDamageSequence: []
-  ImgReloadTimeSequence: []
 --- !u!114 &114996057338310460
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5035,7 +5052,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4580226296817548}
-  - {fileID: 4190275611614582}
+  - {fileID: 4646985193954830}
   - {fileID: 4875669012172012}
   - {fileID: 224176593912501880}
   - {fileID: 224455274235328722}
