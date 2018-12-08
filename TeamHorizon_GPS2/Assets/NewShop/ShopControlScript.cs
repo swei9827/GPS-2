@@ -7,7 +7,11 @@ using UnityEngine.SceneManagement;
 public class ShopControlScript : MonoBehaviour {
 
     int currencyAmount;
-    int isItemSold;
+    int isItemSold1;
+    int isItemSold2;
+    int isItemSold3;
+    int isItemSold4;
+    int isItemSold5;
 
     public Text currencyAmountText;
     public Text Upgrade1_price;
@@ -16,7 +20,12 @@ public class ShopControlScript : MonoBehaviour {
     public Text Health_price;
     public Text Sheild_price;
 
-    public Button buyButton;
+    public Button buyButton1;
+    public Button buyButton2;
+    public Button buyButton3;
+    public Button buyButton4;
+    public Button buyButton5;
+    public Button buyButton6;
 
 	// Use this for initialization
 	void Start ()
@@ -29,51 +38,100 @@ public class ShopControlScript : MonoBehaviour {
     {
         currencyAmountText.text = " Currency: " + currencyAmount.ToString() + "$";
 
-        isItemSold = PlayerPrefs.GetInt("IsItemSold");
-        if (currencyAmount >= 500 && isItemSold == 0)
-            buyButton.interactable = true;
+       isItemSold1 = PlayerPrefs.GetInt("IsItemSold1");
+        if (currencyAmount >= 500 && isItemSold1 == 0)
+            buyButton1.interactable = true;
         else
-            buyButton.interactable = false;
-	}
+            buyButton1.interactable = false;
+
+        isItemSold2 = PlayerPrefs.GetInt("IsItemSold2");
+        if (currencyAmount >= 1000 && isItemSold2 == 0)
+            buyButton2.interactable = true;
+        else
+            buyButton2.interactable = false;
+
+        isItemSold3 = PlayerPrefs.GetInt("IsItemSold3");
+        if (currencyAmount >= 1500 && isItemSold3 == 0)
+            buyButton3.interactable = true;
+        else
+            buyButton3.interactable = false;
+
+
+        isItemSold4 = PlayerPrefs.GetInt("IsItemSold4");
+        if (currencyAmount >= 100 && isItemSold3 == 0)
+            buyButton3.interactable = true;
+        else
+            buyButton3.interactable = false;
+
+        isItemSold5 = PlayerPrefs.GetInt("IsItemSold5");
+        if (currencyAmount >= 200 && isItemSold3 == 0)
+            buyButton3.interactable = true;
+        else
+            buyButton3.interactable = false;
+
+        if (currencyAmount <=0)
+        {
+            buyButton1.interactable = false;
+            buyButton2.interactable = false;
+            buyButton3.interactable = false;
+            buyButton4.interactable = false;
+            buyButton5.interactable = false;
+           // buyButton6.interactable = false;
+        }
+
+        if (currencyAmount <500)
+        {
+            buyButton1.interactable = false;
+            buyButton2.interactable = false;
+            buyButton3.interactable = false;
+            buyButton4.interactable = false;
+            buyButton5.interactable = false;
+            // buyButton6.interactable = false;
+        }
+
+    }
 
     public void Upgrade1()
     {
         currencyAmount -= 500;
-        PlayerPrefs.SetInt("IsItemSold", 1);
+        PlayerPrefs.SetInt("IsItemSold1", 1);
         Upgrade1_price.text = "SOLD";
-        buyButton.gameObject.SetActive(false);
+        buyButton1.gameObject.SetActive(false);
+
     }
 
     public void Upgrade2()
     {
         currencyAmount -= 1000;
-        PlayerPrefs.SetInt("IsItemSold", 1);
+        PlayerPrefs.SetInt("IsItemSold2", 1);
         Upgrade2_price.text = "SOLD";
-        buyButton.gameObject.SetActive(false);
+        buyButton2.gameObject.SetActive(false);
+
     }
 
     public void Upgrade3()
     {
         currencyAmount -= 1500;
-        PlayerPrefs.SetInt("IsItemSold", 1);
+        PlayerPrefs.SetInt("IsItemSold3", 1);
         Upgrade3_price.text = "SOLD";
-        buyButton.gameObject.SetActive(false);
+        buyButton3.gameObject.SetActive(false);
     }
 
     public void Health()
     {
         currencyAmount -= 100;
-        PlayerPrefs.SetInt("IsItemSold", 1);
-        Upgrade2_price.text = "SOLD";
-        buyButton.gameObject.SetActive(false);
+        PlayerPrefs.SetInt("IsItemSold4", 1);
+        Health_price.text = "SOLD";
+        buyButton4.gameObject.SetActive(false);
     }
 
     public void Sheild()
     {
         currencyAmount -= 200;
-        PlayerPrefs.SetInt("IsItemSold", 1);
-        Upgrade2_price.text = "SOLD";
-        buyButton.gameObject.SetActive(false);
+        PlayerPrefs.SetInt("IsItemSold5", 1);
+        Sheild_price.text = "SOLD";
+        buyButton5.gameObject.SetActive(false);
+        
     }
 
     public void Ready()
@@ -84,9 +142,20 @@ public class ShopControlScript : MonoBehaviour {
 
     public void resetPlayerPrefs()
     {
-        currencyAmount = 10000;
-        buyButton.gameObject.SetActive(true);
-       // Upgrade1_price.text = "Price : $500";
+        currencyAmount = 3000;
+        buyButton1.gameObject.SetActive(true);
+        buyButton2.gameObject.SetActive(true);
+        buyButton3.gameObject.SetActive(true);
+        buyButton4.gameObject.SetActive(true);
+        buyButton5.gameObject.SetActive(true);
+
+        buyButton1.interactable = true;
+        buyButton2.interactable = true;
+        buyButton3.interactable = true;
+        buyButton4.interactable = true;
+        buyButton5.interactable = true;
+        // buyButton6.gameObject.SetActive(true);
+        // Upgrade1_price.text = "Price : $500";
         PlayerPrefs.DeleteAll();
         
     }

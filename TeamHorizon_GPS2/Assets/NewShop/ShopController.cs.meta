@@ -1,0 +1,28 @@
+fileFormatVersion: 2
+guid: bcaec1d404066d141a5c15b000417377
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - ShopPanel: {fileID: 1633995668481572, guid: 466777cffff7c9940b7f2469903668a0,
+      type: 2}
+  - scoreAmountText: {instanceID: 0}
+  - Upgrade1_price: {instanceID: 0}
+  - Upgrade2_price: {instanceID: 0}
+  - Upgrade3_price: {instanceID: 0}
+  - Health_price: {instanceID: 0}
+  - Sheild_price: {instanceID: 0}
+  - buyButton1: {instanceID: 0}
+  - buyButton2: {instanceID: 0}
+  - buyButton3: {instanceID: 0}
+  - buyButton4: {instanceID: 0}
+  - buyButton5: {instanceID: 0}
+  - buyButton6: {instanceID: 0}
+  - healthBar: {instanceID: 0}
+  - shieldBar: {instanceID: 0}
+  - txtScore: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

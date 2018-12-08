@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class RaycastShoot : MonoBehaviour
 {
+    public static RaycastShoot instance;
     public Weapon weapon;
     public Camera playerCamera;
     private AudioSource weaponAudio;
@@ -22,6 +23,11 @@ public class RaycastShoot : MonoBehaviour
     //for debugging use
     private WaitForSeconds shotDuration = new WaitForSeconds(.07f);
     private LineRenderer laserLine;
+
+    void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {
@@ -335,6 +341,8 @@ public class RaycastShoot : MonoBehaviour
                     break;
             }
         }
+        bulletLeft.text = currentAmmo.ToString();
+
     }
 
     public void CrouchReload()

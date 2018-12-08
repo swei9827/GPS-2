@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class Level: MonoBehaviour
 {
-    private float score;
+    public static Level instance;
+    public float score;
     public float currency;
     [SerializeField]private float givenTime;
     private float timeLeft;
@@ -27,7 +28,12 @@ public class Level: MonoBehaviour
     public GameObject winUI;
     public GameObject loseUI;
 
-	void Start () {
+    void Awake()
+    {
+        instance = this;
+    }
+
+    void Start () {
         timeLeft = givenTime;
         score = 0;
         isContinue = false;
@@ -68,8 +74,14 @@ public class Level: MonoBehaviour
                     levelState = LEVEL_STATE.FINISHED;
                 }
             }           
-        }        
-	}
+        }
+        else if (levelState == LEVEL_STATE.FINISHED)
+        {
+            Constants.TotalScore += (int)score;
+            levelState = LEVEL_STATE.END;
+            PlayerPrefs.SetInt("TotalScore", Constants.TotalScore);
+        }
+    }
 
     public void LoadScene(int scene)
     {
@@ -78,7 +90,11 @@ public class Level: MonoBehaviour
 
     public void SetTimeScale(float ts)
     {
-        Time.timeScale = ts;
+        //Time.timeScale = ts;
+        if (!Constants.GameIsPaused)
+        {
+            Time.timeScale = ts;
+        }
     }
 
     public void LevelCleared()
@@ -95,5 +111,6 @@ public enum LEVEL_STATE
     PLAYING,
     PAUSED,
     FINISHED,
-    TOTAL_STATE
+    TOTAL_STATE,
+    END
 }

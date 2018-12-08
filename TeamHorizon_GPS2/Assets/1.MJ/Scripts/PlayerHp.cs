@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerHp : MonoBehaviour {
 
-
+    public static PlayerHp instance;
     public float startHealth = 100f;
     public float startShield = 100f;
     public bool activeShield = true;
@@ -19,6 +19,7 @@ public class PlayerHp : MonoBehaviour {
 
     private float tempDmg = 0;
     float testDamage;
+    float ClipSize, Damage, ReloadTime;
     public float healthAfterDamage;
     public float shieldAfterDamage;
 
@@ -26,8 +27,13 @@ public class PlayerHp : MonoBehaviour {
     bool Invulnerable = false;
     public GameObject BulletHolePic;
     float timer;
-    public float InvulnerableTime = 2.0f;
+    public float InvulnerableTime;
     private IEnumerator coroutine;
+
+    void Awake()
+    {
+        instance = this;
+    }
 
     public GameObject loseUI;
 
@@ -45,11 +51,11 @@ public class PlayerHp : MonoBehaviour {
     private void Update()
     {
         timer += Time.deltaTime;
-        if (timer >= InvulnerableTime)
+      /*  if (timer >= InvulnerableTime)
         {
             BulletHolePic.SetActive(false);
             timer = 0;
-        }
+        }*/
 
         if (health != healthAfterDamage || shield != shieldAfterDamage)
         {
@@ -100,7 +106,8 @@ public class PlayerHp : MonoBehaviour {
         }
         else
         {
-            
+            BulletHolePic.SetActive(true);
+            StartCoroutine("WaitForSeconds", 2.0f);
         }
     }
 

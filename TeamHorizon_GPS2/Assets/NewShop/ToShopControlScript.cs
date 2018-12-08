@@ -8,8 +8,8 @@ public class ToShopControlScript : MonoBehaviour
 {
     public ControlCenter cc;
 
-    public Text currencyText;
-    public static int currencyAmount;
+    public Text scoreText;
+    public static int scoreAmount;
     int isUpgrade1Sold;
     int isUpgrade2Sold;
     int isUpgrade3Sold;
@@ -27,7 +27,7 @@ public class ToShopControlScript : MonoBehaviour
     {
         cc = GameObject.FindGameObjectWithTag("ControlCenter").GetComponent<ControlCenter>();
 
-        currencyAmount = PlayerPrefs.GetInt("CurrencyAmount");
+        scoreAmount = PlayerPrefs.GetInt("scoreAmount");
         isUpgrade1Sold = PlayerPrefs.GetInt("isUpgrade1Sold");
         isUpgrade2Sold = PlayerPrefs.GetInt("isUpgrade2Sold");
         isUpgrade3Sold = PlayerPrefs.GetInt("isUpgrade3Sold");
@@ -63,16 +63,16 @@ public class ToShopControlScript : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        currencyText.text = "Currency : " + currencyAmount.ToString() + "$";
+        scoreText.text = " : " + scoreAmount.ToString();
 	}
 
     public void goToShop()
     {
-        if (cc.winUI ==true)
-        {
-            PlayerPrefs.SetInt("CurrencyAmount", currencyAmount);
-            SceneManager.LoadScene("NewShop");
-        }
+       // if (Win ==true)
+       // {
+        //    PlayerPrefs.SetInt("CurrencyAmount", currencyAmount);
+        //    SceneManager.LoadScene("NewShop");
+       // }
 
     }
 }

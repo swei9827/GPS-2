@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1354696877240078}
+  m_IsPrefabAsset: 1
+--- !u!1 &1354696877240078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4232174547988384}
+  - component: {fileID: 114643060945704724}
+  m_Layer: 0
+  m_Name: shopControllergameObj
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4232174547988384
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1354696877240078}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 640, y: 360, z: -0.2944032}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114643060945704724
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1354696877240078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcaec1d404066d141a5c15b000417377, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShopPanel: {fileID: 0}
+  scoreAmountText: {fileID: 114150204420953728, guid: 466777cffff7c9940b7f2469903668a0,
+    type: 2}
+  Upgrade1_price: {fileID: 114485575237686528, guid: 466777cffff7c9940b7f2469903668a0,
+    type: 2}
+  Upgrade2_price: {fileID: 114082984152284536, guid: 466777cffff7c9940b7f2469903668a0,
+    type: 2}
+  Upgrade3_price: {fileID: 114575757423419748, guid: 466777cffff7c9940b7f2469903668a0,
+    type: 2}
+  Health_price: {fileID: 114352328359166042, guid: 466777cffff7c9940b7f2469903668a0,
+    type: 2}
+  Sheild_price: {fileID: 114731883312846714, guid: 466777cffff7c9940b7f2469903668a0,
+    type: 2}
+  buyButton1: {fileID: 114971921786592754, guid: 466777cffff7c9940b7f2469903668a0,
+    type: 2}
+  buyButton2: {fileID: 114628927790563964, guid: 466777cffff7c9940b7f2469903668a0,
+    type: 2}
+  buyButton3: {fileID: 114926051919936366, guid: 466777cffff7c9940b7f2469903668a0,
+    type: 2}
+  buyButton4: {fileID: 114413696236023372, guid: 466777cffff7c9940b7f2469903668a0,
+    type: 2}
+  buyButton5: {fileID: 114167876169930782, guid: 466777cffff7c9940b7f2469903668a0,
+    type: 2}
+  buyButton6: {fileID: 0}
+  healthBar: {fileID: 0}
+  shieldBar: {fileID: 0}
+  txtScore: {fileID: 114150204420953728, guid: 466777cffff7c9940b7f2469903668a0, type: 2}
+  HealthValue: 100
+  ShieldValue: 100
+  ClipVale: 400
+  DamageValue: 20000
+  ReloadTimeValue: 50000
+  ImgClipSequence:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  ImgDamageSequence:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  ImgReloadTimeSequence:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
