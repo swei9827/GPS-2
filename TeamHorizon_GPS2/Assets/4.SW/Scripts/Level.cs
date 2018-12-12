@@ -28,8 +28,8 @@ public class Level: MonoBehaviour
     public GameObject winUI;
     public GameObject loseUI;
 
-    public float minutes;
-    public float seconds;
+    float minutes;
+    float seconds;
 
     void Awake()
     {

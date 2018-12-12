@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Weapon", menuName = "Weapon")]
-public class Weapon : ScriptableObject
+[System.Serializable]
+public class Weapon
 {
     [Tooltip("Weapon Damage")]
     public int damage;
@@ -28,9 +28,6 @@ public class Weapon : ScriptableObject
 
     [Tooltip("Effect while bullet hit")]
     public GameObject effect;
-
-    [Tooltip("Sound while weapon fire")]
-    public AudioClip sound;
 
     //[Tooltip("Health value between 0 and 100.")]
     //public bool reloading;
