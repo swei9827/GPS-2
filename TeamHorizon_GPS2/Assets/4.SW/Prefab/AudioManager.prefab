@@ -51,29 +51,137 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75f332c2a2627d42bd40a62774a7059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  efxSource: {fileID: 0}
-  musicSource: {fileID: 0}
   mixerGroup: {fileID: 24300002, guid: 6fe0f7ea1824249418e9607a4c839bb4, type: 2}
   lowPitchRange: 0.95
   highPitchRange: 1.05
   sounds:
-  - name: Opening
-    clip: {fileID: 8300000, guid: 32a13322f0b7a4940837be660c6a5438, type: 3}
-    volume: 0.5
+  - name: TITLE
+    clip: {fileID: 8300000, guid: 0a8f1a398fd39a443a617d4f2f15c4c0, type: 3}
+    volume: 1
     volumeVariance: 1
     pitch: 1
     pitchVariance: 0.126
-    loop: 0
+    loop: 1
     mixerGroup: {fileID: 243335218154334276, guid: 6fe0f7ea1824249418e9607a4c839bb4,
       type: 2}
     source: {fileID: 0}
-  - name: Stage 1
-    clip: {fileID: 8300000, guid: 27f92304fc7613445a80deee95339770, type: 3}
-    volume: 0.5
+  - name: SHOP
+    clip: {fileID: 8300000, guid: 27e0162628edc544bb867b14b355f660, type: 3}
+    volume: 1
     volumeVariance: 1
     pitch: 1
     pitchVariance: 0.155
     loop: 1
+    mixerGroup: {fileID: 243335218154334276, guid: 6fe0f7ea1824249418e9607a4c839bb4,
+      type: 2}
+    source: {fileID: 0}
+  - name: TUTORIAL
+    clip: {fileID: 8300000, guid: a936cef2869f436499f1f9cbc0fb8150, type: 3}
+    volume: 1
+    volumeVariance: 1
+    pitch: 1
+    pitchVariance: 0.155
+    loop: 1
+    mixerGroup: {fileID: 243335218154334276, guid: 6fe0f7ea1824249418e9607a4c839bb4,
+      type: 2}
+    source: {fileID: 0}
+  - name: LEVEL1
+    clip: {fileID: 8300000, guid: 08467027a9a7fe74eb51904e4deb5f5a, type: 3}
+    volume: 1
+    volumeVariance: 1
+    pitch: 1
+    pitchVariance: 0.155
+    loop: 1
+    mixerGroup: {fileID: 243335218154334276, guid: 6fe0f7ea1824249418e9607a4c839bb4,
+      type: 2}
+    source: {fileID: 0}
+  - name: RIVER
+    clip: {fileID: 8300000, guid: 5bde677dcbfa1f343aeb609a65b041b5, type: 3}
+    volume: 1
+    volumeVariance: 1
+    pitch: 1
+    pitchVariance: 0.155
+    loop: 1
+    mixerGroup: {fileID: 243335218154334276, guid: 6fe0f7ea1824249418e9607a4c839bb4,
+      type: 2}
+    source: {fileID: 0}
+  - name: LEVEL3
+    clip: {fileID: 8300000, guid: e3b8fb1cec91af04cb401c3697660258, type: 3}
+    volume: 1
+    volumeVariance: 1
+    pitch: 1
+    pitchVariance: 0.155
+    loop: 1
+    mixerGroup: {fileID: 243335218154334276, guid: 6fe0f7ea1824249418e9607a4c839bb4,
+      type: 2}
+    source: {fileID: 0}
+  - name: DEFEAT
+    clip: {fileID: 8300000, guid: 658851a534135de499e5d386945970cf, type: 3}
+    volume: 1
+    volumeVariance: 1
+    pitch: 1
+    pitchVariance: 0.155
+    loop: 1
+    mixerGroup: {fileID: 243335218154334276, guid: 6fe0f7ea1824249418e9607a4c839bb4,
+      type: 2}
+    source: {fileID: 0}
+  - name: VICTORY
+    clip: {fileID: 8300000, guid: 90411f2a30e3798458a1b55cdbc4c4a5, type: 3}
+    volume: 1
+    volumeVariance: 1
+    pitch: 1
+    pitchVariance: 0.155
+    loop: 1
+    mixerGroup: {fileID: 243335218154334276, guid: 6fe0f7ea1824249418e9607a4c839bb4,
+      type: 2}
+    source: {fileID: 0}
+  - name: BUTTON
+    clip: {fileID: 8300000, guid: 3d6381ebac095bb409eb7e226c711742, type: 3}
+    volume: 1
+    volumeVariance: 1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 243335218154334276, guid: 6fe0f7ea1824249418e9607a4c839bb4,
+      type: 2}
+    source: {fileID: 0}
+  - name: TIER UPGRADE
+    clip: {fileID: 8300000, guid: 6f50c84e7b547a545b74bb689589090e, type: 3}
+    volume: 1
+    volumeVariance: 1
+    pitch: 1
+    pitchVariance: 0.155
+    loop: 0
+    mixerGroup: {fileID: 243335218154334276, guid: 6fe0f7ea1824249418e9607a4c839bb4,
+      type: 2}
+    source: {fileID: 0}
+  - name: MAXED UPGRADE
+    clip: {fileID: 8300000, guid: 6f50c84e7b547a545b74bb689589090e, type: 3}
+    volume: 1
+    volumeVariance: 1
+    pitch: 1
+    pitchVariance: 0.155
+    loop: 0
+    mixerGroup: {fileID: 243335218154334276, guid: 6fe0f7ea1824249418e9607a4c839bb4,
+      type: 2}
+    source: {fileID: 0}
+  - name: PURCHASE HEALTH
+    clip: {fileID: 8300000, guid: f0bb4c6f0653a6f4cb47013e9d96dd2b, type: 3}
+    volume: 1
+    volumeVariance: 1
+    pitch: 1
+    pitchVariance: 0.155
+    loop: 0
+    mixerGroup: {fileID: 243335218154334276, guid: 6fe0f7ea1824249418e9607a4c839bb4,
+      type: 2}
+    source: {fileID: 0}
+  - name: PURCHASE SHIELD
+    clip: {fileID: 8300000, guid: 2a9dbf42ca8124542a3f1732c9f4dbce, type: 3}
+    volume: 1
+    volumeVariance: 1
+    pitch: 1
+    pitchVariance: 0.155
+    loop: 0
     mixerGroup: {fileID: 243335218154334276, guid: 6fe0f7ea1824249418e9607a4c839bb4,
       type: 2}
     source: {fileID: 0}
