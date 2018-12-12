@@ -11,11 +11,12 @@ public class MainMenuControl : MonoBehaviour {
     public GameObject CreditPage1;
     public GameObject CreditPage2;
     public GameObject StageSelectPage;
+    AudioManager audioM;
 
     // Use this for initialization
     void Start () {
-		
-	}
+		audioM = FindObjectOfType<AudioManager>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -24,32 +25,35 @@ public class MainMenuControl : MonoBehaviour {
 
     public void QuitGame()
     {
+        audioM.Play("BUTTON");
         Application.Quit();
     }
 
     public void StartGame()
     {
-        SceneManager.LoadScene(1);
-        var audio = FindObjectOfType<AudioManager>();
-        audio.Stop("TITLE");
-        audio.Play("TUTORIAL");
+        audioM.Stop("TITLE");
+        audioM.Play("TUTORIAL");
         Time.timeScale = 1.0f;
+        SceneManager.LoadScene(1);
     }
 
     public void StageSelect()
     {
+        audioM.Play("BUTTON");
         MenuPage.SetActive(false);
         SelectStage.SetActive(true);
     }
 
     public void Setting()
     {
+        audioM.Play("BUTTON");
         MenuPage.SetActive(false);
         SettingPage.SetActive(true); 
     }
 
     public void BackMenuPage()
     {
+        audioM.Play("BUTTON");
         SettingPage.SetActive(false);
         CreditPage1.SetActive(false);
         CreditPage2.SetActive(false);
@@ -59,18 +63,21 @@ public class MainMenuControl : MonoBehaviour {
 
     public void CreditPage()
     {
+        audioM.Play("BUTTON");
         MenuPage.SetActive(false);
         CreditPage1.SetActive(true);
     }
 
     public void CreditChangeSecondPageButton()
     {
+        audioM.Play("BUTTON");
         CreditPage1.SetActive(false);
         CreditPage2.SetActive(true);
     }
 
     public void CreditBackFirstPageButton()
     {
+        audioM.Play("BUTTON");
         CreditPage2.SetActive(false);
         CreditPage1.SetActive(true);
     }

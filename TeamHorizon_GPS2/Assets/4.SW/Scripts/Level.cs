@@ -28,6 +28,9 @@ public class Level: MonoBehaviour
     public GameObject winUI;
     public GameObject loseUI;
 
+    public float minutes;
+    public float seconds;
+
     void Awake()
     {
         instance = this;
@@ -51,8 +54,8 @@ public class Level: MonoBehaviour
 
 	void Update () {
 
-        float minutes = Mathf.Floor(timeLeft / 60);
-        float seconds = Mathf.RoundToInt(timeLeft % 60);
+        minutes = Mathf.Floor(Mathf.RoundToInt(timeLeft) / 60);
+        seconds = Mathf.Round(Mathf.RoundToInt(timeLeft) % 60);
 
         timeLeftUI.text = minutes.ToString("00") + " : " + seconds.ToString("00");
         ScoreUI.text = score.ToString();

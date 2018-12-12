@@ -28,7 +28,6 @@ public class PlayerHp : MonoBehaviour {
     public GameObject BulletHolePic;
     float timer;
     public float InvulnerableTime;
-    private IEnumerator coroutine;
 
     void Awake()
     {
@@ -44,7 +43,6 @@ public class PlayerHp : MonoBehaviour {
         shield = startShield;
         healthAfterDamage = health;
         shieldAfterDamage = shield;
-
         //StartCoroutine(coroutine);
 	}
 
@@ -65,8 +63,6 @@ public class PlayerHp : MonoBehaviour {
             healthBar.fillAmount = health / startHealth;
             healthBarCover.fillAmount = health / startHealth;
             shieldBarCover.fillAmount = shield / startShield;
-
-
 
         }
         
@@ -103,11 +99,12 @@ public class PlayerHp : MonoBehaviour {
                     //Debug.Log("condition 2");
                 }
             }
+            StartCoroutine("WaitForSec", 2.0f);
         }
         else
         {
             BulletHolePic.SetActive(true);
-            StartCoroutine("WaitForSeconds", 2.0f);
+            StartCoroutine("WaitForSec", 2.0f);
         }
     }
 

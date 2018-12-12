@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Name: AutoRifle
   m_EditorClassIdentifier: 
   damage: 1
-  fireRate: 0.1
   range: 500
   maxAmmo: 30
   reloadTime: 1.5
   clipReload: 1
   eachBulletRequire: 0
   effect: {fileID: 100000, guid: 8e1dcf1924b1945fcaab73df0affd2ab, type: 2}
-  sound: {fileID: 8300000, guid: bdf7d79b3ec976849ae870ce05d6d928, type: 3}
+  sound: {fileID: 8300000, guid: 329b373a2beb92d4cb7cf31e5197ce5e, type: 3}
