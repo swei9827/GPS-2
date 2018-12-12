@@ -31,9 +31,8 @@ public class MainMenuControl : MonoBehaviour {
     {
         SceneManager.LoadScene(1);
         var audio = FindObjectOfType<AudioManager>();
-        audio.Stop("OpeningBGM");
-        audio.Stop("Opening");
-        audio.Play("Stage 1");
+        audio.Stop("TITLE");
+        audio.Play("TUTORIAL");
         Time.timeScale = 1.0f;
     }
 
