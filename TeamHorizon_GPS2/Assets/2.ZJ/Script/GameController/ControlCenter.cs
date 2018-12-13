@@ -680,15 +680,18 @@ public class ControlCenter : MonoBehaviour
             }
             if(status == STATUS.QTE)
             {
+                swipeDir[1].SetActive(true);
                 if (QTESuccess)
                 {
                     levelStatus = 10;
                     status = STATUS.MOVING;
+                    swipeDir[1].SetActive(false);
                 }
                 else if (QTEFail)
                 {
                     levelStatus = 11;
                     status = STATUS.MOVING;
+                    swipeDir[1].SetActive(false);
                 }
             }
         }
@@ -906,15 +909,18 @@ public class ControlCenter : MonoBehaviour
             }
             if(status == STATUS.QTE)
             {
+                swipeDir[0].SetActive(true);
                 if (QTESuccess)
                 {
                     levelStatus = 18;
                     status = STATUS.MOVING;
+                    swipeDir[0].SetActive(false);
                 }
                 else if (QTEFail)
                 {
                     levelStatus = 19;
                     status = STATUS.MOVING;
+                    swipeDir[0].SetActive(false);
                 }
             }
         }
@@ -1119,15 +1125,18 @@ public class ControlCenter : MonoBehaviour
             }
             if(status == STATUS.QTE)
             {
+                swipeDir[1].SetActive(true);
                 if (QTESuccess)
                 {
                     levelStatus = 26;
                     status = STATUS.MOVING;
+                    swipeDir[1].SetActive(false);
                 }
                 else if (QTEFail)
                 {
                     levelStatus = 27;
                     status = STATUS.MOVING;
+                    swipeDir[1].SetActive(false);
                 }
             }
         }
@@ -1213,8 +1222,8 @@ public class ControlCenter : MonoBehaviour
             {
                 if (!battleArea[6].GetComponent<HSProfile>().destroyed)
                 {                    
-                    sMove.PlayerMove(battleArea[14]);
-                    if (player.transform.position == battleArea[14].position)
+                    sMove.PlayerMove(battleArea[6]);
+                    if (player.transform.position == battleArea[6].position)
                     {
                         status = STATUS.CROUCH;
                     }
@@ -1269,15 +1278,18 @@ public class ControlCenter : MonoBehaviour
             }
             if(status == STATUS.QTE)
             {
+                swipeDir[1].SetActive(true);
                 if (QTESuccess)
                 {
                     status = STATUS.MOVING;
                     levelStatus = 31;
+                    swipeDir[1].SetActive(false);
                 }
                 else if (QTEFail)
                 {
                     status = STATUS.MOVING;
                     levelStatus = 32;
+                    swipeDir[1].SetActive(false);
                 }
             }
         }
@@ -1338,15 +1350,18 @@ public class ControlCenter : MonoBehaviour
             }
             if (status == STATUS.QTE)
             {
+                swipeDir[0].SetActive(true);
                 if (QTESuccess)
                 {
                     status = STATUS.MOVING;
                     levelStatus = 34;
+                    swipeDir[0].SetActive(false);
                 }
                 else if (QTEFail)
                 {
                     status = STATUS.MOVING;
                     levelStatus = 35;
+                    swipeDir[0].SetActive(false);
                 }
             }
         }
@@ -1407,15 +1422,18 @@ public class ControlCenter : MonoBehaviour
             }
             if (status == STATUS.QTE)
             {
+                swipeDir[1].SetActive(true);
                 if (QTESuccess)
                 {
                     status = STATUS.MOVING;
                     levelStatus = 37;
+                    swipeDir[1].SetActive(false);
                 }
                 else if (QTEFail)
                 {
                     status = STATUS.MOVING;
                     levelStatus = 38;
+                    swipeDir[1].SetActive(false);
                 }
             }
         }

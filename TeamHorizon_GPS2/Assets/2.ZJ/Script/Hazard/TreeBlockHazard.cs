@@ -22,13 +22,21 @@ public class TreeBlockHazard : MonoBehaviour {
         cc = GameObject.FindGameObjectWithTag("ControlCenter").GetComponent<ControlCenter>();
     }
 
+    void Update()
+    {
+        if (TBHealth <= 0)
+        {
+            Destroy(this);
+        }
+    }
+
     public void TreeBlockDamage()
     {
         float distance = Vector3.Distance(Player.position, transform.position);
         if (distance <= MaxDistance)
         {
             TBHealth -= 1;
-        }
+        }       
     }
 
     void OnTriggerEnter (Collider collision)
