@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ControlCenter : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class ControlCenter : MonoBehaviour
     public List<Transform> locations = new List<Transform>();
     public List<Transform> battleArea = new List<Transform>();
     public List<GameObject> hazards = new List<GameObject>();
-    public List<GameObject> qtes = new List<GameObject>();
+    public List<GameObject> swipeDir = new List<GameObject>();
 
     //reference
     private ScreenWobble screenWobble;
@@ -172,17 +173,19 @@ public class ControlCenter : MonoBehaviour
             }
             if(status == STATUS.QTE)
             {
-               // qtes[0].SetActive(true);
+                swipeDir[1].SetActive(true);
             }
             if (QTESuccess)
             {
                 levelStatus = 5;
                 status = STATUS.MOVING;
+                swipeDir[1].SetActive(false);
             }
             else if (QTEFail)
             {
                 levelStatus = 6;
-                status = STATUS.MOVING;              
+                status = STATUS.MOVING;
+                swipeDir[1].SetActive(false);
             }
         }
         // QTE Success
