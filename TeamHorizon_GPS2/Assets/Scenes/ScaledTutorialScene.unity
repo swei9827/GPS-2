@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -28565,6 +28565,26 @@ Prefab:
       propertyPath: m_Name
       value: Enemy_SlothWolf_M4 (LS_07_01)
       objectReference: {fileID: 0}
+    - target: {fileID: 114573567931251406, guid: d8e68aa9f196fea43a490c727bb281da,
+        type: 2}
+      propertyPath: endPosX
+      value: -22.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 114573567931251406, guid: d8e68aa9f196fea43a490c727bb281da,
+        type: 2}
+      propertyPath: endPosZ
+      value: -74.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999827304267310, guid: d8e68aa9f196fea43a490c727bb281da,
+        type: 2}
+      propertyPath: EnemyArea
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114573567931251406, guid: d8e68aa9f196fea43a490c727bb281da,
+        type: 2}
+      propertyPath: EnemyArea
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8e68aa9f196fea43a490c727bb281da, type: 2}
   m_IsPrefabAsset: 0
@@ -32814,6 +32834,31 @@ Prefab:
     - target: {fileID: 4989900312509144, guid: 2a5363b2470fd9d42a814ad9c4ed147a, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 114929517475278334, guid: 2a5363b2470fd9d42a814ad9c4ed147a,
+        type: 2}
+      propertyPath: endPosX
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114929517475278334, guid: 2a5363b2470fd9d42a814ad9c4ed147a,
+        type: 2}
+      propertyPath: endPosY
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114929517475278334, guid: 2a5363b2470fd9d42a814ad9c4ed147a,
+        type: 2}
+      propertyPath: endPosZ
+      value: 74
+      objectReference: {fileID: 0}
+    - target: {fileID: 114929517475278334, guid: 2a5363b2470fd9d42a814ad9c4ed147a,
+        type: 2}
+      propertyPath: EnemyArea
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114101311828449222, guid: 2a5363b2470fd9d42a814ad9c4ed147a,
+        type: 2}
+      propertyPath: EnemyArea
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a5363b2470fd9d42a814ad9c4ed147a, type: 2}
@@ -38327,6 +38372,26 @@ Prefab:
       propertyPath: m_Name
       value: Enemy_SlothWolf_Dragunov (LS_09_00)
       objectReference: {fileID: 0}
+    - target: {fileID: 114929517475278334, guid: 2a5363b2470fd9d42a814ad9c4ed147a,
+        type: 2}
+      propertyPath: endPosX
+      value: -25.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114929517475278334, guid: 2a5363b2470fd9d42a814ad9c4ed147a,
+        type: 2}
+      propertyPath: endPosZ
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114929517475278334, guid: 2a5363b2470fd9d42a814ad9c4ed147a,
+        type: 2}
+      propertyPath: EnemyArea
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114101311828449222, guid: 2a5363b2470fd9d42a814ad9c4ed147a,
+        type: 2}
+      propertyPath: EnemyArea
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a5363b2470fd9d42a814ad9c4ed147a, type: 2}
   m_IsPrefabAsset: 0
@@ -41969,6 +42034,26 @@ Prefab:
       propertyPath: m_Name
       value: Enemy_SlothWolf_Dragunov (LS_09_01)
       objectReference: {fileID: 0}
+    - target: {fileID: 114929517475278334, guid: 2a5363b2470fd9d42a814ad9c4ed147a,
+        type: 2}
+      propertyPath: endPosX
+      value: -21.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 114929517475278334, guid: 2a5363b2470fd9d42a814ad9c4ed147a,
+        type: 2}
+      propertyPath: endPosZ
+      value: 3.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 114929517475278334, guid: 2a5363b2470fd9d42a814ad9c4ed147a,
+        type: 2}
+      propertyPath: EnemyArea
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114101311828449222, guid: 2a5363b2470fd9d42a814ad9c4ed147a,
+        type: 2}
+      propertyPath: EnemyArea
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a5363b2470fd9d42a814ad9c4ed147a, type: 2}
   m_IsPrefabAsset: 0
@@ -43852,6 +43937,26 @@ Prefab:
     - target: {fileID: 4831695605417122, guid: d8e68aa9f196fea43a490c727bb281da, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 114573567931251406, guid: d8e68aa9f196fea43a490c727bb281da,
+        type: 2}
+      propertyPath: endPosX
+      value: -65.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 114573567931251406, guid: d8e68aa9f196fea43a490c727bb281da,
+        type: 2}
+      propertyPath: endPosZ
+      value: 75.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114573567931251406, guid: d8e68aa9f196fea43a490c727bb281da,
+        type: 2}
+      propertyPath: EnemyArea
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999827304267310, guid: d8e68aa9f196fea43a490c727bb281da,
+        type: 2}
+      propertyPath: EnemyArea
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8e68aa9f196fea43a490c727bb281da, type: 2}
@@ -48154,6 +48259,26 @@ Prefab:
     - target: {fileID: 4831695605417122, guid: d8e68aa9f196fea43a490c727bb281da, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 114573567931251406, guid: d8e68aa9f196fea43a490c727bb281da,
+        type: 2}
+      propertyPath: endPosX
+      value: -66.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114573567931251406, guid: d8e68aa9f196fea43a490c727bb281da,
+        type: 2}
+      propertyPath: endPosZ
+      value: 73.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114573567931251406, guid: d8e68aa9f196fea43a490c727bb281da,
+        type: 2}
+      propertyPath: EnemyArea
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999827304267310, guid: d8e68aa9f196fea43a490c727bb281da,
+        type: 2}
+      propertyPath: EnemyArea
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8e68aa9f196fea43a490c727bb281da, type: 2}
@@ -54380,6 +54505,26 @@ Prefab:
     - target: {fileID: 1542356964788776, guid: d8e68aa9f196fea43a490c727bb281da, type: 2}
       propertyPath: m_Name
       value: Enemy_SlothWolf_M4 (LS_07_00)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114573567931251406, guid: d8e68aa9f196fea43a490c727bb281da,
+        type: 2}
+      propertyPath: endPosX
+      value: -23.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 114573567931251406, guid: d8e68aa9f196fea43a490c727bb281da,
+        type: 2}
+      propertyPath: endPosZ
+      value: -75.744
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999827304267310, guid: d8e68aa9f196fea43a490c727bb281da,
+        type: 2}
+      propertyPath: EnemyArea
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114573567931251406, guid: d8e68aa9f196fea43a490c727bb281da,
+        type: 2}
+      propertyPath: EnemyArea
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8e68aa9f196fea43a490c727bb281da, type: 2}
@@ -66047,6 +66192,31 @@ Prefab:
     - target: {fileID: 4831695605417122, guid: d8e68aa9f196fea43a490c727bb281da, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 114573567931251406, guid: d8e68aa9f196fea43a490c727bb281da,
+        type: 2}
+      propertyPath: endPosX
+      value: 14.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114573567931251406, guid: d8e68aa9f196fea43a490c727bb281da,
+        type: 2}
+      propertyPath: endPosY
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114573567931251406, guid: d8e68aa9f196fea43a490c727bb281da,
+        type: 2}
+      propertyPath: endPosZ
+      value: 71.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 114573567931251406, guid: d8e68aa9f196fea43a490c727bb281da,
+        type: 2}
+      propertyPath: EnemyArea
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999827304267310, guid: d8e68aa9f196fea43a490c727bb281da,
+        type: 2}
+      propertyPath: EnemyArea
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8e68aa9f196fea43a490c727bb281da, type: 2}
