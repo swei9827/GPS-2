@@ -77,7 +77,7 @@ public class Dialogue_Control : MonoBehaviour {
             }
             else if (hasClick == true)
             {
-                DelayTime = 2.7f;
+                DelayTime = 0.0f;
                 level.SetTimeScale(1.0f);
                 timer += Time.deltaTime;
                 Dialogue1Completed = true;
