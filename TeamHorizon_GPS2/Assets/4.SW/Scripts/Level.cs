@@ -31,6 +31,8 @@ public class Level: MonoBehaviour
     float minutes;
     float seconds;
 
+    public bool isLevelCleared;
+
     void Awake()
     {
         instance = this;
@@ -40,6 +42,7 @@ public class Level: MonoBehaviour
         timeLeft = givenTime;
         score = 0;
         isContinue = false;
+        isLevelCleared = false;
 	}
 	
     public void setScore(float s)
@@ -102,10 +105,15 @@ public class Level: MonoBehaviour
 
     public void LevelCleared()
     {
-        winUI.SetActive(true);
-        endScore.text = score.ToString();
-        bonusTimeScore.text = (timeLeft * 256.0f).ToString();
-        totalScore.text = score + (timeLeft * 256.0f).ToString();
+        if(!isLevelCleared)
+        {
+            isLevelCleared = true;
+            winUI.SetActive(true);
+            Time.timeScale = 0;
+            endScore.text = score.ToString();
+            bonusTimeScore.text = (timeLeft * 256.0f).ToString();
+            totalScore.text = score + (timeLeft * 256.0f).ToString();
+        }        
     }
 }
 
