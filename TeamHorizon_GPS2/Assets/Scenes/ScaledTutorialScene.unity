@@ -22906,6 +22906,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1258319829}
     m_Modifications:
+    - target: {fileID: 114586699824051800, guid: 63d32d787bf6cd9409f5586387da04cf,
+        type: 2}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224735743830491310, guid: 63d32d787bf6cd9409f5586387da04cf,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -23163,6 +23168,46 @@ Prefab:
         type: 2}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114586699824051800, guid: 63d32d787bf6cd9409f5586387da04cf,
+        type: 2}
+      propertyPath: m_MinValue
+      value: -80
+      objectReference: {fileID: 0}
+    - target: {fileID: 114586699824051800, guid: 63d32d787bf6cd9409f5586387da04cf,
+        type: 2}
+      propertyPath: m_MaxValue
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114586699824051800, guid: 63d32d787bf6cd9409f5586387da04cf,
+        type: 2}
+      propertyPath: m_WholeNumbers
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114586699824051800, guid: 63d32d787bf6cd9409f5586387da04cf,
+        type: 2}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114586699824051800, guid: 63d32d787bf6cd9409f5586387da04cf,
+        type: 2}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114586699824051800, guid: 63d32d787bf6cd9409f5586387da04cf,
+        type: 2}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1258319830}
+    - target: {fileID: 114586699824051800, guid: 63d32d787bf6cd9409f5586387da04cf,
+        type: 2}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetMasterLvl
+      objectReference: {fileID: 0}
+    - target: {fileID: 114586699824051800, guid: 63d32d787bf6cd9409f5586387da04cf,
+        type: 2}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63d32d787bf6cd9409f5586387da04cf, type: 2}
@@ -40309,6 +40354,7 @@ GameObject:
   - component: {fileID: 1258319828}
   - component: {fileID: 1258319827}
   - component: {fileID: 1258319826}
+  - component: {fileID: 1258319830}
   m_Layer: 5
   m_Name: GameCanvas
   m_TagString: Untagged
@@ -40394,6 +40440,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1258319830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1258319825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4d59baeff1f87346bd2911432422af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterMixer: {fileID: 24100000, guid: 6fe0f7ea1824249418e9607a4c839bb4, type: 2}
 --- !u!1 &1259994031
 GameObject:
   m_ObjectHideFlags: 0
