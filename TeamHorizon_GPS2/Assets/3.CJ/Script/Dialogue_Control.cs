@@ -10,6 +10,7 @@ public class Dialogue_Control : MonoBehaviour {
     Player_Crouch crouch;
     TargetProfile targetProfile;
     bool isPause = false;
+    RaycastShoot rcShoot;
 
     GameObject tempGameObject;
     GameObject tempGameObject2;
@@ -58,9 +59,11 @@ public class Dialogue_Control : MonoBehaviour {
     void Start () {
         cc = GameObject.FindGameObjectWithTag("ControlCenter").GetComponent<ControlCenter>();
         level = GameObject.FindGameObjectWithTag("ControlCenter").GetComponent<Level>();
-       // weapon = GameObject.FindGameObjectWithTag("Player").GetComponent<RaycastShoot>().weapon;
+       //weapon = GameObject.FindGameObjectWithTag("Player").GetComponent<RaycastShoot>().weapon;
         crouch = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Player_Crouch>();
-	}
+        rcShoot = GameObject.FindGameObjectWithTag("Player").GetComponent<RaycastShoot>();
+
+    }
 
     // Update is called once per frame
     void Update() {
@@ -71,6 +74,7 @@ public class Dialogue_Control : MonoBehaviour {
     {
         if (cc.levelStatus == 1 && Dialogue6Completed == false)
         {
+            rcShoot.isDisable = true;
             if (hasClick == false)
             {
                 level.SetTimeScale(0.0f);
@@ -94,7 +98,8 @@ public class Dialogue_Control : MonoBehaviour {
                         {
                             level.SetTimeScale(1.0f);
                             Dialogue2Completed = true;
-                        }
+                            rcShoot.isDisable = false;
+                        }                        
                     }
                 }
             }
@@ -105,6 +110,7 @@ public class Dialogue_Control : MonoBehaviour {
                 tempTimer += Time.deltaTime;
                 if (tempTimer >= DelayTime)
                 {
+                    rcShoot.isDisable = true;
                     if (hasClick3 == false)
                     {
                         level.SetTimeScale(0.0f);
@@ -114,6 +120,7 @@ public class Dialogue_Control : MonoBehaviour {
                     {
                         level.SetTimeScale(1.0f);
                         Dialogue3Completed = true;
+                        rcShoot.isDisable = false;
                     }
                 }
             }
@@ -124,6 +131,7 @@ public class Dialogue_Control : MonoBehaviour {
                 tempTimer2 += Time.deltaTime;
                 if (tempTimer2 >= DelayTime)
                 {
+                    rcShoot.isDisable = true;
                     if (hasClick4 == false)
                     {
                         level.SetTimeScale(0.0f);
@@ -133,12 +141,14 @@ public class Dialogue_Control : MonoBehaviour {
                     {
                         level.SetTimeScale(1.0f);
                         Dialogue4Completed = true;
+                        rcShoot.isDisable = false;
                     }
                 }
             }
 
             if (Dialogue4Completed == true)
             {
+                rcShoot.isDisable = true;
                 if (hasClick5 == false)
                 {
                     level.SetTimeScale(0.0f);
@@ -149,11 +159,13 @@ public class Dialogue_Control : MonoBehaviour {
                 {
                     level.SetTimeScale(1.0f);
                     Dialogue5Completed = true;
+                    rcShoot.isDisable = false;
                 }
             }
 
             if (Dialogue5Completed == true)
             {
+                rcShoot.isDisable = true;
                 if (hasClick6 == false)
                 {
                     level.SetTimeScale(0.0f);
@@ -164,6 +176,7 @@ public class Dialogue_Control : MonoBehaviour {
                 {
                     level.SetTimeScale(1.0f);
                     Dialogue6Completed = true;
+                    rcShoot.isDisable = false;
                 }
             }
         }
@@ -186,6 +199,7 @@ public class Dialogue_Control : MonoBehaviour {
             timer += Time.deltaTime;
             if (timer >= DelayTime)
             {
+                rcShoot.isDisable = true;
                 if (hasClick == false)
                 {
                     level.SetTimeScale(0.0f);
@@ -194,6 +208,7 @@ public class Dialogue_Control : MonoBehaviour {
                 else
                 {
                     level.SetTimeScale(1.0f);
+                    rcShoot.isDisable = true;
                 }
             }
         }

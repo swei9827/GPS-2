@@ -21,6 +21,7 @@ public class RaycastShoot : MonoBehaviour
     public GameObject reloadIndicator;
     public Text bulletLeft;
 
+    public bool isDisable;
     //for debugging use
     private WaitForSeconds shotDuration = new WaitForSeconds(.07f);
 
@@ -31,6 +32,7 @@ public class RaycastShoot : MonoBehaviour
 
     void Start()
     {
+        isDisable = true;
         currentAmmo = weapon.maxAmmo;
         bulletLeft.text = currentAmmo.ToString();
     }
@@ -63,7 +65,7 @@ public class RaycastShoot : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (!EventSystem.current.IsPointerOverGameObject())
+            if (!EventSystem.current.IsPointerOverGameObject() && !isDisable)
             {
                 if (currentAmmo > 0)
                 {
@@ -163,7 +165,7 @@ public class RaycastShoot : MonoBehaviour
 
     public void TouchShoot()
     {
-        if (Input.touchCount > 0)
+        if (Input.touchCount > 0 && !isDisable)
         {
             Touch touch = Input.GetTouch(0);
             switch (touch.phase)
