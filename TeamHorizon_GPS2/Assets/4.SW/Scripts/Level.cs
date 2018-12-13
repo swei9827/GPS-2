@@ -91,6 +91,7 @@ public class Level: MonoBehaviour
 
     public void LoadScene(int scene)
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(scene);
     }
 
