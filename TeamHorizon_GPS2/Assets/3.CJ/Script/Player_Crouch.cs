@@ -143,7 +143,7 @@ public class Player_Crouch : MonoBehaviour {
             }
             else if (playerArea == 13)
             {
-                transform.Translate(new Vector3(0.0f, -1.2f, 0.0f));
+                transform.Translate(new Vector3(0.0f, -0.5f, 0.0f));
             }
         }
     }
@@ -171,7 +171,7 @@ public class Player_Crouch : MonoBehaviour {
             }
             else if (playerArea == 13)
             {
-                transform.Translate(new Vector3(0.0f, 1.2f, 0.0f));
+                transform.Translate(new Vector3(0.0f, 0.5f, 0.0f));
             }
         }        
     }
