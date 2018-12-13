@@ -64,19 +64,24 @@ public class Dialogue_Control : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if(cc.levelStatus == 1 && Dialogue6Completed == false)
+        DialogueUpdate();
+    }
+
+    void DialogueUpdate()
+    {
+        if (cc.levelStatus == 1 && Dialogue6Completed == false)
         {
-            if(hasClick == false)
+            if (hasClick == false)
             {
                 level.SetTimeScale(0.0f);
             }
-            else if(hasClick == true)
+            else if (hasClick == true)
             {
                 DelayTime = 2.7f;
                 level.SetTimeScale(1.0f);
                 timer += Time.deltaTime;
                 Dialogue1Completed = true;
-                if(timer >= DelayTime)
+                if (timer >= DelayTime)
                 {
                     if (Dialogue1Completed == true && Dialogue2Completed == false)
                     {
@@ -85,20 +90,20 @@ public class Dialogue_Control : MonoBehaviour {
                             level.SetTimeScale(0.0f);
                             dialogue[1].SetActive(true);
                         }
-                        else if(hasClick2 == true)
+                        else if (hasClick2 == true)
                         {
                             level.SetTimeScale(1.0f);
                             Dialogue2Completed = true;
                         }
                     }
-                } 
+                }
             }
-            
-            if(Dialogue2Completed == true)
+
+            if (Dialogue2Completed == true)
             {
                 DelayTime = 3.0f;
                 tempTimer += Time.deltaTime;
-                if(tempTimer >= DelayTime)
+                if (tempTimer >= DelayTime)
                 {
                     if (hasClick3 == false)
                     {
@@ -110,7 +115,7 @@ public class Dialogue_Control : MonoBehaviour {
                         level.SetTimeScale(1.0f);
                         Dialogue3Completed = true;
                     }
-                } 
+                }
             }
 
             if (Dialogue3Completed == true)
@@ -132,7 +137,7 @@ public class Dialogue_Control : MonoBehaviour {
                 }
             }
 
-            if(Dialogue4Completed == true)
+            if (Dialogue4Completed == true)
             {
                 if (hasClick5 == false)
                 {
@@ -162,7 +167,7 @@ public class Dialogue_Control : MonoBehaviour {
                 }
             }
         }
-        if(Dialogue6Completed == true)
+        if (Dialogue6Completed == true)
         {
             timer = 0;
             tempTimer = 0;
@@ -175,13 +180,13 @@ public class Dialogue_Control : MonoBehaviour {
             hasClick5 = false;
             hasClick6 = false;
         }
-        if(cc.levelStatus == 2)
+        if (cc.levelStatus == 2)
         {
             DelayTime = 1.5f;
             timer += Time.deltaTime;
-            if(timer >= DelayTime)
+            if (timer >= DelayTime)
             {
-                if(hasClick == false)
+                if (hasClick == false)
                 {
                     level.SetTimeScale(0.0f);
                     dialogue[6].SetActive(true);
