@@ -9,7 +9,7 @@ public class RaycastShoot : MonoBehaviour
     public static RaycastShoot instance;
     public Weapon weapon;
     public Camera playerCamera;
-    public AudioSource hitAudio;
+    public AudioSource fireAudio;
     public AudioSource missAudio;
     public bool isUItouch = false;
     public bool isReloading = false;
@@ -67,6 +67,7 @@ public class RaycastShoot : MonoBehaviour
             {
                 if (currentAmmo > 0)
                 {
+                    fireAudio.Play();
                     Vector3 posFar = new Vector3(Input.mousePosition.x, Input.mousePosition.y, playerCamera.farClipPlane);
                     Vector3 posNear = new Vector3(Input.mousePosition.x, Input.mousePosition.y, playerCamera.nearClipPlane);
                     Vector3 posF = playerCamera.ScreenToWorldPoint(posFar);
@@ -89,65 +90,54 @@ public class RaycastShoot : MonoBehaviour
                         GameObject bulletEffect = Instantiate(weapon.effect, hit.point, transform.rotation);
                         Destroy(bulletEffect, 1.0f);
                         if(hit.collider.CompareTag("Enemy"))
-                        {
-                            hitAudio.Play();
+                        {                            
                             hit.collider.gameObject.GetComponent<EnemyMovement>().hp -= weapon.damage;
                             hit.collider.gameObject.GetComponentInParent<DamageFlash>().StartCoroutine("Flash");
                         }
                         else if (hit.collider.CompareTag("EnemyHead"))
                         {
-                            Debug.Log("Hit Head");
-                            hitAudio.Play();
+                            Debug.Log("Hit Head");                            
                             hit.collider.gameObject.GetComponentInParent<EnemyMovement>().DamageCalculation(weapon.damage, 1);
                             hit.collider.gameObject.GetComponentInParent<DamageFlash>().StartCoroutine("Flash");
                         }
                         else if (hit.collider.CompareTag("EnemyBody"))
                         {
-                            hitAudio.Play();
                             Debug.Log("Hit Body");
                             hit.collider.gameObject.GetComponentInParent<EnemyMovement>().DamageCalculation(weapon.damage, 2);
                             hit.collider.gameObject.GetComponentInParent<DamageFlash>().StartCoroutine("Flash");
                         }
                         else if (hit.collider.CompareTag("EnemyHand"))
                         {
-                            hitAudio.Play();
                             Debug.Log("Hit Hand");
                             hit.collider.gameObject.GetComponentInParent<EnemyMovement>().DamageCalculation(weapon.damage, 3);
                             hit.collider.gameObject.GetComponentInParent<DamageFlash>().StartCoroutine("Flash");
                         }
                         else if (hit.collider.CompareTag("Enemy_Destroyable_Bullet"))
                         {
-                            hitAudio.Play();
                             hit.collider.gameObject.GetComponent<Enemy_Destroyable_Bullet>().hp -= weapon.damage;
                         }
                         else if (hit.collider.CompareTag("Environment"))
-                        {
-                            hitAudio.Play();
+                        {                            
                             hit.collider.gameObject.GetComponent<EnvironementTrigger>().ETDamage(); ;
                         }
                         else if (hit.collider.CompareTag("FallingTree"))
                         {
-                            hitAudio.Play();
                             hit.collider.gameObject.GetComponent<TreeFallHazard>().TreeFallDamage();
                         }
                         else if (hit.collider.CompareTag("FallingTreeV2"))
                         {
-                            hitAudio.Play();
                             hit.collider.gameObject.GetComponent<TreeFallHazardWithDistanceChecker>().TreeV2FallDamage();
                         }
                         else if (hit.collider.CompareTag("BlockingTree"))
-                        {
-                            hitAudio.Play();
+                        {                            
                             hit.collider.gameObject.GetComponent<TreeBlockHazard>().TreeBlockDamage();
                         }
                         else if (hit.collider.CompareTag("Obstacle"))
                         {
-                            hitAudio.Play();
                             hit.collider.gameObject.GetComponent<Obstacles>().ObstaclesDamage();
                         }
                         else if (hit.collider.CompareTag("Interactive"))
                         {
-                            hitAudio.Play();
                             hit.collider.gameObject.GetComponent<IObstacles>().IObstaclesDamage();
                         }
                         else
@@ -268,6 +258,7 @@ public class RaycastShoot : MonoBehaviour
                     {
                         if (currentAmmo > 0 && !isReloading)
                         {
+                            fireAudio.Play();
                             Vector3 posFar = new Vector3(touch.position.x, touch.position.y, playerCamera.farClipPlane);
                             Vector3 posNear = new Vector3(touch.position.x, touch.position.y, playerCamera.nearClipPlane);
                             Vector3 posF = playerCamera.ScreenToWorldPoint(posFar);
@@ -290,65 +281,54 @@ public class RaycastShoot : MonoBehaviour
                                 GameObject bulletEffect = Instantiate(weapon.effect, hit.point, transform.rotation);
                                 Destroy(bulletEffect, 1.0f);
                                 if (hit.collider.CompareTag("Enemy"))
-                                {
-                                    hitAudio.Play();
+                                {                                    
                                     hit.collider.gameObject.GetComponent<EnemyMovement>().hp -= weapon.damage;
                                     hit.collider.gameObject.GetComponentInParent<DamageFlash>().StartCoroutine("Flash");
                                 }
                                 else if (hit.collider.CompareTag("EnemyHead"))
                                 {
                                     Debug.Log("Hit Head");
-                                    hitAudio.Play();
                                     hit.collider.gameObject.GetComponentInParent<EnemyMovement>().DamageCalculation(weapon.damage, 1);
                                     hit.collider.gameObject.GetComponentInParent<DamageFlash>().StartCoroutine("Flash");
                                 }
                                 else if (hit.collider.CompareTag("EnemyBody"))
                                 {
                                     Debug.Log("Hit Body");
-                                    hitAudio.Play();
                                     hit.collider.gameObject.GetComponentInParent<EnemyMovement>().DamageCalculation(weapon.damage, 2);
                                     hit.collider.gameObject.GetComponentInParent<DamageFlash>().StartCoroutine("Flash");
                                 }
                                 else if (hit.collider.CompareTag("EnemyHand"))
                                 {
                                     Debug.Log("Hit Hand");
-                                    hitAudio.Play();
                                     hit.collider.gameObject.GetComponentInParent<EnemyMovement>().DamageCalculation(weapon.damage, 3);
                                     hit.collider.gameObject.GetComponentInParent<DamageFlash>().StartCoroutine("Flash");
                                 }
                                 else if (hit.collider.CompareTag("Enemy_Destroyable_Bullet"))
                                 {
-                                    hitAudio.Play();
                                     hit.collider.gameObject.GetComponent<Enemy_Destroyable_Bullet>().hp -= weapon.damage;
                                 }
                                 else if (hit.collider.CompareTag("Environment"))
                                 {
-                                    hitAudio.Play();
                                     hit.collider.gameObject.GetComponent<EnvironementTrigger>().ETDamage(); ;
                                 }
                                 else if (hit.collider.CompareTag("FallingTree"))
                                 {
-                                    hitAudio.Play();
                                     hit.collider.gameObject.GetComponent<TreeFallHazard>().TreeFallDamage();
                                 }
                                 else if (hit.collider.CompareTag("FallingTreeV2"))
                                 {
-                                    hitAudio.Play();
                                     hit.collider.gameObject.GetComponent<TreeFallHazardWithDistanceChecker>().TreeV2FallDamage();
                                 }
                                 else if (hit.collider.CompareTag("BlockingTree"))
                                 {
-                                    hitAudio.Play();
                                     hit.collider.gameObject.GetComponent<TreeBlockHazard>().TreeBlockDamage();
                                 }
                                 else if (hit.collider.CompareTag("Obstacle"))
                                 {
-                                    hitAudio.Play();
                                     hit.collider.gameObject.GetComponent<Obstacles>().ObstaclesDamage();
                                 }
                                 else if (hit.collider.CompareTag("Interactive"))
                                 {
-                                    hitAudio.Play();
                                     hit.collider.gameObject.GetComponent<IObstacles>().IObstaclesDamage();
                                 }
                                 else
