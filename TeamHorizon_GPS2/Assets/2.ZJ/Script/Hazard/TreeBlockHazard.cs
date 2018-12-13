@@ -26,7 +26,7 @@ public class TreeBlockHazard : MonoBehaviour {
     {
         if (TBHealth <= 0)
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }
 
@@ -47,7 +47,7 @@ public class TreeBlockHazard : MonoBehaviour {
             {
                 if (cc.Level1 && !damageDealt)
                 {
-                    Player.GetComponent<PlayerHp>().health -= Damage;
+                    Player.GetComponent<PlayerHp>().TakeDamage(Damage);
                     damageDealt = true;
                 }
                 Player.GetComponent<ScriptedMovement>().speed = slowSpeed;
