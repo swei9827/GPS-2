@@ -16,14 +16,19 @@ public class ReadyAndGo : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        ReadyScene();
+	}
+
+    void ReadyScene()
+    {
         timer += Time.deltaTime;
-        if(timer >= delayTime)
+        if (timer >= delayTime)
         {
             ReadySceneFinish = true;
         }
-		if(ReadySceneFinish == true)
+        if (ReadySceneFinish == true)
         {
             SceneManager.LoadScene(2);
         }
-	}
+    }
 }
