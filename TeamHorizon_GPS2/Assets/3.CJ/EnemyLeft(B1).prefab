@@ -600,7 +600,7 @@ GameObject:
   - component: {fileID: 114744459170663472}
   m_Layer: 0
   m_Name: EnemyLeft(B1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -927,7 +927,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1838715643221122}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.8818611, y: -1.1437759, z: 1.5209961}
+  m_LocalPosition: {x: -1.46, y: -1.2016735, z: 2.0574417}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4171152510187652}
@@ -1362,7 +1362,7 @@ Animator:
   m_GameObject: {fileID: 1838715643221122}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 4b7d1c51a23b2e849aa714e288276b78, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6b8a0924a06e9be48afcefb788dcc37e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1377,7 +1377,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1838715643221122}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5d59cfd7dc1132439fc977b0104d84d, type: 3}
   m_Name: 
@@ -1385,22 +1385,22 @@ MonoBehaviour:
   lvlController: {fileID: 0}
   tp: {fileID: 0}
   enemyType: 0
-  move: 0
-  moveSpeed: 0
-  endPosX: 0
+  move: 1
+  moveSpeed: 2
+  endPosX: 64.8
   endPosY: 0
-  endPosZ: 0
+  endPosZ: -102.84
   player: {fileID: 0}
   EnemyStartAppear: 0
   ThrowBarrel: 0
   ThrowGranade: 0
   StabSlash: 0
   Running: 0
-  EnemyArea: 0
+  EnemyArea: 1
   timer: 0
-  hideDelayTimer: 0
+  hideDelayTimer: 2
   enemyHide: 0
-  hp: 0
+  hp: 2
   animator: {fileID: 0}
   SlothWolf_DamageAnim: 0
   SlothWolf_AimingAnim: 0
@@ -1417,7 +1417,12 @@ MonoBehaviour:
   Soldier_StabSlashAnim: 0
   Soldier_RunningAnim: 0
   Soldier_GranadeAnim: 0
-  targetProfile: []
+  targetProfile:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114233621426848386
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1442,17 +1447,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1838715643221122}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 633d22b77c0549748a62215bf5837a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 0
-  shootDelayTime: 0
-  EnemyArea: 0
+  shootDelayTime: 1
+  EnemyArea: 1
   playerArea: 0
   CC: {fileID: 0}
-  bulletDamage: 0
+  bulletDamage: 2.5
 --- !u!135 &135061259561131268
 SphereCollider:
   m_ObjectHideFlags: 1
