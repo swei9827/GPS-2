@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6418,7 +6418,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: dc7a02e06d8d768439bd3682acc008c5, type: 2}
+  - {fileID: 2100000, guid: fbec83abaaa12364dabcfed279243373, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9150,13 +9150,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2050459575}
-        m_MethodName: RetryLevel
-        m_Mode: 1
+      - m_Target: {fileID: 2050459572}
+        m_MethodName: LoadScene
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -28560,7 +28560,7 @@ Prefab:
         type: 2}
       propertyPath: tp
       value: 
-      objectReference: {fileID: 1520313767}
+      objectReference: {fileID: 1060160348}
     - target: {fileID: 114573567931251406, guid: d8e68aa9f196fea43a490c727bb281da,
         type: 2}
       propertyPath: player
@@ -32826,7 +32826,7 @@ Prefab:
         type: 2}
       propertyPath: tp
       value: 
-      objectReference: {fileID: 1520313767}
+      objectReference: {fileID: 1571995795}
     - target: {fileID: 114929517475278334, guid: 2a5363b2470fd9d42a814ad9c4ed147a,
         type: 2}
       propertyPath: player
@@ -34684,7 +34684,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: dc7a02e06d8d768439bd3682acc008c5, type: 2}
+  - {fileID: 2100000, guid: fbec83abaaa12364dabcfed279243373, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -38367,7 +38367,7 @@ Prefab:
         type: 2}
       propertyPath: tp
       value: 
-      objectReference: {fileID: 1520313767}
+      objectReference: {fileID: 1676157506}
     - target: {fileID: 114929517475278334, guid: 2a5363b2470fd9d42a814ad9c4ed147a,
         type: 2}
       propertyPath: player
@@ -42129,7 +42129,7 @@ Prefab:
         type: 2}
       propertyPath: tp
       value: 
-      objectReference: {fileID: 1520313767}
+      objectReference: {fileID: 1676157506}
     - target: {fileID: 114929517475278334, guid: 2a5363b2470fd9d42a814ad9c4ed147a,
         type: 2}
       propertyPath: player
@@ -44026,7 +44026,7 @@ Prefab:
         type: 2}
       propertyPath: tp
       value: 
-      objectReference: {fileID: 1520313767}
+      objectReference: {fileID: 878326306}
     - target: {fileID: 114573567931251406, guid: d8e68aa9f196fea43a490c727bb281da,
         type: 2}
       propertyPath: player
@@ -48348,7 +48348,7 @@ Prefab:
         type: 2}
       propertyPath: tp
       value: 
-      objectReference: {fileID: 1520313767}
+      objectReference: {fileID: 878326306}
     - target: {fileID: 114573567931251406, guid: d8e68aa9f196fea43a490c727bb281da,
         type: 2}
       propertyPath: player
@@ -50231,7 +50231,7 @@ MonoBehaviour:
     eachBulletRequire: 0
     effect: {fileID: 100000, guid: 8e1dcf1924b1945fcaab73df0affd2ab, type: 2}
   playerCamera: {fileID: 1671293120}
-  fireAudio: {fileID: 1577847613}
+  fireAudio: {fileID: 1577847614}
   missAudio: {fileID: 1577847613}
   isUItouch: 0
   isReloading: 0
@@ -50250,6 +50250,7 @@ MonoBehaviour:
   reloadNotice: {fileID: 1588500671}
   reloadIndicator: {fileID: 1822775094}
   bulletLeft: {fileID: 1014359199}
+  isDisable: 0
 --- !u!114 &1577847617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54606,7 +54607,7 @@ Prefab:
         type: 2}
       propertyPath: tp
       value: 
-      objectReference: {fileID: 1520313767}
+      objectReference: {fileID: 1060160348}
     - target: {fileID: 114573567931251406, guid: d8e68aa9f196fea43a490c727bb281da,
         type: 2}
       propertyPath: player
@@ -57944,7 +57945,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: dc7a02e06d8d768439bd3682acc008c5, type: 2}
+  - {fileID: 2100000, guid: fbec83abaaa12364dabcfed279243373, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -62941,7 +62942,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -66138,6 +66139,7 @@ MonoBehaviour:
   totalScore: {fileID: 633870355}
   winUI: {fileID: 2099404014}
   loseUI: {fileID: 1621961340}
+  isLevelCleared: 0
 --- !u!114 &2050459573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66283,7 +66285,7 @@ Prefab:
         type: 2}
       propertyPath: tp
       value: 
-      objectReference: {fileID: 1520313767}
+      objectReference: {fileID: 1571995795}
     - target: {fileID: 114573567931251406, guid: d8e68aa9f196fea43a490c727bb281da,
         type: 2}
       propertyPath: player
