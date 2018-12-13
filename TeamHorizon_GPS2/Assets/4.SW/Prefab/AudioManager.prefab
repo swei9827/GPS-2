@@ -185,3 +185,13 @@ MonoBehaviour:
     mixerGroup: {fileID: 243335218154334276, guid: 6fe0f7ea1824249418e9607a4c839bb4,
       type: 2}
     source: {fileID: 0}
+  - name: PLAYER HURT
+    clip: {fileID: 8300000, guid: c84734db092a4e24ca1cfeb42072c321, type: 3}
+    volume: 1
+    volumeVariance: 1
+    pitch: 1
+    pitchVariance: 0.155
+    loop: 0
+    mixerGroup: {fileID: 243335218154334276, guid: 6fe0f7ea1824249418e9607a4c839bb4,
+      type: 2}
+    source: {fileID: 0}

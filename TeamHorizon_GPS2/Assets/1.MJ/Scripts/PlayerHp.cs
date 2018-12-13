@@ -28,6 +28,7 @@ public class PlayerHp : MonoBehaviour {
     public GameObject BulletHolePic;
     float timer;
     public float InvulnerableTime;
+    AudioManager audioM;
 
     void Awake()
     {
@@ -36,15 +37,15 @@ public class PlayerHp : MonoBehaviour {
 
     public GameObject loseUI;
 
-    // Use this for initialization
     void Start () {
         //healthBar = GetComponent<Image>();
         health = startHealth;
         shield = startShield;
         healthAfterDamage = health;
         shieldAfterDamage = shield;
+        audioM = FindObjectOfType<AudioManager>();
         //StartCoroutine(coroutine);
-	}
+    }
 
     private void Update()
     {
@@ -78,10 +79,10 @@ public class PlayerHp : MonoBehaviour {
         if (Invulnerable == false)
         {
             BulletHolePic.SetActive(true);
+            audioM.Play("PLAYER HURT");
             if (activeShield == false)
             {
                 healthAfterDamage = health - damage;
-                //Debug.Log("hehehehe");
             }
             else if (activeShield == true)
             {
@@ -91,12 +92,10 @@ public class PlayerHp : MonoBehaviour {
                     shieldAfterDamage = 0;
                     healthAfterDamage = health - tempDmg;
                     activeShield = false;
-                    // Debug.Log("condition 1");
                 }
                 else
                 {
                     shieldAfterDamage = shield - damage;
-                    //Debug.Log("condition 2");
                 }
             }
             StartCoroutine("WaitForSec", 2.0f);
