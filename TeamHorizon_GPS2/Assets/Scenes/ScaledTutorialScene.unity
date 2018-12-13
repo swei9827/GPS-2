@@ -4642,7 +4642,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &111735541
 Transform:
   m_ObjectHideFlags: 0
@@ -4651,7 +4651,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 111735540}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 11.389, y: 0.3, z: 71.7}
+  m_LocalPosition: {x: 14.7, y: 0.3, z: 70.03}
   m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000005}
   m_Children:
   - {fileID: 21683526}
@@ -4695,7 +4695,7 @@ MonoBehaviour:
   enemyType: 0
   move: 1
   moveSpeed: 2
-  endPosX: 13
+  endPosX: 14.7
   endPosY: 0.3
   endPosZ: 71.08
   player: {fileID: 1577847618}
@@ -4744,10 +4744,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 0
   shootDelayTime: 1
-  EnemyArea: 12
+  EnemyArea: 11
   playerArea: 0
   CC: {fileID: 2050459573}
-  bulletDamage: 2.5
+  bulletDamage: 5
 --- !u!114 &111735545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5157,7 +5157,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &133416344
 Transform:
   m_ObjectHideFlags: 0
@@ -5166,7 +5166,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 133416343}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -61.953, y: 0.3, z: 73.78}
+  m_LocalPosition: {x: -65.061, y: 0.3, z: 75.948}
   m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000005}
   m_Children:
   - {fileID: 309614005}
@@ -5210,9 +5210,9 @@ MonoBehaviour:
   enemyType: 0
   move: 1
   moveSpeed: 2
-  endPosX: -61.953
+  endPosX: -65.953
   endPosY: 0.3
-  endPosZ: 75.87
+  endPosZ: 75.3
   player: {fileID: 1577847618}
   EnemyStartAppear: 0
   ThrowBarrel: 0
@@ -5259,10 +5259,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 0
   shootDelayTime: 1
-  EnemyArea: 15
+  EnemyArea: 13
   playerArea: 0
   CC: {fileID: 2050459573}
-  bulletDamage: 2.5
+  bulletDamage: 5
 --- !u!114 &133416348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6032,7 +6032,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &146069476
 Transform:
   m_ObjectHideFlags: 0
@@ -6041,7 +6041,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 146069475}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -22.79, y: 0.3, z: -76.7}
+  m_LocalPosition: {x: -21.37, y: 0.3, z: -73.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 132038110}
@@ -6087,7 +6087,7 @@ MonoBehaviour:
   moveSpeed: 2
   endPosX: -22.07
   endPosY: 0.2
-  endPosZ: -76.7
+  endPosZ: -74.7
   player: {fileID: 1577847618}
   EnemyStartAppear: 0
   ThrowBarrel: 0
@@ -6137,7 +6137,7 @@ MonoBehaviour:
   EnemyArea: 7
   playerArea: 0
   CC: {fileID: 2050459573}
-  bulletDamage: 2.5
+  bulletDamage: 5
 --- !u!114 &146069480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6288,7 +6288,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 156767525}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -133, y: 1.4, z: 73}
+  m_LocalPosition: {x: -133, y: 2.77, z: 73.29}
   m_LocalScale: {x: 0.5, y: 2.5, z: 2}
   m_Children: []
   m_Father: {fileID: 953716947}
@@ -7808,7 +7808,7 @@ Prefab:
     - target: {fileID: 114744459170663472, guid: d89e28074f7d44544828ad9e4e6ab810,
         type: 2}
       propertyPath: EnemyArea
-      value: 15
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 114744459170663472, guid: d89e28074f7d44544828ad9e4e6ab810,
         type: 2}
@@ -7818,7 +7818,7 @@ Prefab:
     - target: {fileID: 114744459170663472, guid: d89e28074f7d44544828ad9e4e6ab810,
         type: 2}
       propertyPath: bulletDamage
-      value: 2.5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d89e28074f7d44544828ad9e4e6ab810, type: 2}
@@ -8966,7 +8966,7 @@ Prefab:
     - target: {fileID: 114744459170663472, guid: d89e28074f7d44544828ad9e4e6ab810,
         type: 2}
       propertyPath: bulletDamage
-      value: 2.5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114159944743290196, guid: d89e28074f7d44544828ad9e4e6ab810,
         type: 2}
@@ -10634,7 +10634,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &241320052
 Transform:
   m_ObjectHideFlags: 0
@@ -13124,7 +13124,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &309416589
 Transform:
   m_ObjectHideFlags: 0
@@ -14426,7 +14426,7 @@ Prefab:
     - target: {fileID: 114744459170663472, guid: d89e28074f7d44544828ad9e4e6ab810,
         type: 2}
       propertyPath: bulletDamage
-      value: 2.5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d89e28074f7d44544828ad9e4e6ab810, type: 2}
@@ -19291,7 +19291,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &494383414
 Transform:
   m_ObjectHideFlags: 0
@@ -19300,7 +19300,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 494383413}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1.257, y: 0.3, z: 74.27}
+  m_LocalPosition: {x: 4.58, y: 0.3, z: 75.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1726187024}
@@ -19343,10 +19343,10 @@ MonoBehaviour:
   tp: {fileID: 1571995795}
   enemyType: 0
   move: 1
-  moveSpeed: 5
-  endPosX: -3.5
+  moveSpeed: 2
+  endPosX: 5
   endPosY: 0.3
-  endPosZ: 75.26
+  endPosZ: 74
   player: {fileID: 1577847618}
   EnemyStartAppear: 0
   ThrowBarrel: 0
@@ -19393,10 +19393,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 0
   shootDelayTime: 1
-  EnemyArea: 12
+  EnemyArea: 11
   playerArea: 0
   CC: {fileID: 2050459573}
-  bulletDamage: 2.5
+  bulletDamage: 5
 --- !u!114 &494383418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37362,7 +37362,7 @@ Prefab:
     - target: {fileID: 114744459170663472, guid: d89e28074f7d44544828ad9e4e6ab810,
         type: 2}
       propertyPath: bulletDamage
-      value: 2.5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d89e28074f7d44544828ad9e4e6ab810, type: 2}
@@ -38100,7 +38100,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &976359991
 Transform:
   m_ObjectHideFlags: 0
@@ -38109,7 +38109,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 976359990}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 68.4, y: 0.3, z: -103.75}
+  m_LocalPosition: {x: 68.4, y: 0.3, z: -102.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1452799934}
@@ -38155,7 +38155,7 @@ MonoBehaviour:
   moveSpeed: 2
   endPosX: 67.26
   endPosY: 0.2
-  endPosZ: -103.7
+  endPosZ: -100.7
   player: {fileID: 1577847618}
   EnemyStartAppear: 0
   ThrowBarrel: 0
@@ -38205,7 +38205,7 @@ MonoBehaviour:
   EnemyArea: 1
   playerArea: 0
   CC: {fileID: 2050459573}
-  bulletDamage: 2.5
+  bulletDamage: 5
 --- !u!114 &976359995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38933,7 +38933,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4492290738164944, guid: 7e874ca395e26bb4083e0bdea1a43a21, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -102.84
+      value: -99.7
       objectReference: {fileID: 0}
     - target: {fileID: 4492290738164944, guid: 7e874ca395e26bb4083e0bdea1a43a21, type: 2}
       propertyPath: m_LocalRotation.x
@@ -38982,7 +38982,22 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1842064083445766, guid: 7e874ca395e26bb4083e0bdea1a43a21, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114296078853416014, guid: 7e874ca395e26bb4083e0bdea1a43a21,
+        type: 2}
+      propertyPath: bulletDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114213574654668820, guid: 7e874ca395e26bb4083e0bdea1a43a21,
+        type: 2}
+      propertyPath: endPosY
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114213574654668820, guid: 7e874ca395e26bb4083e0bdea1a43a21,
+        type: 2}
+      propertyPath: endPosZ
+      value: -99.84
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e874ca395e26bb4083e0bdea1a43a21, type: 2}
@@ -41454,7 +41469,7 @@ Prefab:
     - target: {fileID: 114744459170663472, guid: d89e28074f7d44544828ad9e4e6ab810,
         type: 2}
       propertyPath: bulletDamage
-      value: 2.5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d89e28074f7d44544828ad9e4e6ab810, type: 2}
@@ -42748,7 +42763,7 @@ Prefab:
     - target: {fileID: 114744459170663472, guid: d89e28074f7d44544828ad9e4e6ab810,
         type: 2}
       propertyPath: bulletDamage
-      value: 2.5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d89e28074f7d44544828ad9e4e6ab810, type: 2}
@@ -44775,7 +44790,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1168948015
 Transform:
   m_ObjectHideFlags: 0
@@ -44784,7 +44799,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1168948014}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -63.489, y: 0.3, z: 72.043}
+  m_LocalPosition: {x: -66.508, y: 0.3, z: 71.388}
   m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000005}
   m_Children:
   - {fileID: 2003503872}
@@ -44828,9 +44843,9 @@ MonoBehaviour:
   enemyType: 0
   move: 1
   moveSpeed: 2
-  endPosX: -63.48
+  endPosX: -66.5
   endPosY: 0.3
-  endPosZ: 71.819
+  endPosZ: 73.5
   player: {fileID: 1577847618}
   EnemyStartAppear: 0
   ThrowBarrel: 0
@@ -44877,10 +44892,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 0
   shootDelayTime: 1
-  EnemyArea: 15
+  EnemyArea: 13
   playerArea: 0
   CC: {fileID: 2050459573}
-  bulletDamage: 2.5
+  bulletDamage: 5
 --- !u!114 &1168948019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50362,6 +50377,81 @@ Transform:
   m_Father: {fileID: 792970754}
   m_RootOrder: 88
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1297220572
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1297220574}
+  - component: {fileID: 1297220573}
+  m_Layer: 0
+  m_Name: Portal (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1297220573
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1297220572}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 7935ac0ac005b8f42b194e961e3a6f57, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 12.8, y: 8}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1297220574
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1297220572}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -133.28, y: 2.93, z: 73.29}
+  m_LocalScale: {x: 0.786, y: 0.786, z: 0.786}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1298169891
 GameObject:
   m_ObjectHideFlags: 0
@@ -51022,6 +51112,81 @@ Transform:
   m_Father: {fileID: 245387656}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1318285583
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1318285585}
+  - component: {fileID: 1318285584}
+  m_Layer: 0
+  m_Name: Portal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1318285584
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1318285583}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 7935ac0ac005b8f42b194e961e3a6f57, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 12.8, y: 8}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1318285585
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1318285583}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 84.67, y: 2.93, z: 73.02}
+  m_LocalScale: {x: 0.786, y: 0.786, z: 0.786}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1318982726
 GameObject:
   m_ObjectHideFlags: 0
@@ -51677,7 +51842,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1332349993
 Transform:
   m_ObjectHideFlags: 0
@@ -51686,7 +51851,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1332349992}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -24.55, y: 0.3, z: -77.744}
+  m_LocalPosition: {x: -25.03, y: 0.3, z: -76.53}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 878120489}
@@ -51730,9 +51895,9 @@ MonoBehaviour:
   enemyType: 0
   move: 1
   moveSpeed: 2
-  endPosX: -24.97
+  endPosX: -23.97
   endPosY: 0.2
-  endPosZ: -77.744
+  endPosZ: -75.744
   player: {fileID: 1577847618}
   EnemyStartAppear: 0
   ThrowBarrel: 0
@@ -51782,7 +51947,7 @@ MonoBehaviour:
   EnemyArea: 7
   playerArea: 0
   CC: {fileID: 2050459573}
-  bulletDamage: 2.5
+  bulletDamage: 5
 --- !u!114 &1332349997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54166,7 +54331,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1395316333}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 85, y: 1.4, z: 73}
+  m_LocalPosition: {x: 85, y: 2.71, z: 73}
   m_LocalScale: {x: 0.5, y: 2.5, z: 2}
   m_Children: []
   m_Father: {fileID: 953716947}
@@ -61516,7 +61681,7 @@ Prefab:
     - target: {fileID: 114744459170663472, guid: d89e28074f7d44544828ad9e4e6ab810,
         type: 2}
       propertyPath: bulletDamage
-      value: 2.5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d89e28074f7d44544828ad9e4e6ab810, type: 2}
@@ -66052,7 +66217,7 @@ Prefab:
     - target: {fileID: 114744459170663472, guid: d89e28074f7d44544828ad9e4e6ab810,
         type: 2}
       propertyPath: bulletDamage
-      value: 2.5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d89e28074f7d44544828ad9e4e6ab810, type: 2}
@@ -67443,7 +67608,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1723137984
 Transform:
   m_ObjectHideFlags: 0
@@ -67452,7 +67617,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1723137983}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -26.21, y: 0.3, z: 0.705}
+  m_LocalPosition: {x: -26.21, y: 0.3, z: 2.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1444395511}
@@ -67496,7 +67661,7 @@ MonoBehaviour:
   enemyType: 0
   move: 1
   moveSpeed: 2
-  endPosX: -26.4
+  endPosX: -25.8
   endPosY: 0.3
   endPosZ: 0.25
   player: {fileID: 1577847618}
@@ -67548,7 +67713,7 @@ MonoBehaviour:
   EnemyArea: 9
   playerArea: 0
   CC: {fileID: 2050459573}
-  bulletDamage: 2.5
+  bulletDamage: 5
 --- !u!114 &1723137988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71605,7 +71770,7 @@ Prefab:
     - target: {fileID: 114744459170663472, guid: d89e28074f7d44544828ad9e4e6ab810,
         type: 2}
       propertyPath: EnemyArea
-      value: 15
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 114744459170663472, guid: d89e28074f7d44544828ad9e4e6ab810,
         type: 2}
@@ -71615,7 +71780,7 @@ Prefab:
     - target: {fileID: 114744459170663472, guid: d89e28074f7d44544828ad9e4e6ab810,
         type: 2}
       propertyPath: bulletDamage
-      value: 2.5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d89e28074f7d44544828ad9e4e6ab810, type: 2}
@@ -76511,7 +76676,7 @@ Prefab:
     - target: {fileID: 114744459170663472, guid: d89e28074f7d44544828ad9e4e6ab810,
         type: 2}
       propertyPath: bulletDamage
-      value: 2.5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 95830526531514804, guid: d89e28074f7d44544828ad9e4e6ab810,
         type: 2}
@@ -81827,7 +81992,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2083502006
 Transform:
   m_ObjectHideFlags: 0
@@ -81836,7 +82001,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2083502005}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -22.32, y: 0.3, z: 1.96}
+  m_LocalPosition: {x: -22.32, y: 0.3, z: 3.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 782559006}
@@ -81882,7 +82047,7 @@ MonoBehaviour:
   moveSpeed: 2
   endPosX: -21.65
   endPosY: 0.3
-  endPosZ: 1.505
+  endPosZ: 3.33
   player: {fileID: 1577847618}
   EnemyStartAppear: 0
   ThrowBarrel: 0
@@ -81932,7 +82097,7 @@ MonoBehaviour:
   EnemyArea: 9
   playerArea: 0
   CC: {fileID: 2050459573}
-  bulletDamage: 2.5
+  bulletDamage: 5
 --- !u!114 &2083502010
 MonoBehaviour:
   m_ObjectHideFlags: 0
