@@ -54,7 +54,7 @@ public class TreeFallHazardWithDistanceChecker : MonoBehaviour {
         {
             if(cc.Level1 && !damageDealt)
             {
-                Player.GetComponent<PlayerHp>().health -= Damage;
+                Player.GetComponent<PlayerHp>().TakeDamage(Damage);
                 damageDealt = true;
 
             }

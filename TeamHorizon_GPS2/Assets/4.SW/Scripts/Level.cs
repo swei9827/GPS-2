@@ -111,10 +111,11 @@ public class Level: MonoBehaviour
             winUI.SetActive(true);
             Time.timeScale = 0;
             endScore.text = score.ToString();
-            bonusTimeScore.text = (timeLeft * 256.0f).ToString();
-            totalScore.text = score + (timeLeft * 256.0f).ToString();
+            bonusTimeScore.text = Mathf.RoundToInt(timeLeft * 256.0f).ToString();
+            totalScore.text = Mathf.RoundToInt(score + (timeLeft * 256.0f)).ToString();
         }        
     }
+
 }
 
 public enum LEVEL_STATE

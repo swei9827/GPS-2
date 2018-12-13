@@ -22,13 +22,21 @@ public class TreeBlockHazard : MonoBehaviour {
         cc = GameObject.FindGameObjectWithTag("ControlCenter").GetComponent<ControlCenter>();
     }
 
+    void Update()
+    {
+        if (TBHealth <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
     public void TreeBlockDamage()
     {
         float distance = Vector3.Distance(Player.position, transform.position);
         if (distance <= MaxDistance)
         {
             TBHealth -= 1;
-        }
+        }       
     }
 
     void OnTriggerEnter (Collider collision)
@@ -39,7 +47,7 @@ public class TreeBlockHazard : MonoBehaviour {
             {
                 if (cc.Level1 && !damageDealt)
                 {
-                    Player.GetComponent<PlayerHp>().health -= Damage;
+                    Player.GetComponent<PlayerHp>().TakeDamage(Damage);
                     damageDealt = true;
                 }
                 Player.GetComponent<ScriptedMovement>().speed = slowSpeed;
