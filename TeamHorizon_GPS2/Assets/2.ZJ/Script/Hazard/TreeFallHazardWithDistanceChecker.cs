@@ -3,22 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TreeFallHazardWithDistanceChecker : MonoBehaviour {
-    
+
+    public float Damage;
     public int health;
     public bool FallenTree;
     public float slowDuration;
     public float slowSpeed;
-    public float damage;
     public Transform Player;
     public float MaxDistance;
     private Material mat;
     float originalSpeed = 10.0f;
     float fall = 90;
     bool distanceReached;
+    ControlCenter cc;
+    bool damageDealt;
 
     void Start()
     {
-        mat = this.GetComponent<MeshRenderer>().material;        
+        mat = this.GetComponent<MeshRenderer>().material;
+        cc = GameObject.FindGameObjectWithTag("ControlCenter").GetComponent<ControlCenter>();
     }
     
     void Update()
@@ -49,6 +52,12 @@ public class TreeFallHazardWithDistanceChecker : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("Player") && health > 0)
         {
+            if(cc.Level1 && !damageDealt)
+            {
+                Player.GetComponent<PlayerHp>().health -= Damage;
+                damageDealt = true;
+
+            }
             Player.GetComponent<ScriptedMovement>().speed = slowSpeed;
             //Player.GetComponent<PlayerHP>().playerHealth -= damage;
             StartCoroutine(ResetSpeed(slowDuration));

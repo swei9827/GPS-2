@@ -5,6 +5,7 @@ using UnityEngine;
 public class TreeFallHazard : MonoBehaviour
 {
     float fall = 90;
+    public float Damage;
     public int health;
     public bool FallenTree = false;
     public float slowDuration;
@@ -14,10 +15,13 @@ public class TreeFallHazard : MonoBehaviour
     float originalSpeed = 10.0f;
     public float nextMelee = 0.0f;
     public float meleeHit = 0.2f;
+    ControlCenter cc;
+    bool damageDealt;
 
     private void Start()
     {
         mat = this.GetComponent<MeshRenderer>().material;
+        cc = GameObject.FindGameObjectWithTag("ControlCenter").GetComponent<ControlCenter>();
     }
 
     private void Update()
@@ -42,6 +46,11 @@ public class TreeFallHazard : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") && health > 0)
         {
+            if (cc.Level1 && !damageDealt)
+            {
+                Player.GetComponent<PlayerHp>().health -= Damage;
+                damageDealt = true;
+            }
             Player.GetComponent<ScriptedMovement>().speed = slowSpeed;
             StartCoroutine(ResetSpeed(slowDuration));
         }/*

@@ -13,7 +13,7 @@ public class ScriptedMovement : MonoBehaviour {
 
     void Update()
     {
-        Debug.Log(transform.eulerAngles.y);
+       // Debug.Log(transform.eulerAngles.y);
     }
 
     public void PlayerMove( Transform target)

@@ -33,7 +33,6 @@ public class ControlCenter : MonoBehaviour
     private ScreenWobble screenWobble;
     IEnumerator coroutine;
     ScriptedMovement sMove;
-    
 
     void Start()
     {
@@ -173,23 +172,23 @@ public class ControlCenter : MonoBehaviour
             }
             if(status == STATUS.QTE)
             {
-                qtes[0].SetActive(true);
+               // qtes[0].SetActive(true);
             }
             if (QTESuccess)
             {
                 levelStatus = 5;
-                status = STATUS.MOVING;                        
+                status = STATUS.MOVING;
             }
             else if (QTEFail)
             {
                 levelStatus = 6;
-                status = STATUS.MOVING;                       
+                status = STATUS.MOVING;              
             }
         }
         // QTE Success
         else if(levelStatus == 5)
         {
-            if(status == STATUS.MOVING)
+            if (status == STATUS.MOVING)
             {
                 sMove.PlayerMove(locations[4]);
                 if(player.transform.position == locations[4].position)

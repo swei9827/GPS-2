@@ -6457,6 +6457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3bdf82ebb505cc4297195cf0e8d2625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: 0
   nextMelee: 0
   meleeHit: 0.2
   TBHealth: 2
@@ -22368,7 +22369,9 @@ Prefab:
       propertyPath: m_Name
       value: T6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 111014921686499924, guid: a231a9832252beb449cd3495b620f30b, type: 2}
+    - {fileID: 95555999714249008, guid: a231a9832252beb449cd3495b620f30b, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: a231a9832252beb449cd3495b620f30b, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &739395744
@@ -24920,7 +24923,9 @@ Prefab:
       propertyPath: m_Name
       value: T13
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 111014921686499924, guid: a231a9832252beb449cd3495b620f30b, type: 2}
+    - {fileID: 95555999714249008, guid: a231a9832252beb449cd3495b620f30b, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: a231a9832252beb449cd3495b620f30b, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &796860316
@@ -27112,7 +27117,9 @@ Prefab:
       propertyPath: m_Name
       value: T11
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 111014921686499924, guid: a231a9832252beb449cd3495b620f30b, type: 2}
+    - {fileID: 95555999714249008, guid: a231a9832252beb449cd3495b620f30b, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: a231a9832252beb449cd3495b620f30b, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &852679562
@@ -30395,7 +30402,9 @@ Prefab:
       propertyPath: m_Name
       value: T12
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 111014921686499924, guid: a231a9832252beb449cd3495b620f30b, type: 2}
+    - {fileID: 95555999714249008, guid: a231a9832252beb449cd3495b620f30b, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: a231a9832252beb449cd3495b620f30b, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &937371869
@@ -34659,6 +34668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3bdf82ebb505cc4297195cf0e8d2625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: 0
   nextMelee: 0
   meleeHit: 0.2
   TBHealth: 2
@@ -39556,7 +39566,9 @@ Prefab:
       propertyPath: m_Name
       value: T10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 111014921686499924, guid: a231a9832252beb449cd3495b620f30b, type: 2}
+    - {fileID: 95555999714249008, guid: a231a9832252beb449cd3495b620f30b, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: a231a9832252beb449cd3495b620f30b, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1237954677
@@ -40128,7 +40140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1258319826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40298,7 +40310,9 @@ Prefab:
       propertyPath: m_Name
       value: T3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 111014921686499924, guid: a231a9832252beb449cd3495b620f30b, type: 2}
+    - {fileID: 95555999714249008, guid: a231a9832252beb449cd3495b620f30b, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: a231a9832252beb449cd3495b620f30b, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1261503165
@@ -43404,7 +43418,9 @@ Prefab:
       propertyPath: m_Name
       value: T8
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 111014921686499924, guid: a231a9832252beb449cd3495b620f30b, type: 2}
+    - {fileID: 95555999714249008, guid: a231a9832252beb449cd3495b620f30b, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: a231a9832252beb449cd3495b620f30b, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1362998856
@@ -43935,7 +43951,9 @@ Prefab:
       propertyPath: m_Name
       value: T14
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 111014921686499924, guid: a231a9832252beb449cd3495b620f30b, type: 2}
+    - {fileID: 95555999714249008, guid: a231a9832252beb449cd3495b620f30b, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: a231a9832252beb449cd3495b620f30b, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1377051744
@@ -49718,6 +49736,7 @@ GameObject:
   - component: {fileID: 1577847616}
   - component: {fileID: 1577847617}
   - component: {fileID: 1577847619}
+  - component: {fileID: 1577847620}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -49977,7 +49996,7 @@ MonoBehaviour:
     eachBulletRequire: 0
     effect: {fileID: 100000, guid: 8e1dcf1924b1945fcaab73df0affd2ab, type: 2}
   playerCamera: {fileID: 1671293120}
-  fireAudio: {fileID: 0}
+  fireAudio: {fileID: 1577847613}
   missAudio: {fileID: 1577847613}
   isUItouch: 0
   isReloading: 0
@@ -50051,6 +50070,18 @@ MonoBehaviour:
   BulletHolePic: {fileID: 8400525}
   InvulnerableTime: 2
   loseUI: {fileID: 1621961340}
+--- !u!114 &1577847620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1577847610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83c54fc600aeefd4e884e66a2b1b4d45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swipeDistance: 400
 --- !u!1 &1578295135
 GameObject:
   m_ObjectHideFlags: 0
@@ -51612,6 +51643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad810de5ec706f4ba0aa0b36822b584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: 0
   health: 2
   FallenTree: 0
   slowDuration: 1
@@ -54410,7 +54442,9 @@ Prefab:
       propertyPath: m_Name
       value: T7
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 111014921686499924, guid: a231a9832252beb449cd3495b620f30b, type: 2}
+    - {fileID: 95555999714249008, guid: a231a9832252beb449cd3495b620f30b, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: a231a9832252beb449cd3495b620f30b, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &1709019027
@@ -55005,6 +55039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad810de5ec706f4ba0aa0b36822b584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: 0
   health: 2
   FallenTree: 0
   slowDuration: 1
@@ -55324,7 +55359,9 @@ Prefab:
       propertyPath: m_Name
       value: T9
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 111014921686499924, guid: a231a9832252beb449cd3495b620f30b, type: 2}
+    - {fileID: 95555999714249008, guid: a231a9832252beb449cd3495b620f30b, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: a231a9832252beb449cd3495b620f30b, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1734341811
@@ -56029,7 +56066,9 @@ Prefab:
       propertyPath: m_Name
       value: T2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 111014921686499924, guid: a231a9832252beb449cd3495b620f30b, type: 2}
+    - {fileID: 95555999714249008, guid: a231a9832252beb449cd3495b620f30b, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: a231a9832252beb449cd3495b620f30b, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1753378996
@@ -57701,6 +57740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3bdf82ebb505cc4297195cf0e8d2625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: 0
   nextMelee: 0
   meleeHit: 0.2
   TBHealth: 2
@@ -60604,7 +60644,9 @@ Prefab:
       propertyPath: m_Name
       value: T5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 111014921686499924, guid: a231a9832252beb449cd3495b620f30b, type: 2}
+    - {fileID: 95555999714249008, guid: a231a9832252beb449cd3495b620f30b, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: a231a9832252beb449cd3495b620f30b, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1904085438
@@ -63995,7 +64037,9 @@ Prefab:
       propertyPath: m_Name
       value: T4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 111014921686499924, guid: a231a9832252beb449cd3495b620f30b, type: 2}
+    - {fileID: 95555999714249008, guid: a231a9832252beb449cd3495b620f30b, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: a231a9832252beb449cd3495b620f30b, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &2001859906
@@ -65898,8 +65942,7 @@ MonoBehaviour:
   hazards:
   - {fileID: 1630792666}
   - {fileID: 1716569477}
-  qtes:
-  - {fileID: 1280833118}
+  qtes: []
 --- !u!4 &2050459574
 Transform:
   m_ObjectHideFlags: 0
