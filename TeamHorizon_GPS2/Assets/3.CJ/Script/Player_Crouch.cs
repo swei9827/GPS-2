@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player_Crouch : MonoBehaviour {
+public class Player_Crouch : MonoBehaviour
+{
 
     public bool isCrouch = false;
     public Transform player;
@@ -36,7 +37,7 @@ public class Player_Crouch : MonoBehaviour {
 
             if (isCrouch == true)
             {
-                if(playerArea == 1)
+                if (playerArea == 1)
                 {
                     transform.Translate(new Vector3(-1.2f, 0.0f, 0.0f));
                 }
@@ -46,7 +47,7 @@ public class Player_Crouch : MonoBehaviour {
             }
             else
             {
-                if(playerArea == 1)
+                if (playerArea == 1)
                 {
                     transform.Translate(new Vector3(1.2f, 0.0f, 0.0f));
                 }
@@ -61,7 +62,7 @@ public class Player_Crouch : MonoBehaviour {
     {
         if (isCrouch == false)
         {
-             isCrouch = true;
+            isCrouch = true;
         }
         else
         {
@@ -74,11 +75,11 @@ public class Player_Crouch : MonoBehaviour {
             {
                 transform.Translate(new Vector3(-1.2f, 0.0f, 0.0f));
             }
-            else if(playerArea == 7)
+            else if (playerArea == 7)
             {
                 transform.Translate(new Vector3(1.2f, 0.0f, 0.0f));
             }
-            else if(playerArea == 9)
+            else if (playerArea == 9)
             {
                 transform.Translate(new Vector3(0.0f, -1.2f, 0.0f));
             }
@@ -123,7 +124,7 @@ public class Player_Crouch : MonoBehaviour {
     public void onPress()
     {
         isCrouch = true;
-        if(isCrouch && cc.GetComponent<ControlCenter>().status == STATUS.CROUCH)
+        if (isCrouch && cc.GetComponent<ControlCenter>().status == STATUS.CROUCH)
         {
             if (playerArea == 1)
             {
@@ -151,7 +152,7 @@ public class Player_Crouch : MonoBehaviour {
     public void onRelease()
     {
         isCrouch = false;
-        if(!isCrouch && cc.GetComponent<ControlCenter>().status == STATUS.CROUCH)
+        if (!isCrouch && cc.GetComponent<ControlCenter>().status == STATUS.CROUCH)
         {
             if (playerArea == 1)
             {
@@ -173,6 +174,24 @@ public class Player_Crouch : MonoBehaviour {
             {
                 transform.Translate(new Vector3(0.0f, 0.5f, 0.0f));
             }
-        }        
+        }
+    }
+
+    public void onPressLevel1()
+    {
+        isCrouch = true;
+        if (isCrouch && cc.GetComponent<ControlCenter>().status == STATUS.CROUCH)
+        {
+            transform.Translate(new Vector3(0.0f, -1.2f, 0.0f));
+        }
+    }
+
+    public void onReleaseLevel1()
+    {
+        isCrouch = false;
+        if (!isCrouch && cc.GetComponent<ControlCenter>().status == STATUS.CROUCH)
+        {
+            transform.Translate(new Vector3(0.0f, 1.2f, 0.0f));
+        }
     }
 }
