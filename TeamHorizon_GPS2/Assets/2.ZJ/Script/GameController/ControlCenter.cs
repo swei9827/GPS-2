@@ -329,7 +329,7 @@ public class ControlCenter : MonoBehaviour
                 sMove.PlayerMove(locations[8]);
                 if(player.transform.position == locations[8].position)
                 {
-                    status = STATUS.BATTLE;
+                    status = STATUS.CROUCH;
                 }
             }            
             if (locations[8].GetComponent<TargetProfile>().EnemyCount <= 0)

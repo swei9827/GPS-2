@@ -125,7 +125,26 @@ public class Player_Crouch : MonoBehaviour {
         isCrouch = true;
         if(isCrouch && cc.GetComponent<ControlCenter>().status == STATUS.CROUCH)
         {
-            transform.Translate(new Vector3(0.0f, -1.2f, 0.0f));
+            if (playerArea == 1)
+            {
+                transform.Translate(new Vector3(-1.2f, 0.0f, 0.0f));
+            }
+            else if (playerArea == 7)
+            {
+                transform.Translate(new Vector3(1.2f, 0.0f, 0.0f));
+            }
+            else if (playerArea == 9)
+            {
+                transform.Translate(new Vector3(0.0f, -1.2f, 0.0f));
+            }
+            else if (playerArea == 11)
+            {
+                transform.Translate(new Vector3(-1.2f, 0.0f, 0.0f));
+            }
+            else if (playerArea == 13)
+            {
+                transform.Translate(new Vector3(0.0f, -1.2f, 0.0f));
+            }
         }
     }
 
@@ -134,7 +153,26 @@ public class Player_Crouch : MonoBehaviour {
         isCrouch = false;
         if(!isCrouch && cc.GetComponent<ControlCenter>().status == STATUS.CROUCH)
         {
-            transform.Translate(new Vector3(0.0f, 1.2f, 0.0f));
+            if (playerArea == 1)
+            {
+                transform.Translate(new Vector3(1.2f, 0.0f, 0.0f));
+            }
+            else if (playerArea == 7)
+            {
+                transform.Translate(new Vector3(-1.2f, 0.0f, 0.0f));
+            }
+            else if (playerArea == 9)
+            {
+                transform.Translate(new Vector3(0.0f, 1.2f, 0.0f));
+            }
+            else if (playerArea == 11)
+            {
+                transform.Translate(new Vector3(1.2f, 0.0f, 0.0f));
+            }
+            else if (playerArea == 13)
+            {
+                transform.Translate(new Vector3(0.0f, 1.2f, 0.0f));
+            }
         }        
     }
 }
