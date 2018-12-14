@@ -71,6 +71,12 @@ public class PauseMenuControl : MonoBehaviour {
         level.SetTimeScale(1.0f);        
     }
 
+    public void RetryLevel1()
+    {
+        SceneManager.LoadScene(3);
+        level.SetTimeScale(1.0f);
+    }
+
     public void SettingPage()
     {
         PauseMenuMainPage.SetActive(false);
