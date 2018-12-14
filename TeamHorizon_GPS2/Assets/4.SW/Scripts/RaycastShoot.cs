@@ -32,7 +32,7 @@ public class RaycastShoot : MonoBehaviour
 
     void Start()
     {
-        isDisable = true;
+        isDisable = false;
         currentAmmo = weapon.maxAmmo;
         bulletLeft.text = currentAmmo.ToString();
     }
@@ -67,7 +67,7 @@ public class RaycastShoot : MonoBehaviour
         {
             if (!EventSystem.current.IsPointerOverGameObject() && !isDisable)
             {
-                if (currentAmmo > 0)
+                if (currentAmmo > 0 && !isReloading)
                 {
                     fireAudio.Play();
                     Vector3 posFar = new Vector3(Input.mousePosition.x, Input.mousePosition.y, playerCamera.farClipPlane);
