@@ -57,7 +57,7 @@ public class RaycastShoot : MonoBehaviour
                 anim.Play("bulletIdle");
             }
         }
-        MouseShoot();
+        //MouseShoot();
         TouchShoot();
     }
 
