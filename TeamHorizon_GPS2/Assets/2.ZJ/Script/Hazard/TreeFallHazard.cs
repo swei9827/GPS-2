@@ -13,6 +13,7 @@ public class TreeFallHazard : MonoBehaviour
     public bool PlayerHit;
     public GameObject Player;
     private Material mat;
+    public Material outlineMat;
     float originalSpeed = 10.0f;
     public float nextMelee = 0.0f;
     public float meleeHit = 0.2f;
@@ -54,15 +55,7 @@ public class TreeFallHazard : MonoBehaviour
             }
             Player.GetComponent<ScriptedMovement>().speed = slowSpeed;
             StartCoroutine(ResetSpeed(slowDuration));
-        }/*
-        if (collision.gameObject.CompareTag("PlayerBlade"))
-        {
-            if (Time.deltaTime > nextMelee)
-            {
-                nextMelee = Time.deltaTime + meleeHit;
-                health -= 2;
-            }
-        }*/
+        }
     }
 
     public void TreeFallDamage()
@@ -108,6 +101,7 @@ public class TreeFallHazard : MonoBehaviour
             else if (fall <= 15)
             {
                 FallenTree = true;
+                this.transform.GetChild(4).GetComponent<MeshRenderer>().material = outlineMat;
             }
 
             transform.rotation = Quaternion.Euler(-Mathf.Clamp(fall, 5, 90), transform.localEulerAngles.y, transform.localEulerAngles.z);

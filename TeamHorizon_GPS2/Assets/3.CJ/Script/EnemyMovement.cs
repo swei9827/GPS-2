@@ -135,7 +135,7 @@ public class EnemyMovement : MonoBehaviour
         if (EnemyArea == playerArea )
         {
             float distance = Vector3.Distance(Player.position, transform.position);
-            Debug.Log(distance);
+            //Debug.Log(distance);
             if(distance <= MaxDistance)
             {
                 EnemyStartAppear = true;

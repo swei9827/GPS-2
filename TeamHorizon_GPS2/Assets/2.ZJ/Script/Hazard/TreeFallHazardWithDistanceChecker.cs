@@ -13,6 +13,7 @@ public class TreeFallHazardWithDistanceChecker : MonoBehaviour {
     public float MaxDistance;
     public bool PlayerHit;
     private Material mat;
+    public Material outlineMat;
     float originalSpeed = 10.0f;
     float fall = 90;
     bool distanceReached;
@@ -108,6 +109,7 @@ public class TreeFallHazardWithDistanceChecker : MonoBehaviour {
             else if (fall < 16)
             {
                 FallenTree = true;
+                this.transform.GetChild(4).GetComponent<MeshRenderer>().material = outlineMat;
                 Debug.Log("x");
             }
 
