@@ -10,6 +10,7 @@ public class TreeFallHazard : MonoBehaviour
     public bool FallenTree = false;
     public float slowDuration;
     public float slowSpeed;
+    public bool PlayerHit;
     public GameObject Player;
     private Material mat;
     float originalSpeed = 10.0f;
@@ -66,7 +67,7 @@ public class TreeFallHazard : MonoBehaviour
 
     public void TreeFallDamage()
     {
-        if (FallenTree)
+        if (FallenTree && !PlayerHit)
         {
             health -= 1;
             if (health <= 0)
@@ -115,6 +116,7 @@ public class TreeFallHazard : MonoBehaviour
 
     private IEnumerator ResetSpeed(float waitTime)
     {
+        PlayerHit = true;
         yield return new WaitForSeconds(waitTime);
         GameObject.FindGameObjectWithTag("Player").GetComponent<ScriptedMovement>().speed = originalSpeed;
     }

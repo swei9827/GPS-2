@@ -11,6 +11,7 @@ public class TreeFallHazardWithDistanceChecker : MonoBehaviour {
     public float slowSpeed;
     public Transform Player;
     public float MaxDistance;
+    public bool PlayerHit;
     private Material mat;
     float originalSpeed = 10.0f;
     float fall = 90;
@@ -66,10 +67,13 @@ public class TreeFallHazardWithDistanceChecker : MonoBehaviour {
 
     public void TreeV2FallDamage()
     {
-        float distance = Vector3.Distance(Player.position, transform.position);
-        if (distance <= MaxDistance)
+        if (!PlayerHit)
         {
-            health -= 1;
+            float distance = Vector3.Distance(Player.position, transform.position);
+            if (distance <= MaxDistance)
+            {
+                health -= 1;
+            }
         }
     }
 
@@ -113,6 +117,7 @@ public class TreeFallHazardWithDistanceChecker : MonoBehaviour {
 
     private IEnumerator ResetSpeed(float waitTime)
     {
+        PlayerHit = true;
         yield return new WaitForSeconds(waitTime);
         GameObject.FindGameObjectWithTag("Player").GetComponent<ScriptedMovement>().speed = originalSpeed;
     }

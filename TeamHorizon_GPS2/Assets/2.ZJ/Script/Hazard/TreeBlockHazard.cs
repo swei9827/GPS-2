@@ -13,6 +13,7 @@ public class TreeBlockHazard : MonoBehaviour {
     public float slowSpeed;
     public Transform Player;
     public float MaxDistance;
+    public bool PlayerHit;
     float originalSpeed = 10.0f;
     ControlCenter cc;
     bool damageDealt;
@@ -32,11 +33,14 @@ public class TreeBlockHazard : MonoBehaviour {
 
     public void TreeBlockDamage()
     {
-        float distance = Vector3.Distance(Player.position, transform.position);
-        if (distance <= MaxDistance)
+        if (!PlayerHit)
         {
-            TBHealth -= 1;
-        }       
+            float distance = Vector3.Distance(Player.position, transform.position);
+            if (distance <= MaxDistance)
+            {
+                TBHealth -= 1;
+            }
+        }
     }
 
     void OnTriggerEnter (Collider collision)
@@ -68,6 +72,7 @@ public class TreeBlockHazard : MonoBehaviour {
 
     private IEnumerator ResetSpeed(float waitTime)
     {
+        PlayerHit = true;
         yield return new WaitForSeconds(waitTime);
         GameObject.FindGameObjectWithTag("Player").GetComponent<ScriptedMovement>().speed = originalSpeed;
     }
