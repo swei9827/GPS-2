@@ -19,11 +19,15 @@ public class Enemy_Shoot : MonoBehaviour {
 
     int tempRand = 0;
 
+    public Transform Player;
+    public float MaxDistance;
+
     private void Start()
     {
         CC = GameObject.FindGameObjectWithTag("ControlCenter").GetComponent<ControlCenter>();
         plyrHp = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHp>();
         crouch = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Player_Crouch>();
+        Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -38,7 +42,11 @@ public class Enemy_Shoot : MonoBehaviour {
             {
                 if(EnemyArea == playerArea)
                 {
-                    Fire();
+                    float distance = Vector3.Distance(Player.position, transform.position);
+                    if(distance <= MaxDistance)
+                    {
+                        Fire();
+                    }
                 }
             }
             timer = 0;

@@ -32586,6 +32586,16 @@ Prefab:
       propertyPath: EnemyArea
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114999827304267310, guid: d8e68aa9f196fea43a490c727bb281da,
+        type: 2}
+      propertyPath: MaxDistance
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114573567931251406, guid: d8e68aa9f196fea43a490c727bb281da,
+        type: 2}
+      propertyPath: MaxDistance
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8e68aa9f196fea43a490c727bb281da, type: 2}
   m_IsPrefabAsset: 0
@@ -36344,6 +36354,16 @@ Prefab:
       propertyPath: m_Name
       value: Enemy_SlothWolf_M4 (LS_01_00)
       objectReference: {fileID: 0}
+    - target: {fileID: 114573567931251406, guid: d8e68aa9f196fea43a490c727bb281da,
+        type: 2}
+      propertyPath: MaxDistance
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999827304267310, guid: d8e68aa9f196fea43a490c727bb281da,
+        type: 2}
+      propertyPath: MaxDistance
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8e68aa9f196fea43a490c727bb281da, type: 2}
   m_IsPrefabAsset: 0
@@ -37366,6 +37386,16 @@ Prefab:
         type: 2}
       propertyPath: EnemyArea
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114101311828449222, guid: 2a5363b2470fd9d42a814ad9c4ed147a,
+        type: 2}
+      propertyPath: MaxDistance
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114929517475278334, guid: 2a5363b2470fd9d42a814ad9c4ed147a,
+        type: 2}
+      propertyPath: MaxDistance
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a5363b2470fd9d42a814ad9c4ed147a, type: 2}
@@ -42923,6 +42953,16 @@ Prefab:
       propertyPath: EnemyArea
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 114929517475278334, guid: 2a5363b2470fd9d42a814ad9c4ed147a,
+        type: 2}
+      propertyPath: MaxDistance
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 114101311828449222, guid: 2a5363b2470fd9d42a814ad9c4ed147a,
+        type: 2}
+      propertyPath: MaxDistance
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a5363b2470fd9d42a814ad9c4ed147a, type: 2}
   m_IsPrefabAsset: 0
@@ -47018,6 +47058,16 @@ Prefab:
       propertyPath: EnemyArea
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 114101311828449222, guid: 2a5363b2470fd9d42a814ad9c4ed147a,
+        type: 2}
+      propertyPath: MaxDistance
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 114929517475278334, guid: 2a5363b2470fd9d42a814ad9c4ed147a,
+        type: 2}
+      propertyPath: MaxDistance
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a5363b2470fd9d42a814ad9c4ed147a, type: 2}
   m_IsPrefabAsset: 0
@@ -49317,6 +49367,16 @@ Prefab:
         type: 2}
       propertyPath: EnemyArea
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999827304267310, guid: d8e68aa9f196fea43a490c727bb281da,
+        type: 2}
+      propertyPath: MaxDistance
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114573567931251406, guid: d8e68aa9f196fea43a490c727bb281da,
+        type: 2}
+      propertyPath: MaxDistance
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8e68aa9f196fea43a490c727bb281da, type: 2}
@@ -53797,6 +53857,16 @@ Prefab:
         type: 2}
       propertyPath: EnemyArea
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999827304267310, guid: d8e68aa9f196fea43a490c727bb281da,
+        type: 2}
+      propertyPath: MaxDistance
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114573567931251406, guid: d8e68aa9f196fea43a490c727bb281da,
+        type: 2}
+      propertyPath: MaxDistance
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8e68aa9f196fea43a490c727bb281da, type: 2}
@@ -61101,6 +61171,16 @@ Prefab:
       propertyPath: EnemyArea
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114999827304267310, guid: d8e68aa9f196fea43a490c727bb281da,
+        type: 2}
+      propertyPath: MaxDistance
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114573567931251406, guid: d8e68aa9f196fea43a490c727bb281da,
+        type: 2}
+      propertyPath: MaxDistance
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8e68aa9f196fea43a490c727bb281da, type: 2}
   m_IsPrefabAsset: 0
@@ -65212,6 +65292,16 @@ Prefab:
       propertyPath: CC
       value: 
       objectReference: {fileID: 2050459573}
+    - target: {fileID: 114929517475278334, guid: 2a5363b2470fd9d42a814ad9c4ed147a,
+        type: 2}
+      propertyPath: MaxDistance
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114101311828449222, guid: 2a5363b2470fd9d42a814ad9c4ed147a,
+        type: 2}
+      propertyPath: MaxDistance
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a5363b2470fd9d42a814ad9c4ed147a, type: 2}
   m_IsPrefabAsset: 0
@@ -74242,6 +74332,16 @@ Prefab:
         type: 2}
       propertyPath: EnemyArea
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999827304267310, guid: d8e68aa9f196fea43a490c727bb281da,
+        type: 2}
+      propertyPath: MaxDistance
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114573567931251406, guid: d8e68aa9f196fea43a490c727bb281da,
+        type: 2}
+      propertyPath: MaxDistance
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8e68aa9f196fea43a490c727bb281da, type: 2}
