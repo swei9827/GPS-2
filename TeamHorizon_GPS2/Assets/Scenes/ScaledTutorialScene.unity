@@ -10891,7 +10891,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -57178,6 +57178,26 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ReturnToPauseMenuPageFromSettingPage
+      objectReference: {fileID: 0}
+    - target: {fileID: 114898371791851160, guid: 7dc3349a388b6c94eb477683538f6636,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2050459575}
+    - target: {fileID: 114898371791851160, guid: 7dc3349a388b6c94eb477683538f6636,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayerAnswerYes
+      objectReference: {fileID: 0}
+    - target: {fileID: 114119733175397230, guid: 7dc3349a388b6c94eb477683538f6636,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2050459575}
+    - target: {fileID: 114119733175397230, guid: 7dc3349a388b6c94eb477683538f6636,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayerAnswerNo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dc3349a388b6c94eb477683538f6636, type: 2}
