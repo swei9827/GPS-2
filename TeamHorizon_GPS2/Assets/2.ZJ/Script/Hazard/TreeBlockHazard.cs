@@ -13,9 +13,13 @@ public class TreeBlockHazard : MonoBehaviour {
     public float slowSpeed;
     public Transform Player;
     public float MaxDistance;
+    private bool entered = false;
+    public bool PlayerHit;
     float originalSpeed = 10.0f;
     ControlCenter cc;
     bool damageDealt;
+    private float distance = 0;
+    public Material outlineMat;
 
     void Start()
     {
@@ -28,15 +32,31 @@ public class TreeBlockHazard : MonoBehaviour {
         {
             Destroy(this.gameObject);
         }
+        distance = Vector3.Distance(Player.position, transform.position);
+        if(distance <= MaxDistance)
+        {
+            if(!entered)
+            {
+                EnterInteractZone();
+            }
+        }
     }
 
     public void TreeBlockDamage()
     {
-        float distance = Vector3.Distance(Player.position, transform.position);
-        if (distance <= MaxDistance)
+        if (!PlayerHit)
         {
-            TBHealth -= 1;
-        }       
+            if (distance <= MaxDistance)
+            {
+                TBHealth -= 1;
+            }
+        }
+    }
+
+    public void EnterInteractZone()
+    {
+        entered = true;
+        this.GetComponent<MeshRenderer>().material = outlineMat;
     }
 
     void OnTriggerEnter (Collider collision)
@@ -54,20 +74,12 @@ public class TreeBlockHazard : MonoBehaviour {
                 coroutine = ResetSpeed(slowDuration);
                 StartCoroutine(coroutine);
             }
-
-            if (collision.gameObject.CompareTag("PlayerBlade"))
-            {
-                if(Time.deltaTime > nextMelee)
-                {
-                    nextMelee = Time.deltaTime + meleeHit;
-                    TBHealth -= 2;
-                } 
-            }
         }          
     }
 
     private IEnumerator ResetSpeed(float waitTime)
     {
+        PlayerHit = true;
         yield return new WaitForSeconds(waitTime);
         GameObject.FindGameObjectWithTag("Player").GetComponent<ScriptedMovement>().speed = originalSpeed;
     }

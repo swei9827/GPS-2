@@ -21,12 +21,14 @@ public class Dialogue_Control : MonoBehaviour {
     // Crouch for 1st time Boolean
     bool crouchFirstTime = false;
 
-    bool hasClick = false;
+    bool hasClick = true;
     bool hasClick2 = false;
     bool hasClick3 = false;
     bool hasClick4 = false;
     bool hasClick5 = false;
     bool hasClick6 = false;
+
+    bool allowDialogue7 = false;
 
     Weapon weapon;
 
@@ -192,26 +194,25 @@ public class Dialogue_Control : MonoBehaviour {
             hasClick4 = false;
             hasClick5 = false;
             hasClick6 = false;
+            //allowDialogue7 = true;
         }
-        if (cc.levelStatus == 2)
+        /*if (allowDialogue7 == true)
         {
-            DelayTime = 1.5f;
-            timer += Time.deltaTime;
-            if (timer >= DelayTime)
-            {
-                rcShoot.isDisable = true;
-                if (hasClick == false)
-                {
-                    level.SetTimeScale(0.0f);
-                    dialogue[6].SetActive(true);
-                }
-                else
-                {
-                    level.SetTimeScale(1.0f);
-                    rcShoot.isDisable = true;
-                }
-            }
-        }
+           rcShoot.isDisable = true;
+           if (hasClick == false)
+           {
+               level.SetTimeScale(0.0f);
+               dialogue[6].SetActive(true);
+               dialogue[7].SetActive(true);
+               dialogue[8].SetActive(true);
+           }
+           else
+           {
+               level.SetTimeScale(1.0f);
+               rcShoot.isDisable = true;
+               allowDialogue7 = false;
+           }
+        }*/
     }
 
     public void Pause()

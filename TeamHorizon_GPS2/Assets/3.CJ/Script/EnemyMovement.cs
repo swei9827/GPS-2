@@ -67,6 +67,9 @@ public class EnemyMovement : MonoBehaviour
 
     public static bool EnemyHPreducing = false;
 
+    public Transform Player;
+    public float MaxDistance;
+
     void Start()
     {
         tempX = this.transform.position.x;
@@ -76,6 +79,7 @@ public class EnemyMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         CC = GameObject.FindGameObjectWithTag("ControlCenter").GetComponent<ControlCenter>();
         lvlController = GameObject.FindGameObjectWithTag("ControlCenter").GetComponent<Level>();
+        Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
         //animator.enabled = false;
         //SLOTH
@@ -130,7 +134,12 @@ public class EnemyMovement : MonoBehaviour
 
         if (EnemyArea == playerArea )
         {
-            EnemyStartAppear = true;  
+            float distance = Vector3.Distance(Player.position, transform.position);
+            //Debug.Log(distance);
+            if(distance <= MaxDistance)
+            {
+                EnemyStartAppear = true;
+            }
         }
 
         if(move == true && EnemyStartAppear == true)

@@ -309,19 +309,10 @@ public class ControlCenter : MonoBehaviour
                 sMove.PlayerMove(locations[7]);
                 if(player.transform.position == locations[7].position)
                 {
-                    status = STATUS.CAMERA;
-                }
-            }
-            if(status == STATUS.CAMERA)
-            {
-                hazards[1].GetComponent<TreeFallHazard>().TreeFalling();
-                camera.GetComponent<PanToTarget>().CameraPan(1);
-                if (camera.GetComponent<PanToTarget>().panComplete)
-                {
                     status = STATUS.MOVING;
                     levelStatus = 9;
                 }
-            }
+            }           
         }
         // B3
         else if(levelStatus == 9)
@@ -598,15 +589,18 @@ public class ControlCenter : MonoBehaviour
             }
             if (status == STATUS.INTERACTABLE)
             {
+                swipeDir[2].SetActive(true);
                 // Choosen left path
                 if (GoLeft)
                 {
+                    swipeDir[2].SetActive(false);
                     levelStatus = 7;
                     status = STATUS.MOVING;
                 }
                 // Choosen Right Path
                 else if (GoRight)
                 {
+                    swipeDir[2].SetActive(false);
                     levelStatus = 14;
                     status = STATUS.MOVING;
                 }
