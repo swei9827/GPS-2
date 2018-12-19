@@ -21,7 +21,7 @@ public class Dialogue_Control : MonoBehaviour {
     // Crouch for 1st time Boolean
     bool crouchFirstTime = false;
 
-    bool hasClick = false;
+    bool hasClick = true;
     bool hasClick2 = false;
     bool hasClick3 = false;
     bool hasClick4 = false;
