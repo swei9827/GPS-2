@@ -55,6 +55,7 @@ public class Dialogue_Control : MonoBehaviour {
 
     bool Dialogue6Completed = false;
 
+    public GameObject Instruction;
 
 
     // Use this for initialization
@@ -117,11 +118,13 @@ public class Dialogue_Control : MonoBehaviour {
                     {
                         level.SetTimeScale(0.0f);
                         dialogue[2].SetActive(true);
+                        Instruction.SetActive(true);
                     }
                     else
                     {
                         level.SetTimeScale(1.0f);
                         Dialogue3Completed = true;
+                        Instruction.SetActive(false);
                         rcShoot.isDisable = false;
                     }
                 }
