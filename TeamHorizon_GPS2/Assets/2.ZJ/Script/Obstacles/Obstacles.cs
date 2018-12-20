@@ -11,15 +11,19 @@ public class Obstacles : MonoBehaviour {
     public float meleeHit = 0.2f;
     public float slowDuration;
     public float slowSpeed;
+    public bool PlayerHit;
     float originalSpeed = 10.0f;
 
     public void ObstaclesDamage()
     {
-        float distance = Vector3.Distance(Player.position, transform.position);
-        if(distance <= MaxDistance)
+        if (!PlayerHit)
         {
-            ObsHealth -= 1;
-        }        
+            float distance = Vector3.Distance(Player.position, transform.position);
+            if (distance <= MaxDistance)
+            {
+                ObsHealth -= 1;
+            }
+        }
     }
 
     void Update () {
@@ -51,6 +55,7 @@ public class Obstacles : MonoBehaviour {
 
     private IEnumerator ResetSpeed(float waitTime)
     {
+        PlayerHit = true;
         yield return new WaitForSeconds(waitTime);
         GameObject.FindGameObjectWithTag("Player").GetComponent<ScriptedMovement>().speed = originalSpeed;
     }

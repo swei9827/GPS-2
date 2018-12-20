@@ -59,6 +59,37 @@ public class PlayerSwipe : MonoBehaviour {
                 cc.QTEFail = true;
             }
         }
+
+        if (cc.status == STATUS.INTERACTABLE && cc.levelStatus == 4)
+        {
+            if (Input.touchCount > 0)
+            {
+                Touch touch = Input.GetTouch(0);
+                if (touch.phase == TouchPhase.Began)
+                {
+                    downPosition = touch.position;
+                    upPosition = touch.position;
+                    // Debug.Log(downPosition);
+                }
+
+
+                if (touch.phase == TouchPhase.Ended)
+                {
+                    upPosition = touch.position;
+                    // Debug.Log(upPosition);
+                }
+            }
+            if (SwipeDirectionChecker(downPosition, upPosition) > swipeDistance)
+            {
+                Debug.Log("Swipe Right");
+                cc.InteractSuccess = true;
+            }
+            else if (SwipeDirectionChecker(downPosition, upPosition) < -swipeDistance)
+            {
+                Debug.Log("Swipe Left");
+                cc.InteractFail = true;
+            }
+        }
     }
 
     void LevelOneQTE()

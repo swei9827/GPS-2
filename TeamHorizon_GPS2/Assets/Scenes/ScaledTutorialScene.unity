@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7031,6 +7031,7 @@ MonoBehaviour:
   meleeHit: 0.2
   slowDuration: 1
   slowSpeed: 2
+  PlayerHit: 0
 --- !u!1 &178363376
 GameObject:
   m_ObjectHideFlags: 0
@@ -15214,11 +15215,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 400700878}
   m_Mesh: {fileID: 4300338, guid: f93d5b656c6dbd34c811a28a7c0d7861, type: 3}
---- !u!1 &400824158 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1368169994431004, guid: 2df75fd748fccaf43b42b7968a232120,
-    type: 2}
-  m_PrefabInternal: {fileID: 1255285054}
 --- !u!1 &402884146
 GameObject:
   m_ObjectHideFlags: 0
@@ -17212,6 +17208,7 @@ MonoBehaviour:
   meleeHit: 0.2
   slowDuration: 1
   slowSpeed: 2
+  PlayerHit: 0
 --- !u!1 &465757533
 GameObject:
   m_ObjectHideFlags: 0
@@ -28519,6 +28516,11 @@ Prefab:
     - {fileID: 95555999714249008, guid: a231a9832252beb449cd3495b620f30b, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: a231a9832252beb449cd3495b620f30b, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &795974723 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1800586829394440, guid: 2df75fd748fccaf43b42b7968a232120,
+    type: 2}
+  m_PrefabInternal: {fileID: 1255285054}
 --- !u!1 &796860316
 GameObject:
   m_ObjectHideFlags: 0
@@ -35781,6 +35783,7 @@ MonoBehaviour:
   meleeHit: 0.2
   slowDuration: 1
   slowSpeed: 2
+  PlayerHit: 0
 --- !u!1 &992324640
 GameObject:
   m_ObjectHideFlags: 0
@@ -49935,6 +49938,74 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.9837195, y: 1.8398433, z: 2.6292355}
   m_Center: {x: 2.5818408, y: 0.6431631, z: 1.3132507}
+--- !u!1001 &1391695826
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1853936400}
+    m_Modifications:
+    - target: {fileID: 4756411539734810, guid: a231a9832252beb449cd3495b620f30b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -23.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756411539734810, guid: a231a9832252beb449cd3495b620f30b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756411539734810, guid: a231a9832252beb449cd3495b620f30b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 67.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756411539734810, guid: a231a9832252beb449cd3495b620f30b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756411539734810, guid: a231a9832252beb449cd3495b620f30b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756411539734810, guid: a231a9832252beb449cd3495b620f30b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756411539734810, guid: a231a9832252beb449cd3495b620f30b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756411539734810, guid: a231a9832252beb449cd3495b620f30b, type: 2}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114331427859031928, guid: a231a9832252beb449cd3495b620f30b,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1577847610}
+    - target: {fileID: 114331427859031928, guid: a231a9832252beb449cd3495b620f30b,
+        type: 2}
+      propertyPath: BattleNodes
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114331427859031928, guid: a231a9832252beb449cd3495b620f30b,
+        type: 2}
+      propertyPath: EnemyCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1506761545032920, guid: a231a9832252beb449cd3495b620f30b, type: 2}
+      propertyPath: m_Name
+      value: T10a
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 111014921686499924, guid: a231a9832252beb449cd3495b620f30b, type: 2}
+    - {fileID: 95555999714249008, guid: a231a9832252beb449cd3495b620f30b, type: 2}
+  m_SourcePrefab: {fileID: 100100000, guid: a231a9832252beb449cd3495b620f30b, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!4 &1391695827 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4756411539734810, guid: a231a9832252beb449cd3495b620f30b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1391695826}
 --- !u!1 &1393066997
 GameObject:
   m_ObjectHideFlags: 0
@@ -58749,6 +58820,7 @@ MonoBehaviour:
   meleeHit: 0.2
   slowDuration: 1
   slowSpeed: 2
+  PlayerHit: 0
 --- !u!1 &1651611615
 GameObject:
   m_ObjectHideFlags: 0
@@ -64833,6 +64905,7 @@ MonoBehaviour:
   meleeHit: 0.2
   slowDuration: 1
   slowSpeed: 2
+  PlayerHit: 0
 --- !u!1 &1797430567
 GameObject:
   m_ObjectHideFlags: 0
@@ -66733,6 +66806,7 @@ Transform:
   - {fileID: 102278108}
   - {fileID: 1166328586}
   - {fileID: 559051691}
+  - {fileID: 1391695827}
   m_Father: {fileID: 2139795611}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -72302,6 +72376,7 @@ MonoBehaviour:
   meleeHit: 0.2
   slowDuration: 1
   slowSpeed: 2
+  PlayerHit: 0
 --- !u!1 &2004817931
 GameObject:
   m_ObjectHideFlags: 0
@@ -72750,6 +72825,7 @@ MonoBehaviour:
   meleeHit: 0.2
   slowDuration: 1
   slowSpeed: 2
+  PlayerHit: 0
 --- !u!1 &2025225132
 GameObject:
   m_ObjectHideFlags: 0
@@ -74217,6 +74293,7 @@ MonoBehaviour:
   - {fileID: 102278108}
   - {fileID: 1166328586}
   - {fileID: 559051691}
+  - {fileID: 1391695827}
   battleArea:
   - {fileID: 277529886}
   - {fileID: 1059995691}
@@ -74228,7 +74305,7 @@ MonoBehaviour:
   - {fileID: 1630792666}
   - {fileID: 1716569477}
   swipeDir:
-  - {fileID: 400824158}
+  - {fileID: 795974723}
   - {fileID: 969630601}
 --- !u!4 &2050459574
 Transform:

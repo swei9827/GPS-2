@@ -173,19 +173,19 @@ public class ControlCenter : MonoBehaviour
             }
             if(status == STATUS.QTE)
             {
-                swipeDir[1].SetActive(true);
+                swipeDir[0].SetActive(true);
             }
             if (QTESuccess)
             {
                 levelStatus = 5;
                 status = STATUS.MOVING;
-                swipeDir[1].SetActive(false);
+                swipeDir[0].SetActive(false);
             }
             else if (QTEFail)
             {
                 levelStatus = 6;
                 status = STATUS.MOVING;
-                swipeDir[1].SetActive(false);
+                swipeDir[0].SetActive(false);
             }
         }
         // QTE Success
@@ -331,10 +331,10 @@ public class ControlCenter : MonoBehaviour
             }
             if (status == STATUS.IDLE)
             {
-                sMove.PlayerMove(locations[9]);     
-                if(player.transform.position == locations[9].position)
+                sMove.PlayerMove(locations[14]);     
+                if(player.transform.position == locations[14].position)
                 {
-                    status = STATUS.TURNING;
+                    status = STATUS.INTERACTABLE;
                     levelStatus = 10;
                 }
             }
@@ -342,36 +342,50 @@ public class ControlCenter : MonoBehaviour
         // Interactable Object
         else if(levelStatus == 10)
         {
-            if(status == STATUS.TURNING)
+            if (status == STATUS.INTERACTABLE)
             {
-                sMove.PlayerRotate(locations[10]);
-                if((player.transform.eulerAngles.y > 89 && player.transform.eulerAngles.y < 90.05f))
-                {
-                    status = STATUS.INTERACTABLE;
-                }
-            }
-
-            if(status == STATUS.INTERACTABLE)
-            {
+                swipeDir[1].SetActive(true);
                 if (InteractSuccess)
                 {
-                    status = STATUS.TURNING;
-                    levelStatus = 11;
+                    swipeDir[1].SetActive(false);
+                    status = STATUS.MOVING;
+                    levelStatus = 14;
                 }
                 else if (InteractFail)
                 {
+                    swipeDir[1].SetActive(false);
+                    status = STATUS.MOVING;
+                    levelStatus = 14;
+                }
+            }
+        }
+
+        else if(levelStatus == 14)
+        {
+            if (status == STATUS.MOVING)
+            {
+                sMove.PlayerMove(locations[9]);
+                if (player.transform.position == locations[9].position)
+                {
                     status = STATUS.TURNING;
-                    levelStatus = 13;
+                    if (InteractSuccess)
+                    {
+                        levelStatus = 11;
+                    }
+                    else if (InteractFail)
+                    {
+                        levelStatus = 13;
+                    }
                 }
             }
         }
         // B4
         else if(levelStatus == 11)
-        {
+        {           
             if(status == STATUS.TURNING)
             {
                 sMove.PlayerRotate(locations[10]);
-                if(player.transform.eulerAngles.y >= 89 && player.transform.eulerAngles.y <= 90.05f)
+                if(player.transform.eulerAngles.y >= 89 && player.transform.eulerAngles.y <= 91f)
                 {
                     status = STATUS.MOVING;
                 }
@@ -453,7 +467,7 @@ public class ControlCenter : MonoBehaviour
             if (status == STATUS.TURNING)
             {
                 sMove.PlayerRotate(locations[12]);
-                if (player.transform.eulerAngles.y >= 269 && player.transform.eulerAngles.y <= 270.05f)
+                if (player.transform.eulerAngles.y >= 269 && player.transform.eulerAngles.y <= 271f)
                 {
                     status = STATUS.MOVING;
                 }
