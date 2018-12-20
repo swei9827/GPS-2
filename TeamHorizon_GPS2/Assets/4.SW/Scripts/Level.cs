@@ -95,6 +95,15 @@ public class Level: MonoBehaviour
         SceneManager.LoadScene(scene);
     }
 
+    public void Level1()
+    {
+        Time.timeScale = 1;
+        AudioManager audio = FindObjectOfType<AudioManager>();
+        audio.Play("LEVEL1");
+        audio.Stop("TUTORIAL");
+        SceneManager.LoadScene(3);
+    }
+
     public void SetTimeScale(float ts)
     {
         //Time.timeScale = ts;

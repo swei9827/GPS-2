@@ -59,9 +59,13 @@ public class PauseMenuControl : MonoBehaviour {
 
     public void ReturnMainMenu()
     {
-        var audio = FindObjectOfType<AudioManager>();
-        audio.Stop("Stage 1");
-        audio.Play("OpeningBGM");
+        AudioManager audio = FindObjectOfType<AudioManager>();
+        for(int i=0;i<audio.sounds.Length;i++)
+        {
+            Sound s = audio.sounds[i];
+            s.source.Stop();
+        }
+        audio.Play("TITLE");
         SceneManager.LoadScene(0);
     }
 
