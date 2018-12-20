@@ -51,16 +51,20 @@ public class PlayerSwipe : MonoBehaviour {
             if (SwipeDirectionChecker(downPosition, upPosition) > swipeDistance)
             {
                 Debug.Log("Swipe Right");
+                downPosition = new Vector3(0, 0, 0);
+                upPosition = new Vector3(0, 0, 0);
                 cc.QTESuccess = true;
             }
             else if (SwipeDirectionChecker(downPosition, upPosition) < -swipeDistance)
             {
                 Debug.Log("Swipe Left");
+                downPosition = new Vector3(0, 0, 0);
+                upPosition = new Vector3(0, 0, 0);
                 cc.QTEFail = true;
             }
         }
 
-        if (cc.status == STATUS.INTERACTABLE && cc.levelStatus == 4)
+        if (cc.status == STATUS.INTERACTABLE && cc.levelStatus == 10)
         {
             if (Input.touchCount > 0)
             {
@@ -82,11 +86,15 @@ public class PlayerSwipe : MonoBehaviour {
             if (SwipeDirectionChecker(downPosition, upPosition) > swipeDistance)
             {
                 Debug.Log("Swipe Right");
+                downPosition = new Vector3(0, 0, 0);
+                upPosition = new Vector3(0, 0, 0);
                 cc.InteractSuccess = true;
             }
             else if (SwipeDirectionChecker(downPosition, upPosition) < -swipeDistance)
             {
                 Debug.Log("Swipe Left");
+                downPosition = new Vector3(0, 0, 0);
+                upPosition = new Vector3(0, 0, 0);
                 cc.InteractFail = true;
             }
         }
