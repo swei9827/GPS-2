@@ -57366,6 +57366,90 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 0.43663645
       objectReference: {fileID: 0}
+    - target: {fileID: 224204745588421006, guid: 7dc3349a388b6c94eb477683538f6636,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224204745588421006, guid: 7dc3349a388b6c94eb477683538f6636,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.29999924
+      objectReference: {fileID: 0}
+    - target: {fileID: 224204745588421006, guid: 7dc3349a388b6c94eb477683538f6636,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0.018000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 224204745588421006, guid: 7dc3349a388b6c94eb477683538f6636,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: -3.7350006
+      objectReference: {fileID: 0}
+    - target: {fileID: 224204745588421006, guid: 7dc3349a388b6c94eb477683538f6636,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0.48482952
+      objectReference: {fileID: 0}
+    - target: {fileID: 224204745588421006, guid: 7dc3349a388b6c94eb477683538f6636,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 1.3999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 224204745588421006, guid: 7dc3349a388b6c94eb477683538f6636,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0.5608295
+      objectReference: {fileID: 0}
+    - target: {fileID: 224204745588421006, guid: 7dc3349a388b6c94eb477683538f6636,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0.153158
+      objectReference: {fileID: 0}
+    - target: {fileID: 1127003510129322, guid: 7dc3349a388b6c94eb477683538f6636, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224343888878553898, guid: 7dc3349a388b6c94eb477683538f6636,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 224343888878553898, guid: 7dc3349a388b6c94eb477683538f6636,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.7199707
+      objectReference: {fileID: 0}
+    - target: {fileID: 224343888878553898, guid: 7dc3349a388b6c94eb477683538f6636,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 2.3000183
+      objectReference: {fileID: 0}
+    - target: {fileID: 224343888878553898, guid: 7dc3349a388b6c94eb477683538f6636,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0.3072188
+      objectReference: {fileID: 0}
+    - target: {fileID: 224343888878553898, guid: 7dc3349a388b6c94eb477683538f6636,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.1399231
+      objectReference: {fileID: 0}
+    - target: {fileID: 224343888878553898, guid: 7dc3349a388b6c94eb477683538f6636,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: -2.7800903
+      objectReference: {fileID: 0}
+    - target: {fileID: 224343888878553898, guid: 7dc3349a388b6c94eb477683538f6636,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0.7185625
+      objectReference: {fileID: 0}
+    - target: {fileID: 224343888878553898, guid: 7dc3349a388b6c94eb477683538f6636,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0.675
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dc3349a388b6c94eb477683538f6636, type: 2}
   m_IsPrefabAsset: 0
@@ -58654,6 +58738,10 @@ Prefab:
     - target: {fileID: 100000, guid: 3eaf4d116e99a3e429581bac107263fc, type: 3}
       propertyPath: m_TagString
       value: Interactive
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3eaf4d116e99a3e429581bac107263fc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3eaf4d116e99a3e429581bac107263fc, type: 3}
