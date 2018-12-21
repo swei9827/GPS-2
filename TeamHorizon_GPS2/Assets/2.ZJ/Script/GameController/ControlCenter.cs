@@ -131,7 +131,7 @@ public class ControlCenter : MonoBehaviour
             if (status == STATUS.TURNING)
             {
                 sMove.PlayerRotate(locations[2]);
-                if(player.transform.eulerAngles.y > 269 && player.transform.eulerAngles.y < 270.05f)
+                if(player.transform.eulerAngles.y > 269 && player.transform.eulerAngles.y < 271f)
                 {
                     levelStatus = 3;
                     status = STATUS.MOVING;
@@ -202,7 +202,7 @@ public class ControlCenter : MonoBehaviour
             if(status == STATUS.TURNING)
             {
                 sMove.PlayerRotate(locations[6]);
-                if (player.transform.eulerAngles.y > 359 && player.transform.eulerAngles.y < 360.05f ||
+                if (player.transform.eulerAngles.y > 359 && player.transform.eulerAngles.y < 361f ||
                     player.transform.eulerAngles.y > 0 && player.transform.eulerAngles.y < 0.8f)
                 {
                     levelStatus = 7;
