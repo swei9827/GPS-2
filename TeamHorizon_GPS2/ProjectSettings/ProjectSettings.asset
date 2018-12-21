@@ -248,7 +248,7 @@ PlayerSettings:
   AndroidTargetArchitectures: 5
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/Asus/Desktop/myKeystore.keystore
+  AndroidKeystoreName: C:/Users/Asus/Documents/GPS-2/TeamHorizon_GPS2/myKeystore.keystore
   AndroidKeyaliasName: horizon
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 1
